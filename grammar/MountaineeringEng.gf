@@ -29,6 +29,7 @@ concrete MountaineeringEng of Mountaineering = PhrasebookEng **
     
     GBelayOn = mkGreeting "belay on";
     GBelow = mkGreeting "below";
+    GClimbing = mkGreeting "climbing";
     GFalling = mkGreeting "falling";
     GOffBelay = mkGreeting "off belay";
     GRock = mkGreeting "rock";

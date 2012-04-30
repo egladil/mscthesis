@@ -17,6 +17,7 @@ abstract Mountaineering = Phrasebook ** {
     
     GBelayOn : Greeting;
     GBelow, GRock : Greeting;
+    GClimbing : Greeting;
     GFalling : Greeting;
     GOffBelay, GSafe : Greeting;
     GRope : Greeting;

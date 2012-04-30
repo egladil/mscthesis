@@ -27,6 +27,7 @@ concrete MountaineeringSwe of Mountaineering = PhrasebookSwe **
     
     GBelayOn = mkGreeting "säkring klar";
     GBelow, GRock = mkGreeting "sten";
+    GClimbing = mkGreeting "jag klättrar";
     GFalling = mkGreeting "faller";
     GOffBelay, GSafe = mkGreeting "lägg av";
     GRope = mkGreeting "rep";

@@ -27,6 +27,7 @@ concrete MountaineeringGer of Mountaineering = PhrasebookGer **
     
     GBelayOn = mkGreeting "nachkommen";
     GBelow, GRock = mkGreeting "Stein";
+    GClimbing = mkGreeting "komme";
     GOffBelay, GSafe = mkGreeting "stand";
     GRope = mkGreeting "Seil";
     GSlack = mkGreeting "Seil";
