@@ -14,7 +14,13 @@ concrete MountaineeringSwe of Mountaineering = PhrasebookSwe **
     Overhang = mkPlace (mkN "överhäng" neutrum) "i";
     Summit = mkPlace (mkN "topp") "på";
     
+    VAbseil, VRappel = mkVP (regV "fira");
     VBelay = mkVP (regV "säkra");
+    VBoulder = mkVP (regV "bouldra");
+    VClimb = mkVP (regV "klättra");
+    VFall = mkVP (regV "falla");
+    VLead = mkVP (regV "leda");
+    VStem = mkVP (regV "stämma");
     
     GBelayOn = mkGreeting "säkring klar";
     GBelow, GRock = mkGreeting "sten";

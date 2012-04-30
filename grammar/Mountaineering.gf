@@ -4,7 +4,13 @@ abstract Mountaineering = Phrasebook ** {
     Overhang : PlaceKind ;
     Summit : PlaceKind ;
     
+    VAbseil, VRappel : VerbPhrase;
     VBelay : VerbPhrase;
+    VBoulder : VerbPhrase;
+    VClimb : VerbPhrase;
+    VFall : VerbPhrase;
+    VLead : VerbPhrase;
+    VStem : VerbPhrase;
     
     GBelayOn : Greeting;
     GBelow, GRock : Greeting;

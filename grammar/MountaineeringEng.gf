@@ -15,7 +15,14 @@ concrete MountaineeringEng of Mountaineering = PhrasebookEng **
     Overhang = mkPlace "overhang" "in";
     Summit = mkPlace "summit" "at";
     
+    VAbseil = mkVP (regV "abseil");
     VBelay = mkVP (regV "belay");
+    VBoulder = mkVP (regV "boulder");
+    VClimb = mkVP (regV "climb");
+    VFall = mkVP (regV "fall");
+    VLead = mkVP (regV "lead");
+    VRappel = mkVP (regV "rappel");
+    VStem = mkVP (regV "stem");
     
     GBelayOn = mkGreeting "belay on";
     GBelow = mkGreeting "below";
