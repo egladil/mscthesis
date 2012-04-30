@@ -1,0 +1,6 @@
+missing.txt
+.DS_Store
+*.pgf
+*.gfo
+_grph.dot
+_grph.png
