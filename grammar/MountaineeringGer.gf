@@ -12,6 +12,7 @@ concrete MountaineeringGer of Mountaineering = PhrasebookGer **
   lin
     BelayStation = mkPlace (mkN "Standplatz" "Standplätze" masculine) on_Prep zu_Prep;
     Cliff = mkPlace (mkN "Fels" "Felsen" masculine) on_Prep zu_Prep;
+    ClimbingGym = mkPlace (mkN "Kletterhalle" "Kletterhallen" feminine) in_Prep inAcc_Prep;
     Glacier = mkPlace (mkN "Gletscher") on_Prep zu_Prep;
     Mountain = mkPlace (L.mountain_N) on_Prep zu_Prep;
     Overhang = mkPlace (mkN "Überhang" "Überhänge" masculine) in_Prep inAcc_Prep;

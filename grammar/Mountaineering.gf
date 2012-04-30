@@ -2,6 +2,7 @@ abstract Mountaineering = Phrasebook ** {
   fun
     BelayStation : PlaceKind;
     Cliff : PlaceKind;
+    ClimbingGym : PlaceKind;
     Glacier : PlaceKind;
     Mountain : PlaceKind;
     Overhang : PlaceKind;
