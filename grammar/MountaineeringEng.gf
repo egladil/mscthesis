@@ -12,10 +12,10 @@ concrete MountaineeringEng of Mountaineering = PhrasebookEng **
 
   lin
     BelayStation = mkPlace "belay station" "at";
-    Cliff = mkPlace "cliff" "at";
+    Cliff = mkPlace "cliff" "on";
     ClimbingGym = mkPlace "climbing gym" "at";
-    Glacier = mkPlace "glacier" "at";
-    Mountain = mkPlace "mountain" "at";
+    Glacier = mkPlace "glacier" "on";
+    Mountain = mkPlace "mountain" "on";
     Overhang = mkPlace "overhang" "in";
     Summit = mkPlace "summit" "at";
     
