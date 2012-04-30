@@ -11,6 +11,9 @@ concrete MountaineeringEng of Mountaineering = PhrasebookEng **
       Prelude in {
 
   lin
+    BelayStation = mkPlace "belay station" "at";
+    Cliff = mkPlace "cliff" "at";
+    Glacier = mkPlace "glacier" "at";
     Mountain = mkPlace "mountain" "at";
     Overhang = mkPlace "overhang" "in";
     Summit = mkPlace "summit" "at";

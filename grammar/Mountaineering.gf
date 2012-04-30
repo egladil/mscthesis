@@ -1,8 +1,11 @@
 abstract Mountaineering = Phrasebook ** {
   fun
-    Mountain : PlaceKind ;
-    Overhang : PlaceKind ;
-    Summit : PlaceKind ;
+    BelayStation : PlaceKind;
+    Cliff : PlaceKind;
+    Glacier : PlaceKind;
+    Mountain : PlaceKind;
+    Overhang : PlaceKind;
+    Summit : PlaceKind;
     
     VAbseil, VRappel : VerbPhrase;
     VBelay : VerbPhrase;

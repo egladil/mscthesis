@@ -10,6 +10,9 @@ concrete MountaineeringSwe of Mountaineering = PhrasebookSwe **
 	  Prelude in {
 
   lin
+    BelayStation = mkPlace (mkN "standplats") "på";
+    Cliff = mkPlace (mkN "klippa") "på";
+    Glacier = mkPlace (mkN "glaciär") "på";
     Mountain = mkPlace L.mountain_N "på";
     Overhang = mkPlace (mkN "överhäng" neutrum) "i";
     Summit = mkPlace (mkN "topp") "på";
