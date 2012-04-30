@@ -14,6 +14,8 @@ concrete MountaineeringGer of Mountaineering = PhrasebookGer **
     Overhang = mkPlace (mkN "Überhang" "Überhänge" masculine) in_Prep inAcc_Prep;
     Summit = mkPlace (mkN "Gipfel") on_Prep zu_Prep;
     
+    VBelay = mkVP (regV "sichern");
+    
     GBelayOn = mkGreeting "nachkommen";
     GBelow, GRock = mkGreeting "Stein";
     GOffBelay, GSafe = mkGreeting "stand";
