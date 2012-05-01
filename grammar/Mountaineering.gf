@@ -1,9 +1,11 @@
 abstract Mountaineering = Phrasebook ** {
   cat
     Hold;  -- Anything and everything that can be used as a hold when climbing.
+    KnotKind;  -- Knots.
     
   fun
   	HoldPlaceKind : Hold -> PlaceKind;	-- Maybe it isn't a place after all since the prepositions are weird (see concrete)
+  	KnotToKind : KnotKind -> Kind;
 
 -- Sentences
   fun
@@ -27,6 +29,8 @@ abstract Mountaineering = Phrasebook ** {
     VFall : VerbPhrase;
     VLead : VerbPhrase;
     VStem : VerbPhrase;
+    
+    V2Tie : Object -> VerbPhrase;
     
     GBelayOn : Greeting;
     GBelow, GRock : Greeting;
@@ -69,4 +73,17 @@ abstract Mountaineering = Phrasebook ** {
     Sidepull : Hold;
     Sloper : Hold;
     Undercling : Hold;
+    
+    Bowline : KnotKind;
+    ButterflyKnot : KnotKind;
+    DoubleFisherman : KnotKind;
+    FigureOfEightKnot : KnotKind;
+    FishermansKnot : KnotKind;
+    Knot : KnotKind;
+    MunterHitch : KnotKind;
+    OverhandBend : KnotKind;
+    OverhandKnot : KnotKind;
+    PrusikKnot : KnotKind;
+    ThreadedOverhandKnot : KnotKind;
+    WaterKnot : KnotKind;
 }

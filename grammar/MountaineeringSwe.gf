@@ -69,4 +69,15 @@ concrete MountaineeringSwe of Mountaineering = PhrasebookSwe **
     NHold = mkCN (mkN "grepp");
     Pocket = mkCN (mkN "pocket" "pocketen" "pockets" "pocketsarna");
     Sloper = mkCN (mkN "slope" "slopes");
+    
+    Bowline = mkCN (mkN "pålstek");
+    ButterflyKnot = mkCN (mkN "fjärilsstek");
+    DoubleFisherman = mkCN (mkN "dubbel fiskarknop" "dubbla fiskarknopen" "dubbla fiskarknopar" "dubbla fiskarknoparna");
+    FigureOfEightKnot = mkCN (mkN "åtta");
+    FishermansKnot = mkCN (mkN "fiskarknop");
+    Knot = mkCN (mkN "knop");
+    OverhandBend = mkCN (mkN "dubbel överhandsknop" "dubbla överhandsknopen" "dubbla överhandsknopar" "dubbla överhandsknoparna");
+    OverhandKnot = mkCN (mkN "överhandsknop");
+    PrusikKnot = mkCN (mkN "prusik");
+    WaterKnot = mkCN (mkN "vattenknop");
 }

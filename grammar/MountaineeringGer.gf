@@ -80,4 +80,17 @@ concrete MountaineeringGer of Mountaineering = PhrasebookGer **
     Pocket = mkCN (mkN "Loch" "Löcher" neuter);
     Sloper = mkCN (mkN "Aufleger");
     Undercling = mkCN (mkN "Untergriff");
+    
+    Bowline = mkCN (mkN "Palstek");
+    ButterflyKnot = mkCN (mkN "Schmetterlingsknoten");
+    DoubleFisherman = mkCN (mkN "doppelter Spierenstich");
+    FigureOfEightKnot = mkCN (mkN "Achtknoten");
+    FishermansKnot = mkCN (mkN "Spierenstich");
+    Knot = mkCN (mkN "Knoten");
+    MunterHitch = mkCN (mkN "Halbmastwurf");
+    OverhandBend = mkCN (mkN "Sackstich");
+    OverhandKnot = mkCN (mkN "Kreuzschlag");
+    PrusikKnot = mkCN (mkN "Prusikknoten");
+    ThreadedOverhandKnot = mkCN (mkN "Sackstich in Ringform" "Sackstiche in Ringform" masculine);
+    WaterKnot = mkCN (mkN "Bandschlingenknoten");
 }

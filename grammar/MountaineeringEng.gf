@@ -80,4 +80,17 @@ concrete MountaineeringEng of Mountaineering = PhrasebookEng **
     Sidepull = mkCN (mkN "sidepull");
     Sloper = mkCN (mkN "sloper");
     Undercling = mkCN (mkN "undercling");
+    
+    Bowline = mkCN (mkN "bowline");
+    ButterflyKnot = mkCN (mkN "butterfly knot");
+    DoubleFisherman = mkCN (mkN "double fisherman's knot");
+    FigureOfEightKnot = mkCN (mkN "figure of eight");
+    FishermansKnot = mkCN (mkN "fisherman's knot");
+    Knot = mkCN (mkN "knot");
+    MunterHitch = mkCN (mkN "munter hitch");
+    OverhandBend = mkCN (mkN "overhand bend");
+    OverhandKnot = mkCN (mkN "overhand knot");
+    PrusikKnot = mkCN (mkN "prusik");
+    ThreadedOverhandKnot = mkCN (mkN "threaded overhand knot");
+    WaterKnot = mkCN (mkN "water knot");
 }
