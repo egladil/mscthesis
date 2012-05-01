@@ -44,7 +44,7 @@ concrete MountaineeringSwe of Mountaineering = PhrasebookSwe **
     
     Ascender = mkCN (mkN "repklämma");
     Bolt = mkCN (mkN "bult");
-    Carabiner = mkCN (mkN "karbinhake");
+    Carabiner = mkCN (mkN "karbinhake" "karbinhakar");
     Chalk = mkCN (mkN "krita");
     ChestHarness = mkCN (mkN "bröstsele" "bröstselar");
     ClimbingShoe = mkCN (mkN "klättersko" "klätterskor");
@@ -66,9 +66,9 @@ concrete MountaineeringSwe of Mountaineering = PhrasebookSwe **
     
     Bucket, Jug = mkCN (mkN "brevlåda");
     Crack = mkCN (mkN "spricka");
-    Hold = mkCN (mkN "grepp");
+    Hold = mkCN (mkN "grepp" neutrum);
     Pocket = mkCN (mkN "pocket" "pocketen" "pockets" "pocketsarna");
-    Sloper = mkCN (mkN "slope" "slopes");
+    Sloper = mkCN (mkN "slope" "slopen" "slopes" "slopsen");
     
     Bowline = mkCN (mkN "pålstek");
     ButterflyKnot = mkCN (mkN "fjärilsstek");
