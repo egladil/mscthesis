@@ -1,6 +1,10 @@
 --# -path=.:present:alltenses
 
 concrete MountaineeringGer of Mountaineering = PhrasebookGer ** 
+    MountaineeringI with 
+      (Syntax = SyntaxGer),
+      (Symbolic = SymbolicGer),
+      (Lexicon = LexiconGer) **
     open
       SyntaxGer,
       ParadigmsGer,
@@ -8,7 +12,10 @@ concrete MountaineeringGer of Mountaineering = PhrasebookGer **
       IrregGer,
       ExtraGer,
       Prelude in {
+  lin
+    HoldPlaceKind x = mkCNPlace x (mkPrep "bei" dative) zu_Prep;
 
+-- Words
   lin
     BelayStation = mkPlace (mkN "Standplatz" "Standplätze" masculine) on_Prep zu_Prep;
     Cliff = mkPlace (mkN "Fels" "Felsen" masculine) on_Prep zu_Prep;
@@ -56,4 +63,12 @@ concrete MountaineeringGer of Mountaineering = PhrasebookGer **
     Rope = mkCN (mkN "Seil" "Seile" neuter);
     Runner, Sling = mkCN (mkN "Schlinge");
     Webbing = mkCN (mkN "Schlauchband" "Schlauchbänder" neuter);
+    
+    Bucket, Jug = mkCN (mkN "Henkel" "Henkel" masculine);
+    ChippedHold = mkCN (mkN "geschlagener Griff");
+    Crack = mkCN (mkN "Riss");
+    NHold = mkCN (mkN "Griff");
+    Pocket = mkCN (mkN "Loch" "Löcher" neuter);
+    Sloper = mkCN (mkN "Aufleger");
+    Undercling = mkCN (mkN "Untergriff");
 }

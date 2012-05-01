@@ -1,6 +1,10 @@
 --# -path=.:present:alltenses
 
 concrete MountaineeringEng of Mountaineering = PhrasebookEng **
+    MountaineeringI with 
+      (Syntax = SyntaxEng),
+      (Symbolic = SymbolicEng),
+      (Lexicon = LexiconEng) **
     open 
       SyntaxEng, 
       ParadigmsEng, 
@@ -8,8 +12,11 @@ concrete MountaineeringEng of Mountaineering = PhrasebookEng **
       (P = ParadigmsEng), 
       IrregEng, 
       ExtraEng, 
-      Prelude in {
+      Prelude in {    
+  lin
+    HoldPlaceKind x = mkCNPlace x (mkPrep "by") to_Prep;
 
+-- Words
   lin
     BelayStation = mkPlace "belay station" "at";
     Cliff = mkPlace "cliff" "on";
@@ -62,4 +69,15 @@ concrete MountaineeringEng of Mountaineering = PhrasebookEng **
     Runner = mkCN (mkN "runner");
     Sling = mkCN (mkN "sling");
     Webbing = mkCN (mkN "webbing");
+    
+    Bucket = mkCN (mkN "bucket");
+    Chickenhead = mkCN (mkN "chickenhead");
+    ChippedHold = mkCN (mkN "chipped hold");
+    Crack = mkCN (mkN "crack");
+    NHold = mkCN (mkN "hold");
+    Jug = mkCN (mkN "jug");
+    Pocket = mkCN (mkN "pocket");
+    Sidepull = mkCN (mkN "sidepull");
+    Sloper = mkCN (mkN "sloper");
+    Undercling = mkCN (mkN "undercling");
 }

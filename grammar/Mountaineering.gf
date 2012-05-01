@@ -1,4 +1,11 @@
 abstract Mountaineering = Phrasebook ** {
+  cat
+    Hold;  -- Anything and everything that can be used as a hold when climbing.
+    
+  fun
+  	HoldPlaceKind : Hold -> PlaceKind;	-- Maybe it isn't a place after all since the prepositions are weird (see concrete)
+  
+-- Words
   fun
     BelayStation : PlaceKind;
     Cliff : PlaceKind;
@@ -47,4 +54,14 @@ abstract Mountaineering = Phrasebook ** {
     Rope : Kind;
     Runner, Sling : Kind;
     Webbing : Kind;
+    
+    Bucket, Jug : Hold;
+    Chickenhead : Hold;
+    ChippedHold : Hold;
+    Crack : Hold;
+    NHold : Hold;
+    Pocket : Hold;
+    Sidepull : Hold;
+    Sloper : Hold;
+    Undercling : Hold;
 }

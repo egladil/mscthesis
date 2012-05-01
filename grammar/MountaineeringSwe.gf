@@ -1,14 +1,21 @@
 --# -path=.:present:alltenses
 
-concrete MountaineeringSwe of Mountaineering = PhrasebookSwe ** 
+concrete MountaineeringSwe of Mountaineering = PhrasebookSwe **
+    MountaineeringI with 
+      (Syntax = SyntaxSwe),
+      (Symbolic = SymbolicSwe),
+      (Lexicon = LexiconSwe) **
 	open
 	  SyntaxSwe,
 	  ParadigmsSwe,
 	  (L = LexiconSwe),
 	  IrregSwe,
 	  ExtraSwe,
-	  Prelude in {
+	  Prelude in {    
+  lin
+    HoldPlaceKind x = mkCNPlace x (mkPrep "vid") to_Prep;
 
+-- Words
   lin
     BelayStation = mkPlace (mkN "standplats") "på";
     Cliff = mkPlace (mkN "klippa") "på";
@@ -56,4 +63,10 @@ concrete MountaineeringSwe of Mountaineering = PhrasebookSwe **
     Rope = mkCN (mkN "rep");
     Runner, Sling = mkCN (mkN "slinga");
     Webbing = mkCN (mkN "nylonband" neutrum);
+    
+    Bucket, Jug = mkCN (mkN "brevlåda");
+    Crack = mkCN (mkN "spricka");
+    NHold = mkCN (mkN "grepp");
+    Pocket = mkCN (mkN "pocket" "pocketen" "pockets" "pocketsarna");
+    Sloper = mkCN (mkN "slope" "slopes");
 }
