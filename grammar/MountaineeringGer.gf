@@ -33,4 +33,27 @@ concrete MountaineeringGer of Mountaineering = PhrasebookGer **
     GRope = mkGreeting "Seil";
     GSlack = mkGreeting "Seil";
     GUpRope = mkGreeting "Seil ein";
+
+    Ascender = mkCN (mkN "Steigklemme");
+    Bolt = mkCN (mkN "Haken");
+    Carabiner = mkCN (mkN "Karabinerhaken" "Karabinerhaken" masculine);
+    Chalk = mkCN (mkN "Chalk" "Chalk" "Chalk" "Chalk" "Chalk" "Chalk" masculine);
+    ChestHarness = mkCN (mkN "Brustklettergurt");
+    ClimbingShoe = mkCN (mkN "Kletterschuh");
+    Cord = mkCN (mkN "Reepschnur" "Reepschnüre" feminine);
+    Crampon = mkCN (mkN "Steigeisen" "Steigeisen" neuter);
+    ExpansionBolt = mkCN (mkN "Bohrhaken");
+    HalfRope = mkCN (mkN "Halbseil" "Halbseile" neuter);
+    Harness = mkCN (mkN "Klettergurt");
+    Helmet = mkCN (mkN "Helm");
+    IceAxe = mkCN (mkN "Eispickel" "Eispickel" masculine);
+    Jumar = mkCN (mkN "Jumar");
+    LockingCarabiner = mkCN (mkN "Verschlusskarabiner" "Verschlusskarabiner" masculine);
+    Nut = mkCN (mkN "Klemmkeil");
+    Piton = mkCN (mkN "Haken" "Haken" masculine);
+    Rack = mkCN (mkN "Materialsortiment" "Materialsortimente" neuter);
+    Ring = mkCN (mkN "Ring");
+    Rope = mkCN (mkN "Seil" "Seile" neuter);
+    Runner, Sling = mkCN (mkN "Schlinge");
+    Webbing = mkCN (mkN "Schlauchband" "Schlauchbänder" neuter);
 }

@@ -34,4 +34,26 @@ concrete MountaineeringSwe of Mountaineering = PhrasebookSwe **
     GRope = mkGreeting "rep";
     GSlack = mkGreeting "rep";
     GUpRope = mkGreeting "tag hem";
+    
+    Ascender = mkCN (mkN "repklämma");
+    Bolt = mkCN (mkN "bult");
+    Carabiner = mkCN (mkN "karbinhake");
+    Chalk = mkCN (mkN "krita");
+    ChestHarness = mkCN (mkN "bröstsele" "bröstselar");
+    ClimbingShoe = mkCN (mkN "klättersko" "klätterskor");
+    Cord = mkCN (mkN "snöre" neutrum);
+    Crampon = mkCN (mkN "stegjärn" neutrum);
+    ExpansionBolt = mkCN (mkN "borrbult");
+    Harness = mkCN (mkN "sele" "selar");
+    Helmet = mkCN (mkN "hjälm");
+    IceAxe = mkCN (mkN "isyxa");
+    Jumar = mkCN (mkN "jumar" "jumars");
+    LockingCarabiner = mkCN (mkN "låskarbin" "låskarbiner");
+    Nut = mkCN (mkN "kil");
+    Piton = mkCN (mkN "kil");
+    Rack = mkCN (mkN "utrustning");
+    Ring = mkCN (mkN "ring");
+    Rope = mkCN (mkN "rep");
+    Runner, Sling = mkCN (mkN "slinga");
+    Webbing = mkCN (mkN "nylonband" neutrum);
 }
