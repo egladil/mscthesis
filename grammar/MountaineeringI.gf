@@ -7,4 +7,9 @@ incomplete concrete MountaineeringI of Mountaineering = Phrasebook **
     in {
   lincat
     Hold = CN;
+
+-- Sentences
+  lin
+    ADoVerbPhraseDirection p vp x = mkCl p.name (mkVP vp x.to) ;
+    AModVerbPhraseDirection m p vp x = mkCl p.name (mkVP m (mkVP vp x.to)) ;
 }

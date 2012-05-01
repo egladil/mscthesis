@@ -4,6 +4,11 @@ abstract Mountaineering = Phrasebook ** {
     
   fun
   	HoldPlaceKind : Hold -> PlaceKind;	-- Maybe it isn't a place after all since the prepositions are weird (see concrete)
+
+-- Sentences
+  fun
+    ADoVerbPhraseDirection  : Person -> VerbPhrase -> Place -> Action ;              -- I walk to the hotel
+    AModVerbPhraseDirection : Modality -> Person -> VerbPhrase -> Place -> Action ;  -- I can walk to the hotel
   
 -- Words
   fun

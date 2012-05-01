@@ -1,7 +1,11 @@
 --# -path=.:present:alltenses
 
 concrete MountaineeringGer of Mountaineering = PhrasebookGer ** 
-    MountaineeringI with 
+    MountaineeringI -
+      [
+        ADoVerbPhraseDirection,
+        AModVerbPhraseDirection
+      ] with 
       (Syntax = SyntaxGer),
       (Symbolic = SymbolicGer),
       (Lexicon = LexiconGer) **
@@ -14,6 +18,11 @@ concrete MountaineeringGer of Mountaineering = PhrasebookGer **
       Prelude in {
   lin
     HoldPlaceKind x = mkCNPlace x (mkPrep "bei" dative) zu_Prep;
+    
+-- Sentences
+  lin
+    ADoVerbPhraseDirection p vp x = prop (mkCl p.name (mkVP vp x.to)) ;
+    AModVerbPhraseDirection m p vp x = prop (mkCl p.name (mkVP m (mkVP vp x.to))) ;
 
 -- Words
   lin
