@@ -13,7 +13,7 @@ concrete MountaineeringSwe of Mountaineering = PhrasebookSwe **
 	  ExtraSwe,
 	  Prelude in {    
   lin
-    HoldPlaceKind x = mkCNPlace x (mkPrep "vid") to_Prep;
+    HoldToPlaceKind x = mkCNPlace x (mkPrep "vid") to_Prep;
 
 -- Words
   lin
@@ -66,7 +66,7 @@ concrete MountaineeringSwe of Mountaineering = PhrasebookSwe **
     
     Bucket, Jug = mkCN (mkN "brevlåda");
     Crack = mkCN (mkN "spricka");
-    NHold = mkCN (mkN "grepp");
+    Hold = mkCN (mkN "grepp");
     Pocket = mkCN (mkN "pocket" "pocketen" "pockets" "pocketsarna");
     Sloper = mkCN (mkN "slope" "slopes");
     

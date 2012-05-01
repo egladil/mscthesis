@@ -6,7 +6,7 @@ incomplete concrete MountaineeringI of Mountaineering = Phrasebook **
       Prelude
     in {
   lincat
-    Hold = CN;
+    HoldKind = CN;
     KnotKind = CN;
 
   lin

@@ -14,7 +14,7 @@ concrete MountaineeringEng of Mountaineering = PhrasebookEng **
       ExtraEng, 
       Prelude in {    
   lin
-    HoldPlaceKind x = mkCNPlace x (mkPrep "by") to_Prep;
+    HoldToPlaceKind x = mkCNPlace x (mkPrep "by") to_Prep;
 
 -- Words
   lin
@@ -74,7 +74,7 @@ concrete MountaineeringEng of Mountaineering = PhrasebookEng **
     Chickenhead = mkCN (mkN "chickenhead");
     ChippedHold = mkCN (mkN "chipped hold");
     Crack = mkCN (mkN "crack");
-    NHold = mkCN (mkN "hold");
+    Hold = mkCN (mkN "hold");
     Jug = mkCN (mkN "jug");
     Pocket = mkCN (mkN "pocket");
     Sidepull = mkCN (mkN "sidepull");

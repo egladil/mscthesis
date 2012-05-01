@@ -17,7 +17,7 @@ concrete MountaineeringGer of Mountaineering = PhrasebookGer **
       ExtraGer,
       Prelude in {
   lin
-    HoldPlaceKind x = mkCNPlace x (mkPrep "bei" dative) zu_Prep;
+    HoldToPlaceKind x = mkCNPlace x (mkPrep "bei" dative) zu_Prep;
     
 -- Sentences
   lin
@@ -76,7 +76,7 @@ concrete MountaineeringGer of Mountaineering = PhrasebookGer **
     Bucket, Jug = mkCN (mkN "Henkel" "Henkel" masculine);
     ChippedHold = mkCN (mkN "geschlagener Griff");
     Crack = mkCN (mkN "Riss");
-    NHold = mkCN (mkN "Griff");
+    Hold = mkCN (mkN "Griff");
     Pocket = mkCN (mkN "Loch" "Löcher" neuter);
     Sloper = mkCN (mkN "Aufleger");
     Undercling = mkCN (mkN "Untergriff");

@@ -1,10 +1,10 @@
 abstract Mountaineering = Phrasebook ** {
   cat
-    Hold;  -- Anything and everything that can be used as a hold when climbing.
+    HoldKind;  -- Anything and everything that can be used as a hold when climbing.
     KnotKind;  -- Knots.
     
   fun
-  	HoldPlaceKind : Hold -> PlaceKind;	-- Maybe it isn't a place after all since the prepositions are weird (see concrete)
+  	HoldToPlaceKind : HoldKind -> PlaceKind;	-- Maybe it isn't a place after all since the prepositions are weird (see concrete)
   	KnotToKind : KnotKind -> Kind;
 
 -- Sentences
@@ -64,15 +64,15 @@ abstract Mountaineering = Phrasebook ** {
     Runner, Sling : Kind;
     Webbing : Kind;
     
-    Bucket, Jug : Hold;
-    Chickenhead : Hold;
-    ChippedHold : Hold;
-    Crack : Hold;
-    NHold : Hold;
-    Pocket : Hold;
-    Sidepull : Hold;
-    Sloper : Hold;
-    Undercling : Hold;
+    Bucket, Jug : HoldKind;
+    Chickenhead : HoldKind;
+    ChippedHold : HoldKind;
+    Crack : HoldKind;
+    Hold : HoldKind;
+    Pocket : HoldKind;
+    Sidepull : HoldKind;
+    Sloper : HoldKind;
+    Undercling : HoldKind;
     
     Bowline : KnotKind;
     ButterflyKnot : KnotKind;
