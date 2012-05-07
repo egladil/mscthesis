@@ -93,4 +93,9 @@ concrete MountaineeringSwe of Mountaineering =
     OverhandKnot = mkCN (mkN "överhandsknop");
     PrusikKnot = mkCN (mkN "prusik");
     WaterKnot = mkCN (mkN "vattenknop");
+    
+    ProBelayerMale, ProBelayerFemale = mkN "säkringsman" "säkringsmannen" "säkringsmän" "säkringsmännen";
+    ProClimberMale, ProClimberFemale = mkN "klättrare";
+    ProLeaderMale, ProLeaderFemale = mkN "försteman" "förstemannen" "förstemän" "förstemännen";
+    ProSecondMale, ProSecondFemale = mkN "andreman" "andremannen" "andremän" "andremännen";
 }

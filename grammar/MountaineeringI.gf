@@ -29,5 +29,6 @@ incomplete concrete MountaineeringI of Mountaineering = Phrasebook **
   lin
     V2Tie o = mkVP tie_V2 o;
     
-    ProTeacher = teacher_N;
+    ProTeacherMale, ProTeacherFemale = teacher_N;
+    ProPhysicianMale, ProPhysicianFemale = doctor_N;
 }

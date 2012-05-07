@@ -94,5 +94,10 @@ abstract Mountaineering = Phrasebook ** {
     ThreadedOverhandKnot : KnotKind;
     WaterKnot : KnotKind;
     
-    ProTeacher : Profession;
+    ProBelayerMale, ProBelayerFemale : Profession;
+    ProClimberMale, ProClimberFemale : Profession;
+    ProLeaderMale, ProLeaderFemale : Profession;
+    ProSecondMale, ProSecondFemale : Profession;
+    ProTeacherMale, ProTeacherFemale : Profession;
+    ProPhysicianMale, ProPhysicianFemale : Profession;
 }

@@ -15,7 +15,9 @@ concrete MountaineeringGer of Mountaineering =
     MountaineeringI -
       [
         ADoVerbPhraseDirection,
-        AModVerbPhraseDirection
+        AModVerbPhraseDirection,
+        ProTeacherFemale,
+        ProPhysicianFemale
       ] with 
       (Syntax = SyntaxGer),
       (Symbolic = SymbolicGer),
@@ -104,4 +106,11 @@ concrete MountaineeringGer of Mountaineering =
     PrusikKnot = mkCN (mkN "Prusikknoten");
     ThreadedOverhandKnot = mkCN (mkN "Sackstich in Ringform" "Sackstiche in Ringform" masculine);
     WaterKnot = mkCN (mkN "Bandschlingenknoten");
+    
+    ProBelayerMale = mkN "Sicherungsmann" "Sicherungsmänner" masculine;
+    ProBelayerFemale = mkN "Sicherungsfrau" "Sicherungsfrauen" feminine;
+    ProLeaderMale = mkN "Vorsteiger" "Vorsteiger" masculine;
+    ProLeaderFemale = mkN "Vorsteigerin" "Vorsteigerinnen" feminine;
+    ProTeacherFemale = mkN "Lehrerin" "Lehrerinnen" feminine;
+    ProPhysicianFemale = mkN "Ärztin" "Ärztinnen" feminine;
 }

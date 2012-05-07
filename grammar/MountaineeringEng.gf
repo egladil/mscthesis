@@ -106,4 +106,9 @@ concrete MountaineeringEng of Mountaineering =
     PrusikKnot = mkCN (mkN "prusik");
     ThreadedOverhandKnot = mkCN (mkN "threaded overhand knot");
     WaterKnot = mkCN (mkN "water knot");
+    
+    ProBelayerMale, ProBelayerFemale = mkN "belayer";
+    ProClimberMale, ProClimberFemale = mkN "climber";
+    ProLeaderMale, ProLeaderFemale = mkN "leader";
+    ProSecondMale, ProSecondFemale = mkN "second";
 }
