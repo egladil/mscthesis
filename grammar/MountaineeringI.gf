@@ -8,9 +8,17 @@ incomplete concrete MountaineeringI of Mountaineering = Phrasebook **
   lincat
     HoldKind = CN;
     KnotKind = CN;
+    Profession = N;
 
   lin
     KnotToKind x = x;
+    
+    ThisProfession pro = {name = mkNP this_Quant pro ; isPron = False ; poss = this_Quant};
+    ThatProfession pro = {name = mkNP that_Quant pro ; isPron = False ; poss = that_Quant};
+    TheseProfessions pro = {name = mkNP this_Quant plNum pro ; isPron = False ; poss = this_Quant};
+    ThoseProfessions pro = {name = mkNP that_Quant plNum pro ; isPron = False ; poss = that_Quant};
+    TheProfession pro = {name = mkNP the_Quant pro ; isPron = False ; poss = the_Quant};
+    TheProfessions pro = {name = mkNP the_Quant plNum pro ; isPron = False ; poss = the_Quant};
 
 -- Sentences
   lin
@@ -20,4 +28,6 @@ incomplete concrete MountaineeringI of Mountaineering = Phrasebook **
 -- Words
   lin
     V2Tie o = mkVP tie_V2 o;
+    
+    ProTeacher = teacher_N;
 }

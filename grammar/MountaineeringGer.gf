@@ -1,6 +1,17 @@
 --# -path=.:present:alltenses
 
-concrete MountaineeringGer of Mountaineering = PhrasebookGer ** 
+concrete MountaineeringGer of Mountaineering =
+    PhrasebookGer -
+      [
+        ABusinessman,
+        ACook,
+        ADoctor,
+        AEngineer,
+        ALawyer,
+        AProfessor,
+        AStudent,
+        ATeacher
+      ] **
     MountaineeringI -
       [
         ADoVerbPhraseDirection,

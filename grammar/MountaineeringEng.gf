@@ -1,6 +1,17 @@
 --# -path=.:present:alltenses
 
-concrete MountaineeringEng of Mountaineering = PhrasebookEng **
+concrete MountaineeringEng of Mountaineering =
+    PhrasebookEng -
+      [
+        ABusinessman,
+        ACook,
+        ADoctor,
+        AEngineer,
+        ALawyer,
+        AProfessor,
+        AStudent,
+        ATeacher
+      ] **
     MountaineeringI with 
       (Syntax = SyntaxEng),
       (Symbolic = SymbolicEng),
@@ -16,6 +27,8 @@ concrete MountaineeringEng of Mountaineering = PhrasebookEng **
   lin
     HoldToPlaceKind x = mkCNPlace x (mkPrep "by") to_Prep;
 
+    IsAProfession p pro = mkProfession pro p;
+    
 -- Words
   lin
     BelayStation = mkPlace "belay station" "at";

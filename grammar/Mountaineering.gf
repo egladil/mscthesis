@@ -2,15 +2,22 @@ abstract Mountaineering = Phrasebook ** {
   cat
     HoldKind;  -- Anything and everything that can be used as a hold when climbing.
     KnotKind;  -- Knots.
+    Profession;
     
   fun
   	HoldToPlaceKind : HoldKind -> PlaceKind;	-- Maybe it isn't a place after all since the prepositions are weird (see concrete)
   	KnotToKind : KnotKind -> Kind;
+  	
+    ThisProfession, ThatProfession : Profession -> Person;      -- this teacher, that teacher
+    TheseProfessions, ThoseProfessions : Profession -> Person;  -- these teachers,those teachers
+    TheProfession, TheProfessions : Profession -> Person;       -- the teacher, the teachers
 
 -- Sentences
   fun
     ADoVerbPhraseDirection  : Person -> VerbPhrase -> Place -> Action ;              -- I walk to the hotel
     AModVerbPhraseDirection : Modality -> Person -> VerbPhrase -> Place -> Action ;  -- I can walk to the hotel
+    
+    IsAProfession : Person -> Profession -> Action;
   
 -- Words
   fun
@@ -86,4 +93,6 @@ abstract Mountaineering = Phrasebook ** {
     PrusikKnot : KnotKind;
     ThreadedOverhandKnot : KnotKind;
     WaterKnot : KnotKind;
+    
+    ProTeacher : Profession;
 }

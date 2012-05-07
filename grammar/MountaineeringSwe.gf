@@ -1,6 +1,17 @@
 --# -path=.:present:alltenses
 
-concrete MountaineeringSwe of Mountaineering = PhrasebookSwe **
+concrete MountaineeringSwe of Mountaineering =
+    PhrasebookSwe -
+      [
+        ABusinessman,
+        ACook,
+        ADoctor,
+        AEngineer,
+        ALawyer,
+        AProfessor,
+        AStudent,
+        ATeacher
+      ] **
     MountaineeringI with 
       (Syntax = SyntaxSwe),
       (Symbolic = SymbolicSwe),
@@ -14,6 +25,8 @@ concrete MountaineeringSwe of Mountaineering = PhrasebookSwe **
 	  Prelude in {    
   lin
     HoldToPlaceKind x = mkCNPlace x (mkPrep "vid") to_Prep;
+
+    IsAProfession p pro = mkProfession pro p;
 
 -- Words
   lin
