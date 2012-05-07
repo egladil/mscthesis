@@ -73,7 +73,7 @@ concrete MountaineeringSwe of Mountaineering =
     Piton = mkCN (mkN "kil");
     Rack = mkCN (mkN "utrustning");
     Ring = mkCN (mkN "ring");
-    Rope = mkCN (mkN "rep");
+    Rope = mkCN (mkN "rep" neutrum);
     Runner, Sling = mkCN (mkN "slinga");
     Webbing = mkCN (mkN "nylonband" neutrum);
     
