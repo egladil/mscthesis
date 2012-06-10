@@ -1,6 +1,5 @@
-Adaptable controlled natural languages for online query systems
-Faegheh Hasibi
-CTH 2012
+Opposition by Emil Djupfeldt to:
+Adaptable controlled natural languages for online query systems, Faegheh Hasibi, CTH 2012
 
 
 Section 2.4 discusses how the grammar for stops is generated. Why was it decided to include all the stops in the grammar? Are there any other alternatives like a wildcard rule or something else? And in that case, why were those alternatives discarded?
