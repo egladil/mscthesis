@@ -1,0 +1,16 @@
+Adaptable controlled natural languages for online query systems
+Faegheh Hasibi
+CTH 2012
+
+
+Section 2.4 discusses how the grammar for stops is generated. Why was it decided to include all the stops in the grammar? Are there any other alternatives like a wildcard rule or something else? And in that case, why were those alternatives discarded?
+
+Chapter 3 concerns adaptation of the grammar. Are there any other possible alternatives to rewriting and then recompiling the grammar? If so, why was this approach choosen instead of the alternatives? Would it be possible to dynamically extend the grammar after loading it instead?
+
+Were any other module structures considered in addition to the one shown in section 4.2 fig. 9? If so, why was this one chosen?
+
+In section 4.3.1 the Def grammar is described. Would it be possible to extend this grammar, specifically the New category, using the same technique as is described in section 4.4 for adding new bus/tram line names and thus allowing completely custom definitions?
+
+Sections 4.3.2-4.3.5 give examples of different customisations. Were any other customisations considered? Would it be possible to have a customisation were a word have different meanings on different days? I.e. "work" means the stop "Chalmers" on Mondays, but on Tuesdays it instead means the stop "Lindholmen".
+
+The method described in section 4.4 could probably be used to support new traffic types (i.e. train, metro, ferry) as well. Was this something that was considered? If so, what were the results?
