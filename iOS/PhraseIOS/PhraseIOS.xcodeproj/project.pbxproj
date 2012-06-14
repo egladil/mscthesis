@@ -32,6 +32,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0A13AE40158A1BFD00586E1E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0A13AE39158A1BFD00586E1E /* libpgf.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0A323D201589F733002F0F23;
+			remoteInfo = libpgf;
+		};
+		0A13AE43158A1C0A00586E1E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0A13AE39158A1BFD00586E1E /* libpgf.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0A323D1F1589F733002F0F23;
+			remoteInfo = libpgf;
+		};
 		0A323E20158A069F002F0F23 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0A323DE3158A069F002F0F23 /* Project object */;
@@ -42,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A13AE39158A1BFD00586E1E /* libpgf.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libpgf.xcodeproj; path = ../libpgf/libpgf.xcodeproj; sourceTree = "<group>"; };
 		0A323DEC158A069F002F0F23 /* PhraseIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhraseIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A323DF0158A069F002F0F23 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0A323DF2158A069F002F0F23 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -97,9 +112,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A13AE3A158A1BFD00586E1E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0A13AE41158A1BFD00586E1E /* liblibpgf.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		0A323DE1158A069F002F0F23 = {
 			isa = PBXGroup;
 			children = (
+				0A13AE39158A1BFD00586E1E /* libpgf.xcodeproj */,
 				0A323E54158A0ED2002F0F23 /* icon72x72.png */,
 				0A323E55158A0ED2002F0F23 /* icon114x114.png */,
 				0A323E52158A0EA9002F0F23 /* icon57x57.png */,
@@ -194,6 +218,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				0A13AE44158A1C0A00586E1E /* PBXTargetDependency */,
 			);
 			name = PhraseIOS;
 			productName = PhraseIOS;
@@ -238,6 +263,12 @@
 			mainGroup = 0A323DE1158A069F002F0F23;
 			productRefGroup = 0A323DED158A069F002F0F23 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 0A13AE3A158A1BFD00586E1E /* Products */;
+					ProjectRef = 0A13AE39158A1BFD00586E1E /* libpgf.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				0A323DEB158A069F002F0F23 /* PhraseIOS */,
@@ -245,6 +276,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		0A13AE41158A1BFD00586E1E /* liblibpgf.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = liblibpgf.a;
+			remoteRef = 0A13AE40158A1BFD00586E1E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		0A323DEA158A069F002F0F23 /* Resources */ = {
@@ -313,6 +354,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0A13AE44158A1C0A00586E1E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = libpgf;
+			targetProxy = 0A13AE43158A1C0A00586E1E /* PBXContainerItemProxy */;
+		};
 		0A323E21158A069F002F0F23 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0A323DEB158A069F002F0F23 /* PhraseIOS */;
@@ -408,7 +454,12 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PhraseIOS/PhraseIOS-Prefix.pch";
+				HEADER_SEARCH_PATHS = ../../GF/src/runtime/c;
 				INFOPLIST_FILE = "PhraseIOS/PhraseIOS-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../../Library/Developer/Xcode/DerivedData/libpgf-ahxcyyapicvwqgaljvhgavxegvsq/Build/Products/Debug-iphoneos\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -419,7 +470,12 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PhraseIOS/PhraseIOS-Prefix.pch";
+				HEADER_SEARCH_PATHS = ../../GF/src/runtime/c;
 				INFOPLIST_FILE = "PhraseIOS/PhraseIOS-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../../Library/Developer/Xcode/DerivedData/libpgf-ahxcyyapicvwqgaljvhgavxegvsq/Build/Products/Debug-iphoneos\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
