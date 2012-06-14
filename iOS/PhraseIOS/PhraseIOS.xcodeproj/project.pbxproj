@@ -26,6 +26,9 @@
 		0A323E1F158A069F002F0F23 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A323DF2158A069F002F0F23 /* Foundation.framework */; };
 		0A323E27158A069F002F0F23 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0A323E25158A069F002F0F23 /* InfoPlist.strings */; };
 		0A323E2A158A069F002F0F23 /* PhraseIOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A323E29158A069F002F0F23 /* PhraseIOSTests.m */; };
+		0A323E53158A0EA9002F0F23 /* icon57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A323E52158A0EA9002F0F23 /* icon57x57.png */; };
+		0A323E56158A0ED2002F0F23 /* icon72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A323E54158A0ED2002F0F23 /* icon72x72.png */; };
+		0A323E57158A0ED2002F0F23 /* icon114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A323E55158A0ED2002F0F23 /* icon114x114.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,9 @@
 		0A323E26158A069F002F0F23 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0A323E28158A069F002F0F23 /* PhraseIOSTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhraseIOSTests.h; sourceTree = "<group>"; };
 		0A323E29158A069F002F0F23 /* PhraseIOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhraseIOSTests.m; sourceTree = "<group>"; };
+		0A323E52158A0EA9002F0F23 /* icon57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon57x57.png; sourceTree = "<group>"; };
+		0A323E54158A0ED2002F0F23 /* icon72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon72x72.png; sourceTree = "<group>"; };
+		0A323E55158A0ED2002F0F23 /* icon114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon114x114.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,9 @@
 		0A323DE1158A069F002F0F23 = {
 			isa = PBXGroup;
 			children = (
+				0A323E54158A0ED2002F0F23 /* icon72x72.png */,
+				0A323E55158A0ED2002F0F23 /* icon114x114.png */,
+				0A323E52158A0EA9002F0F23 /* icon57x57.png */,
 				0A323DF6158A069F002F0F23 /* PhraseIOS */,
 				0A323E22158A069F002F0F23 /* PhraseIOSTests */,
 				0A323DEF158A069F002F0F23 /* Frameworks */,
@@ -249,6 +258,9 @@
 				0A323E0E158A069F002F0F23 /* first@2x.png in Resources */,
 				0A323E13158A069F002F0F23 /* second.png in Resources */,
 				0A323E15158A069F002F0F23 /* second@2x.png in Resources */,
+				0A323E53158A0EA9002F0F23 /* icon57x57.png in Resources */,
+				0A323E56158A0ED2002F0F23 /* icon72x72.png in Resources */,
+				0A323E57158A0ED2002F0F23 /* icon114x114.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +478,7 @@
 				0A323E2F158A069F002F0F23 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0A323E30158A069F002F0F23 /* Build configuration list for PBXNativeTarget "PhraseIOSTests" */ = {
 			isa = XCConfigurationList;
@@ -474,6 +487,7 @@
 				0A323E32158A069F002F0F23 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
