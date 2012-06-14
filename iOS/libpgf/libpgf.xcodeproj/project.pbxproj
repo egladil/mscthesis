@@ -1,0 +1,232 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A323D241589F733002F0F23 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A323D231589F733002F0F23 /* Foundation.framework */; };
+		0A323D2A1589F734002F0F23 /* libpgf.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A323D291589F734002F0F23 /* libpgf.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0A323D201589F733002F0F23 /* liblibpgf.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibpgf.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A323D231589F733002F0F23 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0A323D271589F734002F0F23 /* libpgf-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "libpgf-Prefix.pch"; sourceTree = "<group>"; };
+		0A323D281589F734002F0F23 /* libpgf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libpgf.h; sourceTree = "<group>"; };
+		0A323D291589F734002F0F23 /* libpgf.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = libpgf.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0A323D1D1589F733002F0F23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A323D241589F733002F0F23 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0A323D151589F733002F0F23 = {
+			isa = PBXGroup;
+			children = (
+				0A323D251589F734002F0F23 /* libpgf */,
+				0A323D221589F733002F0F23 /* Frameworks */,
+				0A323D211589F733002F0F23 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0A323D211589F733002F0F23 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0A323D201589F733002F0F23 /* liblibpgf.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0A323D221589F733002F0F23 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0A323D231589F733002F0F23 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0A323D251589F734002F0F23 /* libpgf */ = {
+			isa = PBXGroup;
+			children = (
+				0A323D281589F734002F0F23 /* libpgf.h */,
+				0A323D291589F734002F0F23 /* libpgf.m */,
+				0A323D261589F734002F0F23 /* Supporting Files */,
+			);
+			path = libpgf;
+			sourceTree = "<group>";
+		};
+		0A323D261589F734002F0F23 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0A323D271589F734002F0F23 /* libpgf-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0A323D1E1589F733002F0F23 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0A323D1F1589F733002F0F23 /* libpgf */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A323D2D1589F734002F0F23 /* Build configuration list for PBXNativeTarget "libpgf" */;
+			buildPhases = (
+				0A323D1C1589F733002F0F23 /* Sources */,
+				0A323D1D1589F733002F0F23 /* Frameworks */,
+				0A323D1E1589F733002F0F23 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = libpgf;
+			productName = libpgf;
+			productReference = 0A323D201589F733002F0F23 /* liblibpgf.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0A323D171589F733002F0F23 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = Chalmers;
+			};
+			buildConfigurationList = 0A323D1A1589F733002F0F23 /* Build configuration list for PBXProject "libpgf" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0A323D151589F733002F0F23;
+			productRefGroup = 0A323D211589F733002F0F23 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0A323D1F1589F733002F0F23 /* libpgf */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0A323D1C1589F733002F0F23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A323D2A1589F734002F0F23 /* libpgf.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0A323D2B1589F734002F0F23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		0A323D2C1589F734002F0F23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0A323D2E1589F734002F0F23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/libpgf.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "libpgf/libpgf-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		0A323D2F1589F734002F0F23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/libpgf.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "libpgf/libpgf-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0A323D1A1589F733002F0F23 /* Build configuration list for PBXProject "libpgf" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A323D2B1589F734002F0F23 /* Debug */,
+				0A323D2C1589F734002F0F23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0A323D2D1589F734002F0F23 /* Build configuration list for PBXNativeTarget "libpgf" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A323D2E1589F734002F0F23 /* Debug */,
+				0A323D2F1589F734002F0F23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0A323D171589F733002F0F23 /* Project object */;
+}
