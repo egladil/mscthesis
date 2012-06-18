@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A13AE47158F519E00586E1E /* Mountaineering.pgf in Resources */ = {isa = PBXBuildFile; fileRef = 0A13AE46158F519E00586E1E /* Mountaineering.pgf */; };
+		0A13AE51158F5C8600586E1E /* liblibpgf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A13AE41158A1BFD00586E1E /* liblibpgf.a */; };
 		0A323DF1158A069F002F0F23 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A323DF0158A069F002F0F23 /* UIKit.framework */; };
 		0A323DF3158A069F002F0F23 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A323DF2158A069F002F0F23 /* Foundation.framework */; };
 		0A323DF5158A069F002F0F23 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A323DF4158A069F002F0F23 /* CoreGraphics.framework */; };
@@ -57,6 +59,7 @@
 
 /* Begin PBXFileReference section */
 		0A13AE39158A1BFD00586E1E /* libpgf.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libpgf.xcodeproj; path = ../libpgf/libpgf.xcodeproj; sourceTree = "<group>"; };
+		0A13AE46158F519E00586E1E /* Mountaineering.pgf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Mountaineering.pgf; path = ../../grammar/Mountaineering.pgf; sourceTree = "<group>"; };
 		0A323DEC158A069F002F0F23 /* PhraseIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhraseIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A323DF0158A069F002F0F23 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0A323DF2158A069F002F0F23 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -93,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A13AE51158F5C8600586E1E /* liblibpgf.a in Frameworks */,
 				0A323DF1158A069F002F0F23 /* UIKit.framework in Frameworks */,
 				0A323DF3158A069F002F0F23 /* Foundation.framework in Frameworks */,
 				0A323DF5158A069F002F0F23 /* CoreGraphics.framework in Frameworks */,
@@ -120,9 +124,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		0A13AE45158F518900586E1E /* Grammars */ = {
+			isa = PBXGroup;
+			children = (
+				0A13AE46158F519E00586E1E /* Mountaineering.pgf */,
+			);
+			name = Grammars;
+			sourceTree = "<group>";
+		};
 		0A323DE1158A069F002F0F23 = {
 			isa = PBXGroup;
 			children = (
+				0A13AE45158F518900586E1E /* Grammars */,
 				0A13AE39158A1BFD00586E1E /* libpgf.xcodeproj */,
 				0A323E54158A0ED2002F0F23 /* icon72x72.png */,
 				0A323E55158A0ED2002F0F23 /* icon114x114.png */,
@@ -302,6 +315,7 @@
 				0A323E53158A0EA9002F0F23 /* icon57x57.png in Resources */,
 				0A323E56158A0ED2002F0F23 /* icon72x72.png in Resources */,
 				0A323E57158A0ED2002F0F23 /* icon114x114.png in Resources */,
+				0A13AE47158F519E00586E1E /* Mountaineering.pgf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,7 +468,10 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PhraseIOS/PhraseIOS-Prefix.pch";
-				HEADER_SEARCH_PATHS = ../../GF/src/runtime/c;
+				HEADER_SEARCH_PATHS = (
+					../libpgf/libpgf,
+					../../GF/src/runtime/c,
+				);
 				INFOPLIST_FILE = "PhraseIOS/PhraseIOS-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -470,7 +487,10 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PhraseIOS/PhraseIOS-Prefix.pch";
-				HEADER_SEARCH_PATHS = ../../GF/src/runtime/c;
+				HEADER_SEARCH_PATHS = (
+					../libpgf/libpgf,
+					../../GF/src/runtime/c,
+				);
 				INFOPLIST_FILE = "PhraseIOS/PhraseIOS-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

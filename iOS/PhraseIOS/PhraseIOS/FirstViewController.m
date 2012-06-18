@@ -7,9 +7,21 @@
 //
 
 #import "FirstViewController.h"
+#include <stdio.h>
+#include <gu/mem.h>
+#include <gu/exn.h>
+#include <gu/file.h>
 #include <pgf/pgf.h>
 
+#define GRAMMAR "Mountaineering"
+
+static GuPool* gupool = NULL;
+static GuExn* guexception = NULL;
+static PgfPGF* grammar = NULL;
+
 @implementation FirstViewController
+@synthesize txtIn;
+@synthesize txtOut;
 
 - (void)didReceiveMemoryWarning
 {
@@ -21,12 +33,50 @@
 
 - (void)viewDidLoad
 {
+    NSString *grammarPath;
+    const char* cGrammarPath;
+    FILE* file;
+    GuIn* inStream;
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    if (gupool == NULL) {
+        gupool = gu_new_pool();
+    }
+    
+    if (guexception == NULL) {
+        guexception = gu_new_exn(NULL, NULL, gupool);
+    }
+    
+    if (grammar == NULL) {
+        grammarPath = [[NSBundle mainBundle] pathForResource:@GRAMMAR ofType:@"pgf"];
+        assert(grammarPath != nil);
+        
+        cGrammarPath = [grammarPath fileSystemRepresentation];
+        file = fopen(cGrammarPath, "rb");
+        assert(file != NULL);
+        
+        inStream = gu_file_in(file, gupool);
+        
+        grammar = pgf_read(inStream, gupool, guexception);
+        if (!gu_ok(guexception)) {
+            gu_exn_clear(guexception);
+            grammar = NULL;
+            fclose(file);
+            txtOut.text = @"Error loading grammar.";
+            return;
+        }
+        
+        // TODO: Free gu input stream?        
+        fclose(file);
+    }
 }
 
 - (void)viewDidUnload
 {
+    [self setTxtIn:nil];
+    [self setTxtOut:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -62,4 +112,16 @@
     }
 }
 
+- (IBAction)translateInput:(id)sender {
+    NSString* text = txtIn.text;
+    
+    txtOut.text = text;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
+    if (theTextField == self.txtIn) {
+        [theTextField resignFirstResponder];
+    }
+    return YES;
+}
 @end
