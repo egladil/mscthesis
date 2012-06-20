@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0A13AE47158F519E00586E1E /* Mountaineering.pgf in Resources */ = {isa = PBXBuildFile; fileRef = 0A13AE46158F519E00586E1E /* Mountaineering.pgf */; };
 		0A13AE51158F5C8600586E1E /* liblibpgf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A13AE41158A1BFD00586E1E /* liblibpgf.a */; };
+		0A1D1E0B1591E3390074D642 /* gutools.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1E0A1591E3390074D642 /* gutools.m */; };
 		0A323DF1158A069F002F0F23 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A323DF0158A069F002F0F23 /* UIKit.framework */; };
 		0A323DF3158A069F002F0F23 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A323DF2158A069F002F0F23 /* Foundation.framework */; };
 		0A323DF5158A069F002F0F23 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A323DF4158A069F002F0F23 /* CoreGraphics.framework */; };
@@ -60,6 +61,8 @@
 /* Begin PBXFileReference section */
 		0A13AE39158A1BFD00586E1E /* libpgf.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libpgf.xcodeproj; path = ../libpgf/libpgf.xcodeproj; sourceTree = "<group>"; };
 		0A13AE46158F519E00586E1E /* Mountaineering.pgf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Mountaineering.pgf; path = ../../grammar/Mountaineering.pgf; sourceTree = "<group>"; };
+		0A1D1E091591E3390074D642 /* gutools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gutools.h; sourceTree = "<group>"; };
+		0A1D1E0A1591E3390074D642 /* gutools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gutools.m; sourceTree = "<group>"; };
 		0A323DEC158A069F002F0F23 /* PhraseIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhraseIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A323DF0158A069F002F0F23 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0A323DF2158A069F002F0F23 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -183,6 +186,8 @@
 				0A323E12158A069F002F0F23 /* second.png */,
 				0A323E14158A069F002F0F23 /* second@2x.png */,
 				0A323DF7158A069F002F0F23 /* Supporting Files */,
+				0A1D1E091591E3390074D642 /* gutools.h */,
+				0A1D1E0A1591E3390074D642 /* gutools.m */,
 			);
 			path = PhraseIOS;
 			sourceTree = "<group>";
@@ -354,6 +359,7 @@
 				0A323E01158A069F002F0F23 /* AppDelegate.m in Sources */,
 				0A323E0A158A069F002F0F23 /* FirstViewController.m in Sources */,
 				0A323E11158A069F002F0F23 /* SecondViewController.m in Sources */,
+				0A1D1E0B1591E3390074D642 /* gutools.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
