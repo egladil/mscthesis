@@ -144,12 +144,9 @@ static PgfPGF* grammar = NULL;
     startcat = gu_map_get(grammar->gflags, &startcatFlag, PgfCId*);
     if (startcat == NULL) {
         startcat = &defaultCategory;
-    }
+    }    
     
-    txtOut.text = fromGuString(*startcat);
-    
-    
-    input = gu_string_reader(toGuString([txtIn.text stringByAppendingString:@" "], localPool), localPool);
+    input = gu_string_reader(convNSStringtoGuString([txtIn.text stringByAppendingString:@" "], localPool), localPool);
     lexer = pgf_new_lexer(input, localPool);
     assert(lexer != NULL);
     
@@ -188,7 +185,7 @@ static PgfPGF* grammar = NULL;
         goto exit;
     }
     
-    txtOut.text = fromGuString(gu_string_buf_freeze(output, localPool));
+    txtOut.text = convGuStringToNSString(gu_string_buf_freeze(output, localPool));
     
 exit:
     gu_pool_free(localPool);

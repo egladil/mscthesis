@@ -12,8 +12,11 @@
 
 #import "gutools.h"
 
+#define STRINGOUT_BUF_SIZE      128
+#define STRINGOUT_BUF_GROW      1024
 
-GuString toGuString(NSString* src, GuPool* pool) {
+
+GuString convNSStringtoGuString(NSString* src, GuPool* pool) {
     size_t length;
     char* data;
     
@@ -44,8 +47,8 @@ static size_t strOutHelper(GuOutStream* stream, const uint8_t* buf, size_t len, 
         size_t newSize;
         char* tmp;
         
-        newSize = strout->size + 1024;
-        newSize = newSize < newPos ? newPos + 1024 : newSize;
+        newSize = strout->size + STRINGOUT_BUF_GROW;
+        newSize = newSize < newPos ? newPos + STRINGOUT_BUF_GROW : newSize;
         
         tmp = gu_malloc(strout->pool, newSize);
         assert(tmp != NULL);
@@ -61,14 +64,14 @@ static size_t strOutHelper(GuOutStream* stream, const uint8_t* buf, size_t len, 
     return len;
 }
 
-NSString* fromGuString(GuString src) {
+char* convGuStringToCString(GuString src, GuPool* pool) {
     GuPool* localPool = gu_local_pool();
     StringOut* strout;
     GuWriter* writer;
     GuExn* exn;
-    NSString* ret = nil;
+    char* ret = NULL;
     
-    strout = gu_new_s(localPool, StringOut, .stream.output = strOutHelper, .pool = localPool);
+    strout = gu_new_s(localPool, StringOut, .stream.output = strOutHelper, .pool = localPool, .buf = gu_malloc(localPool, STRINGOUT_BUF_SIZE), .size = STRINGOUT_BUF_SIZE);
     writer = gu_new_utf8_writer(gu_new_out(&strout->stream, localPool), localPool);
     
     exn = gu_new_exn(NULL, gu_kind(type), localPool);
@@ -76,7 +79,27 @@ NSString* fromGuString(GuString src) {
     gu_string_write(src, writer, exn);
     
     if (gu_ok(exn)) {
-        ret = [NSString stringWithUTF8String:(strout->buf != NULL ? strout->buf : "")];
+        if (pool == NULL) {
+            ret = gu_malloc(pool, strout->pos + 1);
+            memcpy(ret, strout->buf, strout->pos);
+            ret[strout->pos] = 0;
+        } else {
+            ret = strndup(strout->buf, strout->pos);
+        }
+    }
+    
+    gu_pool_free(localPool);
+    return ret;
+}
+
+NSString* convGuStringToNSString(GuString src) {
+    GuPool* localPool = gu_local_pool();
+    const char* cstr;
+    NSString* ret = nil;
+    
+    cstr = convGuStringToCString(src, localPool);
+    if (cstr != NULL) {
+        ret = [NSString stringWithUTF8String:cstr];
     }
     
     gu_pool_free(localPool);
@@ -113,7 +136,7 @@ NSString* dumpStrMap(GuStringMap* map) {
     gu_map_iter(map, &it->it, exn);
     
     if (gu_ok(exn)) {
-        ret = fromGuString(gu_string_buf_freeze(sb, localPool));
+        ret = convGuStringToNSString(gu_string_buf_freeze(sb, localPool));
     }
     
     gu_pool_free(localPool);

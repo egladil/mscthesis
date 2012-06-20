@@ -13,10 +13,10 @@
 #ifndef GUTOOLS_H
 #define GUTOOLS_H
 
-GuString toGuString(NSString* src, GuPool* pool);
+GuString convNSStringtoGuString(NSString* src, GuPool* pool);
 
-
-NSString* fromGuString(GuString src);
+char* convGuStringToCString(GuString src, GuPool* pool);
+NSString* convGuStringToNSString(GuString src);
 
 NSString* dumpStrMap(GuStringMap* map);
 
