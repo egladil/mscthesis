@@ -4,9 +4,9 @@ missing.txt
 *.gfo
 _grph.dot
 _grph.png
-GF/
-JPGF/
-PhraseDroid/
+/GF/
+/JPGF/
+/PhraseDroid/
 project.xcworkspace/
 xcuserdata/
 build/
