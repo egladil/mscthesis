@@ -13,6 +13,8 @@
 #include <map>
 #include <vector>
 
+#include <gf/reader/AbsCat.h>
+#include <gf/reader/AbsFun.h>
 #include <gf/reader/RLiteral.h>
 
 namespace gf {
@@ -21,17 +23,17 @@ namespace gf {
         class Abstract {
         private:
             /* final */ std::string name;
-            /* final */ std::map<std::string, RLiteral> flags;
-            /* final */ std::vector<AbsFun> absFuns;
-            /* final */ std::vector<AbsCat> absCats;
-            /* final */ std::map<std::string, AbsCat> categories;
-            /* final */ std::map<std::string, AbsFun> functions;
+            /* final */ std::map<std::string, RLiteral*> flags;
+            /* final */ std::vector<AbsFun*> absFuns;
+            /* final */ std::vector<AbsCat*> absCats;
+            /* final */ std::map<std::string, AbsCat*> categories;
+            /* final */ std::map<std::string, AbsFun*> functions;
             
         public:
-            Abstract(const std::string& name, const std::map<std::string, RLiteral> flags, const std::vector<AbsFun> absFuns, std::vector<AbsCat> absCats);
+            Abstract(const std::string& name, const std::map<std::string, RLiteral*> flags, const std::vector<AbsFun*> absFuns, std::vector<AbsCat*> absCats);
             virtual ~Abstract();
             
-            virtual const std::string& name() const;
+            virtual const std::string& getName() const;
             virtual const std::string& startcat() const;
             
             /**
@@ -40,7 +42,7 @@ namespace gf {
              * @param returnType the return type to search for
              * @return a list of matching functions
              **/
-            virtual std::vector<AbsFun> functions(const std::string& returnType) const;
+            virtual std::vector<AbsFun> getFunctions(const std::string& returnType) const;
             
             virtual const std::vector<AbsFun>& getAbsFuns() const;
             virtual const std::vector<AbsFun>& getAbsCats() const;

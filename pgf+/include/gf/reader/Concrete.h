@@ -40,7 +40,7 @@ namespace gf {
             Concrete(const std::string& name, const std::map<std::string, RLiteral>& flags, const std::vector<Sequence>& seqs, const std::vector<CncFun>& cncFuns, const std::vector<ProductionSet>& prods, const std::map<std::string, CncCat>& cncCats, int32_t fId, const std::string& startCat);
             virtual ~Concrete();
             
-            virtual const std::string& name() const;
+            virtual const std::string& getName() const;
             
             /**
              * returns the concretes categories (forest indices) corresponding to the
@@ -60,7 +60,7 @@ namespace gf {
             virtual std::vector<CncCat> getCncCats() const;
             
             virtual int32_t getFId() const;
-            virtual const CncCat& startCat() const;
+            virtual const CncCat& getStartCat() const;
           
             // TODO: Cache vector?
             virtual std::vector<Production> productions() const;
@@ -68,7 +68,7 @@ namespace gf {
             virtual std::string toString() const;
             
             // TODO: Cache map?
-            virtual std::map<int32_t, set<Production> > getSetOfProductions() const;
+            virtual std::map<int32_t, std::set<Production> > getSetOfProductions() const;
         };
         
     }

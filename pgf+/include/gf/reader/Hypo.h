@@ -15,15 +15,16 @@
 
 namespace gf {
     namespace reader {
+        class Type;
         
         class Hypo {
         private:
             /* final */ bool bind;
             /* final */ std::string name;
-            /* final */ Type type;
+            /* final */ Type* type;
             
         public:
-            Hypo(bool bind, const std::string& str, const Type& type);
+            Hypo(bool bind, const std::string& str, Type* type);
             virtual ~Hypo();
             
             virtual std::string toString() const;

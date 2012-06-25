@@ -9,7 +9,7 @@
 #ifndef pgf__Alternative_h
 #define pgf__Alternative_h
 
-#incldue <string>
+#include <string>
 #include <vector>
 
 namespace gf {
@@ -28,7 +28,7 @@ namespace gf {
             virtual const std::vector<std::string>& getAlt2() const;
             
             virtual std::string toString() const;
-        }
+        };
         
     }
 }

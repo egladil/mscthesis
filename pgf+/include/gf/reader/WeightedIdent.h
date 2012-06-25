@@ -23,8 +23,8 @@ namespace gf {
             WeightedIdent(const std::string& ident, double weight);
             virtual ~WeightedIdent();
             
-            virtual const std::string& ident() const;
-            virtual double weight() const;
+            virtual const std::string& getIdent() const;
+            virtual double getWeight() const;
         };
         
     }

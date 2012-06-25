@@ -28,9 +28,9 @@ namespace gf {
             CncFun(const std::string& name, const std::vector<Sequence>& sequences);
             virtual ~CncFun();
             
-            virtual const std::string& name() const;
+            virtual const std::string& getName() const;
             
-            virtual const std::vector<Sequence>& sequences() const;
+            virtual const std::vector<Sequence>& getSequences() const;
             
             virtual Sequence& sequence(uint32_t index);
             virtual const Sequence& sequence(uint32_t index) const;
@@ -41,7 +41,7 @@ namespace gf {
             virtual uint32_t size() const;
             
             virtual std::string toString() const;
-        }
+        };
         
     }
 }

@@ -25,12 +25,12 @@ namespace gf {
     private:
         int32_t majorVersion;
         int32_t minorVersion;
-        std::map<std::string, gf::reader::RLiteral> flags;
-        /* final */ gf::reader::Abstract abstract;
-        /* final */ std::map<std::string, gf::reader::Concrete> concretes;
+        std::map<std::string, gf::reader::RLiteral*> flags;
+        /* final */ gf::reader::Abstract* abstract;
+        /* final */ std::map<std::string, gf::reader::Concrete*> concretes;
         
     public:
-        PGF(int32_t majorVersion, int32_t minorVersion, const std::map<std::string, gf::reader::RLiteral>& flags, const gf::reader::Abstract& abstract, const std::vector<gf::reader::Concrete>& concretes);
+        PGF(int32_t majorVersion, int32_t minorVersion, const std::map<std::string, gf::reader::RLiteral*>& flags, gf::reader::Abstract* abstract, const std::vector<gf::reader::Concrete*>& concretes);
         virtual ~PGF();
         
         /* TODO: Cache set? */

@@ -19,15 +19,15 @@ namespace gf {
         
         class Eq {
         private:
-            std::vector<Pattern> patts;
-            Expr expr;
+            std::vector<Pattern*> patts;
+            Expr* expr;
             
         public:
-            Eq(const std::vector<Pattern>& patterns, Expr expression);
+            Eq(const std::vector<Pattern*>& patterns, Expr* expression);
             virtual ~Eq();
             
             virtual const std::vector<Pattern>& patterns() const;
-            virtual const Expr& expression() const;
+            virtual Expr* expression() const;
             
             virtual std::string toString() const;
         };
