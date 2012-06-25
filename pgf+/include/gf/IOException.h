@@ -19,6 +19,7 @@ namespace gf {
     public:
         IOException();
         IOException(const std::string& message);
+        IOException(int err);
         virtual ~IOException();
     };
     
