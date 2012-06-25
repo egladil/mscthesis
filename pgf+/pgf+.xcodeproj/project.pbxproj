@@ -6,10 +6,15 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		0A1D1E7C159835880074D642 /* PGFReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1E7B159835880074D642 /* PGFReader.cpp */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		0A1D1E29159496140074D642 /* libpgf+.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libpgf+.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A1D1E321594975C0074D642 /* include */ = {isa = PBXFileReference; lastKnownFileType = folder; path = include; sourceTree = "<group>"; };
 		0A1D1E3315949D3F0074D642 /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; path = src; sourceTree = "<group>"; };
+		0A1D1E7B159835880074D642 /* PGFReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PGFReader.cpp; path = src/PGFReader.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +31,7 @@
 		0A1D1E1E159496140074D642 = {
 			isa = PBXGroup;
 			children = (
+				0A1D1E79159835770074D642 /* Sources */,
 				0A1D1E3315949D3F0074D642 /* src */,
 				0A1D1E321594975C0074D642 /* include */,
 				0A1D1E2A159496140074D642 /* Products */,
@@ -38,6 +44,14 @@
 				0A1D1E29159496140074D642 /* libpgf+.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		0A1D1E79159835770074D642 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				0A1D1E7B159835880074D642 /* PGFReader.cpp */,
+			);
+			name = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -101,6 +115,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A1D1E7C159835880074D642 /* PGFReader.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +204,7 @@
 				0A1D1E2F159496140074D642 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
