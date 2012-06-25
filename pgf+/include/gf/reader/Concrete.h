@@ -15,6 +15,7 @@
 #include <vector>
 #include <set>
 
+#include <gf/RefBase.h>
 #include <gf/reader/CncCat.h>
 #include <gf/reader/CncFun.h>
 #include <gf/reader/Production.h>
@@ -25,7 +26,7 @@
 namespace gf {
     namespace reader {
         
-        class Concrete {
+        class Concrete : public gf::RefBase {
         private:
             std::string name;
             std::map<std::string, RLiteral*> flags;
@@ -37,6 +38,12 @@ namespace gf {
             /* final */ std::string startCat;
             
         public:
+            /**
+             * Create a Concrete object.
+             * It is the callers responsibility to increase the reference count
+             * on any provided objects as the constructor takes ownership of the
+             * provided reference. 
+             */
             Concrete(const std::string& name, const std::map<std::string, RLiteral*>& flags, const std::vector<Sequence*>& seqs, const std::vector<CncFun*>& cncFuns, const std::vector<ProductionSet*>& prods, const std::map<std::string, CncCat*>& cncCats, int32_t fId, const std::string& startCat);
             virtual ~Concrete();
             

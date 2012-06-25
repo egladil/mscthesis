@@ -12,6 +12,7 @@
 #include <string>
 #include <vector>
 
+#include <gf/RefBase.h>
 #include <gf/reader/Expr.h>
 #include <gf/reader/Hypo.h>
 
@@ -19,13 +20,19 @@ namespace gf {
     namespace reader {
         class Hypo;
         
-        class Type {
+        class Type : public gf::RefBase {
         private:
             std::vector<Hypo*> hypos;
             std::string str;
             std::vector<Expr*> exprs;
             
         public:
+            /**
+             * Create a Type object.
+             * It is the callers responsibility to increase the reference count
+             * on any provided objects as the constructor takes ownership of the
+             * provided reference.
+             */
             Type(const std::vector<Hypo*>& hypos, const std::string str, const std::vector<Expr*>& exprs);
             virtual ~Type();
             

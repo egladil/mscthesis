@@ -21,6 +21,12 @@ namespace gf {
             Pattern* pattern;
             
         public:
+            /**
+             * Create a VarAsPattern object.
+             * It is the callers responsibility to increase the reference count
+             * on any provided objects as the constructor takes ownership of the
+             * provided reference. 
+             */
             VarAsPattern(const std::string& name, Pattern* pattern);
             
             virtual const std::string& getName() const;

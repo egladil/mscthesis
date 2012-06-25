@@ -11,19 +11,26 @@
 
 #include <string>
 
+#include <gf/RefBase.h>
 #include <gf/reader/Type.h>
 
 namespace gf {
     namespace reader {
         class Type;
         
-        class Hypo {
+        class Hypo : public gf::RefBase {
         private:
             /* final */ bool bind;
             /* final */ std::string name;
             /* final */ Type* type;
             
         public:
+            /**
+             * Create a Hypo object.
+             * It is the callers responsibility to increase the reference count
+             * on any provided objects as the constructor takes ownership of the
+             * provided reference. 
+             */
             Hypo(bool bind, const std::string& str, Type* type);
             virtual ~Hypo();
             

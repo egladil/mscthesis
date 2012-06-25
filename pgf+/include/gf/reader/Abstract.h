@@ -13,6 +13,7 @@
 #include <map>
 #include <vector>
 
+#include <gf/RefBase.h>
 #include <gf/reader/AbsCat.h>
 #include <gf/reader/AbsFun.h>
 #include <gf/reader/RLiteral.h>
@@ -20,7 +21,7 @@
 namespace gf {
     namespace reader {
         
-        class Abstract {
+        class Abstract : public gf::RefBase {
         private:
             /* final */ std::string name;
             /* final */ std::map<std::string, RLiteral*> flags;
@@ -30,6 +31,12 @@ namespace gf {
             /* final */ std::map<std::string, AbsFun*> functions;
             
         public:
+            /**
+             * Create an Abstract object.
+             * It is the callers responsibility to increase the reference count
+             * on any provided objects as the constructor takes ownership of the
+             * provided reference. 
+             */
             Abstract(const std::string& name, const std::map<std::string, RLiteral*> flags, const std::vector<AbsFun*> absFuns, std::vector<AbsCat*> absCats);
             virtual ~Abstract();
             

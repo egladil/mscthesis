@@ -11,10 +11,12 @@
 
 #include <string>
 
+#include <gf/RefBase.h>
+
 namespace gf {
     namespace reader {
         
-        class WeightedIdent {
+        class WeightedIdent : public gf::RefBase {
         private:
             /* final */ double weight;
             /* final */ std::string ident;

@@ -12,19 +12,27 @@
 #include <string>
 #include <vector>
 
+#include <gf/RefBase.h>
+#include <gf/RefBase.h>
 #include <gf/reader/Hypo.h>
 #include <gf/reader/WeightedIdent.h>
 
 namespace gf {
     namespace reader {
         
-        class AbsCat {
+        class AbsCat : public gf::RefBase {
         private:
             /* final */ std::string name;
             /* final */ std::vector<Hypo*> hypos;
             /* final */ std::vector<WeightedIdent*> functions;
             
         public:
+            /**
+             * Create an AbsCat object.
+             * It is the callers responsibility to increase the reference count
+             * on any provided objects as the constructor takes ownership of the
+             * provided reference. 
+             */
             AbsCat(const std::string& name, const std::vector<Hypo*>& hypos, const std::vector<WeightedIdent*>& functions);
             virtual ~AbsCat();
             

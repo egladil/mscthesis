@@ -22,6 +22,12 @@ namespace gf {
             std::vector<Pattern*> patterns;
             
         public:
+            /**
+             * Create an AppPattern object.
+             * It is the callers responsibility to increase the reference count
+             * on any provided objects as the constructor takes ownership of the
+             * provided reference. 
+             */
             AppPattern(const std::string& name, const std::vector<Pattern*>& patterns);
             virtual ~AppPattern();
             

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0A1D1E7C159835880074D642 /* PGFReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1E7B159835880074D642 /* PGFReader.cpp */; };
+		0A1D1EB21599186D0074D642 /* RefBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EB11599186D0074D642 /* RefBase.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -15,6 +16,7 @@
 		0A1D1E321594975C0074D642 /* include */ = {isa = PBXFileReference; lastKnownFileType = folder; path = include; sourceTree = "<group>"; };
 		0A1D1E3315949D3F0074D642 /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; path = src; sourceTree = "<group>"; };
 		0A1D1E7B159835880074D642 /* PGFReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PGFReader.cpp; path = src/PGFReader.cpp; sourceTree = "<group>"; };
+		0A1D1EB11599186D0074D642 /* RefBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RefBase.cpp; path = src/RefBase.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				0A1D1E7B159835880074D642 /* PGFReader.cpp */,
+				0A1D1EB11599186D0074D642 /* RefBase.cpp */,
 			);
 			name = Sources;
 			sourceTree = "<group>";
@@ -116,6 +119,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A1D1E7C159835880074D642 /* PGFReader.cpp in Sources */,
+				0A1D1EB21599186D0074D642 /* RefBase.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

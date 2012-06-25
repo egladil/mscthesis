@@ -20,6 +20,12 @@ namespace gf {
             Expr* rExp;
             
         public:
+            /**
+             * Create an AppExp object.
+             * It is the callers responsibility to increase the reference count
+             * on any provided objects as the constructor takes ownership of the
+             * provided reference. 
+             */
             AppExp(Expr* lExp, Expr* rExp);
             virtual ~AppExp();
             

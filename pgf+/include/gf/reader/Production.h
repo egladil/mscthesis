@@ -13,10 +13,12 @@
 #include <string>
 #include <vector>
 
+#include <gf/RefBase.h>
+
 namespace gf {
     namespace reader {
         
-        class Production {
+        class Production : public gf::RefBase {
         private:
             uint32_t sel;
             

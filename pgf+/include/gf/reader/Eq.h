@@ -11,18 +11,25 @@
 
 #include <vector>
 
+#include <gf/RefBase.h>
 #include <gf/reader/Expr.h>
 #include <gf/reader/Pattern.h>
 
 namespace gf {
     namespace reader {
         
-        class Eq {
+        class Eq : public gf::RefBase {
         private:
             std::vector<Pattern*> patts;
             Expr* expr;
             
         public:
+            /**
+             * Create an Eq object.
+             * It is the callers responsibility to increase the reference count
+             * on any provided objects as the constructor takes ownership of the
+             * provided reference. 
+             */
             Eq(const std::vector<Pattern*>& patterns, Expr* expression);
             virtual ~Eq();
             

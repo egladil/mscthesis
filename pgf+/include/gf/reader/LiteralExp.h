@@ -20,6 +20,12 @@ namespace gf {
             RLiteral* value;
             
         public:
+            /**
+             * Create a LiteralExp object.
+             * It is the callers responsibility to increase the reference count
+             * on any provided objects as the constructor takes ownership of the
+             * provided reference. 
+             */
             LiteralExp(RLiteral* value);
             virtual ~LiteralExp();
             

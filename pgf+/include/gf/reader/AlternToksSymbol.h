@@ -21,6 +21,12 @@ namespace gf {
             std::vector<Alternative*> alternatives;
             
         public:
+            /**
+             * Create an AlternToksSymbol object.
+             * It is the callers responsibility to increase the reference count
+             * on any provided objects as the constructor takes ownership of the
+             * provided reference. 
+             */
             AlternToksSymbol(const std::vector<std::string>& tokens, const std::vector<Alternative*>& alternatives);
             virtual ~AlternToksSymbol();
             

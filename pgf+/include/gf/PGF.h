@@ -15,13 +15,14 @@
 #include <vector>
 #include <set>
 
+#include <gf/RefBase.h>
 #include <gf/reader/Abstract.h>
 #include <gf/reader/Concrete.h>
 #include <gf/reader/RLiteral.h>
 
 namespace gf {
     
-    class PGF {
+    class PGF : public RefBase {
     private:
         int32_t majorVersion;
         int32_t minorVersion;
@@ -30,6 +31,12 @@ namespace gf {
         /* final */ std::map<std::string, gf::reader::Concrete*> concretes;
         
     public:
+        /**
+         * Create a PGF object.
+         * It is the callers responsibility to increase the reference count
+         * on any provided objects as the constructor takes ownership of the
+         * provided reference. 
+         */
         PGF(int32_t majorVersion, int32_t minorVersion, const std::map<std::string, gf::reader::RLiteral*>& flags, gf::reader::Abstract* abstract, const std::vector<gf::reader::Concrete*>& concretes);
         virtual ~PGF();
         

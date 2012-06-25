@@ -21,6 +21,12 @@ namespace gf {
             Type* type;
             
         public:
+            /**
+             * Create a TypedExp object.
+             * It is the callers responsibility to increase the reference count
+             * on any provided objects as the constructor takes ownership of the
+             * provided reference.
+             */
             TypedExp(Expr* expr, Type* type);
             virtual ~TypedExp();
             

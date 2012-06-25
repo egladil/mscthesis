@@ -12,10 +12,12 @@
 #include <string>
 #include <vector>
 
+#include <gf/RefBase.h>
+
 namespace gf {
     namespace reader {
         
-        class Alternative {
+        class Alternative : public gf::RefBase {
         private:
             std::vector<std::string> tokens;
             std::vector<std::string> prefix;

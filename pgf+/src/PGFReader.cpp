@@ -695,7 +695,7 @@ namespace gf {
             }
             
             sequence = sequences.at(idx);
-            // sequence->addReference();
+            sequence->addReference();
             newSequences.push_back(sequence);
         }
         
@@ -788,7 +788,7 @@ namespace gf {
                     throw IOException("error in pgf file: concrete function index out of bounds");
                 }
                 cncFun = cncFuns.at(funId);
-                // cncFun->addRef();
+                cncFun->addReference();
                 
                 ret = new gf::reader::ApplProduction(leftCat, cncFun, domain);
                 break;

@@ -13,6 +13,8 @@
 #include <string>
 #include <vector>
 
+#include <gf/RefBase.h>
+
 namespace gf {
     namespace reader {
         
@@ -26,7 +28,7 @@ namespace gf {
          *  - a list of labels (names of fields in the pmcfg tuples)
          * Here we will keep only the indices.
          */
-        class CncCat {
+        class CncCat : public gf::RefBase {
         private:
             std::string name;
             int32_t firstFId;

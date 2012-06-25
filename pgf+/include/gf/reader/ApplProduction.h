@@ -23,6 +23,12 @@ namespace gf {
             /* final */ std::vector<uint32_t> domain;
             
         public:
+            /**
+             * Create an ApplProduction object.
+             * It is the callers responsibility to increase the reference count
+             * on any provided objects as the constructor takes ownership of the
+             * provided reference. 
+             */
             ApplProduction(uint32_t fId, CncFun* function, const std::vector<uint32_t>& domain);
             virtual ~ApplProduction();
             

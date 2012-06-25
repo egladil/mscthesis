@@ -12,13 +12,14 @@
 #include <string>
 #include <vector>
 
+#include <gf/RefBase.h>
 #include <gf/reader/Eq.h>
 #include <gf/reader/Type.h>
 
 namespace gf {
     namespace reader {
         
-        class AbsFun {
+        class AbsFun : public gf::RefBase {
         private:
             /* final */ std::string name;
             /* final */ Type* type;
@@ -27,6 +28,12 @@ namespace gf {
             /* final */ double weight;
             
         public:
+            /**
+             * Create an AbsFun object.
+             * It is the callers responsibility to increase the reference count
+             * on any provided objects as the constructor takes ownership of the
+             * provided reference. 
+             */
             AbsFun(const std::string& name, Type* type, int32_t arity, const std::vector<Eq*>& eqs, double weight);
             virtual ~AbsFun();
             

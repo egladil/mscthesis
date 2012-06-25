@@ -11,10 +11,12 @@
 
 #include <string>
 
+#include <gf/RefBase.h>
+
 namespace gf {
     namespace reader {
         
-        class Expr {
+        class Expr : public gf::RefBase {
         private:
             
         public:

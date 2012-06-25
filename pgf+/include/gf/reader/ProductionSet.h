@@ -14,17 +14,24 @@
 #include <vector>
 #include <set>
 
+#include <gf/RefBase.h>
 #include <gf/reader/Production.h>
 
 namespace gf {
     namespace reader {
         
-        class ProductionSet {
+        class ProductionSet : public gf::RefBase {
         private:
             int32_t id;
             std::vector<Production*> prods;
             
         public:
+            /**
+             * Create a ProductionSet object.
+             * It is the callers responsibility to increase the reference count
+             * on any provided objects as the constructor takes ownership of the
+             * provided reference. 
+             */
             ProductionSet(int32_t id, const std::vector<Production*>& prods);
             virtual ~ProductionSet();
             

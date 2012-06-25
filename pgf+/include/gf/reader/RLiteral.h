@@ -11,10 +11,12 @@
 
 #include <string>
 
+#include <gf/RefBase.h>
+
 namespace gf {
     namespace reader {
         
-        class RLiteral {
+        class RLiteral : public gf::RefBase {
         private:
             
         public:
