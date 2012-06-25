@@ -66,6 +66,26 @@ namespace gf {
         return ss.str();
     }
     
+    static inline std::string convIso88591toUtf8(const std::string& str) {
+        std::string ret;
+        
+        for (std::string::const_iterator it = str.begin(); it != str.end(); it++) {
+            char ch = *it;
+            
+            if (ch < 0x80) {
+                ret+= ch;
+            } else if (ch < 0xc0) {
+                ret+= (char) 0xc2;
+                ret+= (char) ((ch & 0x3f) + 0x80);
+            } else {
+                ret+= (char) 0xc3;
+                ret+= (char) ((ch & 0x3f) + 0x80);
+            }
+        }
+        
+        return ret;
+    }
+    
 }
 
 #endif
