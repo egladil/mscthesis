@@ -1,36 +1,35 @@
 //
-//  StringLit.h
+//  IntLit.h
 //  pgf+
 //
 //  Created by Emil Djupfeldt on 2012-06-25.
 //  Copyright (c) 2012 Chalmers University of Technology. All rights reserved.
 //
 
-#ifndef pgf__StringLit_h
-#define pgf__StringLit_h
+#ifndef pgf__IntLit_h
+#define pgf__IntLit_h
 
-#include <string>
+#include <stdint.h>
 #include <gf/reader/RLiteral.h>
 
 namespace gf {
     namespace reader {
         
-        class StringLit : public RLiteral {
+        class IntLit : public RLiteral {
         private:
-            std::string value;
+            int32_t value;
             
         public:
-            StringLit(const std::string& value);
-            virtual ~StringLit();
+            IntLit(int32_t value);
+            virtual ~IntLit();
             
             virtual std::string toString() const;
             
-            virtual const std::string& getValue() const;
+            virtual int32_t getValue() const;
             
         };
         
     }
 }
-
 
 #endif

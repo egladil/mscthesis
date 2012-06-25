@@ -1,36 +1,34 @@
 //
-//  StringLit.h
+//  FloatLit.h
 //  pgf+
 //
 //  Created by Emil Djupfeldt on 2012-06-25.
 //  Copyright (c) 2012 Chalmers University of Technology. All rights reserved.
 //
 
-#ifndef pgf__StringLit_h
-#define pgf__StringLit_h
+#ifndef pgf__FloatLit_h
+#define pgf__FloatLit_h
 
-#include <string>
 #include <gf/reader/RLiteral.h>
 
 namespace gf {
     namespace reader {
         
-        class StringLit : public RLiteral {
+        class FloatLit : public RLiteral {
         private:
-            std::string value;
+            double value;
             
         public:
-            StringLit(const std::string& value);
-            virtual ~StringLit();
+            FloatLit(double value);
+            virtual ~FloatLit();
             
             virtual std::string toString() const;
             
-            virtual const std::string& getValue() const;
+            virtual double getValue() const;
             
         };
         
     }
 }
-
 
 #endif
