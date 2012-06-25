@@ -9,6 +9,7 @@
 #ifndef pgf__string_h
 #define pgf__string_h
 
+#include <sstream>
 #include <string>
 #include <vector>
 
@@ -57,6 +58,12 @@ namespace gf {
                 
         
         return str.substr(start, end - start);
+    }
+    
+    template<class T> inline std::string toString(const T& t) {
+        std::stringstream ss;
+        ss << t;
+        return ss.str();
     }
     
 }
