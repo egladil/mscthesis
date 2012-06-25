@@ -22,10 +22,10 @@ namespace gf {
         class CncFun {
         private:
             std::string name;
-            std::vector<Sequence> sequences;
+            std::vector<Sequence*> sequences;
             
         public:
-            CncFun(const std::string& name, const std::vector<Sequence>& sequences);
+            CncFun(const std::string& name, const std::vector<Sequence*>& sequences);
             virtual ~CncFun();
             
             virtual const std::string& getName() const;

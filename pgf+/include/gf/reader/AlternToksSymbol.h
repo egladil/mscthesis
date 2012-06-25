@@ -21,7 +21,7 @@ namespace gf {
             std::vector<Alternative*> alternatives;
             
         public:
-            AlternToksSymbol(const std::vector<Alternative*>& alternatives);
+            AlternToksSymbol(const std::vector<std::string>& tokens, const std::vector<Alternative*>& alternatives);
             virtual ~AlternToksSymbol();
             
             virtual const std::vector<Alternative*>& getAlternatives() const;

@@ -202,12 +202,12 @@ namespace gf {
         /**
          * @throws gf::IOException if there was a read error
          */
-        std::vector<gf::reader::Alternative> getListAlternative() throw(gf::IOException);
+        std::vector<gf::reader::Alternative*> getListAlternative() throw(gf::IOException);
         
         /**
          * @throws gf::IOException if there was a read error
          */
-        gf::reader::Alternative getAlternative() throw(gf::IOException);
+        gf::reader::Alternative* getAlternative() throw(gf::IOException);
         
         /**
          * @throws gf::IOException if there was a read error
@@ -217,12 +217,12 @@ namespace gf {
         /**
          * @throws gf::IOException if there was a read error
          */
-        gf::reader::CncFun* getCncFun(const std::vector<gf::reader::Sequence>& sequences) throw(gf::IOException);
+        gf::reader::CncFun* getCncFun(const std::vector<gf::reader::Sequence*>& sequences) throw(gf::IOException);
         
         /**
          * @throws gf::IOException if there was a read error
          */
-        std::vector<gf::reader::CncFun*> getListCncFun(const std::vector<gf::reader::Sequence>& sequences) throw(gf::IOException);
+        std::vector<gf::reader::CncFun*> getListCncFun(const std::vector<gf::reader::Sequence*>& sequences) throw(gf::IOException);
         
         /**
          * @throws gf::IOException if there was a read error
@@ -251,6 +251,16 @@ namespace gf {
         std::vector<gf::reader::ProductionSet*> getListProductionSet(const std::vector<gf::reader::CncFun*>& cncFuns) throw(gf::IOException);
         
         /**
+         * Read a list of production
+         * @param leftCat is the left hand side category of this production (
+         * read only once for the whole production set)
+         * @param cncFuns is the list of concrete function
+         * @return the list of Productions read.
+         * @throws gf::IOException if there was a read error
+         */
+        std::vector<gf::reader::Production*> getListProduction(uint32_t leftCat, const std::vector<gf::reader::CncFun*>& cncFuns) throw (gf::IOException);
+        
+        /**
          * Read a production.
          * @param leftCat is the left hand side category of this production
          *                (read only once for the whole production set)
@@ -267,7 +277,7 @@ namespace gf {
          * @return the domains for the PArgs read.
          * @throws gf::IOException if there was a read error
          */
-        std::vector<int32_t> getDomainFromPArgs() throw(gf::IOException);
+        std::vector<uint32_t> getDomainFromPArgs() throw(gf::IOException);
         
         /**
          * @throws gf::IOException if there was a read error
@@ -318,12 +328,12 @@ namespace gf {
          * @return the integer read.
          * @throws gf::IOException if there was a read error
          */
-        int32_t getInt();
+        uint32_t getInt() throw (gf::IOException);
         
         /**
          * @throws gf::IOException if there was a read error
          */
-        std::vector<int32_t> getListInt() throw(gf::IOException);
+        std::vector<uint32_t> getListInt() throw(gf::IOException);
         
         /**
          * Combine two bytes into a 16 bit integer.

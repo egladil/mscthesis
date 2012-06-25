@@ -22,14 +22,14 @@ namespace gf {
         class ProductionSet {
         private:
             int32_t id;
-            std::vector<Production> prods;
+            std::vector<Production*> prods;
             
         public:
-            ProductionSet(int32_t id, const std::vector<Production>& prods);
+            ProductionSet(int32_t id, const std::vector<Production*>& prods);
             virtual ~ProductionSet();
             
             virtual uint32_t length() const;
-            virtual const std::vector<Production>& getProductions() const;
+            virtual const std::vector<Production*>& getProductions() const;
             
             virtual std::string toString() const;
             

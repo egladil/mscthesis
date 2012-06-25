@@ -18,25 +18,26 @@ namespace gf {
         
         class Production {
         private:
-            int32_t sel;
+            uint32_t sel;
             
         protected:
-            int32_t fId;
+            uint32_t fId;
             
         public:
-            Production(int32_t selector, int32_t fId);
+            Production(uint32_t selector, uint32_t fId);
             virtual ~Production();
             
-            virtual int32_t getCategory() const;
+            virtual uint32_t getCategory() const;
             
-            virtual int32_t range() const;
+            virtual uint32_t range() const;
             
             virtual std::string toString() const = 0;
+            virtual bool equals(const Production* other) const;
             
-            virtual const std::vector<int32_t>& domain() const;
+            virtual const std::vector<uint32_t>& getDomain() const = 0;
             
-            virtual int32_t getSel() const;
-            virtual int32_t getFId() const;
+            virtual uint32_t getSel() const;
+            virtual uint32_t getFId() const;
         };
         
     }

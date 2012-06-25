@@ -20,10 +20,10 @@ namespace gf {
         
         class Sequence {
         private:
-            std::vector<Symbol> symbs;
+            std::vector<Symbol*> symbs;
             
         public:
-            Sequence(const std::vector<Symbol> symbs);
+            Sequence(const std::vector<Symbol*>& symbs);
             virtual ~Sequence();
             
             virtual Symbol& symbol(uint32_t index);

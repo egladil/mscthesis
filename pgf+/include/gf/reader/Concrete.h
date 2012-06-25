@@ -28,16 +28,16 @@ namespace gf {
         class Concrete {
         private:
             std::string name;
-            std::map<std::string, RLiteral> flags;
-            std::vector<Sequence> seqs;
-            std::vector<CncFun> cncFuns;
-            std::vector<ProductionSet> prods;
-            std::map<std::string, CncCat> cncCats;
+            std::map<std::string, RLiteral*> flags;
+            std::vector<Sequence*> seqs;
+            std::vector<CncFun*> cncFuns;
+            std::vector<ProductionSet*> prods;
+            std::map<std::string, CncCat*> cncCats;
             int32_t fId;
             /* final */ std::string startCat;
             
         public:
-            Concrete(const std::string& name, const std::map<std::string, RLiteral>& flags, const std::vector<Sequence>& seqs, const std::vector<CncFun>& cncFuns, const std::vector<ProductionSet>& prods, const std::map<std::string, CncCat>& cncCats, int32_t fId, const std::string& startCat);
+            Concrete(const std::string& name, const std::map<std::string, RLiteral*>& flags, const std::vector<Sequence*>& seqs, const std::vector<CncFun*>& cncFuns, const std::vector<ProductionSet*>& prods, const std::map<std::string, CncCat*>& cncCats, int32_t fId, const std::string& startCat);
             virtual ~Concrete();
             
             virtual const std::string& getName() const;
