@@ -3,7 +3,7 @@
 //  pgf+
 //
 //  Created by Emil Djupfeldt on 2012-06-22.
-//  Copyright (c) 2012 Chalmers. All rights reserved.
+//  Copyright (c) 2012 Chalmers University of Technology. All rights reserved.
 //
 
 #ifndef pgf__UnknownCategoryException_h
