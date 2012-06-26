@@ -37,15 +37,13 @@ namespace gf {
             
             virtual const std::string& getName() const;
             
-            virtual const std::vector<Sequence>& getSequences() const;
+            virtual const std::vector<Sequence*>& getSequences() const;
             
-            virtual Sequence& sequence(uint32_t index);
-            virtual const Sequence& sequence(uint32_t index) const;
+            virtual Sequence* sequence(uint32_t index) const;
             
-            virtual Symbol& symbol(uint32_t seqIndex, uint32_t symbIndex);
-            virtual const Symbol& symbol(uint32_t seqIndex, uint32_t symbIndex) const;
+            virtual const Symbol* symbol(uint32_t seqIndex, uint32_t symbIndex) const;
             
-            virtual uint32_t size() const;
+            virtual size_t size() const;
             
             virtual std::string toString() const;
         };

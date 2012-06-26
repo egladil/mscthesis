@@ -33,12 +33,11 @@ namespace gf {
             Sequence(const std::vector<Symbol*>& symbs);
             virtual ~Sequence();
             
-            virtual Symbol& symbol(uint32_t index);
-            virtual const Symbol& symbol(uint32_t index) const;
+            virtual Symbol* symbol(uint32_t index) const;
             
             virtual uint32_t length() const;
             
-            virtual const std::vector<Symbol> getSymbols() const;
+            virtual const std::vector<Symbol*> getSymbols() const;
             
             virtual std::string toString() const;
         };

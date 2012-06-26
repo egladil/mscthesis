@@ -23,6 +23,8 @@
 		0A1D1ED91599BF5E0074D642 /* ApplProduction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1ED81599BF5D0074D642 /* ApplProduction.cpp */; };
 		0A1D1EDB1599C1FE0074D642 /* AppPattern.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EDA1599C1FD0074D642 /* AppPattern.cpp */; };
 		0A1D1EDD1599C41C0074D642 /* ArgConstSymbol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EDC1599C41B0074D642 /* ArgConstSymbol.cpp */; };
+		0A1D1EDF1599C5DE0074D642 /* CncCat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EDE1599C5DD0074D642 /* CncCat.cpp */; };
+		0A1D1EE11599C7220074D642 /* CncFun.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EE01599C7210074D642 /* CncFun.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,8 @@
 		0A1D1ED81599BF5D0074D642 /* ApplProduction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ApplProduction.cpp; sourceTree = "<group>"; };
 		0A1D1EDA1599C1FD0074D642 /* AppPattern.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppPattern.cpp; sourceTree = "<group>"; };
 		0A1D1EDC1599C41B0074D642 /* ArgConstSymbol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ArgConstSymbol.cpp; sourceTree = "<group>"; };
+		0A1D1EDE1599C5DD0074D642 /* CncCat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CncCat.cpp; sourceTree = "<group>"; };
+		0A1D1EE01599C7210074D642 /* CncFun.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CncFun.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,8 @@
 				0A1D1ED81599BF5D0074D642 /* ApplProduction.cpp */,
 				0A1D1EDA1599C1FD0074D642 /* AppPattern.cpp */,
 				0A1D1EDC1599C41B0074D642 /* ArgConstSymbol.cpp */,
+				0A1D1EDE1599C5DD0074D642 /* CncCat.cpp */,
+				0A1D1EE01599C7210074D642 /* CncFun.cpp */,
 			);
 			path = reader;
 			sourceTree = "<group>";
@@ -185,6 +191,8 @@
 				0A1D1ED91599BF5E0074D642 /* ApplProduction.cpp in Sources */,
 				0A1D1EDB1599C1FE0074D642 /* AppPattern.cpp in Sources */,
 				0A1D1EDD1599C41C0074D642 /* ArgConstSymbol.cpp in Sources */,
+				0A1D1EDF1599C5DE0074D642 /* CncCat.cpp in Sources */,
+				0A1D1EE11599C7220074D642 /* CncFun.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

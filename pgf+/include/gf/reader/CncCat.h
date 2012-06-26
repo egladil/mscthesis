@@ -31,18 +31,18 @@ namespace gf {
         class CncCat : public gf::RefBase {
         private:
             std::string name;
-            int32_t firstFId;
-            int32_t lastFId;
+            uint32_t firstFId;
+            uint32_t lastFId;
             
         public:
-            CncCat(const std::string& name, int32_t firstFId, int32_t lastFId, const std::vector<std::string>& labels);
+            CncCat(const std::string& name, uint32_t firstFId, uint32_t lastFId, const std::vector<std::string>& labels);
             virtual ~CncCat();
             
             virtual std::string toString() const;
             
             virtual const std::string& getName() const;
-            virtual int32_t getFirstId() const;
-            virtual int32_t getLastId() const;
+            virtual uint32_t getFirstId() const;
+            virtual uint32_t getLastId() const;
         };
         
     }
