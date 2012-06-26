@@ -25,6 +25,8 @@
 		0A1D1EDD1599C41C0074D642 /* ArgConstSymbol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EDC1599C41B0074D642 /* ArgConstSymbol.cpp */; };
 		0A1D1EDF1599C5DE0074D642 /* CncCat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EDE1599C5DD0074D642 /* CncCat.cpp */; };
 		0A1D1EE11599C7220074D642 /* CncFun.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EE01599C7210074D642 /* CncFun.cpp */; };
+		0A1D1EE31599EC240074D642 /* CoerceProduction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EE21599EC230074D642 /* CoerceProduction.cpp */; };
+		0A1D1EE51599EDC60074D642 /* Concrete.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EE41599EDC50074D642 /* Concrete.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		0A1D1EDC1599C41B0074D642 /* ArgConstSymbol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ArgConstSymbol.cpp; sourceTree = "<group>"; };
 		0A1D1EDE1599C5DD0074D642 /* CncCat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CncCat.cpp; sourceTree = "<group>"; };
 		0A1D1EE01599C7210074D642 /* CncFun.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CncFun.cpp; sourceTree = "<group>"; };
+		0A1D1EE21599EC230074D642 /* CoerceProduction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CoerceProduction.cpp; sourceTree = "<group>"; };
+		0A1D1EE41599EDC50074D642 /* Concrete.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Concrete.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,8 @@
 				0A1D1EDC1599C41B0074D642 /* ArgConstSymbol.cpp */,
 				0A1D1EDE1599C5DD0074D642 /* CncCat.cpp */,
 				0A1D1EE01599C7210074D642 /* CncFun.cpp */,
+				0A1D1EE21599EC230074D642 /* CoerceProduction.cpp */,
+				0A1D1EE41599EDC50074D642 /* Concrete.cpp */,
 			);
 			path = reader;
 			sourceTree = "<group>";
@@ -193,6 +199,8 @@
 				0A1D1EDD1599C41C0074D642 /* ArgConstSymbol.cpp in Sources */,
 				0A1D1EDF1599C5DE0074D642 /* CncCat.cpp in Sources */,
 				0A1D1EE11599C7220074D642 /* CncFun.cpp in Sources */,
+				0A1D1EE31599EC240074D642 /* CoerceProduction.cpp in Sources */,
+				0A1D1EE51599EDC60074D642 /* Concrete.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

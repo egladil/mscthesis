@@ -22,7 +22,7 @@ namespace gf {
         
         class ProductionSet : public gf::RefBase {
         private:
-            int32_t id;
+            uint32_t id;
             std::vector<Production*> prods;
             
         public:
@@ -32,7 +32,7 @@ namespace gf {
              * on any provided objects as the constructor takes ownership of the
              * provided reference. 
              */
-            ProductionSet(int32_t id, const std::vector<Production*>& prods);
+            ProductionSet(uint32_t id, const std::vector<Production*>& prods);
             virtual ~ProductionSet();
             
             virtual uint32_t length() const;
@@ -40,10 +40,10 @@ namespace gf {
             
             virtual std::string toString() const;
             
-            virtual int32_t getId() const;
+            virtual uint32_t getId() const;
             
             // TODO: Cache set?
-            virtual std::set<Production> getSetOfProductions() const;
+            virtual std::set<Production*> getSetOfProductions() const;
         };
         
     }

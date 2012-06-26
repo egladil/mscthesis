@@ -30,9 +30,9 @@ namespace gf {
         private:
             std::string name;
             std::map<std::string, RLiteral*> flags;
-            std::vector<Sequence*> seqs;
+            std::vector<Sequence*> sequences;
             std::vector<CncFun*> cncFuns;
-            std::vector<ProductionSet*> prods;
+            std::vector<ProductionSet*> productions;
             std::map<std::string, CncCat*> cncCats;
             int32_t fId;
             /* final */ std::string startCat;
@@ -44,7 +44,7 @@ namespace gf {
              * on any provided objects as the constructor takes ownership of the
              * provided reference. 
              */
-            Concrete(const std::string& name, const std::map<std::string, RLiteral*>& flags, const std::vector<Sequence*>& seqs, const std::vector<CncFun*>& cncFuns, const std::vector<ProductionSet*>& prods, const std::map<std::string, CncCat*>& cncCats, int32_t fId, const std::string& startCat);
+            Concrete(const std::string& name, const std::map<std::string, RLiteral*>& flags, const std::vector<Sequence*>& sequences, const std::vector<CncFun*>& cncFuns, const std::vector<ProductionSet*>& productions, const std::map<std::string, CncCat*>& cncCats, int32_t fId, const std::string& startCat);
             virtual ~Concrete();
             
             virtual const std::string& getName() const;
@@ -56,26 +56,23 @@ namespace gf {
              * @return the CncCat object
              * @throws gf::UnknownCategoryException if the category is unknown
              **/
-            virtual CncCat& concreteCat(const std::string& absCat);
-            virtual const CncCat& concreteCat(const std::string& absCat) const;
+            virtual CncCat* concreteCat(const std::string& absCat) const;
             
-            virtual const std::vector<Sequence>& getSequences() const;
-            virtual const std::vector<CncFun>& getCncFuns() const;
-            virtual const std::vector<ProductionSet>& getProductionSets() const;
+            virtual const std::vector<Sequence*>& getSequences() const;
+            virtual const std::vector<CncFun*>& getCncFuns() const;
+            virtual const std::vector<ProductionSet*>& getProductionSets() const;
             
-            // TODO: Cache vector?
-            virtual std::vector<CncCat> getCncCats() const;
+            virtual std::vector<CncCat*> getCncCats() const;
             
             virtual int32_t getFId() const;
-            virtual const CncCat& getStartCat() const;
+            virtual const CncCat* getStartCat() const;
           
-            // TODO: Cache vector?
-            virtual std::vector<Production> productions() const;
+            virtual std::vector<Production*> getProductions() const;
             
             virtual std::string toString() const;
             
             // TODO: Cache map?
-            virtual std::map<int32_t, std::set<Production> > getSetOfProductions() const;
+            virtual std::map<uint32_t, std::set<Production*> > getSetOfProductions() const;
         };
         
     }

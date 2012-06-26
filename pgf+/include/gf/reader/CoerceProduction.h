@@ -19,6 +19,7 @@ namespace gf {
         class CoerceProduction : public Production {
         private:
             uint32_t initId;
+            std::vector<uint32_t> domain;
             
         public:
             CoerceProduction(uint32_t fId, uint32_t initId);
