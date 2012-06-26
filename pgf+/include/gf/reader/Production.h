@@ -20,7 +20,7 @@ namespace gf {
         
         class Production : public gf::RefBase {
         private:
-            uint32_t sel;
+            uint32_t selector;
             
         protected:
             uint32_t fId;
@@ -34,11 +34,11 @@ namespace gf {
             virtual uint32_t range() const;
             
             virtual std::string toString() const = 0;
-            virtual bool equals(const Production* other) const;
+            virtual bool equals(const Production* other) const = 0;
             
             virtual const std::vector<uint32_t>& getDomain() const = 0;
             
-            virtual uint32_t getSel() const;
+            virtual uint32_t getSelector() const;
             virtual uint32_t getFId() const;
         };
         

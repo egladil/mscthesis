@@ -38,6 +38,10 @@
 		0A1D1EF71599FB630074D642 /* LambdaExp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EF61599FB610074D642 /* LambdaExp.cpp */; };
 		0A1D1EF91599FC830074D642 /* LiteralExp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EF81599FC810074D642 /* LiteralExp.cpp */; };
 		0A1D1EFB1599FD2F0074D642 /* LiteralPattern.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EFA1599FD2C0074D642 /* LiteralPattern.cpp */; };
+		0A1D1EFD1599FDF90074D642 /* MetaExp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EFC1599FDF70074D642 /* MetaExp.cpp */; };
+		0A1D1EFF1599FEFF0074D642 /* Pattern.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EFE1599FEFC0074D642 /* Pattern.cpp */; };
+		0A1D1F011599FF830074D642 /* Production.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1F001599FF800074D642 /* Production.cpp */; };
+		0A1D1F03159A00460074D642 /* ProductionSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1F02159A00430074D642 /* ProductionSet.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +79,10 @@
 		0A1D1EF61599FB610074D642 /* LambdaExp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LambdaExp.cpp; sourceTree = "<group>"; };
 		0A1D1EF81599FC810074D642 /* LiteralExp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LiteralExp.cpp; sourceTree = "<group>"; };
 		0A1D1EFA1599FD2C0074D642 /* LiteralPattern.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LiteralPattern.cpp; sourceTree = "<group>"; };
+		0A1D1EFC1599FDF70074D642 /* MetaExp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MetaExp.cpp; sourceTree = "<group>"; };
+		0A1D1EFE1599FEFC0074D642 /* Pattern.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Pattern.cpp; sourceTree = "<group>"; };
+		0A1D1F001599FF800074D642 /* Production.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Production.cpp; sourceTree = "<group>"; };
+		0A1D1F02159A00430074D642 /* ProductionSet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProductionSet.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +157,10 @@
 				0A1D1EF61599FB610074D642 /* LambdaExp.cpp */,
 				0A1D1EF81599FC810074D642 /* LiteralExp.cpp */,
 				0A1D1EFA1599FD2C0074D642 /* LiteralPattern.cpp */,
+				0A1D1EFC1599FDF70074D642 /* MetaExp.cpp */,
+				0A1D1EFE1599FEFC0074D642 /* Pattern.cpp */,
+				0A1D1F001599FF800074D642 /* Production.cpp */,
+				0A1D1F02159A00430074D642 /* ProductionSet.cpp */,
 			);
 			path = reader;
 			sourceTree = "<group>";
@@ -245,6 +257,10 @@
 				0A1D1EF71599FB630074D642 /* LambdaExp.cpp in Sources */,
 				0A1D1EF91599FC830074D642 /* LiteralExp.cpp in Sources */,
 				0A1D1EFB1599FD2F0074D642 /* LiteralPattern.cpp in Sources */,
+				0A1D1EFD1599FDF90074D642 /* MetaExp.cpp in Sources */,
+				0A1D1EFF1599FEFF0074D642 /* Pattern.cpp in Sources */,
+				0A1D1F011599FF830074D642 /* Production.cpp in Sources */,
+				0A1D1F03159A00460074D642 /* ProductionSet.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
