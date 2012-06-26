@@ -7,24 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A1D1E7C159835880074D642 /* PGFReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1E7B159835880074D642 /* PGFReader.cpp */; };
-		0A1D1EB21599186D0074D642 /* RefBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EB11599186D0074D642 /* RefBase.cpp */; };
-		0A1D1EB41599A8E50074D642 /* Exception.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EB31599A8E50074D642 /* Exception.cpp */; };
-		0A1D1EB61599AA550074D642 /* IOException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EB51599AA550074D642 /* IOException.cpp */; };
-		0A1D1EB81599AB840074D642 /* UnknownCategoryException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EB71599AB840074D642 /* UnknownCategoryException.cpp */; };
-		0A1D1EBA1599ABD90074D642 /* UnknownLanguageException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EB91599ABD90074D642 /* UnknownLanguageException.cpp */; };
+		0A1D1EC41599AD200074D642 /* Exception.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EBE1599AD200074D642 /* Exception.cpp */; };
+		0A1D1EC51599AD200074D642 /* IOException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EBF1599AD200074D642 /* IOException.cpp */; };
+		0A1D1EC61599AD200074D642 /* PGFReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EC01599AD200074D642 /* PGFReader.cpp */; };
+		0A1D1EC71599AD200074D642 /* RefBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EC11599AD200074D642 /* RefBase.cpp */; };
+		0A1D1EC81599AD200074D642 /* UnknownCategoryException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EC21599AD200074D642 /* UnknownCategoryException.cpp */; };
+		0A1D1EC91599AD200074D642 /* UnknownLanguageException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EC31599AD200074D642 /* UnknownLanguageException.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0A1D1E29159496140074D642 /* libpgf+.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libpgf+.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A1D1E321594975C0074D642 /* include */ = {isa = PBXFileReference; lastKnownFileType = folder; path = include; sourceTree = "<group>"; };
 		0A1D1E3315949D3F0074D642 /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; path = src; sourceTree = "<group>"; };
-		0A1D1E7B159835880074D642 /* PGFReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PGFReader.cpp; path = src/PGFReader.cpp; sourceTree = "<group>"; };
-		0A1D1EB11599186D0074D642 /* RefBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RefBase.cpp; path = src/RefBase.cpp; sourceTree = "<group>"; };
-		0A1D1EB31599A8E50074D642 /* Exception.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Exception.cpp; path = src/Exception.cpp; sourceTree = "<group>"; };
-		0A1D1EB51599AA550074D642 /* IOException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IOException.cpp; path = src/IOException.cpp; sourceTree = "<group>"; };
-		0A1D1EB71599AB840074D642 /* UnknownCategoryException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UnknownCategoryException.cpp; path = src/UnknownCategoryException.cpp; sourceTree = "<group>"; };
-		0A1D1EB91599ABD90074D642 /* UnknownLanguageException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UnknownLanguageException.cpp; path = src/UnknownLanguageException.cpp; sourceTree = "<group>"; };
+		0A1D1EBE1599AD200074D642 /* Exception.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Exception.cpp; sourceTree = "<group>"; };
+		0A1D1EBF1599AD200074D642 /* IOException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IOException.cpp; sourceTree = "<group>"; };
+		0A1D1EC01599AD200074D642 /* PGFReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PGFReader.cpp; sourceTree = "<group>"; };
+		0A1D1EC11599AD200074D642 /* RefBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RefBase.cpp; sourceTree = "<group>"; };
+		0A1D1EC21599AD200074D642 /* UnknownCategoryException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UnknownCategoryException.cpp; sourceTree = "<group>"; };
+		0A1D1EC31599AD200074D642 /* UnknownLanguageException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UnknownLanguageException.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,14 +59,23 @@
 		0A1D1E79159835770074D642 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				0A1D1E7B159835880074D642 /* PGFReader.cpp */,
-				0A1D1EB11599186D0074D642 /* RefBase.cpp */,
-				0A1D1EB31599A8E50074D642 /* Exception.cpp */,
-				0A1D1EB51599AA550074D642 /* IOException.cpp */,
-				0A1D1EB71599AB840074D642 /* UnknownCategoryException.cpp */,
-				0A1D1EB91599ABD90074D642 /* UnknownLanguageException.cpp */,
+				0A1D1EBE1599AD200074D642 /* Exception.cpp */,
+				0A1D1EBF1599AD200074D642 /* IOException.cpp */,
+				0A1D1EC01599AD200074D642 /* PGFReader.cpp */,
+				0A1D1EC11599AD200074D642 /* RefBase.cpp */,
+				0A1D1EC21599AD200074D642 /* UnknownCategoryException.cpp */,
+				0A1D1EC31599AD200074D642 /* UnknownLanguageException.cpp */,
+				0A1D1EBB1599AC350074D642 /* reader */,
 			);
 			name = Sources;
+			path = src;
+			sourceTree = "<group>";
+		};
+		0A1D1EBB1599AC350074D642 /* reader */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = reader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,12 +139,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A1D1E7C159835880074D642 /* PGFReader.cpp in Sources */,
-				0A1D1EB21599186D0074D642 /* RefBase.cpp in Sources */,
-				0A1D1EB41599A8E50074D642 /* Exception.cpp in Sources */,
-				0A1D1EB61599AA550074D642 /* IOException.cpp in Sources */,
-				0A1D1EB81599AB840074D642 /* UnknownCategoryException.cpp in Sources */,
-				0A1D1EBA1599ABD90074D642 /* UnknownLanguageException.cpp in Sources */,
+				0A1D1EC41599AD200074D642 /* Exception.cpp in Sources */,
+				0A1D1EC51599AD200074D642 /* IOException.cpp in Sources */,
+				0A1D1EC61599AD200074D642 /* PGFReader.cpp in Sources */,
+				0A1D1EC71599AD200074D642 /* RefBase.cpp in Sources */,
+				0A1D1EC81599AD200074D642 /* UnknownCategoryException.cpp in Sources */,
+				0A1D1EC91599AD200074D642 /* UnknownLanguageException.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
