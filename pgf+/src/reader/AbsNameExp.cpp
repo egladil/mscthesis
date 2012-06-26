@@ -12,7 +12,7 @@ namespace gf {
     namespace reader {
         
         AbsNameExp::AbsNameExp(const std::string& name)
-        : name(name) {
+            : name(name) {
         }
         
         AbsNameExp::~AbsNameExp() {

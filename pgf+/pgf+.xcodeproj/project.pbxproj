@@ -19,6 +19,10 @@
 		0A1D1ED11599B1CA0074D642 /* Abstract.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1ED01599B1CA0074D642 /* Abstract.cpp */; };
 		0A1D1ED31599B73A0074D642 /* Alternative.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1ED21599B73A0074D642 /* Alternative.cpp */; };
 		0A1D1ED51599B8670074D642 /* AlternToksSymbol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1ED41599B8660074D642 /* AlternToksSymbol.cpp */; };
+		0A1D1ED71599BE590074D642 /* AppExp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1ED61599BE580074D642 /* AppExp.cpp */; };
+		0A1D1ED91599BF5E0074D642 /* ApplProduction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1ED81599BF5D0074D642 /* ApplProduction.cpp */; };
+		0A1D1EDB1599C1FE0074D642 /* AppPattern.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EDA1599C1FD0074D642 /* AppPattern.cpp */; };
+		0A1D1EDD1599C41C0074D642 /* ArgConstSymbol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EDC1599C41B0074D642 /* ArgConstSymbol.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +41,10 @@
 		0A1D1ED01599B1CA0074D642 /* Abstract.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Abstract.cpp; sourceTree = "<group>"; };
 		0A1D1ED21599B73A0074D642 /* Alternative.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Alternative.cpp; sourceTree = "<group>"; };
 		0A1D1ED41599B8660074D642 /* AlternToksSymbol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AlternToksSymbol.cpp; sourceTree = "<group>"; };
+		0A1D1ED61599BE580074D642 /* AppExp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppExp.cpp; sourceTree = "<group>"; };
+		0A1D1ED81599BF5D0074D642 /* ApplProduction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ApplProduction.cpp; sourceTree = "<group>"; };
+		0A1D1EDA1599C1FD0074D642 /* AppPattern.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppPattern.cpp; sourceTree = "<group>"; };
+		0A1D1EDC1599C41B0074D642 /* ArgConstSymbol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ArgConstSymbol.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,11 +95,15 @@
 			isa = PBXGroup;
 			children = (
 				0A1D1ECA1599AD950074D642 /* AbsCat.cpp */,
-				0A1D1ED21599B73A0074D642 /* Alternative.cpp */,
 				0A1D1ECC1599B0540074D642 /* AbsFun.cpp */,
 				0A1D1ECE1599B12F0074D642 /* AbsNameExp.cpp */,
-				0A1D1ED41599B8660074D642 /* AlternToksSymbol.cpp */,
 				0A1D1ED01599B1CA0074D642 /* Abstract.cpp */,
+				0A1D1ED21599B73A0074D642 /* Alternative.cpp */,
+				0A1D1ED41599B8660074D642 /* AlternToksSymbol.cpp */,
+				0A1D1ED61599BE580074D642 /* AppExp.cpp */,
+				0A1D1ED81599BF5D0074D642 /* ApplProduction.cpp */,
+				0A1D1EDA1599C1FD0074D642 /* AppPattern.cpp */,
+				0A1D1EDC1599C41B0074D642 /* ArgConstSymbol.cpp */,
 			);
 			path = reader;
 			sourceTree = "<group>";
@@ -169,6 +181,10 @@
 				0A1D1ED11599B1CA0074D642 /* Abstract.cpp in Sources */,
 				0A1D1ED31599B73A0074D642 /* Alternative.cpp in Sources */,
 				0A1D1ED51599B8670074D642 /* AlternToksSymbol.cpp in Sources */,
+				0A1D1ED71599BE590074D642 /* AppExp.cpp in Sources */,
+				0A1D1ED91599BF5E0074D642 /* ApplProduction.cpp in Sources */,
+				0A1D1EDB1599C1FE0074D642 /* AppPattern.cpp in Sources */,
+				0A1D1EDD1599C41C0074D642 /* ArgConstSymbol.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

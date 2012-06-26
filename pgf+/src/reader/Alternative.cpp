@@ -12,7 +12,7 @@ namespace gf {
     namespace reader {
         
         Alternative::Alternative(const std::vector<std::string>& tokens, const std::vector<std::string>& prefix)
-        : tokens(tokens), prefix(prefix) {
+            : tokens(tokens), prefix(prefix) {
         }
         
         Alternative::~Alternative() {
