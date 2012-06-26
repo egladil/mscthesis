@@ -23,8 +23,8 @@ namespace gf {
         class Type : public gf::RefBase {
         private:
             std::vector<Hypo*> hypos;
-            std::string str;
-            std::vector<Expr*> exprs;
+            std::string name;
+            std::vector<Expr*> expressions;
             
         public:
             /**
@@ -38,7 +38,7 @@ namespace gf {
             
             virtual std::string toString() const;
             
-            virtual const std::vector<Hypo>& getHypos() const;
+            virtual const std::vector<Hypo*>& getHypos() const;
             virtual const std::string& getName() const;
             virtual const std::vector<Expr*>& getExprs() const;
             

@@ -46,6 +46,9 @@
 		0A1D1F07159A02790074D642 /* Sequence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1F06159A02770074D642 /* Sequence.cpp */; };
 		0A1D1F09159A03D00074D642 /* StringLit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1F08159A03CC0074D642 /* StringLit.cpp */; };
 		0A1D1F0B159A04400074D642 /* Symbol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1F0A159A043C0074D642 /* Symbol.cpp */; };
+		0A1D1F0D159A04BF0074D642 /* ToksSymbol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1F0C159A04BA0074D642 /* ToksSymbol.cpp */; };
+		0A1D1F0F159A05760074D642 /* Type.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1F0E159A05720074D642 /* Type.cpp */; };
+		0A1D1F11159A07DF0074D642 /* TypedExp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1F10159A07DC0074D642 /* TypedExp.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +94,9 @@
 		0A1D1F06159A02770074D642 /* Sequence.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sequence.cpp; sourceTree = "<group>"; };
 		0A1D1F08159A03CC0074D642 /* StringLit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StringLit.cpp; sourceTree = "<group>"; };
 		0A1D1F0A159A043C0074D642 /* Symbol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Symbol.cpp; sourceTree = "<group>"; };
+		0A1D1F0C159A04BA0074D642 /* ToksSymbol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ToksSymbol.cpp; sourceTree = "<group>"; };
+		0A1D1F0E159A05720074D642 /* Type.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Type.cpp; sourceTree = "<group>"; };
+		0A1D1F10159A07DC0074D642 /* TypedExp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TypedExp.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +179,9 @@
 				0A1D1F06159A02770074D642 /* Sequence.cpp */,
 				0A1D1F08159A03CC0074D642 /* StringLit.cpp */,
 				0A1D1F0A159A043C0074D642 /* Symbol.cpp */,
+				0A1D1F0C159A04BA0074D642 /* ToksSymbol.cpp */,
+				0A1D1F0E159A05720074D642 /* Type.cpp */,
+				0A1D1F10159A07DC0074D642 /* TypedExp.cpp */,
 			);
 			path = reader;
 			sourceTree = "<group>";
@@ -277,6 +286,9 @@
 				0A1D1F07159A02790074D642 /* Sequence.cpp in Sources */,
 				0A1D1F09159A03D00074D642 /* StringLit.cpp in Sources */,
 				0A1D1F0B159A04400074D642 /* Symbol.cpp in Sources */,
+				0A1D1F0D159A04BF0074D642 /* ToksSymbol.cpp in Sources */,
+				0A1D1F0F159A05760074D642 /* Type.cpp in Sources */,
+				0A1D1F11159A07DF0074D642 /* TypedExp.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

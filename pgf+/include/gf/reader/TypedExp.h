@@ -17,7 +17,7 @@ namespace gf {
         
         class TypedExp : public Expr {
         private:
-            Expr* expr;
+            Expr* expression;
             Type* type;
             
         public:
@@ -27,10 +27,10 @@ namespace gf {
              * on any provided objects as the constructor takes ownership of the
              * provided reference.
              */
-            TypedExp(Expr* expr, Type* type);
+            TypedExp(Expr* expression, Type* type);
             virtual ~TypedExp();
             
-            virtual Expr* getExp();
+            virtual Expr* getExpression();
             virtual Type* getType();
             
             virtual std::string toString() const;
