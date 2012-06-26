@@ -16,6 +16,8 @@ namespace gf {
         }
         
         TypedExp::~TypedExp() {
+            gf::release(expression);
+            gf::release(type);
         }
         
         Expr* TypedExp::getExpression() {
