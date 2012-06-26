@@ -22,7 +22,7 @@ namespace gf {
             VarExp(uint32_t index);
             virtual ~VarExp();
             
-            virtual uint32_t getVarInd() const;
+            virtual uint32_t getVarIndex() const;
             
             virtual std::string toString() const;
         };

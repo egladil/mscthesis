@@ -28,6 +28,7 @@ namespace gf {
              * provided reference. 
              */
             VarAsPattern(const std::string& name, Pattern* pattern);
+            virtual ~VarAsPattern();
             
             virtual const std::string& getName() const;
             virtual Pattern* getPattern() const;

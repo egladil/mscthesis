@@ -49,6 +49,11 @@
 		0A1D1F0D159A04BF0074D642 /* ToksSymbol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1F0C159A04BA0074D642 /* ToksSymbol.cpp */; };
 		0A1D1F0F159A05760074D642 /* Type.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1F0E159A05720074D642 /* Type.cpp */; };
 		0A1D1F11159A07DF0074D642 /* TypedExp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1F10159A07DC0074D642 /* TypedExp.cpp */; };
+		0A1D1F13159A092C0074D642 /* VarAsPattern.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1F12159A09270074D642 /* VarAsPattern.cpp */; };
+		0A1D1F15159A0A010074D642 /* VarExp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1F14159A09FC0074D642 /* VarExp.cpp */; };
+		0A1D1F17159A0AA90074D642 /* VarPattern.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1F16159A0AA50074D642 /* VarPattern.cpp */; };
+		0A1D1F19159A0B140074D642 /* WeightedIdent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1F18159A0B0F0074D642 /* WeightedIdent.cpp */; };
+		0A1D1F1B159A0B8C0074D642 /* WildCardPattern.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1F1A159A0B870074D642 /* WildCardPattern.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +102,11 @@
 		0A1D1F0C159A04BA0074D642 /* ToksSymbol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ToksSymbol.cpp; sourceTree = "<group>"; };
 		0A1D1F0E159A05720074D642 /* Type.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Type.cpp; sourceTree = "<group>"; };
 		0A1D1F10159A07DC0074D642 /* TypedExp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TypedExp.cpp; sourceTree = "<group>"; };
+		0A1D1F12159A09270074D642 /* VarAsPattern.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VarAsPattern.cpp; sourceTree = "<group>"; };
+		0A1D1F14159A09FC0074D642 /* VarExp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VarExp.cpp; sourceTree = "<group>"; };
+		0A1D1F16159A0AA50074D642 /* VarPattern.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VarPattern.cpp; sourceTree = "<group>"; };
+		0A1D1F18159A0B0F0074D642 /* WeightedIdent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WeightedIdent.cpp; sourceTree = "<group>"; };
+		0A1D1F1A159A0B870074D642 /* WildCardPattern.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WildCardPattern.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +192,11 @@
 				0A1D1F0C159A04BA0074D642 /* ToksSymbol.cpp */,
 				0A1D1F0E159A05720074D642 /* Type.cpp */,
 				0A1D1F10159A07DC0074D642 /* TypedExp.cpp */,
+				0A1D1F12159A09270074D642 /* VarAsPattern.cpp */,
+				0A1D1F14159A09FC0074D642 /* VarExp.cpp */,
+				0A1D1F16159A0AA50074D642 /* VarPattern.cpp */,
+				0A1D1F18159A0B0F0074D642 /* WeightedIdent.cpp */,
+				0A1D1F1A159A0B870074D642 /* WildCardPattern.cpp */,
 			);
 			path = reader;
 			sourceTree = "<group>";
@@ -289,6 +304,11 @@
 				0A1D1F0D159A04BF0074D642 /* ToksSymbol.cpp in Sources */,
 				0A1D1F0F159A05760074D642 /* Type.cpp in Sources */,
 				0A1D1F11159A07DF0074D642 /* TypedExp.cpp in Sources */,
+				0A1D1F13159A092C0074D642 /* VarAsPattern.cpp in Sources */,
+				0A1D1F15159A0A010074D642 /* VarExp.cpp in Sources */,
+				0A1D1F17159A0AA90074D642 /* VarPattern.cpp in Sources */,
+				0A1D1F19159A0B140074D642 /* WeightedIdent.cpp in Sources */,
+				0A1D1F1B159A0B8C0074D642 /* WildCardPattern.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
