@@ -21,7 +21,7 @@ namespace gf {
         
         class Sequence : public gf::RefBase {
         private:
-            std::vector<Symbol*> symbs;
+            std::vector<Symbol*> symbols;
             
         public:
             /**
@@ -30,12 +30,12 @@ namespace gf {
              * on any provided objects as the constructor takes ownership of the
              * provided reference.
              */
-            Sequence(const std::vector<Symbol*>& symbs);
+            Sequence(const std::vector<Symbol*>& symbols);
             virtual ~Sequence();
             
-            virtual Symbol* symbol(uint32_t index) const;
+            virtual Symbol* getSymbol(uint32_t index) const;
             
-            virtual uint32_t length() const;
+            virtual size_t length() const;
             
             virtual const std::vector<Symbol*> getSymbols() const;
             

@@ -42,6 +42,10 @@
 		0A1D1EFF1599FEFF0074D642 /* Pattern.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EFE1599FEFC0074D642 /* Pattern.cpp */; };
 		0A1D1F011599FF830074D642 /* Production.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1F001599FF800074D642 /* Production.cpp */; };
 		0A1D1F03159A00460074D642 /* ProductionSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1F02159A00430074D642 /* ProductionSet.cpp */; };
+		0A1D1F05159A022B0074D642 /* RLiteral.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1F04159A02280074D642 /* RLiteral.cpp */; };
+		0A1D1F07159A02790074D642 /* Sequence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1F06159A02770074D642 /* Sequence.cpp */; };
+		0A1D1F09159A03D00074D642 /* StringLit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1F08159A03CC0074D642 /* StringLit.cpp */; };
+		0A1D1F0B159A04400074D642 /* Symbol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1F0A159A043C0074D642 /* Symbol.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +87,10 @@
 		0A1D1EFE1599FEFC0074D642 /* Pattern.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Pattern.cpp; sourceTree = "<group>"; };
 		0A1D1F001599FF800074D642 /* Production.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Production.cpp; sourceTree = "<group>"; };
 		0A1D1F02159A00430074D642 /* ProductionSet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProductionSet.cpp; sourceTree = "<group>"; };
+		0A1D1F04159A02280074D642 /* RLiteral.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RLiteral.cpp; sourceTree = "<group>"; };
+		0A1D1F06159A02770074D642 /* Sequence.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sequence.cpp; sourceTree = "<group>"; };
+		0A1D1F08159A03CC0074D642 /* StringLit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StringLit.cpp; sourceTree = "<group>"; };
+		0A1D1F0A159A043C0074D642 /* Symbol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Symbol.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +169,10 @@
 				0A1D1EFE1599FEFC0074D642 /* Pattern.cpp */,
 				0A1D1F001599FF800074D642 /* Production.cpp */,
 				0A1D1F02159A00430074D642 /* ProductionSet.cpp */,
+				0A1D1F04159A02280074D642 /* RLiteral.cpp */,
+				0A1D1F06159A02770074D642 /* Sequence.cpp */,
+				0A1D1F08159A03CC0074D642 /* StringLit.cpp */,
+				0A1D1F0A159A043C0074D642 /* Symbol.cpp */,
 			);
 			path = reader;
 			sourceTree = "<group>";
@@ -261,6 +273,10 @@
 				0A1D1EFF1599FEFF0074D642 /* Pattern.cpp in Sources */,
 				0A1D1F011599FF830074D642 /* Production.cpp in Sources */,
 				0A1D1F03159A00460074D642 /* ProductionSet.cpp in Sources */,
+				0A1D1F05159A022B0074D642 /* RLiteral.cpp in Sources */,
+				0A1D1F07159A02790074D642 /* Sequence.cpp in Sources */,
+				0A1D1F09159A03D00074D642 /* StringLit.cpp in Sources */,
+				0A1D1F0B159A04400074D642 /* Symbol.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
