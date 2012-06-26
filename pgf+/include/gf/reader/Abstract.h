@@ -37,7 +37,7 @@ namespace gf {
              * on any provided objects as the constructor takes ownership of the
              * provided reference. 
              */
-            Abstract(const std::string& name, const std::map<std::string, RLiteral*> flags, const std::vector<AbsFun*> absFuns, std::vector<AbsCat*> absCats);
+            Abstract(const std::string& name, const std::map<std::string, RLiteral*>& flags, const std::vector<AbsFun*>& absFuns, const std::vector<AbsCat*>& absCats);
             virtual ~Abstract();
             
             virtual const std::string& getName() const;
@@ -49,10 +49,10 @@ namespace gf {
              * @param returnType the return type to search for
              * @return a list of matching functions
              **/
-            virtual std::vector<AbsFun> getFunctions(const std::string& returnType) const;
+            virtual std::vector<AbsFun*> getFunctions(const std::string& returnType) const;
             
-            virtual const std::vector<AbsFun>& getAbsFuns() const;
-            virtual const std::vector<AbsFun>& getAbsCats() const;
+            virtual const std::vector<AbsFun*>& getAbsFuns() const;
+            virtual const std::vector<AbsCat*>& getAbsCats() const;
             
             virtual std::string toString() const;
         };

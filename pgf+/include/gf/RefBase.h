@@ -27,7 +27,7 @@ namespace gf {
         virtual std::string toString() const;
     };
     
-    static inline void release(RefBase*& ptr) {
+    template<class T> static inline void release(T*& ptr) {
         if (ptr != NULL) {
             ptr->release();
             ptr = NULL;

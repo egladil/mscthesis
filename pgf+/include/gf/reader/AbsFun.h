@@ -38,9 +38,9 @@ namespace gf {
             virtual ~AbsFun();
             
             virtual const std::string& getName() const;
-            virtual const Type& getType() const;
+            virtual const Type* getType() const;
             virtual int32_t getArity() const;
-            virtual const std::vector<Eq> getEqs() const;
+            virtual const std::vector<Eq*>& getEqs() const;
             virtual double getWeight() const;
             
             virtual std::string toString() const;

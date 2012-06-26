@@ -37,8 +37,8 @@ namespace gf {
             virtual ~AbsCat();
             
             virtual const std::string& getName() const;
-            virtual const std::vector<Hypo>& getHypos() const;
-            virtual const std::vector<WeightedIdent> getFunctions() const;
+            virtual const std::vector<Hypo*>& getHypos() const;
+            virtual const std::vector<WeightedIdent*>& getFunctions() const;
             
             virtual std::string toString() const;
         };

@@ -24,7 +24,7 @@ namespace gf {
             ToksSymbol(const std::vector<std::string>& tokens);
             virtual ~ToksSymbol();
             
-            virtual const std::vector<std::string>& getTokens();
+            virtual const std::vector<std::string>& getTokens() const;
             
             virtual bool isTerminal() const;
             
