@@ -27,6 +27,10 @@
 		0A1D1EE11599C7220074D642 /* CncFun.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EE01599C7210074D642 /* CncFun.cpp */; };
 		0A1D1EE31599EC240074D642 /* CoerceProduction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EE21599EC230074D642 /* CoerceProduction.cpp */; };
 		0A1D1EE51599EDC60074D642 /* Concrete.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EE41599EDC50074D642 /* Concrete.cpp */; };
+		0A1D1EE71599F46C0074D642 /* Eq.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EE61599F46B0074D642 /* Eq.cpp */; };
+		0A1D1EE91599F5C80074D642 /* Expr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EE81599F5C70074D642 /* Expr.cpp */; };
+		0A1D1EEB1599F6040074D642 /* FloatLit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EEA1599F6030074D642 /* FloatLit.cpp */; };
+		0A1D1EED1599F6A80074D642 /* Hypo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EEC1599F6A60074D642 /* Hypo.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +57,10 @@
 		0A1D1EE01599C7210074D642 /* CncFun.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CncFun.cpp; sourceTree = "<group>"; };
 		0A1D1EE21599EC230074D642 /* CoerceProduction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CoerceProduction.cpp; sourceTree = "<group>"; };
 		0A1D1EE41599EDC50074D642 /* Concrete.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Concrete.cpp; sourceTree = "<group>"; };
+		0A1D1EE61599F46B0074D642 /* Eq.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Eq.cpp; sourceTree = "<group>"; };
+		0A1D1EE81599F5C70074D642 /* Expr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Expr.cpp; sourceTree = "<group>"; };
+		0A1D1EEA1599F6030074D642 /* FloatLit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FloatLit.cpp; sourceTree = "<group>"; };
+		0A1D1EEC1599F6A60074D642 /* Hypo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Hypo.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +124,10 @@
 				0A1D1EE01599C7210074D642 /* CncFun.cpp */,
 				0A1D1EE21599EC230074D642 /* CoerceProduction.cpp */,
 				0A1D1EE41599EDC50074D642 /* Concrete.cpp */,
+				0A1D1EE61599F46B0074D642 /* Eq.cpp */,
+				0A1D1EE81599F5C70074D642 /* Expr.cpp */,
+				0A1D1EEA1599F6030074D642 /* FloatLit.cpp */,
+				0A1D1EEC1599F6A60074D642 /* Hypo.cpp */,
 			);
 			path = reader;
 			sourceTree = "<group>";
@@ -201,6 +213,10 @@
 				0A1D1EE11599C7220074D642 /* CncFun.cpp in Sources */,
 				0A1D1EE31599EC240074D642 /* CoerceProduction.cpp in Sources */,
 				0A1D1EE51599EDC60074D642 /* Concrete.cpp in Sources */,
+				0A1D1EE71599F46C0074D642 /* Eq.cpp in Sources */,
+				0A1D1EE91599F5C80074D642 /* Expr.cpp in Sources */,
+				0A1D1EEB1599F6040074D642 /* FloatLit.cpp in Sources */,
+				0A1D1EED1599F6A80074D642 /* Hypo.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

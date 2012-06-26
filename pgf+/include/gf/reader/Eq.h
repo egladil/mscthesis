@@ -20,7 +20,7 @@ namespace gf {
         
         class Eq : public gf::RefBase {
         private:
-            std::vector<Pattern*> patts;
+            std::vector<Pattern*> patterns;
             Expr* expr;
             
         public:
@@ -33,8 +33,8 @@ namespace gf {
             Eq(const std::vector<Pattern*>& patterns, Expr* expression);
             virtual ~Eq();
             
-            virtual const std::vector<Pattern>& patterns() const;
-            virtual Expr* expression() const;
+            virtual const std::vector<Pattern*>& getPatterns() const;
+            virtual Expr* getExpression() const;
             
             virtual std::string toString() const;
         };

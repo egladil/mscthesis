@@ -31,14 +31,14 @@ namespace gf {
              * on any provided objects as the constructor takes ownership of the
              * provided reference. 
              */
-            Hypo(bool bind, const std::string& str, Type* type);
+            Hypo(bool bind, const std::string& name, Type* type);
             virtual ~Hypo();
             
             virtual std::string toString() const;
             
             virtual bool getBind() const;
             virtual const std::string& getName() const;
-            virtual const Type& getType() const;
+            virtual const Type* getType() const;
         };
         
     }
