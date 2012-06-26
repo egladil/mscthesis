@@ -31,6 +31,10 @@
 		0A1D1EE91599F5C80074D642 /* Expr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EE81599F5C70074D642 /* Expr.cpp */; };
 		0A1D1EEB1599F6040074D642 /* FloatLit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EEA1599F6030074D642 /* FloatLit.cpp */; };
 		0A1D1EED1599F6A80074D642 /* Hypo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EEC1599F6A60074D642 /* Hypo.cpp */; };
+		0A1D1EEF1599F8FB0074D642 /* ImpArgPattern.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EEE1599F8F90074D642 /* ImpArgPattern.cpp */; };
+		0A1D1EF11599F97F0074D642 /* ImplExp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EF01599F97D0074D642 /* ImplExp.cpp */; };
+		0A1D1EF31599FA0C0074D642 /* InaccPattern.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EF21599FA0A0074D642 /* InaccPattern.cpp */; };
+		0A1D1EF51599FA840074D642 /* IntLit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EF41599FA810074D642 /* IntLit.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +65,10 @@
 		0A1D1EE81599F5C70074D642 /* Expr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Expr.cpp; sourceTree = "<group>"; };
 		0A1D1EEA1599F6030074D642 /* FloatLit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FloatLit.cpp; sourceTree = "<group>"; };
 		0A1D1EEC1599F6A60074D642 /* Hypo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Hypo.cpp; sourceTree = "<group>"; };
+		0A1D1EEE1599F8F90074D642 /* ImpArgPattern.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImpArgPattern.cpp; sourceTree = "<group>"; };
+		0A1D1EF01599F97D0074D642 /* ImplExp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImplExp.cpp; sourceTree = "<group>"; };
+		0A1D1EF21599FA0A0074D642 /* InaccPattern.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InaccPattern.cpp; sourceTree = "<group>"; };
+		0A1D1EF41599FA810074D642 /* IntLit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IntLit.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +136,10 @@
 				0A1D1EE81599F5C70074D642 /* Expr.cpp */,
 				0A1D1EEA1599F6030074D642 /* FloatLit.cpp */,
 				0A1D1EEC1599F6A60074D642 /* Hypo.cpp */,
+				0A1D1EEE1599F8F90074D642 /* ImpArgPattern.cpp */,
+				0A1D1EF01599F97D0074D642 /* ImplExp.cpp */,
+				0A1D1EF21599FA0A0074D642 /* InaccPattern.cpp */,
+				0A1D1EF41599FA810074D642 /* IntLit.cpp */,
 			);
 			path = reader;
 			sourceTree = "<group>";
@@ -217,6 +229,10 @@
 				0A1D1EE91599F5C80074D642 /* Expr.cpp in Sources */,
 				0A1D1EEB1599F6040074D642 /* FloatLit.cpp in Sources */,
 				0A1D1EED1599F6A80074D642 /* Hypo.cpp in Sources */,
+				0A1D1EEF1599F8FB0074D642 /* ImpArgPattern.cpp in Sources */,
+				0A1D1EF11599F97F0074D642 /* ImplExp.cpp in Sources */,
+				0A1D1EF31599FA0C0074D642 /* InaccPattern.cpp in Sources */,
+				0A1D1EF51599FA840074D642 /* IntLit.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
