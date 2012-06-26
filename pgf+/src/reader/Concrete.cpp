@@ -17,6 +17,25 @@ namespace gf {
         }
         
         Concrete::~Concrete() {
+            for (std::map<std::string, RLiteral*>::iterator it = flags.begin(); it != flags.end(); it++) {
+                gf::release(it->second);
+            }
+            
+            for (std::vector<Sequence*>::iterator it = sequences.begin(); it != sequences.end(); it++) {
+                gf::release(*it);
+            }
+            
+            for (std::vector<CncFun*>::iterator it = cncFuns.begin(); it != cncFuns.end(); it++) {
+                gf::release(*it);
+            }
+            
+            for (std::vector<ProductionSet*>::iterator it = productions.begin(); it != productions.end(); it++) {
+                gf::release(*it);
+            }
+            
+            for (std::map<std::string, CncCat*>::iterator it = cncCats.begin(); it != cncCats.end(); it++) {
+                gf::release(it->second);
+            }
         }
         
         const std::string& Concrete::getName() const {
