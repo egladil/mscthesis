@@ -10,11 +10,14 @@
 
 namespace gf {
     
-    UnknownCategoryException::UnknownCategoryException(const std::string& message)
-    : Exception(message) {
+    UnknownCategoryException::UnknownCategoryException(const std::string& category)
+        : Exception("Unknown category: " + category), category(category) {
     }
     
     UnknownCategoryException::~UnknownCategoryException() {
     }
     
+    const std::string& UnknownCategoryException::getCategory() const {
+        return category;
+    }
 }

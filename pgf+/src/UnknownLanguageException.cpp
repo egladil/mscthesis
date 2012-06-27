@@ -10,11 +10,14 @@
 
 namespace gf {
     
-    UnknownLanguageException::UnknownLanguageException(const std::string& message)
-    : Exception(message) {
+    UnknownLanguageException::UnknownLanguageException(const std::string& language)
+    : Exception("Unknown language: "+ language), language(language) {
     }
     
     UnknownLanguageException::~UnknownLanguageException() {
     }
     
+    const std::string& UnknownLanguageException::getLanguage() const {
+        return language;
+    }
 }

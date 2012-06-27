@@ -53,9 +53,11 @@ namespace gf {
         
         while (len > 0) {
             read(buf, len < sizeof(buf) ? len : sizeof(buf));
-            if (len >= sizeof(buf)) {
-                len-= sizeof(buf);
+            if (len < sizeof(buf)) {
+                break;
             }
+                
+            len-= sizeof(buf);
         }
     }
     
@@ -101,7 +103,7 @@ namespace gf {
         
         // Read version
         read(version, sizeof(version));        
-#ifdef _DEBUG
+#ifdef DEBUG
         fprintf(stderr, "PGF version: %u.%u.%u.%u\n", version[0], version[1], version[2], version[3]);
 #endif
         
@@ -112,7 +114,7 @@ namespace gf {
             gf::reader::StringLit* strlit = dynamic_cast<gf::reader::StringLit*>(idxFlag->second);
             assert(strlit != NULL); // Malformed pgf, throw exception instead.
             index = readIndex(strlit->getValue());
-#ifdef _DEBUG
+#ifdef DEBUG
             fprintf(stderr, "[");
             for (std::map<std::string, uint32_t>::const_iterator it = index.begin(); it != index.end(); it++) {
                 fprintf(stderr, "%s[%s, %u]", it == index.begin() ? "" : ", ", it->first.c_str(), it->second);
@@ -131,19 +133,21 @@ namespace gf {
             std::string name;
             
             name = getIdent();
-#ifdef _DEBUG
+#ifdef DEBUG
             fprintf(stderr, "Language: %s\n", name.c_str());
 #endif
             if (readAllLanguages || languages.erase(name) > 0) {
                 concretes.push_back(getConcrete(name, startCat));
-            } else if (!index.empty()) {
+            } /*else if (!index.empty()) {
                 std::map<std::string, uint32_t>::const_iterator langIdx = index.find(name);
-                assert(langIdx != index.end()); // Malformed pgf, throw exception instead.
+                if (langIdx == index.end()) {
+                    throw IOException("Malformed pgf, index for concrete not found.");
+                }
                 skip(langIdx->second);
-#ifdef _DEBUG
+#ifdef DEBUG
                 fprintf(stderr, "Skipping %s\n", name.c_str());
 #endif
-            } else {
+            } */else {
                 // Skip manually
                 getConcrete(name, startCat);
             }
@@ -185,7 +189,9 @@ namespace gf {
             }
             
             idx = split(str, ':');
-            assert(idx.size() == 2); // Malformed pgf, throw exception instead.
+            if (idx.size() != 2) {
+                throw IOException("Malformed pgf, index with more than one ':'");
+            }
             
             ret.insert(std::make_pair(idx.front(), strtoul(idx.back().c_str(), NULL, 10)));
         }
@@ -200,7 +206,7 @@ namespace gf {
         std::vector<gf::reader::AbsCat*> absCats;
         
         name = getIdent();
-#ifdef _DEBUG
+#ifdef DEBUG
         fprintf(stderr, "Abstract syntax [%s]\n", name.c_str());
 #endif
         flags = getListFlag();
@@ -242,7 +248,7 @@ namespace gf {
         gf::reader::AbsFun* ret;
         
         name = getIdent();
-#ifdef _DEBUG
+#ifdef DEBUG
         fprintf(stderr, "AbsFun: '%s'\n", name.c_str());
 #endif
         type = getType();
@@ -255,7 +261,7 @@ namespace gf {
         
         ret = new gf::reader::AbsFun(name, type, arity, equations, weight);
         
-#ifdef _DEBUG
+#ifdef DEBUG
         fprintf(stderr, "/AbsFun: %s\n", ret->toString().c_str());
 #endif
         
@@ -309,8 +315,8 @@ namespace gf {
         expressions = getListExpr();
         
         ret = new gf::reader::Type(hypos, returnCat, expressions);
-#ifdef _DEBUG
-        fprintf(stderr, "Type: %s\n", ret.toString().c_str());
+#ifdef DEBUG
+        fprintf(stderr, "Type: %s\n", ret->toString().c_str());
 #endif
         return ret;
     }
@@ -536,19 +542,19 @@ namespace gf {
         std::map<std::string, gf::reader::CncCat*> cncCats;
         int32_t fId;
         
-#ifdef _DEBUG
+#ifdef DEBUG
         fprintf(stderr, "Concrete: %s\n", name.c_str());
         
         fprintf(stderr, "Concrete: Reading flags\n");
 #endif
         flags = getListFlag();
         
-#ifdef _DEBUG
+#ifdef DEBUG
         fprintf(stderr, "Concrete: Skipping print names\n");
 #endif
         skipListPrintName();
         
-#ifdef _DEBUG
+#ifdef DEBUG
         fprintf(stderr, "Concrete: Reading sequences\n");
 #endif
         sequences = getListSequence();
@@ -589,6 +595,9 @@ namespace gf {
         
         cnt = getInt();
         for (int i = 0; i < cnt; i++) {
+#ifdef DEBUG
+            fprintf(stderr, "Reading sequence %i/%i\n", i, cnt);
+#endif
             ret.push_back(getSequence());
         }
         
@@ -600,7 +609,7 @@ namespace gf {
         gf::reader::Symbol* ret;
         
         tag = getInt();  
-#ifdef _DEBUG
+#ifdef DEBUG
         fprintf(stderr, "Symbol: type=%i\n", tag);
 #endif
         switch (tag) {
@@ -640,7 +649,7 @@ namespace gf {
                 throw IOException("invalid tag for symbol: " + toString(tag));
         }
         
-#ifdef _DEBUG
+#ifdef DEBUG
         fprintf(stderr, "/Symbol: %s\n", ret->toString().c_str());
 #endif
         
@@ -772,7 +781,7 @@ namespace gf {
         gf::reader::Production* ret = NULL;
         
         tag = getInt();
-#ifdef _DEBUG
+#ifdef DEBUG
         fprintf(stderr, "Production: type=%i\n", tag);
 #endif
         switch (tag) {
@@ -805,8 +814,8 @@ namespace gf {
                 throw IOException("invalid tag for production: " + toString(tag));
         }
         
-#ifdef _DEBUG
-        fprintf(stderr, "/Production: %s\n", ret.toString().c_str());
+#ifdef DEBUG
+        fprintf(stderr, "/Production: %s\n", ret->toString().c_str());
 #endif
         return ret;
     }
@@ -882,7 +891,9 @@ namespace gf {
             
             r = readByte();
             ret+= r;
-            if (r >= 0xC0 && r <= 0xDF) {
+            if (r < 0xC0) {
+                // Nothing
+            } else if (r >= 0xC0 && r <= 0xDF) {
                 ret+= readByte();
             } else if (r >= 0xE0 && r <= 0xEF) {
                 ret+= readByte();
@@ -994,6 +1005,11 @@ namespace gf {
         }
         
         return ret; 
+    }
+    
+    
+    uint16_t PGFReader::makeInt16(uint8_t j1, uint8_t j2) const {
+        return (((uint16_t) j1) << 8) | j2;
     }
     
 }

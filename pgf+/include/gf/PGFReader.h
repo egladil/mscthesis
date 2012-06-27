@@ -341,7 +341,7 @@ namespace gf {
          * @param j2 the most significant byte.
          * @return a 16 bit integer.
          */
-        uint16_t makeInt16(uint8_t j1, uint8_t j2);
+        uint16_t makeInt16(uint8_t j1, uint8_t j2) const;
         
         
     public:

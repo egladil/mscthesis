@@ -21,7 +21,7 @@ namespace gf {
         UnknownLanguageException(const std::string& language);
         virtual ~UnknownLanguageException();
         
-        virtual const std::string& getLanguage();
+        virtual const std::string& getLanguage() const;
     };
     
 }

@@ -17,8 +17,8 @@ namespace gf {
     }
     
     RefBase::~RefBase() {
-#ifdef _DEBUG
-        fprintf("destroying %s with ref count %i\n", RefBase::toString(), referenceCounter);
+#ifdef DEBUG
+        fprintf(stderr, "destroying %s with ref count %i\n", RefBase::toString().c_str(), referenceCounter);
 #endif
     }
     
