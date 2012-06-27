@@ -24,8 +24,8 @@ namespace gf {
     
     class PGF : public RefBase {
     private:
-        int32_t majorVersion;
-        int32_t minorVersion;
+        uint32_t majorVersion;
+        uint32_t minorVersion;
         std::map<std::string, gf::reader::RLiteral*> flags;
         /* final */ gf::reader::Abstract* abstract;
         /* final */ std::map<std::string, gf::reader::Concrete*> concretes;
@@ -37,44 +37,40 @@ namespace gf {
          * on any provided objects as the constructor takes ownership of the
          * provided reference. 
          */
-        PGF(int32_t majorVersion, int32_t minorVersion, const std::map<std::string, gf::reader::RLiteral*>& flags, gf::reader::Abstract* abstract, const std::vector<gf::reader::Concrete*>& concretes);
+        PGF(uint32_t majorVersion, uint32_t minorVersion, const std::map<std::string, gf::reader::RLiteral*>& flags, gf::reader::Abstract* abstract, const std::vector<gf::reader::Concrete*>& concretes);
         virtual ~PGF();
         
-        /* TODO: Cache set? */
         /**
          * Returns the names of all concrete grammars available in the PGF
          * @return list of concrete names
          */
-        virtual std::set<std::string> concreteNames() const;
+        virtual std::set<std::string> getConcreteNames() const;
         
         /**
          * access the concrete grammar by its name
          * @param name the name of the concrete grammar
          * @return the concrete grammar of null if there is no grammr with
          *             that name.
-         * @throws TODO: some exception if not present
          */
-        virtual gf::reader::Concrete& concrete(const std::string& name);
-        virtual const gf::reader::Concrete& concrete(const std::string& name) const;
+        virtual gf::reader::Concrete* getConcrete(const std::string& name) const;
         
         /**
          * Get the major version of the pgf.
          * @return major version
          */
-        virtual int32_t getMajorVersion() const;
+        virtual uint32_t getMajorVersion() const;
         
         /**
          * Get the minor version of the pgf.
          * @return minor version
          */
-        virtual int32_t getMinorVersion() const;
+        virtual uint32_t getMinorVersion() const;
         
         /**
          * Get the abstract grammar for the pgf.
          * @return abstract grammar
          */
-        virtual gf::reader::Abstract& getAbstract();
-        virtual const gf::reader::Abstract& getAbstract() const;
+        virtual gf::reader::Abstract* getAbstract() const;
         
         /**
          * Return true if the given name correspond to a concrete grammar

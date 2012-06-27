@@ -54,6 +54,8 @@
 		0A1D1F17159A0AA90074D642 /* VarPattern.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1F16159A0AA50074D642 /* VarPattern.cpp */; };
 		0A1D1F19159A0B140074D642 /* WeightedIdent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1F18159A0B0F0074D642 /* WeightedIdent.cpp */; };
 		0A1D1F1B159A0B8C0074D642 /* WildCardPattern.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1F1A159A0B870074D642 /* WildCardPattern.cpp */; };
+		0A1D1F1D159B0F8B0074D642 /* PGF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1F1C159B0F870074D642 /* PGF.cpp */; };
+		0A1D1F1F159B145A0074D642 /* PGFBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1F1E159B14550074D642 /* PGFBuilder.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +109,8 @@
 		0A1D1F16159A0AA50074D642 /* VarPattern.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VarPattern.cpp; sourceTree = "<group>"; };
 		0A1D1F18159A0B0F0074D642 /* WeightedIdent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WeightedIdent.cpp; sourceTree = "<group>"; };
 		0A1D1F1A159A0B870074D642 /* WildCardPattern.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WildCardPattern.cpp; sourceTree = "<group>"; };
+		0A1D1F1C159B0F870074D642 /* PGF.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PGF.cpp; sourceTree = "<group>"; };
+		0A1D1F1E159B14550074D642 /* PGFBuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PGFBuilder.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,8 @@
 			children = (
 				0A1D1EBE1599AD200074D642 /* Exception.cpp */,
 				0A1D1EBF1599AD200074D642 /* IOException.cpp */,
+				0A1D1F1C159B0F870074D642 /* PGF.cpp */,
+				0A1D1F1E159B14550074D642 /* PGFBuilder.cpp */,
 				0A1D1EC01599AD200074D642 /* PGFReader.cpp */,
 				0A1D1EC11599AD200074D642 /* RefBase.cpp */,
 				0A1D1EC21599AD200074D642 /* UnknownCategoryException.cpp */,
@@ -309,6 +315,8 @@
 				0A1D1F17159A0AA90074D642 /* VarPattern.cpp in Sources */,
 				0A1D1F19159A0B140074D642 /* WeightedIdent.cpp in Sources */,
 				0A1D1F1B159A0B8C0074D642 /* WildCardPattern.cpp in Sources */,
+				0A1D1F1D159B0F8B0074D642 /* PGF.cpp in Sources */,
+				0A1D1F1F159B145A0074D642 /* PGFBuilder.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,7 +12,9 @@
 #include <stdio.h>
 #include <string>
 
+#include <gf/IOException.h>
 #include <gf/PGF.h>
+#include <gf/UnknownLanguageException.h>
 
 namespace gf {
     
@@ -31,7 +33,7 @@ namespace gf {
          * @return the read pgf object
          * @throws gf::IOException if the file could not be read
          */
-        static const PGF& fromFile(const std::string& filename);
+        static PGF* fromFile(const std::string& filename) throw (IOException);
         
         /**
          * Reads a PGF binary from a file idenfied by filename.
@@ -45,7 +47,7 @@ namespace gf {
          * @throws gf::IOException if the file could not be read
          * @throws gf::UnknownLanguageException if one or more of the specified languages does not exist
          */
-        static const PGF& fromFile(const std::string& filename, const std::vector<std::string>& languages);
+        static PGF* fromFile(const std::string& filename, const std::set<std::string>& languages) throw (IOException, UnknownLanguageException);
         
         /**
          * Reads a pgf from an input stream
@@ -54,7 +56,7 @@ namespace gf {
          * @return the read pgf object
          * @throws gf::IOException if the file could not be read
          */
-        static const PGF& fromStdIOStream(FILE* stream);
+        static PGF* fromStdIOStream(FILE* stream) throw (IOException);
         
         /**
          * Reads a pgf from an input stream
@@ -67,7 +69,7 @@ namespace gf {
          * @throws gf::IOException if the file could not be read
          * @throws gf::UnknownLanguageException if one or more of the specified languages does not exist
          */
-        static const PGF& fromStdIOStream(FILE* stream, const std::vector<std::string>& languages);
+        static PGF* fromStdIOStream(FILE* stream, const std::set<std::string>& languages) throw (IOException, UnknownLanguageException);
     };
     
 }
