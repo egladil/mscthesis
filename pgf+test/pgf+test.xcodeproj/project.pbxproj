@@ -1,0 +1,294 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A1D1F52159B410C0074D642 /* libpgf+.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1D1F4F159B40FD0074D642 /* libpgf+.a */; };
+		0A1D1F55159B46800074D642 /* IndexedPGFTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1F54159B46800074D642 /* IndexedPGFTest.cpp */; };
+		0A1D1F59159B475D0074D642 /* Foods.pgf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0A1D1F56159B47340074D642 /* Foods.pgf */; };
+		0A1D1F5A159B475D0074D642 /* Phrasebook.pgf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0A1D1F57159B47340074D642 /* Phrasebook.pgf */; };
+		0A1D1F5B159B475D0074D642 /* PhrasebookIndexed.pgf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0A1D1F58159B47350074D642 /* PhrasebookIndexed.pgf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0A1D1F4E159B40FD0074D642 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0A1D1F4A159B40FD0074D642 /* pgf+.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0A1D1E29159496140074D642;
+			remoteInfo = "pgf+";
+		};
+		0A1D1F50159B41040074D642 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0A1D1F4A159B40FD0074D642 /* pgf+.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0A1D1E28159496140074D642;
+			remoteInfo = "pgf+";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0A1D1F29159B3DAB0074D642 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				0A1D1F59159B475D0074D642 /* Foods.pgf in CopyFiles */,
+				0A1D1F5A159B475D0074D642 /* Phrasebook.pgf in CopyFiles */,
+				0A1D1F5B159B475D0074D642 /* PhrasebookIndexed.pgf in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0A1D1F2B159B3DAB0074D642 /* pgf+test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "pgf+test"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A1D1F4A159B40FD0074D642 /* pgf+.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "pgf+.xcodeproj"; path = "../pgf+/pgf+.xcodeproj"; sourceTree = "<group>"; };
+		0A1D1F53159B41430074D642 /* testutil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testutil.h; sourceTree = "<group>"; };
+		0A1D1F54159B46800074D642 /* IndexedPGFTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IndexedPGFTest.cpp; sourceTree = "<group>"; };
+		0A1D1F56159B47340074D642 /* Foods.pgf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Foods.pgf; sourceTree = "<group>"; };
+		0A1D1F57159B47340074D642 /* Phrasebook.pgf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Phrasebook.pgf; sourceTree = "<group>"; };
+		0A1D1F58159B47350074D642 /* PhrasebookIndexed.pgf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PhrasebookIndexed.pgf; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0A1D1F28159B3DAB0074D642 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A1D1F52159B410C0074D642 /* libpgf+.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0A1D1F20159B3DAA0074D642 = {
+			isa = PBXGroup;
+			children = (
+				0A1D1F4A159B40FD0074D642 /* pgf+.xcodeproj */,
+				0A1D1F2E159B3DAB0074D642 /* pgf+test */,
+				0A1D1F2C159B3DAB0074D642 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0A1D1F2C159B3DAB0074D642 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0A1D1F2B159B3DAB0074D642 /* pgf+test */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0A1D1F2E159B3DAB0074D642 /* pgf+test */ = {
+			isa = PBXGroup;
+			children = (
+				0A1D1F56159B47340074D642 /* Foods.pgf */,
+				0A1D1F57159B47340074D642 /* Phrasebook.pgf */,
+				0A1D1F58159B47350074D642 /* PhrasebookIndexed.pgf */,
+				0A1D1F53159B41430074D642 /* testutil.h */,
+				0A1D1F54159B46800074D642 /* IndexedPGFTest.cpp */,
+			);
+			name = "pgf+test";
+			path = "../pgf+/test";
+			sourceTree = "<group>";
+		};
+		0A1D1F4B159B40FD0074D642 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0A1D1F4F159B40FD0074D642 /* libpgf+.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0A1D1F2A159B3DAB0074D642 /* pgf+test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A1D1F35159B3DAB0074D642 /* Build configuration list for PBXNativeTarget "pgf+test" */;
+			buildPhases = (
+				0A1D1F27159B3DAB0074D642 /* Sources */,
+				0A1D1F28159B3DAB0074D642 /* Frameworks */,
+				0A1D1F29159B3DAB0074D642 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0A1D1F51159B41040074D642 /* PBXTargetDependency */,
+			);
+			name = "pgf+test";
+			productName = "pgf+test";
+			productReference = 0A1D1F2B159B3DAB0074D642 /* pgf+test */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0A1D1F22159B3DAB0074D642 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = Chalmers;
+			};
+			buildConfigurationList = 0A1D1F25159B3DAB0074D642 /* Build configuration list for PBXProject "pgf+test" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0A1D1F20159B3DAA0074D642;
+			productRefGroup = 0A1D1F2C159B3DAB0074D642 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 0A1D1F4B159B40FD0074D642 /* Products */;
+					ProjectRef = 0A1D1F4A159B40FD0074D642 /* pgf+.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				0A1D1F2A159B3DAB0074D642 /* pgf+test */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		0A1D1F4F159B40FD0074D642 /* libpgf+.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libpgf+.a";
+			remoteRef = 0A1D1F4E159B40FD0074D642 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0A1D1F27159B3DAB0074D642 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A1D1F55159B46800074D642 /* IndexedPGFTest.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0A1D1F51159B41040074D642 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "pgf+";
+			targetProxy = 0A1D1F50159B41040074D642 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0A1D1F33159B3DAB0074D642 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		0A1D1F34159B3DAB0074D642 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		0A1D1F36159B3DAB0074D642 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"../pgf+/include",
+					"../gtest/gtest-1.6.0/include",
+				);
+				LIBRARY_SEARCH_PATHS = ../gtest/build/lib/.libs;
+				OTHER_LDFLAGS = (
+					"-lgtest_main",
+					"-lgtest",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WARNING_LDFLAGS = "";
+			};
+			name = Debug;
+		};
+		0A1D1F37159B3DAB0074D642 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"../pgf+/include",
+					"../gtest/gtest-1.6.0/include",
+				);
+				LIBRARY_SEARCH_PATHS = ../gtest/build/lib/.libs;
+				OTHER_LDFLAGS = (
+					"-lgtest_main",
+					"-lgtest",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WARNING_LDFLAGS = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0A1D1F25159B3DAB0074D642 /* Build configuration list for PBXProject "pgf+test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A1D1F33159B3DAB0074D642 /* Debug */,
+				0A1D1F34159B3DAB0074D642 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0A1D1F35159B3DAB0074D642 /* Build configuration list for PBXNativeTarget "pgf+test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A1D1F36159B3DAB0074D642 /* Debug */,
+				0A1D1F37159B3DAB0074D642 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0A1D1F22159B3DAB0074D642 /* Project object */;
+}
