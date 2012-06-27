@@ -37,10 +37,28 @@ function darcs_dep() {
 	fi
 }
 
+function http_zip_dep() {
+	DEPNAME=$1
+	REPO=$2
+	
+	DEP=${BASE}/${DEPNAME}
+	TMP=${DEP}.tmp.zip
+	if [ -d "${DEP}" ]; then
+		echo "${DEPNAME} already present"
+	else
+		echo "Checking out ${DEPNAME}"
+		mkdir -p "${DEP}"
+		cd "${DEP}"
+		wget -O "${TMP}" "${REPO}"
+		unzip "${TMP}"
+		rm -fr "${TMP}"
+	fi
+}
+
 
 echo "Setting up dependencies in ${BASE}"
 
 darcs_dep GF http://www.grammaticalframework.org/
 git_dep JPGF https://github.com/GrammaticalFramework/JPGF.git
 git_dep PhraseDroid https://github.com/GrammaticalFramework/PhraseDroid.git
-
+http_zip_dep gtest http://googletest.googlecode.com/files/gtest-1.6.0.zip
