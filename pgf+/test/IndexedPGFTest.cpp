@@ -19,7 +19,7 @@
 
 
 TEST(IndexedPGF, IndexedPhrasebookSelect) {
-    std::string filename = "PhrasebookIndexed.pgf";
+    std::string filename = getAppDir() + "PhrasebookIndexed.pgf";
     std::set<std::string> languages;
     gf::PGF* pgf = NULL;
     
@@ -40,11 +40,15 @@ TEST(IndexedPGF, IndexedPhrasebookSelect) {
     EXPECT_FALSE(pgf->hasConcrete("PhrasebookIta"));
     
     EXPECT_EQ(pgf->getConcreteNames(), languages);
+    
+    gf::release(pgf);
+    
+    usleep(10 * 1000000);
 }
 
 
 TEST(IndexedPGF, IndexedPhrasebookAll) {
-    std::string filename = "PhrasebookIndexed.pgf";
+    std::string filename = getAppDir() + "PhrasebookIndexed.pgf";
     std::set<std::string> languages;
     gf::PGF* pgf = NULL;
     
@@ -77,11 +81,13 @@ TEST(IndexedPGF, IndexedPhrasebookAll) {
 	languages.insert("PhrasebookSwe");
     
 	EXPECT_EQ(pgf->getConcreteNames(), languages);
+    
+    gf::release(pgf);
 }
 
 
 TEST(IndexedPGF, UnknownLanguage) {
-    std::string filename = "PhrasebookIndexed.pgf";
+    std::string filename = getAppDir() + "PhrasebookIndexed.pgf";
     std::set<std::string> languages;
     gf::PGF* pgf = NULL;
     
@@ -90,6 +96,7 @@ TEST(IndexedPGF, UnknownLanguage) {
     
     try {
         pgf = gf::PGFBuilder::fromFile(filename, languages);
+        gf::release(pgf);
         FAIL();
     } catch (gf::UnknownLanguageException& ex) {
         SUCCEED();
@@ -97,11 +104,13 @@ TEST(IndexedPGF, UnknownLanguage) {
         EXPECT_EQ("", ex.toString());
         FAIL();
     }
+    
+    gf::release(pgf);
 }
 
 
 TEST(IndexedPGF, UnindexedFoodsSelect) {
-    std::string filename = "Foods.pgf";
+    std::string filename = getAppDir() + "Foods.pgf";
     std::set<std::string> languages;
     gf::PGF* pgf = NULL;
     
@@ -118,11 +127,13 @@ TEST(IndexedPGF, UnindexedFoodsSelect) {
     
 	EXPECT_TRUE(pgf->hasConcrete("FoodsIta"));
 	EXPECT_FALSE(pgf->hasConcrete("FoodsFre"));
+    
+    gf::release(pgf);
 }
 
 
 TEST(IndexedPGF, UnindexedFoodsAll) {
-    std::string filename = "Foods.pgf";
+    std::string filename = getAppDir() + "Foods.pgf";
     std::set<std::string> languages;
     gf::PGF* pgf = NULL;
     
@@ -163,4 +174,6 @@ TEST(IndexedPGF, UnindexedFoodsAll) {
 	languages.insert("FoodsUrd");
     
 	EXPECT_EQ(pgf->getConcreteNames(), languages);
+    
+    gf::release(pgf);
 }

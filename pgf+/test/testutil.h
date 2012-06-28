@@ -9,6 +9,7 @@
 #ifndef pgf_test_testutil_h
 #define pgf_test_testutil_h
 
+#include <dlfcn.h>
 #include <string>
 #include <vector>
 
@@ -19,6 +20,36 @@
 #include <gf/reader/Hypo.h>
 #include <gf/reader/Type.h>
 #include <gf/reader/WeightedIdent.h>
+
+static inline std::string getAppDir() {
+    Dl_info info;
+    std::string path;
+    size_t pos;
+    
+    if (dladdr((void*) &getAppDir, &info) == 0) {
+        return "";
+    }
+    
+    path = info.dli_fname;
+    
+#ifdef DEBUG
+    fprintf(stderr, "Full path: %s\n", path.c_str());
+#endif
+    
+    pos = path.rfind('/');
+    if (pos == std::string::npos) {
+        return "";
+    }
+    
+    path = path.substr(0, pos + 1);
+    
+    
+#ifdef DEBUG
+    fprintf(stderr, "Directory: %s\n", path.c_str());
+#endif
+    
+    return path;
+}
 
 static inline gf::reader::Type* mkType(const std::string& type) {
     return new gf::reader::Type(std::vector<gf::reader::Hypo*>(), type, std::vector<gf::reader::Expr*>());
