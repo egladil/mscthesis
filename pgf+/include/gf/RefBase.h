@@ -24,6 +24,10 @@ namespace gf {
         virtual void addReference();
         virtual void release();
         
+#ifdef DEBUG
+        virtual int getReferenceCount() const;
+#endif
+        
         virtual std::string toString() const;
     };
     

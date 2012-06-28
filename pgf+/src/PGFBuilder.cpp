@@ -18,6 +18,10 @@ namespace gf {
         FILE* file;
         PGF* ret;
         
+#ifdef DEBUG
+        fprintf(stderr, "Opening %s\n", filename.c_str());
+#endif
+        
         file = fopen(filename.c_str(), "rb");
         if (file == NULL) {
             throw IOException(errno);
@@ -38,6 +42,10 @@ namespace gf {
     PGF* PGFBuilder::fromFile(const std::string& filename, const std::set<std::string>& languages) throw (IOException, UnknownLanguageException) {
         FILE* file;
         PGF* ret;
+        
+#ifdef DEBUG
+        fprintf(stderr, "Opening %s\n", filename.c_str());
+#endif
         
         file = fopen(filename.c_str(), "rb");
         if (file == NULL) {

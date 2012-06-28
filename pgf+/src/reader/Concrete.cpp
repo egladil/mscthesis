@@ -13,7 +13,7 @@ namespace gf {
     namespace reader {
         
         Concrete::Concrete(const std::string& name, const std::map<std::string, RLiteral*>& flags, const std::vector<Sequence*>& sequences, const std::vector<CncFun*>& cncFuns, const std::vector<ProductionSet*>& productions, const std::map<std::string, CncCat*>& cncCats, int32_t fId, const std::string& startCat)
-        : name(name), flags(flags), sequences(sequences), cncFuns(cncFuns), cncCats(cncCats), fId(fId), startCat(startCat) {   
+            : name(name), flags(flags), sequences(sequences), cncFuns(cncFuns), productions(productions), cncCats(cncCats), fId(fId), startCat(startCat) {   
         }
         
         Concrete::~Concrete() {
