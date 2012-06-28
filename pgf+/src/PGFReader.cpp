@@ -149,7 +149,7 @@ namespace gf {
 #endif
             } else {
                 // Skip manually
-                getConcrete(name, startCat);
+                getConcrete(name, startCat)->release();
             }
         }
             
