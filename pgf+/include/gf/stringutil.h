@@ -51,7 +51,6 @@ namespace gf {
         
         for (end = str.size(); end > start; end--) {
             if (!isWhiteSpace(str.at(end - 1))) {
-                end--;
                 break;
             }
         }

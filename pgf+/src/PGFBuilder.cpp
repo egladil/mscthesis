@@ -30,6 +30,8 @@ namespace gf {
             throw;
         }
         
+        fclose(file);
+        
         return ret;
     }
     
@@ -48,6 +50,8 @@ namespace gf {
             fclose(file);
             throw;
         }
+        
+        fclose(file);
         
         return ret;
     }

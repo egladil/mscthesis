@@ -138,7 +138,7 @@ namespace gf {
 #endif
             if (readAllLanguages || languages.erase(name) > 0) {
                 concretes.push_back(getConcrete(name, startCat));
-            } /*else if (!index.empty()) {
+            } else if (!index.empty()) {
                 std::map<std::string, uint32_t>::const_iterator langIdx = index.find(name);
                 if (langIdx == index.end()) {
                     throw IOException("Malformed pgf, index for concrete not found.");
@@ -147,7 +147,7 @@ namespace gf {
 #ifdef DEBUG
                 fprintf(stderr, "Skipping %s\n", name.c_str());
 #endif
-            } */else {
+            } else {
                 // Skip manually
                 getConcrete(name, startCat);
             }
@@ -559,6 +559,9 @@ namespace gf {
 #endif
         sequences = getListSequence();
         cncFuns = getListCncFun(sequences);
+        
+        skipListLinDef();
+        
         productionSets = getListProductionSet(cncFuns);
         
         cncCats = getListCncCat();
@@ -672,6 +675,9 @@ namespace gf {
         std::vector<std::string> tokens;
         std::vector<std::string> prefixes;
         
+        tokens = getListString();
+        prefixes = getListString();
+        
         return new gf::reader::Alternative(tokens, prefixes);
     }
     
@@ -717,6 +723,9 @@ namespace gf {
         
         cnt = getInt();
         for (int i = 0; i < cnt; i++) {
+#ifdef DEBUG
+            fprintf(stderr, "Reading concrete function %i/%i\n", i, cnt);
+#endif
             ret.push_back(getCncFun(sequences));
         }
         
@@ -758,6 +767,9 @@ namespace gf {
         
         cnt = getInt();
         for (int i = 0; i < cnt; i++) {
+#ifdef DEBUG
+            fprintf(stderr, "Reading production set %i/%i\n", i, cnt);
+#endif
             ret.push_back(getProductionSet(cncFuns));
         }
         
@@ -855,6 +867,10 @@ namespace gf {
         for (int i = 0; i < cnt; i++) {
             gf::reader::CncCat* cat;
             
+#ifdef DEBUG
+            fprintf(stderr, "Reading concrete category %i/%i\n", i, cnt);
+#endif
+            
             cat = getCncCat();
             
             ret.insert(std::make_pair(cat->getName(), cat));
@@ -891,7 +907,7 @@ namespace gf {
             
             r = readByte();
             ret+= r;
-            if (r < 0xC0) {
+            if (r < 0x7F) {
                 // Nothing
             } else if (r >= 0xC0 && r <= 0xDF) {
                 ret+= readByte();
