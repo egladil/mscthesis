@@ -59,6 +59,20 @@ namespace gf {
         return str.substr(start, end - start);
     }
     
+    static inline std::string merge(const std::vector<std::string>& vec, const std::string& delim) {
+        std::string ret;
+        
+        for (std::vector<std::string>::const_iterator it = vec.begin(); it != vec.end(); it++) {
+            if (it != vec.begin()) {
+                ret+= delim;
+            }
+            
+            ret+= *it;
+        }
+        
+        return ret;
+    }
+    
     template<class T> inline std::string toString(const T& t) {
         std::stringstream ss;
         ss << t;
