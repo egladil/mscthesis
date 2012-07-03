@@ -190,11 +190,14 @@ namespace gf {
             MapIntSP::const_iterator old = productions0.find(index);
             if (old != productions0.end()) {
                 if (old->second != set) {
-                    for (SetProd::const_iterator prod = old->second.begin(); prod != old->second.end(); prod++) {
-                        set.insert(*prod);
-                    }
+                    set.insert(old->second.begin(), old->second.end());
                     
-                    productions1.insert(std::make_pair(index, set));
+                    MapIntSP::iterator it = productions1.find(index);
+                    if (it == productions1.end()) {
+                        productions1.insert(std::make_pair(index, set));
+                    } else {
+                        it->second = set;
+                    }
                     modified = true;
                 }
             } else {
