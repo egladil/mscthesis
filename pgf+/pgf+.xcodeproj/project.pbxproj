@@ -66,6 +66,11 @@
 		0ACD4C32159DACEA00878123 /* RezDesc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD4C31159DACEA00878123 /* RezDesc.cpp */; };
 		0ACD4C34159DE20F00878123 /* LinearizerException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD4C33159DE20E00878123 /* LinearizerException.cpp */; };
 		0ACD4C36159DE26D00878123 /* Linearizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD4C35159DE26B00878123 /* Linearizer.cpp */; };
+		0ACD4C3D15A305E000878123 /* Absyn.C in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD4C3815A305E000878123 /* Absyn.C */; };
+		0ACD4C3E15A305E000878123 /* Lexer.C in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD4C3915A305E000878123 /* Lexer.C */; };
+		0ACD4C3F15A305E000878123 /* Parser.C in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD4C3A15A305E000878123 /* Parser.C */; };
+		0ACD4C4015A305E000878123 /* Printer.C in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD4C3B15A305E000878123 /* Printer.C */; };
+		0ACD4C4115A305E000878123 /* Skeleton.C in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD4C3C15A305E000878123 /* Skeleton.C */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -131,6 +136,11 @@
 		0ACD4C31159DACEA00878123 /* RezDesc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RezDesc.cpp; sourceTree = "<group>"; };
 		0ACD4C33159DE20E00878123 /* LinearizerException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LinearizerException.cpp; sourceTree = "<group>"; };
 		0ACD4C35159DE26B00878123 /* Linearizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Linearizer.cpp; sourceTree = "<group>"; };
+		0ACD4C3815A305E000878123 /* Absyn.C */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Absyn.C; sourceTree = "<group>"; };
+		0ACD4C3915A305E000878123 /* Lexer.C */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Lexer.C; sourceTree = "<group>"; };
+		0ACD4C3A15A305E000878123 /* Parser.C */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Parser.C; sourceTree = "<group>"; };
+		0ACD4C3B15A305E000878123 /* Printer.C */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Printer.C; sourceTree = "<group>"; };
+		0ACD4C3C15A305E000878123 /* Skeleton.C */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Skeleton.C; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +187,7 @@
 				0A1D1EC31599AD200074D642 /* UnknownLanguageException.cpp */,
 				0ACD4C21159DA68100878123 /* linearizer */,
 				0A1D1EBB1599AC350074D642 /* reader */,
+				0ACD4C3715A305BA00878123 /* trees */,
 			);
 			name = Sources;
 			path = src;
@@ -243,6 +254,18 @@
 				0ACD4C31159DACEA00878123 /* RezDesc.cpp */,
 			);
 			path = linearizer;
+			sourceTree = "<group>";
+		};
+		0ACD4C3715A305BA00878123 /* trees */ = {
+			isa = PBXGroup;
+			children = (
+				0ACD4C3815A305E000878123 /* Absyn.C */,
+				0ACD4C3915A305E000878123 /* Lexer.C */,
+				0ACD4C3A15A305E000878123 /* Parser.C */,
+				0ACD4C3B15A305E000878123 /* Printer.C */,
+				0ACD4C3C15A305E000878123 /* Skeleton.C */,
+			);
+			path = trees;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,6 +388,11 @@
 				0ACD4C32159DACEA00878123 /* RezDesc.cpp in Sources */,
 				0ACD4C34159DE20F00878123 /* LinearizerException.cpp in Sources */,
 				0ACD4C36159DE26D00878123 /* Linearizer.cpp in Sources */,
+				0ACD4C3D15A305E000878123 /* Absyn.C in Sources */,
+				0ACD4C3E15A305E000878123 /* Lexer.C in Sources */,
+				0ACD4C3F15A305E000878123 /* Parser.C in Sources */,
+				0ACD4C4015A305E000878123 /* Printer.C in Sources */,
+				0ACD4C4115A305E000878123 /* Skeleton.C in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
