@@ -522,7 +522,7 @@ namespace gf {
             
             for (MapIntSP::const_iterator it = productions.begin(); it != productions.end(); it++) {
                 uint32_t fid = it->first;
-                for (SetProd::const_iterator ip = it->second.begin(); ip != it->second.begin(); ip++) {
+                for (SetProd::const_iterator ip = it->second.begin(); ip != it->second.end(); ip++) {
                     gf::linearizer::CncType* cty;
                     std::vector<gf::linearizer::AppResult*> temp;
                     /*
@@ -552,7 +552,7 @@ namespace gf {
                 return ret;
             }
             
-            for (SetProd::const_iterator ip = it->second.begin(); ip != it->second.begin(); ip++) {
+            for (SetProd::const_iterator ip = it->second.begin(); ip != it->second.end(); ip++) {
                 std::vector<gf::linearizer::AppResult*> temp;
                 
                 temp = toApp(mb_cty, *ip, function, productions);

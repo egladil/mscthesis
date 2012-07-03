@@ -46,7 +46,7 @@ namespace gf {
             ret+= cncType->toString();
             ret+= ") bracketedToken: [";
             for (std::vector<std::vector<BracketedToken*> >::const_iterator it = linTable.begin(); it != linTable.end(); it++) {
-                ret+= it != linTable.begin() ? "[" : ", [";
+                ret+= it == linTable.begin() ? "[" : ", [";
                 for (std::vector<BracketedToken*>::const_iterator it2 = it->begin(); it2 != it->end(); it2++) {
                     ret+= (it2 == it->begin() ? "" : ", ") + (*it2)->toString();
                 }

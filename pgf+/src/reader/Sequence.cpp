@@ -30,7 +30,7 @@ namespace gf {
             return symbols.size();
         }
         
-        const std::vector<Symbol*> Sequence::getSymbols() const {
+        const std::vector<Symbol*>& Sequence::getSymbols() const {
             return symbols;
         }
         

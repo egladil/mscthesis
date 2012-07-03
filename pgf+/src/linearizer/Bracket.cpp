@@ -34,7 +34,7 @@ namespace gf {
             return fId;
         }
         
-        const std::vector<BracketedToken*> Bracket::getBracketedTokens() const {
+        const std::vector<BracketedToken*>& Bracket::getBracketedTokens() const {
             return tokens;
         }
         

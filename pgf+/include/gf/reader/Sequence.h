@@ -37,7 +37,7 @@ namespace gf {
             
             virtual size_t length() const;
             
-            virtual const std::vector<Symbol*> getSymbols() const;
+            virtual const std::vector<Symbol*>& getSymbols() const;
             
             virtual std::string toString() const;
         };

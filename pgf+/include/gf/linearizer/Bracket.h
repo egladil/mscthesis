@@ -32,7 +32,7 @@ namespace gf {
             virtual const std::string& getCId() const;
             virtual uint32_t getLIndex() const;
             virtual uint32_t getFId() const;
-            virtual const std::vector<BracketedToken*> getBracketedTokens() const;
+            virtual const std::vector<BracketedToken*>& getBracketedTokens() const;
             
             virtual std::string toString() const;
         };
