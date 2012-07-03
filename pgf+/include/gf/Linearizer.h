@@ -10,6 +10,7 @@
 #define _Linearizer_h
 
 #include <stdint.h>
+#include <list>
 #include <map>
 #include <set>
 #include <string>
@@ -76,7 +77,7 @@ namespace gf {
         /**
          * filters an IntMap of productions according to filterProdsSet1
          **/
-        virtual MapIntSP filterProductions(const MapIntSP& productions0, const MapIntSP& productions1) const;
+        virtual MapIntSP filterProductions(const MapIntSP& productions0, const MapIntSP& productions) const;
         
         /**
          * checks if a production satisfies conditionProd recursively
@@ -86,7 +87,7 @@ namespace gf {
         /**
          * checks if a production just has a variable argument
          **/
-        virtual bool isHoProduction(gf::reader::Production* p) const;
+        virtual bool isHoProduction(gf::reader::Production* production) const;
         
         /**
          * gets list of forest ids from the categories in ho_cats
@@ -96,7 +97,7 @@ namespace gf {
         /**
          * get all names of types from Concrete
          **/
-        virtual std::vector<std::string> getHoCategories() const;
+        virtual std::set<std::string> getHoCategories() const;
         
         /**
          * gets the types from the hypotheses of a type
@@ -111,11 +112,11 @@ namespace gf {
         /**
          * flattens the result of the linearization
          **/
-        virtual std::vector<std::string> renderLin(gf::linearizer::LinTriple* tripple) const;
+        virtual std::vector<std::string> renderLin(gf::linearizer::LinTriple* triple) const;
         
-        virtual std::vector<std::vector<std::string> > renderAllLins(const std::vector<gf::linearizer::LinTriple*>& tripples) const;
+        virtual std::vector<std::vector<std::string> > renderAllLins(const std::vector<gf::linearizer::LinTriple*>& triples) const;
         
-        virtual std::vector<gf::linearizer::LinTriple*> linearize(const Tree& tree) const throw (gf::LinearizerException);
+        virtual std::vector<gf::linearizer::LinTriple*> linearize(const Tree* tree) const throw (gf::LinearizerException);
         
         /**
          * main linearization function
@@ -126,7 +127,7 @@ namespace gf {
          * @param tree is the tree to linearize
          * @return all the possible linearized tuples for this tree.
          **/
-        virtual std::vector<gf::linearizer::LinTriple*> lin0(const std::vector<std::string>& xs, const std::vector<std::string>& ys, gf::linearizer::CncType* mb_cty, uint32_t mb_fid, const Tree& tree) const throw (gf::LinearizerException);
+        virtual std::vector<gf::linearizer::LinTriple*> lin0(std::vector<std::string>& xs, const std::vector<std::string>& ys, gf::linearizer::CncType* mb_cty, uint32_t mb_fid, const Tree* tree) const throw (gf::LinearizerException);
         
         /**
          * intermediate linearization for complex expressions
@@ -180,7 +181,7 @@ namespace gf {
          * shuffles the results of of the intermediate linearization,
          * for generating all the possible combinations
          **/
-        virtual std::vector<gf::linearizer::RezDesc*> descend(uint32_t n_fid, const std::vector<gf::linearizer::CncType*>& cncTypes, const std::vector<const Tree*>& trees, const std::vector<std::string>& xs) const throw (gf::LinearizerException);
+        virtual std::vector<gf::linearizer::RezDesc*> descend(uint32_t n_fid, std::list<gf::linearizer::CncType*>& cncTypes, std::list<const Tree*>& trees, const std::vector<std::string>& xs) const throw (gf::LinearizerException);
         
         /**
          * checks if a production is application production
@@ -238,12 +239,12 @@ namespace gf {
         /**
          * Linearize a tree to a vector of tokens.
          **/
-        virtual std::vector<std::string> linearizeTokens(const Tree& absyn) const throw (gf::LinearizerException);
+        virtual std::vector<std::string> linearizeTokens(const Tree* absyn) const throw (gf::LinearizerException);
         
         /**
          * Linearize a tree to a string.
          **/
-        virtual std::string linearizeString(const Tree& absyn) const throw (gf::LinearizerException);
+        virtual std::string linearizeString(const Tree* absyn) const throw (gf::LinearizerException);
     };
     
 }

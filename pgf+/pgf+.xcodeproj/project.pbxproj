@@ -56,6 +56,16 @@
 		0A1D1F1B159A0B8C0074D642 /* WildCardPattern.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1F1A159A0B870074D642 /* WildCardPattern.cpp */; };
 		0A1D1F1D159B0F8B0074D642 /* PGF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1F1C159B0F870074D642 /* PGF.cpp */; };
 		0A1D1F1F159B145A0074D642 /* PGFBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1F1E159B14550074D642 /* PGFBuilder.cpp */; };
+		0ACD4C24159DA6A700878123 /* AppResult.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD4C23159DA6A700878123 /* AppResult.cpp */; };
+		0ACD4C26159DA78800878123 /* Bracket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD4C25159DA78800878123 /* Bracket.cpp */; };
+		0ACD4C28159DA92000878123 /* BracketedToken.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD4C27159DA92000878123 /* BracketedToken.cpp */; };
+		0ACD4C2A159DA97300878123 /* CncType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD4C29159DA97300878123 /* CncType.cpp */; };
+		0ACD4C2C159DAA2700878123 /* LeafKP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD4C2B159DAA2700878123 /* LeafKP.cpp */; };
+		0ACD4C2E159DAB5C00878123 /* LeafKS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD4C2D159DAB5C00878123 /* LeafKS.cpp */; };
+		0ACD4C30159DACBC00878123 /* LinTriple.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD4C2F159DACBC00878123 /* LinTriple.cpp */; };
+		0ACD4C32159DACEA00878123 /* RezDesc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD4C31159DACEA00878123 /* RezDesc.cpp */; };
+		0ACD4C34159DE20F00878123 /* LinearizerException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD4C33159DE20E00878123 /* LinearizerException.cpp */; };
+		0ACD4C36159DE26D00878123 /* Linearizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD4C35159DE26B00878123 /* Linearizer.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +121,16 @@
 		0A1D1F1A159A0B870074D642 /* WildCardPattern.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WildCardPattern.cpp; sourceTree = "<group>"; };
 		0A1D1F1C159B0F870074D642 /* PGF.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PGF.cpp; sourceTree = "<group>"; };
 		0A1D1F1E159B14550074D642 /* PGFBuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PGFBuilder.cpp; sourceTree = "<group>"; };
+		0ACD4C23159DA6A700878123 /* AppResult.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppResult.cpp; sourceTree = "<group>"; };
+		0ACD4C25159DA78800878123 /* Bracket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bracket.cpp; sourceTree = "<group>"; };
+		0ACD4C27159DA92000878123 /* BracketedToken.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BracketedToken.cpp; sourceTree = "<group>"; };
+		0ACD4C29159DA97300878123 /* CncType.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CncType.cpp; sourceTree = "<group>"; };
+		0ACD4C2B159DAA2700878123 /* LeafKP.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LeafKP.cpp; sourceTree = "<group>"; };
+		0ACD4C2D159DAB5C00878123 /* LeafKS.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LeafKS.cpp; sourceTree = "<group>"; };
+		0ACD4C2F159DACBC00878123 /* LinTriple.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LinTriple.cpp; sourceTree = "<group>"; };
+		0ACD4C31159DACEA00878123 /* RezDesc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RezDesc.cpp; sourceTree = "<group>"; };
+		0ACD4C33159DE20E00878123 /* LinearizerException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LinearizerException.cpp; sourceTree = "<group>"; };
+		0ACD4C35159DE26B00878123 /* Linearizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Linearizer.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,12 +167,15 @@
 			children = (
 				0A1D1EBE1599AD200074D642 /* Exception.cpp */,
 				0A1D1EBF1599AD200074D642 /* IOException.cpp */,
+				0ACD4C35159DE26B00878123 /* Linearizer.cpp */,
+				0ACD4C33159DE20E00878123 /* LinearizerException.cpp */,
 				0A1D1F1C159B0F870074D642 /* PGF.cpp */,
 				0A1D1F1E159B14550074D642 /* PGFBuilder.cpp */,
 				0A1D1EC01599AD200074D642 /* PGFReader.cpp */,
 				0A1D1EC11599AD200074D642 /* RefBase.cpp */,
 				0A1D1EC21599AD200074D642 /* UnknownCategoryException.cpp */,
 				0A1D1EC31599AD200074D642 /* UnknownLanguageException.cpp */,
+				0ACD4C21159DA68100878123 /* linearizer */,
 				0A1D1EBB1599AC350074D642 /* reader */,
 			);
 			name = Sources;
@@ -205,6 +228,21 @@
 				0A1D1F1A159A0B870074D642 /* WildCardPattern.cpp */,
 			);
 			path = reader;
+			sourceTree = "<group>";
+		};
+		0ACD4C21159DA68100878123 /* linearizer */ = {
+			isa = PBXGroup;
+			children = (
+				0ACD4C23159DA6A700878123 /* AppResult.cpp */,
+				0ACD4C25159DA78800878123 /* Bracket.cpp */,
+				0ACD4C27159DA92000878123 /* BracketedToken.cpp */,
+				0ACD4C29159DA97300878123 /* CncType.cpp */,
+				0ACD4C2B159DAA2700878123 /* LeafKP.cpp */,
+				0ACD4C2D159DAB5C00878123 /* LeafKS.cpp */,
+				0ACD4C2F159DACBC00878123 /* LinTriple.cpp */,
+				0ACD4C31159DACEA00878123 /* RezDesc.cpp */,
+			);
+			path = linearizer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,6 +355,16 @@
 				0A1D1F1B159A0B8C0074D642 /* WildCardPattern.cpp in Sources */,
 				0A1D1F1D159B0F8B0074D642 /* PGF.cpp in Sources */,
 				0A1D1F1F159B145A0074D642 /* PGFBuilder.cpp in Sources */,
+				0ACD4C24159DA6A700878123 /* AppResult.cpp in Sources */,
+				0ACD4C26159DA78800878123 /* Bracket.cpp in Sources */,
+				0ACD4C28159DA92000878123 /* BracketedToken.cpp in Sources */,
+				0ACD4C2A159DA97300878123 /* CncType.cpp in Sources */,
+				0ACD4C2C159DAA2700878123 /* LeafKP.cpp in Sources */,
+				0ACD4C2E159DAB5C00878123 /* LeafKS.cpp in Sources */,
+				0ACD4C30159DACBC00878123 /* LinTriple.cpp in Sources */,
+				0ACD4C32159DACEA00878123 /* RezDesc.cpp in Sources */,
+				0ACD4C34159DE20F00878123 /* LinearizerException.cpp in Sources */,
+				0ACD4C36159DE26D00878123 /* Linearizer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -27,7 +27,7 @@ namespace gf {
             return name;
         }
         
-        const Type* AbsFun::getType() const {
+        Type* AbsFun::getType() const {
             return type;
         }
         
