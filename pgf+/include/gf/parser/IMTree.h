@@ -19,7 +19,7 @@
 namespace gf {
     namespace parser {
         
-        class IMTree : RefBase {
+        class IMTree : public RefBase {
         private:
             
         protected:

@@ -16,7 +16,7 @@
 namespace gf {
     namespace parser {
         
-        class IMApplication : IMTree {
+        class IMApplication : public IMTree {
         private:
             std::string fun;
             std::vector<IMTree*> args;

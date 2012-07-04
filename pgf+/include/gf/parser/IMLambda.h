@@ -16,7 +16,7 @@
 namespace gf {
     namespace parser {
                 
-        class IMLambda : IMTree {
+        class IMLambda : public IMTree {
         private:
             std::vector<std::pair<bool, std::string> > variables;
             IMTree* body;

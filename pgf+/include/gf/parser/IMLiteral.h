@@ -15,7 +15,7 @@
 namespace gf {
     namespace parser {
         
-        class IMLiteral : IMTree {
+        class IMLiteral : public IMTree {
         private:
             std::string value;
             

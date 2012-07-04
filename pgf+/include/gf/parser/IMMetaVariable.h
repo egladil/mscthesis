@@ -15,7 +15,7 @@
 namespace gf {
     namespace parser {
         
-        class IMMetaVariable : IMTree {
+        class IMMetaVariable : public IMTree {
         private:
             uint32_t id;
             

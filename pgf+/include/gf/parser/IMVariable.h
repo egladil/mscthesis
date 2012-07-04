@@ -15,7 +15,7 @@
 namespace gf {
     namespace parser {
         
-        class IMVariable : IMTree {
+        class IMVariable : public IMTree {
         private:
             std::string cId;
             
