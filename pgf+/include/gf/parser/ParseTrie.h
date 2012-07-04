@@ -50,7 +50,7 @@ namespace gf {
             virtual ParseTrie* getSubTrie(const std::vector<std::string>& key);
             virtual const ParseTrie* getSubTrie(const std::vector<std::string>& key) const;
             
-            virtual std::vector<std::string> predict() const;
+            virtual std::set<std::string> predict() const;
             
             virtual std::string toString() const;
             virtual std::string toStringWithPrefix(const std::string& prefix) const;

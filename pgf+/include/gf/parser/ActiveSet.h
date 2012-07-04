@@ -21,14 +21,14 @@ namespace gf {
         class ActiveSet : public RefBase {
         public:
             struct ActiveItemInt {
-                ActiveItem* ai;
-                uint32_t i;
+                ActiveItem* _1;
+                uint32_t _2;
             };
             
             struct ActiveItemIntInt {
-                ActiveItem* ai;
-                uint32_t i0;
-                uint32_t i1;
+                ActiveItem* _1;
+                uint32_t _2;
+                uint32_t _3;
             };
             
         private:

@@ -14,6 +14,7 @@
 #include <string>
 #include <vector>
 #include <gf/RefBase.h>
+#include <gf/UnknownCategoryException.h>
 #include <gf/parser/ActiveItem.h>
 #include <gf/parser/ActiveSet.h>
 #include <gf/parser/Chart.h>
@@ -46,7 +47,7 @@ namespace gf {
             void processActiveItem(ActiveItem* item);
             
         public:
-            ParseState(gf::reader::Concrete* grammar, const std::string& startcat);
+            ParseState(gf::reader::Concrete* grammar, const std::string& startcat) throw (gf::UnknownCategoryException);
             virtual ~ParseState();
             
             /**
