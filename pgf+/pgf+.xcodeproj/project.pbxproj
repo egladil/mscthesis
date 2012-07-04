@@ -60,6 +60,7 @@
 		0A9C64E115A46EF6005B2989 /* Parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A9C64E015A46EF6005B2989 /* Parser.cpp */; };
 		0A9C64E515A472A7005B2989 /* ParseState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A9C64E415A472A7005B2989 /* ParseState.cpp */; };
 		0A9C64E715A489B5005B2989 /* ActiveItem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A9C64E615A489B5005B2989 /* ActiveItem.cpp */; };
+		0A9C64E915A48CC5005B2989 /* ParseTrie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A9C64E815A48CC5005B2989 /* ParseTrie.cpp */; };
 		0ACD4C24159DA6A700878123 /* AppResult.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD4C23159DA6A700878123 /* AppResult.cpp */; };
 		0ACD4C26159DA78800878123 /* Bracket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD4C25159DA78800878123 /* Bracket.cpp */; };
 		0ACD4C28159DA92000878123 /* BracketedToken.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD4C27159DA92000878123 /* BracketedToken.cpp */; };
@@ -134,6 +135,7 @@
 		0A9C64E015A46EF6005B2989 /* Parser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Parser.cpp; sourceTree = "<group>"; };
 		0A9C64E415A472A7005B2989 /* ParseState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ParseState.cpp; sourceTree = "<group>"; };
 		0A9C64E615A489B5005B2989 /* ActiveItem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActiveItem.cpp; sourceTree = "<group>"; };
+		0A9C64E815A48CC5005B2989 /* ParseTrie.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ParseTrie.cpp; sourceTree = "<group>"; };
 		0ACD4C23159DA6A700878123 /* AppResult.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppResult.cpp; sourceTree = "<group>"; };
 		0ACD4C25159DA78800878123 /* Bracket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bracket.cpp; sourceTree = "<group>"; };
 		0ACD4C27159DA92000878123 /* BracketedToken.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BracketedToken.cpp; sourceTree = "<group>"; };
@@ -255,8 +257,9 @@
 		0A9C64E315A47270005B2989 /* parser */ = {
 			isa = PBXGroup;
 			children = (
-				0A9C64E415A472A7005B2989 /* ParseState.cpp */,
 				0A9C64E615A489B5005B2989 /* ActiveItem.cpp */,
+				0A9C64E415A472A7005B2989 /* ParseState.cpp */,
+				0A9C64E815A48CC5005B2989 /* ParseTrie.cpp */,
 			);
 			path = parser;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				0A9C64E115A46EF6005B2989 /* Parser.cpp in Sources */,
 				0A9C64E515A472A7005B2989 /* ParseState.cpp in Sources */,
 				0A9C64E715A489B5005B2989 /* ActiveItem.cpp in Sources */,
+				0A9C64E915A48CC5005B2989 /* ParseTrie.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

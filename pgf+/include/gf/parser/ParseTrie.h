@@ -10,6 +10,7 @@
 #define _ParseTrie_h
 
 #include <map>
+#include <set>
 #include <vector>
 #include <gf/RefBase.h>
 #include <gf/parser/ActiveItem.h>
