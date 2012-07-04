@@ -34,7 +34,7 @@ namespace gf {
         return startcat;
     }
     
-    gf::parser::ParseState* Parser::parse(const std::vector<std::string>& tokens) const throw (ParseException) {
+    gf::parser::ParseState* Parser::parse(const std::vector<std::string>& tokens) const throw (ParseException, UnknownCategoryException) {
         gf::parser::ParseState* state;
         
         language->addReference();
@@ -45,7 +45,7 @@ namespace gf {
                 if (!state->scan(*it)) {
                     break;
                 }
-            } catch (ParseException& e) {
+            } catch (Exception& e) {
                 gf::release(state);
                 throw;
             }
@@ -54,7 +54,7 @@ namespace gf {
         return state;
     }
     
-    std::vector<Tree*> Parser::parseToTrees(const std::vector<std::string>& tokens) const throw (ParseException) {
+    std::vector<Tree*> Parser::parseToTrees(const std::vector<std::string>& tokens) const throw (ParseException, UnknownCategoryException) {
         gf::parser::ParseState* state;
         std::vector<Tree*> ret;
         
@@ -65,11 +65,11 @@ namespace gf {
         return ret;
     }
     
-    gf::parser::ParseState* Parser::parse(const std::string& phrase) const throw (ParseException) {
+    gf::parser::ParseState* Parser::parse(const std::string& phrase) const throw (ParseException, UnknownCategoryException) {
         return parse(split(phrase, ' '));
     }
     
-    gf::parser::ParseState* Parser::parse() const throw (ParseException) {
+    gf::parser::ParseState* Parser::parse() const throw (ParseException, UnknownCategoryException) {
         return parse(std::vector<std::string>());
     }
     

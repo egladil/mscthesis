@@ -14,6 +14,7 @@
 #include <gf/PGF.h>
 #include <gf/ParseException.h>
 #include <gf/RefBase.h>
+#include <gf/UnknownCategoryException.h>
 #include <gf/UnknownLanguageException.h>
 #include <gf/parser/ParseState.h>
 #include <gf/reader/Concrete.h>
@@ -39,14 +40,14 @@ namespace gf {
          * @param tokens the input tokens
          * @return the corresponding parse-state
          **/
-        virtual gf::parser::ParseState* parse(const std::vector<std::string>& tokens) const throw (ParseException);
+        virtual gf::parser::ParseState* parse(const std::vector<std::string>& tokens) const throw (ParseException, UnknownCategoryException);
         
         /**
          * Parse the given list of tokens
          * @param tokens the input tokens
          * @return a vector of trees
          **/
-        virtual std::vector<Tree*> parseToTrees(const std::vector<std::string>& tokens) const throw (ParseException);
+        virtual std::vector<Tree*> parseToTrees(const std::vector<std::string>& tokens) const throw (ParseException, UnknownCategoryException);
         
         /**
          * Parse the given string
@@ -54,14 +55,14 @@ namespace gf {
          * @param phrase the input string
          * @return the corresponding parse-state
          **/
-        virtual gf::parser::ParseState* parse(const std::string& phrase) const throw (ParseException);
+        virtual gf::parser::ParseState* parse(const std::string& phrase) const throw (ParseException, UnknownCategoryException);
         
         /**
          * Parses the empty string
          * (usefull for completion)
          * @return the corresponding parse-state
          **/
-        virtual gf::parser::ParseState* parse() const throw (ParseException);
+        virtual gf::parser::ParseState* parse() const throw (ParseException, UnknownCategoryException);
 
     };
     
