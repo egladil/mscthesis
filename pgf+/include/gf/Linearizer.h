@@ -49,12 +49,12 @@ namespace gf {
          * constructs the l-productions of the concrete syntax for
          * a given language
          **/
-        virtual MapStrMapIntSP getLProductions() const throw (gf::LinearizerException);
+        MapStrMapIntSP getLProductions() const throw (gf::LinearizerException);
         
         /**
          * aligns the indexes for the l-productions
          **/
-        virtual MapStrMapIntSP linIndex(const MapIntSP& productions) const;
+        MapStrMapIntSP linIndex(const MapIntSP& productions) const;
         
         /** This function computes the list of abstract function corresponding to
          * a given production. This is easy for standard productions but less for
@@ -62,61 +62,61 @@ namespace gf {
          * @param p the production
          * @param productions ???
          **/
-        virtual std::vector<std::string> getFunctions(gf::reader::Production* production, const MapIntSP& productions) const;
+        std::vector<std::string> getFunctions(gf::reader::Production* production, const MapIntSP& productions) const;
         
         /**
          * checks if index is the index of a literal or a valid set of productions
          **/
-        virtual bool conditionProd(uint32_t index, const MapIntSP& productions) const;
+        bool conditionProd(uint32_t index, const MapIntSP& productions) const;
         
         /**
          * filters a set of productions according to filterRule
          **/
-        virtual SetProd filterProdSet1(const MapIntSP& productions, const SetProd& set) const;
+        SetProd filterProdSet1(const MapIntSP& productions, const SetProd& set) const;
         
         /**
          * filters an IntMap of productions according to filterProdsSet1
          **/
-        virtual MapIntSP filterProductions(const MapIntSP& productions0, const MapIntSP& productions) const;
+        MapIntSP filterProductions(const MapIntSP& productions0, const MapIntSP& productions) const;
         
         /**
          * checks if a production satisfies conditionProd recursively
          **/
-        virtual bool filterRule(const MapIntSP& productions, gf::reader::Production* production) const;
+        bool filterRule(const MapIntSP& productions, gf::reader::Production* production) const;
         
         /**
          * checks if a production just has a variable argument
          **/
-        virtual bool isHoProduction(gf::reader::Production* production) const;
+        bool isHoProduction(gf::reader::Production* production) const;
         
         /**
          * gets list of forest ids from the categories in ho_cats
          **/
-        virtual std::set<uint32_t> getHoFIds() const;
+        std::set<uint32_t> getHoFIds() const;
         
         /**
          * get all names of types from Concrete
          **/
-        virtual std::set<std::string> getHoCategories() const;
+        std::set<std::string> getHoCategories() const;
         
         /**
          * gets the types from the hypotheses of a type
          **/
-        virtual std::vector<std::string> getHypoArgsOfType(gf::reader::Type* type) const;
+        std::vector<std::string> getHypoArgsOfType(gf::reader::Type* type) const;
         
         /**
          * flattens a bracketed token
          **/
-        virtual std::vector<std::string> untoken(gf::linearizer::BracketedToken* bt, const std::string& after) const;
+        std::vector<std::string> untoken(gf::linearizer::BracketedToken* bt, const std::string& after) const;
         
         /**
          * flattens the result of the linearization
          **/
-        virtual std::vector<std::string> renderLin(gf::linearizer::LinTriple* triple) const;
+        std::vector<std::string> renderLin(gf::linearizer::LinTriple* triple) const;
         
-        virtual std::vector<std::vector<std::string> > renderAllLins(const std::vector<gf::linearizer::LinTriple*>& triples) const;
+        std::vector<std::vector<std::string> > renderAllLins(const std::vector<gf::linearizer::LinTriple*>& triples) const;
         
-        virtual std::vector<gf::linearizer::LinTriple*> linearize(const Tree* tree) const throw (gf::LinearizerException);
+        std::vector<gf::linearizer::LinTriple*> linearize(const Tree* tree) const throw (gf::LinearizerException);
         
         /**
          * main linearization function
@@ -127,7 +127,7 @@ namespace gf {
          * @param tree is the tree to linearize
          * @return all the possible linearized tuples for this tree.
          **/
-        virtual std::vector<gf::linearizer::LinTriple*> lin0(std::vector<std::string>& xs, const std::vector<std::string>& ys, gf::linearizer::CncType* mb_cty, uint32_t mb_fid, const Tree* tree) const throw (gf::LinearizerException);
+        std::vector<gf::linearizer::LinTriple*> lin0(std::vector<std::string>& xs, const std::vector<std::string>& ys, gf::linearizer::CncType* mb_cty, uint32_t mb_fid, const Tree* tree) const throw (gf::LinearizerException);
         
         /**
          * intermediate linearization for complex expressions
@@ -145,73 +145,73 @@ namespace gf {
          * @param es the argument of the function to linearize
          * @return All the possible linearization for the application of f to es
          **/
-        virtual std::vector<gf::linearizer::LinTriple*> apply(const std::vector<std::string>& xs, gf::linearizer::CncType* mb_cty, uint32_t n_fid, const std::string& function, const std::vector<const Tree*>& trees) const throw (gf::LinearizerException);
+        std::vector<gf::linearizer::LinTriple*> apply(const std::vector<std::string>& xs, gf::linearizer::CncType* mb_cty, uint32_t n_fid, const std::string& function, const std::vector<const Tree*>& trees) const throw (gf::LinearizerException);
         
-        virtual std::vector<gf::linearizer::AppResult*> getApps(const MapIntSP& productions, gf::linearizer::CncType* mb_cty, const std::string& function) const throw (gf::LinearizerException);
+        std::vector<gf::linearizer::AppResult*> getApps(const MapIntSP& productions, gf::linearizer::CncType* mb_cty, const std::string& function) const throw (gf::LinearizerException);
         
-        virtual std::vector<gf::linearizer::AppResult*> toApp(gf::linearizer::CncType* cty, gf::reader::Production* production, const std::string& function, const MapIntSP& productions) const throw (gf::LinearizerException);
+        std::vector<gf::linearizer::AppResult*> toApp(gf::linearizer::CncType* cty, gf::reader::Production* production, const std::string& function, const MapIntSP& productions) const throw (gf::LinearizerException);
         
         /**
          * computes the types of the arguments of a function type
          **/
-        virtual std::vector<std::string> catSkeleton(gf::reader::Type* type) const;
+        std::vector<std::string> catSkeleton(gf::reader::Type* type) const;
         
         /**
          * creates a simple vector of vectors of bracketed tokens containing a string value
          **/
-        virtual VVBracketedToken mkVVBracketedToken(const std::string& str) const;
+        VVBracketedToken mkVVBracketedToken(const std::string& str) const;
         
         /**
          * computes the sequence of bracketed tokens associated to a symbol
          **/
-        virtual VBracketedToken compute(gf::reader::Symbol* symbol, const std::vector<gf::linearizer::CncType*>& cncTypes, const VVVBracketedToken& linTables) const;
+        VBracketedToken compute(gf::reader::Symbol* symbol, const std::vector<gf::linearizer::CncType*>& cncTypes, const VVVBracketedToken& linTables) const;
         
         /**
          * retrieves a sequence of bracketed tokens from an intermediate result of the linearization
          * according to 2 indices from a production
          **/
-        virtual VBracketedToken getArg(uint32_t d, uint32_t r, const std::vector<gf::linearizer::CncType*>& cncTypes, const VVVBracketedToken& linTables) const;
+        VBracketedToken getArg(uint32_t d, uint32_t r, const std::vector<gf::linearizer::CncType*>& cncTypes, const VVVBracketedToken& linTables) const;
         
         /**
          * computes a sequence of bracketed tokens from the sequence of symbols of a concrete function
          **/
-        virtual VBracketedToken computeSequence(gf::reader::Sequence* sequence, const std::vector<gf::linearizer::CncType*>& cncTypes, const VVVBracketedToken& linTables) const;
+        VBracketedToken computeSequence(gf::reader::Sequence* sequence, const std::vector<gf::linearizer::CncType*>& cncTypes, const VVVBracketedToken& linTables) const;
         
         /**
          * shuffles the results of of the intermediate linearization,
          * for generating all the possible combinations
          **/
-        virtual std::vector<gf::linearizer::RezDesc*> descend(uint32_t n_fid, std::list<gf::linearizer::CncType*>& cncTypes, std::list<const Tree*>& trees, const std::vector<std::string>& xs) const throw (gf::LinearizerException);
+        std::vector<gf::linearizer::RezDesc*> descend(uint32_t n_fid, std::list<gf::linearizer::CncType*>& cncTypes, std::list<const Tree*>& trees, const std::vector<std::string>& xs) const throw (gf::LinearizerException);
         
         /**
          * checks if a production is application production
          **/
-        virtual bool isApplication(gf::reader::Production* production) const;
+        bool isApplication(gf::reader::Production* production) const;
         
         /**
          * checks if an integer is the index of an integer literal
          **/
-        virtual bool isLiteralInt(int32_t i) const;
+        bool isLiteralInt(int32_t i) const;
         
         /**
          * checks if an integer is the index of a string literal
          **/
-        virtual bool isLiteralString(int32_t i) const;
+        bool isLiteralString(int32_t i) const;
         
         /**
          * checks if an integer is the index of a float literal
          **/
-        virtual bool isLiteralFloat(int32_t i) const;
+        bool isLiteralFloat(int32_t i) const;
         
         /**
          * checks if an integer is the index of a variable literal
          **/
-        virtual bool isLiteralVar(int32_t i) const;
+        bool isLiteralVar(int32_t i) const;
         
         /**
          * checks if an integer is the index of a literal
          **/
-        virtual bool isLiteral(int32_t i) const;
+        bool isLiteral(int32_t i) const;
         
         
     public:
