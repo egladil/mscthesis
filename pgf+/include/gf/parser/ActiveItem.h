@@ -31,6 +31,13 @@ namespace gf {
             ActiveItem(uint32_t begin, uint32_t category, gf::reader::CncFun* cncFun, const std::vector<uint32_t>& domain, uint32_t constituent, uint32_t position);
             virtual ~ActiveItem();
             
+            uint32_t getBegin() const;
+            uint32_t getCategory() const;
+            gf::reader::CncFun* getFunction() const;
+            const std::vector<uint32_t>& getDomain() const;
+            uint32_t getConstituent() const;
+            uint32_t getPosition() const;
+            
             virtual gf::reader::Symbol* nextSymbol() const;
 
             virtual bool hasNextSymbol() const;
