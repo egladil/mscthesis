@@ -11,7 +11,6 @@
 
 #include <stdint.h>
 #include <map>
-#include <multimap>
 #include <vector>
 #include <gf/RefBase.h>
 #include <gf/parser/ActiveItem.h>

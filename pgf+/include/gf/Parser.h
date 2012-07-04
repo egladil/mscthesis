@@ -12,7 +12,7 @@
 #include <string>
 #include <vector>
 #include <gf/PGF.h>
-#include <gf/ParseException>
+#include <gf/ParseException.h>
 #include <gf/RefBase.h>
 #include <gf/UnknownLanguageException.h>
 #include <gf/parser/ParseState.h>
