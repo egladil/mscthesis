@@ -16,6 +16,7 @@
 #include <set>
 
 #include <gf/RefBase.h>
+#include <gf/UnknownCategoryException.h>
 #include <gf/reader/CncCat.h>
 #include <gf/reader/CncFun.h>
 #include <gf/reader/Production.h>
@@ -56,7 +57,7 @@ namespace gf {
              * @return the CncCat object
              * @throws gf::UnknownCategoryException if the category is unknown
              **/
-            virtual CncCat* concreteCat(const std::string& absCat) const;
+            virtual CncCat* concreteCat(const std::string& absCat) const throw (gf::UnknownCategoryException);
             
             virtual const std::vector<Sequence*>& getSequences() const;
             virtual const std::vector<CncFun*>& getCncFuns() const;

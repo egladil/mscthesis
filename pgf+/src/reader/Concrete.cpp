@@ -42,14 +42,7 @@ namespace gf {
             return name;
         }
         
-        /**
-         * returns the concretes categories (forest indices) corresponding to the
-         * given abstract category.
-         * @param absCat the name of the abstract category
-         * @return the CncCat object
-         * @throws gf::UnknownCategoryException if the category is unknown
-         **/
-        CncCat* Concrete::concreteCat(const std::string& absCat) const {
+        CncCat* Concrete::concreteCat(const std::string& absCat) const throw (gf::UnknownCategoryException) {
             std::map<std::string, CncCat*>::const_iterator it = cncCats.find(absCat);
             if (it == cncCats.end()) {
                 throw UnknownCategoryException(absCat);
