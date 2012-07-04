@@ -24,6 +24,8 @@ namespace gf {
             virtual ~IMVariable();
             
             virtual const std::string& getCId() const;
+            
+            virtual gf::Tree* toAbstract() const;
         };
         
     }

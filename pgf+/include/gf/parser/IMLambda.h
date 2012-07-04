@@ -30,6 +30,8 @@ namespace gf {
             
             virtual const std::vector<std::pair<bool, std::string> >& getVariables() const;
             virtual IMTree* getBody() const;
+            
+            virtual gf::Tree* toAbstract() const;
         };
         
     }

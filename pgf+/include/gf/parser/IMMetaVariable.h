@@ -24,6 +24,8 @@ namespace gf {
             virtual ~IMMetaVariable();
             
             virtual uint32_t getId() const;
+            
+            virtual gf::Tree* toAbstract() const;
         };
         
     }

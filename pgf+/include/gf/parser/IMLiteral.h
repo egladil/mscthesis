@@ -24,6 +24,8 @@ namespace gf {
             virtual ~IMLiteral();
             
             virtual const std::string& getValue() const;
+            
+            virtual gf::Tree* toAbstract() const;
         };
         
     }

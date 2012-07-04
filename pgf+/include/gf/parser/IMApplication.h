@@ -27,6 +27,8 @@ namespace gf {
             
             virtual const std::string& getFunction() const;
             virtual const std::vector<IMTree*>& getArguments() const;
+            
+            virtual gf::Tree* toAbstract() const;
         };
         
     }
