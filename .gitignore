@@ -1,6 +1,6 @@
 missing.txt
 .DS_Store
-*.pgf
+/grammar/*.pgf
 *.gfo
 _grph.dot
 _grph.png
