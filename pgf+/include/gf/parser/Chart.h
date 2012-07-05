@@ -13,10 +13,10 @@
 #include <map>
 #include <set>
 #include <vector>
+#include <gf/ParseException.h>
 #include <gf/RefBase.h>
 #include <gf/reader/ApplProduction.h>
 #include <gf/reader/CncFun.h>
-#include <gf/reader/CoerceProduction.h>
 #include <gf/reader/Production.h>
 
 namespace gf {
@@ -31,6 +31,8 @@ namespace gf {
             
             std::vector<gf::reader::ApplProduction*> uncoerce(gf::reader::Production* production) const;
             
+            std::vector<uint32_t> mkCategoryBookKey(uint32_t oldCat, uint32_t cons, uint32_t begin, uint32_t end) const;
+            
         public:
             Chart(uint32_t nextCategory);
             virtual ~Chart();
@@ -43,7 +45,7 @@ namespace gf {
             virtual uint32_t getFreshCategory(uint32_t oldCat, uint32_t cons, uint32_t begin, uint32_t end);
             
             virtual bool hasCategory(uint32_t oldCat, uint32_t cons, uint32_t begin, uint32_t end) const;
-            virtual uint32_t getCategory(uint32_t oldCat, uint32_t cons, uint32_t begin, uint32_t end) const;
+            virtual uint32_t getCategory(uint32_t oldCat, uint32_t cons, uint32_t begin, uint32_t end) const throw (gf::ParseException);
 
             virtual uint32_t generateFreshCategory(uint32_t oldCat, uint32_t cons, uint32_t begin, uint32_t end);
             
