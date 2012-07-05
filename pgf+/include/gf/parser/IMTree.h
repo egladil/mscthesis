@@ -21,6 +21,13 @@
 namespace gf {
     namespace parser {
         
+        class IMApplication;
+        class IMLambda;
+        class IMLiteral;
+        class IMMetaVariable;
+        class IMVariable;
+        
+        
         class IMTree : public RefBase {
         private:
             
@@ -38,6 +45,12 @@ namespace gf {
             static std::vector<IMTree*> mkTreesForCat(uint32_t cat, Chart* chart);
             static std::vector<IMTree*> mkTreesForProduction(gf::reader::ApplProduction* production, Chart* chart);
             static std::vector<std::vector<IMTree*> > listMixer(const std::vector<std::vector<IMTree*> >& src);
+            
+            friend class IMApplication;
+            friend class IMLambda;
+            friend class IMLiteral;
+            friend class IMMetaVariable;
+            friend class IMVariable;
         };
         
     }
