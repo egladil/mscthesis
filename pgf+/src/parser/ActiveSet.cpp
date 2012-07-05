@@ -55,6 +55,8 @@ namespace gf {
             
             for (std::multimap<uint32_t, ActiveItemInt>::const_iterator it = multi->second.begin(); it != multi->second.end(); it++) {
                 ActiveItemIntInt val = {it->second._1, it->second._2, it->first};
+                
+                val._1->addReference();
                 ret.push_back(val);
             }
             
@@ -72,8 +74,14 @@ namespace gf {
             }
             
             range = multi->second.equal_range(cons);
+#ifdef DEBUG
+            ActiveItemInt x = multi->second.begin()->second;
+#endif
             for (std::multimap<uint32_t, ActiveItemInt>::const_iterator it = range.first; it != range.second; it++) {
-                ret.push_back(it->second);
+                ActiveItemInt val = it->second;
+                
+                val._1->addReference();
+                ret.push_back(val);
             }
             
             return ret;

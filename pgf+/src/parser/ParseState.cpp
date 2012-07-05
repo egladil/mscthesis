@@ -17,7 +17,33 @@ namespace gf {
         
         ParseState::ParseState(gf::reader::Concrete* grammar, const std::string& startcat) throw (gf::UnknownCategoryException)
             : grammar(grammar), startcat(grammar->concreteCat(startcat)), chart(new Chart(100)), trie(new ParseTrie()), position(0) {
+            std::vector<gf::reader::Production*> productions;
             this->startcat->addReference();
+                
+            productions = grammar->getProductions();
+            for (std::vector<gf::reader::Production*>::const_iterator it = productions.begin(); it != productions.end(); it++) {
+                gf::reader::Production* prod = *it;
+                
+                prod->addReference();
+                chart->addProduction(prod);
+            }
+                
+            for (uint32_t id = this->startcat->getFirstId(); id <= this->startcat->getLastId(); id++) {
+                std::vector<gf::reader::ApplProduction*> prods;
+                
+                prods = chart->getProductions(id);
+                for (std::vector<gf::reader::ApplProduction*>::iterator prod = prods.begin(); prod != prods.end(); prod++) {
+                    gf::reader::CncFun* fun;
+                    
+                    fun = (*prod)->getFunction();
+                    fun->addReference();
+                    
+                    agenda.push_back(new ActiveItem(0, id, fun, (*prod)->getDomain(), 0, 0));
+                }
+                
+            }
+            
+            compute();
         }
         
         ParseState::~ParseState() {
@@ -32,9 +58,13 @@ namespace gf {
             active.push_back(new ActiveSet());
             
             while (!agenda.empty()) {
-                processActiveItem(agenda.back());
-                gf::release(agenda.back());
+                ActiveItem* item;
+                
+                item = agenda.back();
                 agenda.pop_back();
+                
+                processActiveItem(item);
+                gf::release(item);
             }
         }
         
@@ -43,6 +73,7 @@ namespace gf {
                 if (chart->hasCategory(item->getCategory(), item->getConstituent(), item->getBegin(), position)) {
                     uint32_t cat;
                     std::vector<ActiveSet::ActiveItemIntInt> oldActive;
+                    gf::reader::CncFun* fun;
                     
                     cat = chart->getCategory(item->getCategory(), item->getConstituent(), item->getBegin(), position);
                     oldActive = active.at(position)->get(cat);
@@ -57,10 +88,17 @@ namespace gf {
                         agenda.push_back(new ActiveItem(position, cat, fun, item->getDomain(), r, 0));
                     }
                     
-                    chart->addProduction(cat, item->getFunction(), item->getDomain());
+                    for (std::vector<ActiveSet::ActiveItemIntInt>::iterator it = oldActive.begin(); it != oldActive.end(); it++) {
+                        gf::release(it->_1);
+                    }
+                    
+                    fun = item->getFunction();
+                    fun->addReference();
+                    chart->addProduction(cat, fun, item->getDomain());
                 } else {
                     uint32_t cat;
                     std::vector<ActiveSet::ActiveItemInt> oldActive;
+                    gf::reader::CncFun* fun;
                     
                     cat = chart->generateFreshCategory(item->getCategory(), item->getConstituent(), item->getBegin(), position);
                     oldActive = active.at(item->getBegin())->get(item->getCategory(), item->getConstituent());
@@ -80,7 +118,13 @@ namespace gf {
                         agenda.push_back(new ActiveItem(ip->getBegin(), ip->getCategory(), fun, domain, ip->getConstituent(), ip->getPosition() + 1));
                     }
                     
-                    chart->addProduction(cat, item->getFunction(), item->getDomain());
+                    for (std::vector<ActiveSet::ActiveItemInt>::iterator it = oldActive.begin(); it != oldActive.end(); it++) {
+                        gf::release(it->_1);
+                    }
+                    
+                    fun = item->getFunction();
+                    fun->addReference();
+                    chart->addProduction(cat, fun, item->getDomain());
                 }
             } else {
                 gf::reader::Symbol* next;
@@ -115,6 +159,8 @@ namespace gf {
                     cat = item->getDomain().at(arg->getArg());
                     
                     assert(position < active.size());
+                    
+                    item->addReference();
                     if (active.at(position)->add(cat, arg->getCons(), item, arg->getArg())) {
                         std::vector<gf::reader::ApplProduction*> prods;
                         
@@ -131,6 +177,8 @@ namespace gf {
                         for (std::vector<gf::reader::ApplProduction*>::iterator it = prods.begin(); it != prods.end(); it++) {
                             gf::release(*it);
                         }
+                    } else {
+                        item->release();
                     }
                     
                     if (chart->hasCategory(cat, arg->getCons(), position, position)) {
