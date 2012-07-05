@@ -21,6 +21,9 @@ namespace gf {
             std::vector<std::pair<bool, std::string> > variables;
             IMTree* body;
             
+        protected:
+            virtual gf::Tree* toAbstract(const std::vector<std::string>& args) const;
+            
         public:
             /**
              * The list of variables must be non-empty.
@@ -30,8 +33,6 @@ namespace gf {
             
             virtual const std::vector<std::pair<bool, std::string> >& getVariables() const;
             virtual IMTree* getBody() const;
-            
-            virtual gf::Tree* toAbstract() const;
         };
         
     }

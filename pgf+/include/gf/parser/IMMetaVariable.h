@@ -19,13 +19,14 @@ namespace gf {
         private:
             uint32_t id;
             
+        protected:
+            virtual gf::Tree* toAbstract(const std::vector<std::string>& args) const;
+            
         public:
             IMMetaVariable(uint32_t id);
             virtual ~IMMetaVariable();
             
             virtual uint32_t getId() const;
-            
-            virtual gf::Tree* toAbstract() const;
         };
         
     }

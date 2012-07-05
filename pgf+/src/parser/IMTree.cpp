@@ -18,6 +18,10 @@ namespace gf {
         IMTree::~IMTree() {
         }
         
+        gf::Tree* IMTree::toAbstract() {
+            return toAbstract(std::vector<std::string>());
+        }
+        
         std::vector<IMTree*> IMTree::buildTrees(Chart* chart, gf::reader::CncCat* cncCat, uint32_t length) throw (gf::ParseException) {
             std::vector<IMTree*> ret;
             

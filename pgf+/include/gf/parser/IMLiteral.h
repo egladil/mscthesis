@@ -19,13 +19,14 @@ namespace gf {
         private:
             std::string value;
             
+        protected:
+            virtual gf::Tree* toAbstract(const std::vector<std::string>& args) const;
+            
         public:
             IMLiteral(const std::string& value);
             virtual ~IMLiteral();
             
             virtual const std::string& getValue() const;
-            
-            virtual gf::Tree* toAbstract() const;
         };
         
     }

@@ -21,14 +21,15 @@ namespace gf {
             std::string fun;
             std::vector<IMTree*> args;
             
+        protected:
+            virtual gf::Tree* toAbstract(const std::vector<std::string>& args) const;
+            
         public:
             IMApplication(const std::string& fun, const std::vector<IMTree*>& args);
             virtual ~IMApplication();
             
             virtual const std::string& getFunction() const;
             virtual const std::vector<IMTree*>& getArguments() const;
-            
-            virtual gf::Tree* toAbstract() const;
         };
         
     }

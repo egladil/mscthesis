@@ -9,6 +9,7 @@
 #ifndef _IMTree_h
 #define _IMTree_h
 
+#include <string>
 #include <vector>
 #include <gf/ParseException.h>
 #include <gf/RefBase.h>
@@ -26,10 +27,12 @@ namespace gf {
         protected:
             IMTree();
             
+            virtual gf::Tree* toAbstract(const std::vector<std::string>& args) const = 0;
+            
         public:
             virtual ~IMTree();
             
-            virtual gf::Tree* toAbstract() const = 0;
+            virtual gf::Tree* toAbstract();
             
             static std::vector<IMTree*> buildTrees(Chart* chart, gf::reader::CncCat* cncCat, uint32_t length) throw (gf::ParseException);
             static std::vector<IMTree*> mkTreesForCat(uint32_t cat, Chart* chart);
