@@ -20,6 +20,8 @@
 #include <gf/reader/Hypo.h>
 #include <gf/reader/Type.h>
 #include <gf/reader/WeightedIdent.h>
+#include <gf/trees/Absyn.H>
+#include <gf/trees/Parser.H>
 
 static inline std::string getAppDir() {
     Dl_info info;
@@ -83,6 +85,33 @@ static inline gf::reader::AbsCat* mkCategory(const std::string& name, const std:
     }
     
     return new gf::reader::AbsCat(name, std::vector<gf::reader::Hypo*>(), funs);
+}
+
+
+static inline gf::PGF* pgfWithLanguageGuaranteed(const std::string& file, const std::string& language) {
+    std::string filename = getAppDir() + file;
+    std::set<std::string> languages;
+    gf::PGF* pgf = NULL;
+    
+    languages.insert(language);
+    
+    try {
+        pgf = gf::PGFBuilder::fromFile(filename, languages);
+    } catch (gf::Exception& ex) {
+        EXPECT_EQ("", ex.toString());
+        EXPECT_EQ(0, 1);
+        return NULL;
+    }
+    
+    EXPECT_NE(pgf, (gf::PGF*) NULL);
+    
+    EXPECT_TRUE(pgf->hasConcrete(language));
+    
+    return pgf;
+}
+
+static inline gf::Tree* parseTree(const std::string& str) {
+    return gf::pTree(str.c_str());
 }
 
 

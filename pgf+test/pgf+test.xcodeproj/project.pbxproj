@@ -12,6 +12,7 @@
 		0A1D1F59159B475D0074D642 /* Foods.pgf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0A1D1F56159B47340074D642 /* Foods.pgf */; };
 		0A1D1F5A159B475D0074D642 /* Phrasebook.pgf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0A1D1F57159B47340074D642 /* Phrasebook.pgf */; };
 		0A1D1F5B159B475D0074D642 /* PhrasebookIndexed.pgf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0A1D1F58159B47350074D642 /* PhrasebookIndexed.pgf */; };
+		0A9C64FB15A5DD49005B2989 /* FoodsParseTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A9C64FA15A5DD49005B2989 /* FoodsParseTest.cpp */; };
 		0ACD4C20159CA94100878123 /* FoodsLinearizeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD4C1F159CA94100878123 /* FoodsLinearizeTest.cpp */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		0A1D1F56159B47340074D642 /* Foods.pgf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Foods.pgf; sourceTree = "<group>"; };
 		0A1D1F57159B47340074D642 /* Phrasebook.pgf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Phrasebook.pgf; sourceTree = "<group>"; };
 		0A1D1F58159B47350074D642 /* PhrasebookIndexed.pgf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PhrasebookIndexed.pgf; sourceTree = "<group>"; };
+		0A9C64FA15A5DD49005B2989 /* FoodsParseTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FoodsParseTest.cpp; sourceTree = "<group>"; };
 		0ACD4C1F159CA94100878123 /* FoodsLinearizeTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FoodsLinearizeTest.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +98,7 @@
 				0A1D1F53159B41430074D642 /* testutil.h */,
 				0A1D1F54159B46800074D642 /* IndexedPGFTest.cpp */,
 				0ACD4C1F159CA94100878123 /* FoodsLinearizeTest.cpp */,
+				0A9C64FA15A5DD49005B2989 /* FoodsParseTest.cpp */,
 			);
 			name = "pgf+test";
 			path = "../pgf+/test";
@@ -179,6 +182,7 @@
 			files = (
 				0A1D1F55159B46800074D642 /* IndexedPGFTest.cpp in Sources */,
 				0ACD4C20159CA94100878123 /* FoodsLinearizeTest.cpp in Sources */,
+				0A9C64FB15A5DD49005B2989 /* FoodsParseTest.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
