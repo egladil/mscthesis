@@ -94,6 +94,8 @@ namespace gf {
                     tmp2 = uncoerce(*it);
                     ret.insert(ret.end(), tmp2.begin(), tmp2.end());
                 }
+                
+                return ret;
             } else {
                 assert(0);
             }
