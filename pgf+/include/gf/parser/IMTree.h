@@ -10,6 +10,7 @@
 #define _IMTree_h
 
 #include <vector>
+#include <gf/ParseException.h>
 #include <gf/RefBase.h>
 #include <gf/parser/Chart.h>
 #include <gf/reader/ApplProduction.h>
@@ -30,7 +31,7 @@ namespace gf {
             
             virtual gf::Tree* toAbstract() const = 0;
             
-            static std::vector<IMTree*> buildTrees(Chart* chart, gf::reader::CncCat* cncCat, uint32_t length);
+            static std::vector<IMTree*> buildTrees(Chart* chart, gf::reader::CncCat* cncCat, uint32_t length) throw (gf::ParseException);
             static std::vector<IMTree*> mkTreesForCat(uint32_t cat, Chart* chart);
             static std::vector<IMTree*> mkTreesForProduction(gf::reader::ApplProduction* production, Chart* chart);
             static std::vector<std::vector<IMTree*> > listMixer(const std::vector<std::vector<IMTree*> >& src);

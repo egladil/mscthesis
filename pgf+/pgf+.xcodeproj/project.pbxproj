@@ -63,6 +63,7 @@
 		0A9C64E915A48CC5005B2989 /* ParseTrie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A9C64E815A48CC5005B2989 /* ParseTrie.cpp */; };
 		0A9C64EB15A5A295005B2989 /* Chart.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A9C64EA15A5A295005B2989 /* Chart.cpp */; };
 		0A9C64ED15A5AED7005B2989 /* ActiveSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A9C64EC15A5AED7005B2989 /* ActiveSet.cpp */; };
+		0A9C64EF15A5B416005B2989 /* IMTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A9C64EE15A5B416005B2989 /* IMTree.cpp */; };
 		0ACD4C24159DA6A700878123 /* AppResult.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD4C23159DA6A700878123 /* AppResult.cpp */; };
 		0ACD4C26159DA78800878123 /* Bracket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD4C25159DA78800878123 /* Bracket.cpp */; };
 		0ACD4C28159DA92000878123 /* BracketedToken.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD4C27159DA92000878123 /* BracketedToken.cpp */; };
@@ -140,6 +141,7 @@
 		0A9C64E815A48CC5005B2989 /* ParseTrie.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ParseTrie.cpp; sourceTree = "<group>"; };
 		0A9C64EA15A5A295005B2989 /* Chart.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Chart.cpp; sourceTree = "<group>"; };
 		0A9C64EC15A5AED7005B2989 /* ActiveSet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActiveSet.cpp; sourceTree = "<group>"; };
+		0A9C64EE15A5B416005B2989 /* IMTree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IMTree.cpp; sourceTree = "<group>"; };
 		0ACD4C23159DA6A700878123 /* AppResult.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppResult.cpp; sourceTree = "<group>"; };
 		0ACD4C25159DA78800878123 /* Bracket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bracket.cpp; sourceTree = "<group>"; };
 		0ACD4C27159DA92000878123 /* BracketedToken.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BracketedToken.cpp; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 				0A9C64E615A489B5005B2989 /* ActiveItem.cpp */,
 				0A9C64EC15A5AED7005B2989 /* ActiveSet.cpp */,
 				0A9C64EA15A5A295005B2989 /* Chart.cpp */,
+				0A9C64EE15A5B416005B2989 /* IMTree.cpp */,
 				0A9C64E415A472A7005B2989 /* ParseState.cpp */,
 				0A9C64E815A48CC5005B2989 /* ParseTrie.cpp */,
 			);
@@ -429,6 +432,7 @@
 				0A9C64E915A48CC5005B2989 /* ParseTrie.cpp in Sources */,
 				0A9C64EB15A5A295005B2989 /* Chart.cpp in Sources */,
 				0A9C64ED15A5AED7005B2989 /* ActiveSet.cpp in Sources */,
+				0A9C64EF15A5B416005B2989 /* IMTree.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
