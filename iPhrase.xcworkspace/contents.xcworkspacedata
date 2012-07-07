@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:pgf+/pgf+.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:pgf+test/pgf+test.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:iPhrase/iPhrase.xcodeproj">
+   </FileRef>
+</Workspace>
