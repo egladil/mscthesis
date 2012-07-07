@@ -9,28 +9,86 @@
 #import "FirstViewController.h"
 #import "grammar.h"
 
+#include <gf/stringutil.h>
 #include <gf/Parser.h>
 #include <gf/trees/Printer.H>
 
-gf::Parser* parser = NULL;
+static gf::Parser* parser = NULL;
+
+static std::set<std::string> predictCache;
+static std::vector<std::string> tokenCache;
+static gf::parser::ParseState* psCache = NULL;
+static bool errorCache = false;
 
 static std::string predict(const std::string& current) {
-    gf::parser::ParseState* ps = NULL;
-    std::set<std::string> predict;
+    std::vector<std::string> tokens;
+    bool restart;
+    std::string last;
     std::string ret;
     
-    try {
-        ps = parser->parse(current);
-        predict = ps->predict();
-    } catch (gf::Exception& e) {
-        gf::release(ps);
-        return "Error predicting: " + e.toString();
-    }
-    gf::release(ps);
+    tokens = gf::split(current, ' ');
     
-    for (std::set<std::string>::const_iterator it = predict.begin(); it != predict.end(); it++) {
-        ret+= (it == predict.begin() ? "" : "\n") + *it;
+    restart = false;
+    if (psCache == NULL || errorCache || tokens.size() < tokenCache.size()) {
+        restart = true;
+    } else {
+        for (int i = 0; i < tokenCache.size(); i++) {
+            if (tokens.at(i) != tokenCache.at(i)) {
+                restart = true;
+                break;
+            }
+        }
     }
+    
+    if (restart) {
+        gf::release(psCache);
+        try {
+            psCache = parser->parse();
+        } catch (gf::Exception& e) {
+            gf::release(psCache);
+            errorCache = true;
+            return "Error creating parser state: " + e.toString();
+        }
+        tokenCache.clear();
+    }
+    
+    if (restart || current.empty() || current.at(current.size() - 1) == ' ') {
+        for (std::vector<std::string>::const_iterator it = tokens.begin() + tokenCache.size(); it != tokens.end(); it++) {
+            try {
+                if (!psCache->scan(*it)) {
+                    break;
+                }
+            } catch (gf::Exception& e) {
+                errorCache = true;
+                return "Error scanning: " + e.toString();
+            }
+            
+            tokenCache.push_back(*it);
+        }
+        
+        if (tokenCache.size() < tokens.size() - 1) {
+            errorCache = true;
+            return "Parse error on token: " + tokens.at(tokenCache.size());
+        }
+        
+        try {
+            predictCache = psCache->predict();
+        } catch (gf::Exception& e) {
+            errorCache = true;
+            return "Error predicting: " + e.toString();
+        }
+    }
+    
+    last = tokenCache.size() < tokens.size() ? tokens.back() : "";
+    for (std::set<std::string>::const_iterator it = predictCache.begin(); it != predictCache.end(); it++) {
+        std::string word = *it;
+        
+        if (last.empty() || word.substr(0, last.size()) == last) {
+            ret+= *it + "\n";
+        }
+    }
+    
+    errorCache = false;
     
     return ret;
 }
@@ -105,6 +163,7 @@ static std::string trees(const std::string& current) {
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
     
+    gf::release(psCache);
     gf::release(parser);
 }
 

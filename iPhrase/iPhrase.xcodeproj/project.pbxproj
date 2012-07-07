@@ -54,7 +54,7 @@
 		0A8398A215A8427600875849 /* icon57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon57x57.png; sourceTree = "<group>"; };
 		0A8398A415A8427C00875849 /* icon114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon114x114.png; sourceTree = "<group>"; };
 		0A8398A615A8428300875849 /* icon72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon72x72.png; sourceTree = "<group>"; };
-		0A8398A815A842A200875849 /* libpgf+ios.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = "libpgf+ios.a"; path = "../pgf+/build/Release-iphoneos/libpgf+ios.a"; sourceTree = "<group>"; };
+		0A8398A815A842A200875849 /* libpgf+ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libpgf+ios.a"; path = "../pgf+/build/Release-iphoneos/libpgf+ios.a"; sourceTree = "<group>"; };
 		0A8398B615A84AC500875849 /* grammar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = grammar.h; sourceTree = "<group>"; };
 		0A8398B715A84ACF00875849 /* grammar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = grammar.cpp; sourceTree = "<group>"; };
 		0A8398B915A84ECD00875849 /* Foods.pgf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Foods.pgf; path = ../JPGF/test/org/grammaticalframework/Foods.pgf; sourceTree = "<group>"; };
@@ -303,6 +303,7 @@
 		0A8398A015A8422600875849 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iPhrase/iPhrase-Prefix.pch";
 				INFOPLIST_FILE = "iPhrase/iPhrase-Info.plist";
@@ -314,6 +315,7 @@
 		0A8398A115A8422600875849 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iPhrase/iPhrase-Prefix.pch";
 				INFOPLIST_FILE = "iPhrase/iPhrase-Info.plist";
@@ -341,6 +343,7 @@
 				0A8398A115A8422600875849 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
