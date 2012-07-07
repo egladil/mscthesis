@@ -10,6 +10,7 @@
 #import "grammar.h"
 
 #include <gf/Parser.h>
+#include <gf/trees/Printer.H>
 
 gf::Parser* parser = NULL;
 
@@ -29,6 +30,32 @@ static std::string predict(const std::string& current) {
     
     for (std::set<std::string>::const_iterator it = predict.begin(); it != predict.end(); it++) {
         ret+= (it == predict.begin() ? "" : "\n") + *it;
+    }
+    
+    return ret;
+}
+
+static std::string trees(const std::string& current) {
+    gf::parser::ParseState* ps = NULL;
+    std::vector<gf::Tree*> trees;
+    std::string ret;
+    
+    try {
+        ps = parser->parse(current);
+        trees = ps->getTrees();
+    } catch (gf::Exception& e) {
+        gf::release(ps);
+        return "Error predicting: " + e.toString();
+    }
+    gf::release(ps);
+    
+    for (std::vector<gf::Tree*>::const_iterator it = trees.begin(); it != trees.end(); it++) {
+        ret+= (it == trees.begin() ? "" : "\n");
+        ret+= gf::PrintAbsyn().print(*it);
+    }
+    
+    for (std::vector<gf::Tree*>::iterator it = trees.begin(); it != trees.end(); it++) {
+        delete *it;
     }
     
     return ret;
@@ -60,7 +87,7 @@ static std::string predict(const std::string& current) {
     pgf->addReference();
     
     try {
-        parser = new gf::Parser(pgf, "FoodsEng");
+        parser = new gf::Parser(pgf, "MountaineeringEng");
     } catch (gf::Exception& e) {
         gf::release(pgf);
         fprintf(stderr, "Error creating parser: %s\n", e.toString().c_str());
@@ -129,7 +156,14 @@ static std::string predict(const std::string& current) {
 }
 
 - (IBAction)inputDone:(id)sender {
-//    [txtOut setText:[NSString stringWithUTF8String:"done"]];
+    std::string input;
+    std::string output;
+    
+    input = [[txtIn text] UTF8String];
+    
+    output = trees(input);
+    
+    [txtOut setText:[NSString stringWithUTF8String:output.c_str()]];
 }
 
 @end

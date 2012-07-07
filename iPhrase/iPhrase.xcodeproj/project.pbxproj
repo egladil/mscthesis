@@ -27,6 +27,7 @@
 		0A8398A915A842A200875849 /* libpgf+ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A8398A815A842A200875849 /* libpgf+ios.a */; };
 		0A8398B815A84ACF00875849 /* grammar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A8398B715A84ACF00875849 /* grammar.cpp */; };
 		0A8398BA15A84ECD00875849 /* Foods.pgf in Resources */ = {isa = PBXBuildFile; fileRef = 0A8398B915A84ECD00875849 /* Foods.pgf */; };
+		0A8398BC15A8577500875849 /* Mountaineering.pgf in Resources */ = {isa = PBXBuildFile; fileRef = 0A8398BB15A8577500875849 /* Mountaineering.pgf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		0A8398B615A84AC500875849 /* grammar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = grammar.h; sourceTree = "<group>"; };
 		0A8398B715A84ACF00875849 /* grammar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = grammar.cpp; sourceTree = "<group>"; };
 		0A8398B915A84ECD00875849 /* Foods.pgf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Foods.pgf; path = ../JPGF/test/org/grammaticalframework/Foods.pgf; sourceTree = "<group>"; };
+		0A8398BB15A8577500875849 /* Mountaineering.pgf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Mountaineering.pgf; path = ../grammar/Mountaineering.pgf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		0A83986815A8422600875849 = {
 			isa = PBXGroup;
 			children = (
+				0A8398BB15A8577500875849 /* Mountaineering.pgf */,
 				0A8398B915A84ECD00875849 /* Foods.pgf */,
 				0A8398A815A842A200875849 /* libpgf+ios.a */,
 				0A8398A615A8428300875849 /* icon72x72.png */,
@@ -201,6 +204,7 @@
 				0A8398A515A8427C00875849 /* icon114x114.png in Resources */,
 				0A8398A715A8428300875849 /* icon72x72.png in Resources */,
 				0A8398BA15A84ECD00875849 /* Foods.pgf in Resources */,
+				0A8398BC15A8577500875849 /* Mountaineering.pgf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
