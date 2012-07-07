@@ -7,31 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A1D1F52159B410C0074D642 /* libpgf+.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1D1F4F159B40FD0074D642 /* libpgf+.a */; };
 		0A1D1F55159B46800074D642 /* IndexedPGFTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1F54159B46800074D642 /* IndexedPGFTest.cpp */; };
 		0A1D1F59159B475D0074D642 /* Foods.pgf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0A1D1F56159B47340074D642 /* Foods.pgf */; };
 		0A1D1F5A159B475D0074D642 /* Phrasebook.pgf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0A1D1F57159B47340074D642 /* Phrasebook.pgf */; };
 		0A1D1F5B159B475D0074D642 /* PhrasebookIndexed.pgf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0A1D1F58159B47350074D642 /* PhrasebookIndexed.pgf */; };
+		0A8398AC15A8431B00875849 /* libpgf+.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A8398AB15A8431B00875849 /* libpgf+.a */; };
 		0A9C64FB15A5DD49005B2989 /* FoodsParseTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A9C64FA15A5DD49005B2989 /* FoodsParseTest.cpp */; };
 		0ACD4C20159CA94100878123 /* FoodsLinearizeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD4C1F159CA94100878123 /* FoodsLinearizeTest.cpp */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		0A1D1F4E159B40FD0074D642 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0A1D1F4A159B40FD0074D642 /* pgf+.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0A1D1E29159496140074D642;
-			remoteInfo = "pgf+";
-		};
-		0A1D1F50159B41040074D642 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0A1D1F4A159B40FD0074D642 /* pgf+.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 0A1D1E28159496140074D642;
-			remoteInfo = "pgf+";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		0A1D1F29159B3DAB0074D642 /* CopyFiles */ = {
@@ -50,12 +33,12 @@
 
 /* Begin PBXFileReference section */
 		0A1D1F2B159B3DAB0074D642 /* pgf+test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "pgf+test"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0A1D1F4A159B40FD0074D642 /* pgf+.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "pgf+.xcodeproj"; path = "../pgf+/pgf+.xcodeproj"; sourceTree = "<group>"; };
 		0A1D1F53159B41430074D642 /* testutil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testutil.h; sourceTree = "<group>"; };
 		0A1D1F54159B46800074D642 /* IndexedPGFTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IndexedPGFTest.cpp; sourceTree = "<group>"; };
 		0A1D1F56159B47340074D642 /* Foods.pgf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Foods.pgf; sourceTree = "<group>"; };
 		0A1D1F57159B47340074D642 /* Phrasebook.pgf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Phrasebook.pgf; sourceTree = "<group>"; };
 		0A1D1F58159B47350074D642 /* PhrasebookIndexed.pgf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PhrasebookIndexed.pgf; sourceTree = "<group>"; };
+		0A8398AB15A8431B00875849 /* libpgf+.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libpgf+.a"; path = "../../../../Library/Developer/Xcode/DerivedData/iPhrase-cixqxmwhopreqhdtkculnizzlmra/Build/Products/Debug/libpgf+.a"; sourceTree = "<group>"; };
 		0A9C64FA15A5DD49005B2989 /* FoodsParseTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FoodsParseTest.cpp; sourceTree = "<group>"; };
 		0ACD4C1F159CA94100878123 /* FoodsLinearizeTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FoodsLinearizeTest.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,7 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A1D1F52159B410C0074D642 /* libpgf+.a in Frameworks */,
+				0A8398AC15A8431B00875849 /* libpgf+.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,7 +58,7 @@
 		0A1D1F20159B3DAA0074D642 = {
 			isa = PBXGroup;
 			children = (
-				0A1D1F4A159B40FD0074D642 /* pgf+.xcodeproj */,
+				0A8398AB15A8431B00875849 /* libpgf+.a */,
 				0A1D1F2E159B3DAB0074D642 /* pgf+test */,
 				0A1D1F2C159B3DAB0074D642 /* Products */,
 			);
@@ -104,14 +87,6 @@
 			path = "../pgf+/test";
 			sourceTree = "<group>";
 		};
-		0A1D1F4B159B40FD0074D642 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0A1D1F4F159B40FD0074D642 /* libpgf+.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,7 +101,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				0A1D1F51159B41040074D642 /* PBXTargetDependency */,
 			);
 			name = "pgf+test";
 			productName = "pgf+test";
@@ -152,28 +126,12 @@
 			mainGroup = 0A1D1F20159B3DAA0074D642;
 			productRefGroup = 0A1D1F2C159B3DAB0074D642 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 0A1D1F4B159B40FD0074D642 /* Products */;
-					ProjectRef = 0A1D1F4A159B40FD0074D642 /* pgf+.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				0A1D1F2A159B3DAB0074D642 /* pgf+test */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		0A1D1F4F159B40FD0074D642 /* libpgf+.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libpgf+.a";
-			remoteRef = 0A1D1F4E159B40FD0074D642 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0A1D1F27159B3DAB0074D642 /* Sources */ = {
@@ -187,14 +145,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		0A1D1F51159B41040074D642 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "pgf+";
-			targetProxy = 0A1D1F50159B41040074D642 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		0A1D1F33159B3DAB0074D642 /* Debug */ = {
@@ -249,7 +199,10 @@
 					"../pgf+/include",
 					"../gtest/gtest-1.6.0/include",
 				);
-				LIBRARY_SEARCH_PATHS = ../gtest/build/lib/.libs;
+				LIBRARY_SEARCH_PATHS = (
+					../gtest/build/lib/.libs,
+					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/iPhrase-cixqxmwhopreqhdtkculnizzlmra/Build/Products/Debug\"",
+				);
 				OTHER_LDFLAGS = (
 					"-lgtest_main",
 					"-lgtest",
@@ -266,7 +219,10 @@
 					"../pgf+/include",
 					"../gtest/gtest-1.6.0/include",
 				);
-				LIBRARY_SEARCH_PATHS = ../gtest/build/lib/.libs;
+				LIBRARY_SEARCH_PATHS = (
+					../gtest/build/lib/.libs,
+					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/iPhrase-cixqxmwhopreqhdtkculnizzlmra/Build/Products/Debug\"",
+				);
 				OTHER_LDFLAGS = (
 					"-lgtest_main",
 					"-lgtest",
