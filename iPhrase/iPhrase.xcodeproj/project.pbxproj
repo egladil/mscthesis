@@ -12,10 +12,10 @@
 		0A83987C15A8422600875849 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A83987B15A8422600875849 /* CoreGraphics.framework */; };
 		0A83988215A8422600875849 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0A83988015A8422600875849 /* InfoPlist.strings */; };
 		0A83988415A8422600875849 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A83988315A8422600875849 /* main.m */; };
-		0A83988815A8422600875849 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A83988715A8422600875849 /* AppDelegate.m */; };
+		0A83988815A8422600875849 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0A83988715A8422600875849 /* AppDelegate.mm */; };
 		0A83988B15A8422600875849 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A83988915A8422600875849 /* MainStoryboard_iPhone.storyboard */; };
 		0A83988E15A8422600875849 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A83988C15A8422600875849 /* MainStoryboard_iPad.storyboard */; };
-		0A83989115A8422600875849 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A83989015A8422600875849 /* FirstViewController.m */; };
+		0A83989115A8422600875849 /* FirstViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0A83989015A8422600875849 /* FirstViewController.mm */; };
 		0A83989315A8422600875849 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A83989215A8422600875849 /* first.png */; };
 		0A83989515A8422600875849 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A83989415A8422600875849 /* first@2x.png */; };
 		0A83989815A8422600875849 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A83989715A8422600875849 /* SecondViewController.m */; };
@@ -25,6 +25,8 @@
 		0A8398A515A8427C00875849 /* icon114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8398A415A8427C00875849 /* icon114x114.png */; };
 		0A8398A715A8428300875849 /* icon72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8398A615A8428300875849 /* icon72x72.png */; };
 		0A8398A915A842A200875849 /* libpgf+ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A8398A815A842A200875849 /* libpgf+ios.a */; };
+		0A8398B815A84ACF00875849 /* grammar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A8398B715A84ACF00875849 /* grammar.cpp */; };
+		0A8398BA15A84ECD00875849 /* Foods.pgf in Resources */ = {isa = PBXBuildFile; fileRef = 0A8398B915A84ECD00875849 /* Foods.pgf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,11 +39,11 @@
 		0A83988315A8422600875849 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0A83988515A8422600875849 /* iPhrase-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iPhrase-Prefix.pch"; sourceTree = "<group>"; };
 		0A83988615A8422600875849 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		0A83988715A8422600875849 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0A83988715A8422600875849 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		0A83988A15A8422600875849 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		0A83988D15A8422600875849 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		0A83988F15A8422600875849 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		0A83989015A8422600875849 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		0A83989015A8422600875849 /* FirstViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FirstViewController.mm; sourceTree = "<group>"; };
 		0A83989215A8422600875849 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		0A83989415A8422600875849 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
 		0A83989615A8422600875849 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
@@ -52,6 +54,9 @@
 		0A8398A415A8427C00875849 /* icon114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon114x114.png; sourceTree = "<group>"; };
 		0A8398A615A8428300875849 /* icon72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon72x72.png; sourceTree = "<group>"; };
 		0A8398A815A842A200875849 /* libpgf+ios.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = "libpgf+ios.a"; path = "../pgf+/build/Release-iphoneos/libpgf+ios.a"; sourceTree = "<group>"; };
+		0A8398B615A84AC500875849 /* grammar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = grammar.h; sourceTree = "<group>"; };
+		0A8398B715A84ACF00875849 /* grammar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = grammar.cpp; sourceTree = "<group>"; };
+		0A8398B915A84ECD00875849 /* Foods.pgf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Foods.pgf; path = ../JPGF/test/org/grammaticalframework/Foods.pgf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +77,7 @@
 		0A83986815A8422600875849 = {
 			isa = PBXGroup;
 			children = (
+				0A8398B915A84ECD00875849 /* Foods.pgf */,
 				0A8398A815A842A200875849 /* libpgf+ios.a */,
 				0A8398A615A8428300875849 /* icon72x72.png */,
 				0A8398A415A8427C00875849 /* icon114x114.png */,
@@ -104,11 +110,11 @@
 			isa = PBXGroup;
 			children = (
 				0A83988615A8422600875849 /* AppDelegate.h */,
-				0A83988715A8422600875849 /* AppDelegate.m */,
+				0A83988715A8422600875849 /* AppDelegate.mm */,
 				0A83988915A8422600875849 /* MainStoryboard_iPhone.storyboard */,
 				0A83988C15A8422600875849 /* MainStoryboard_iPad.storyboard */,
 				0A83988F15A8422600875849 /* FirstViewController.h */,
-				0A83989015A8422600875849 /* FirstViewController.m */,
+				0A83989015A8422600875849 /* FirstViewController.mm */,
 				0A83989215A8422600875849 /* first.png */,
 				0A83989415A8422600875849 /* first@2x.png */,
 				0A83989615A8422600875849 /* SecondViewController.h */,
@@ -116,6 +122,8 @@
 				0A83989915A8422600875849 /* second.png */,
 				0A83989B15A8422600875849 /* second@2x.png */,
 				0A83987E15A8422600875849 /* Supporting Files */,
+				0A8398B715A84ACF00875849 /* grammar.cpp */,
+				0A8398B615A84AC500875849 /* grammar.h */,
 			);
 			path = iPhrase;
 			sourceTree = "<group>";
@@ -192,6 +200,7 @@
 				0A8398A315A8427600875849 /* icon57x57.png in Resources */,
 				0A8398A515A8427C00875849 /* icon114x114.png in Resources */,
 				0A8398A715A8428300875849 /* icon72x72.png in Resources */,
+				0A8398BA15A84ECD00875849 /* Foods.pgf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,9 +212,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A83988415A8422600875849 /* main.m in Sources */,
-				0A83988815A8422600875849 /* AppDelegate.m in Sources */,
-				0A83989115A8422600875849 /* FirstViewController.m in Sources */,
+				0A83988815A8422600875849 /* AppDelegate.mm in Sources */,
+				0A83989115A8422600875849 /* FirstViewController.mm in Sources */,
 				0A83989815A8422600875849 /* SecondViewController.m in Sources */,
+				0A8398B815A84ACF00875849 /* grammar.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +268,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "../pgf+/include";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -276,6 +287,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "../pgf+/include";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
