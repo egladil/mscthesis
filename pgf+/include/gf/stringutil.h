@@ -83,7 +83,7 @@ namespace gf {
         std::string ret;
         
         for (std::string::const_iterator it = str.begin(); it != str.end(); it++) {
-            char ch = *it;
+            unsigned char ch = *it;
             
             if (ch < 0x80) {
                 ret+= ch;

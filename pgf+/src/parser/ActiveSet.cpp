@@ -74,9 +74,6 @@ namespace gf {
             }
             
             range = multi->second.equal_range(cons);
-#ifdef DEBUG
-            ActiveItemInt x = multi->second.begin()->second;
-#endif
             for (std::multimap<uint32_t, ActiveItemInt>::const_iterator it = range.first; it != range.second; it++) {
                 ActiveItemInt val = it->second;
                 
