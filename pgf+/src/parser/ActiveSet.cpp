@@ -34,7 +34,7 @@ namespace gf {
                 
                 range = multi->second.equal_range(cons);
                 for (std::multimap<uint32_t, ActiveItemInt>::const_iterator it = range.first; it != range.second; it++) {
-                    if (it->second._1 == item && it->second._2 == cons2) {
+                    if (*it->second._1 == *item && it->second._2 == cons2) {
                         return false;
                     }
                 }
