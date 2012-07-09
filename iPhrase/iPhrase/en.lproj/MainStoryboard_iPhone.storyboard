@@ -17,7 +17,7 @@
                                 <rect key="frame" x="10" y="10" width="300" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
                                 <connections>
                                     <action selector="inputChanged:" destination="2" eventType="editingChanged" id="xZR-Oi-U4J"/>
                                     <action selector="inputDone:" destination="2" eventType="editingDidEnd" id="Eml-Qe-I0t"/>
@@ -94,6 +94,21 @@
         <image name="first" width="16" height="16"/>
         <image name="second" width="16" height="16"/>
     </resources>
+    <classes>
+        <class className="FirstViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FirstViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="inputChanged:"/>
+                <relationship kind="action" name="inputDone:"/>
+                <relationship kind="outlet" name="svSuggestions" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="txtIn" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="vMain" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="SecondViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SecondViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

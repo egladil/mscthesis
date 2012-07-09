@@ -15,6 +15,7 @@
 
 - (IBAction)inputChanged:(id)sender;
 - (IBAction)inputDone:(id)sender;
+- (BOOL)textFieldShouldReturn:(UITextField *)textField;
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation;
 @end

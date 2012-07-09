@@ -295,6 +295,11 @@ AlternativesInput* altInput = nil;
 //    [txtOut setText:[NSString stringWithUTF8String:output.c_str()]];
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return NO;
+}
+
 - (IBAction)onAlternative:(NSString*)word {
     fprintf(stderr, "suggestion %s\n", [word UTF8String]);
 }
