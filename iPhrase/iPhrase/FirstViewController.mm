@@ -20,11 +20,11 @@ static std::vector<std::string> tokenCache;
 static gf::parser::ParseState* psCache = NULL;
 static bool errorCache = false;
 
-static std::string predict(const std::string& current) {
+static std::set<std::string> predict(const std::string& current) {
     std::vector<std::string> tokens;
     bool restart;
     std::string last;
-    std::string ret;
+    std::set<std::string> ret;
     
     tokens = gf::split(current, ' ');
     
@@ -47,7 +47,8 @@ static std::string predict(const std::string& current) {
         } catch (gf::Exception& e) {
             gf::release(psCache);
             errorCache = true;
-            return "Error creating parser state: " + e.toString();
+            ret.insert("Error creating parser state: " + e.toString());
+            return ret;
         }
         tokenCache.clear();
     }
@@ -60,7 +61,8 @@ static std::string predict(const std::string& current) {
                 }
             } catch (gf::Exception& e) {
                 errorCache = true;
-                return "Error scanning: " + e.toString();
+                ret.insert("Error scanning: " + e.toString());
+                return ret;
             }
             
             tokenCache.push_back(*it);
@@ -68,14 +70,16 @@ static std::string predict(const std::string& current) {
         
         if (tokenCache.size() < tokens.size() - 1) {
             errorCache = true;
-            return "Parse error on token: " + tokens.at(tokenCache.size());
+            ret.insert("Parse error on token: " + tokens.at(tokenCache.size()));
+            return ret;
         }
         
         try {
             predictCache = psCache->predict();
         } catch (gf::Exception& e) {
             errorCache = true;
-            return "Error predicting: " + e.toString();
+            ret.insert("Error predicting: " + e.toString());
+            return ret;
         }
     }
     
@@ -84,7 +88,7 @@ static std::string predict(const std::string& current) {
         std::string word = *it;
         
         if (last.empty() || word.substr(0, last.size()) == last) {
-            ret+= *it + "\n";
+            ret.insert(word);
         }
     }
     
@@ -119,9 +123,68 @@ static std::string trees(const std::string& current) {
     return ret;
 }
 
+static NSArray* arrayFromSet(const std::set<std::string>& set) {
+    NSMutableArray* array;
+    
+    array = [NSMutableArray arrayWithCapacity:0];
+    
+    for (std::set<std::string>::const_iterator it = set.begin(); it != set.end(); it++) {
+        [array addObject:[NSString stringWithUTF8String:it->c_str()]];
+    }
+    
+    return [NSArray arrayWithArray:array];
+}
+
+static NSArray* arrayFromVector(const std::vector<std::string>& vec) {
+    NSMutableArray* array;
+    
+    array = [NSMutableArray arrayWithCapacity:0];
+    
+    for (std::vector<std::string>::const_iterator it = vec.begin(); it != vec.end(); it++) {
+        [array addObject:[NSString stringWithUTF8String:it->c_str()]];
+    }
+    
+    return [NSArray arrayWithArray:array];
+}
+
 @implementation FirstViewController
 @synthesize txtIn;
 @synthesize txtOut;
+
+NSMutableArray* suggestions = nil;
+
+
+- (void)updateSuggestions:(NSArray*)words
+{
+    float y = 0;
+    
+    for (UIButton* btn in suggestions) {
+        [btn removeFromSuperview];
+//        [btn release];
+    }
+    
+    [suggestions removeAllObjects];
+    
+    for (NSObject* obj in words) {
+        NSString* word;
+        UIButton* btn;
+        
+        if (![obj isKindOfClass:[NSString class]]) {
+            continue;
+        }
+        
+        word = (NSString*) obj;
+        
+        btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [btn setTitle:word forState:UIControlStateNormal];
+        [btn setFrame:CGRectMake(10, y+= 30, 100, 20)];
+        [btn addTarget:self action:@selector(onSuggestionTouched:) forControlEvents:UIControlEventTouchUpInside];
+
+        [suggestions addObject:btn];
+        [txtOut addSubview:btn];
+    }
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -152,7 +215,9 @@ static std::string trees(const std::string& current) {
         return;
     }
     
-    [txtOut setText:[NSString stringWithUTF8String:predict("").c_str()]];
+    suggestions = [NSMutableArray arrayWithCapacity:0];
+    
+    [self updateSuggestions:arrayFromSet(predict(""))];
 }
 
 - (void)viewDidUnload
@@ -165,6 +230,8 @@ static std::string trees(const std::string& current) {
     
     gf::release(psCache);
     gf::release(parser);
+
+    suggestions = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -198,20 +265,19 @@ static std::string trees(const std::string& current) {
 }
 
 - (void)dealloc {
+    /*
     [txtIn release];
     [txtOut release];
     [super dealloc];
+    */
 }
 
 - (IBAction)inputChanged:(id)sender {
     std::string input;
-    std::string output;
     
     input = [[txtIn text] UTF8String];
     
-    output = predict(input);
-    
-    [txtOut setText:[NSString stringWithUTF8String:output.c_str()]];
+    [self updateSuggestions:arrayFromSet(predict(input))];
 }
 
 - (IBAction)inputDone:(id)sender {
@@ -223,6 +289,18 @@ static std::string trees(const std::string& current) {
     output = trees(input);
     
     [txtOut setText:[NSString stringWithUTF8String:output.c_str()]];
+}
+
+- (IBAction)onSuggestionTouched:(id)sender {
+    UIButton* btn;
+    
+    if (![sender isKindOfClass:[UIButton class]]) {
+        return;
+    }
+    
+    btn = (UIButton*) sender;
+    
+    fprintf(stderr, "suggestion %s\n", [[btn titleForState:UIControlStateNormal] UTF8String]);
 }
 
 @end
