@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 Chalmers. All rights reserved.
 //
 
+#import "AlternativesInput.h"
 #import "FirstViewController.h"
 #import "grammar.h"
 
@@ -151,23 +152,15 @@ static NSArray* arrayFromVector(const std::vector<std::string>& vec) {
 @synthesize txtIn;
 @synthesize txtOut;
 
-NSMutableArray* suggestions = nil;
+AlternativesInput* altInput = nil;
 
 
 - (void)updateSuggestions:(NSArray*)words
 {
-    float y = 0;
-    
-    for (UIButton* btn in suggestions) {
-        [btn removeFromSuperview];
-//        [btn release];
-    }
-    
-    [suggestions removeAllObjects];
+    [altInput clearAlternatives];
     
     for (NSObject* obj in words) {
         NSString* word;
-        UIButton* btn;
         
         if (![obj isKindOfClass:[NSString class]]) {
             continue;
@@ -175,13 +168,7 @@ NSMutableArray* suggestions = nil;
         
         word = (NSString*) obj;
         
-        btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        [btn setTitle:word forState:UIControlStateNormal];
-        [btn setFrame:CGRectMake(10, y+= 30, 100, 20)];
-        [btn addTarget:self action:@selector(onSuggestionTouched:) forControlEvents:UIControlEventTouchUpInside];
-
-        [suggestions addObject:btn];
-        [txtOut addSubview:btn];
+        [altInput addAlternative:word];
     }
 }
 
@@ -215,7 +202,9 @@ NSMutableArray* suggestions = nil;
         return;
     }
     
-    suggestions = [NSMutableArray arrayWithCapacity:0];
+    altInput = [[AlternativesInput alloc] initWithFrame:CGRectMake(0, 50, 250, 200)];
+    [altInput addTarget:self action:@selector(onAlternative:)];
+    [txtOut addSubview:altInput];
     
     [self updateSuggestions:arrayFromSet(predict(""))];
 }
@@ -231,7 +220,7 @@ NSMutableArray* suggestions = nil;
     gf::release(psCache);
     gf::release(parser);
 
-    suggestions = nil;
+    altInput = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -291,16 +280,8 @@ NSMutableArray* suggestions = nil;
     [txtOut setText:[NSString stringWithUTF8String:output.c_str()]];
 }
 
-- (IBAction)onSuggestionTouched:(id)sender {
-    UIButton* btn;
-    
-    if (![sender isKindOfClass:[UIButton class]]) {
-        return;
-    }
-    
-    btn = (UIButton*) sender;
-    
-    fprintf(stderr, "suggestion %s\n", [[btn titleForState:UIControlStateNormal] UTF8String]);
+- (IBAction)onAlternative:(NSString*)word {
+    fprintf(stderr, "suggestion %s\n", [word UTF8String]);
 }
 
 @end

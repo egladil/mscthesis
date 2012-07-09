@@ -14,5 +14,4 @@
 
 - (IBAction)inputChanged:(id)sender;
 - (IBAction)inputDone:(id)sender;
-- (IBAction)onSuggestionTouched:(id)sender;
 @end
