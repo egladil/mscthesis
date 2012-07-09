@@ -17,4 +17,6 @@
 - (void)clearAlternatives;
 
 - (void)layoutSubviews;
+
+- (float) optimalHeight;
 @end

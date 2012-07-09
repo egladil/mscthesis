@@ -17,6 +17,8 @@ NSMutableDictionary* wordsForButtons = nil;
 NSMutableDictionary* targetHelper = nil;
 NSMutableDictionary* targets = nil;
 
+float optimalHeight = 0;
+
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self == nil) {
@@ -146,11 +148,13 @@ NSMutableDictionary* targets = nil;
 - (void)layoutSubviews {
     float x;
     float y;
-    CGSize max;
+    float maxWidth;
+    float height;
     
     x = 0;
     y = 0;
-    max = self.frame.size;
+    maxWidth = self.frame.size.width;
+    height = 0;
     for (NSString* word in wordOrder) {
         UIButton* btn;
         CGRect rect;
@@ -158,7 +162,7 @@ NSMutableDictionary* targets = nil;
         btn = [buttonsForWords objectForKey:word];
         rect = btn.frame;
         
-        if (x + rect.size.width > max.width) {
+        if (x + rect.size.width > maxWidth) {
             x = 0;
             y+= rect.size.height + 5;
         }
@@ -166,10 +170,19 @@ NSMutableDictionary* targets = nil;
         rect.origin.x = x;
         rect.origin.y = y;
         
+        height = y + rect.size.height;
+        
         x+= rect.size.width + 5;
         
         [btn setFrame:rect];
     }
+    
+    optimalHeight = height;
+}
+
+- (float) optimalHeight {
+    [self layoutIfNeeded];
+    return optimalHeight;
 }
 
 @end
