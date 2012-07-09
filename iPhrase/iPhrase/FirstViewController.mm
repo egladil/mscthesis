@@ -149,14 +149,17 @@ static NSArray* arrayFromVector(const std::vector<std::string>& vec) {
 }
 
 @implementation FirstViewController
+@synthesize vMain;
 @synthesize txtIn;
-@synthesize txtOut;
+@synthesize svSuggestions;
 
 AlternativesInput* altInput = nil;
 
 
 - (void)updateSuggestions:(NSArray*)words
 {
+    CGRect rect;
+    
     [altInput clearAlternatives];
     
     for (NSObject* obj in words) {
@@ -170,6 +173,11 @@ AlternativesInput* altInput = nil;
         
         [altInput addAlternative:word];
     }
+    
+    rect = altInput.frame;
+    rect.size.height = [altInput optimalHeight];
+    [altInput setFrame:rect];
+    [svSuggestions setContentSize:rect.size];
 }
 
 
@@ -189,7 +197,6 @@ AlternativesInput* altInput = nil;
 	// Do any additional setup after loading the view, typically from a nib.
     
     [txtIn setText:[NSString stringWithUTF8String:""]];
-    [txtOut setText:[NSString stringWithUTF8String:""]];
     
     pgf = getGrammar();
     pgf->addReference();
@@ -202,9 +209,16 @@ AlternativesInput* altInput = nil;
         return;
     }
     
-    altInput = [[AlternativesInput alloc] initWithFrame:CGRectMake(0, 50, 250, 200)];
+    altInput = [[AlternativesInput alloc] initWithFrame:CGRectMake(5, 0, 290, 100)];
+    [altInput setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
     [altInput addTarget:self action:@selector(onAlternative:)];
-    [txtOut addSubview:altInput];
+    [svSuggestions addSubview:altInput];
+    
+    [txtIn setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
+    [svSuggestions setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     
     [self updateSuggestions:arrayFromSet(predict(""))];
 }
@@ -212,7 +226,8 @@ AlternativesInput* altInput = nil;
 - (void)viewDidUnload
 {
     [self setTxtIn:nil];
-    [self setTxtOut:nil];
+    [self setSvSuggestions:nil];
+    [self setVMain:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -277,11 +292,60 @@ AlternativesInput* altInput = nil;
     
     output = trees(input);
     
-    [txtOut setText:[NSString stringWithUTF8String:output.c_str()]];
+//    [txtOut setText:[NSString stringWithUTF8String:output.c_str()]];
 }
 
 - (IBAction)onAlternative:(NSString*)word {
     fprintf(stderr, "suggestion %s\n", [word UTF8String]);
+}
+
+
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    CGRect rect;
+    
+    rect = altInput.frame;
+    rect.size.height = [altInput optimalHeight];
+    [altInput setFrame:rect];
+    [svSuggestions setContentSize:rect.size];
+}
+
+- (void)keyboardDidShow:(NSNotification *)notification {
+    CGSize kbdSize;
+    CGSize scrSize;
+    CGRect rect;
+    
+    kbdSize = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    scrSize = [UIScreen mainScreen].applicationFrame.size;
+    
+    if (UIInterfaceOrientationIsLandscape([self interfaceOrientation])) {
+        float tmp;
+        
+        tmp = kbdSize.width;
+        kbdSize.width = kbdSize.height;
+        kbdSize.height = tmp;
+        
+        tmp = scrSize.width;
+        scrSize.width = scrSize.height;
+        scrSize.height = tmp;
+    }
+    
+    rect = svSuggestions.frame;
+    rect.size.height = scrSize.height - rect.origin.y - kbdSize.height;
+    
+    [svSuggestions setFrame:rect];
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification {
+    CGSize viewSize;
+    CGRect rect;
+    
+    viewSize = vMain.frame.size;
+    
+    rect = svSuggestions.frame;
+    rect.size.height = viewSize.height - rect.origin.y;
+    
+    [svSuggestions setFrame:rect];
 }
 
 @end

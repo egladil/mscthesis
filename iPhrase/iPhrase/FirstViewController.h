@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface FirstViewController : UIViewController
-@property (retain, nonatomic) IBOutlet UITextField *txtIn;
-@property (retain, nonatomic) IBOutlet UITextView *txtOut;
+@property (weak, nonatomic) IBOutlet UIView *vMain;
+@property (weak, nonatomic) IBOutlet UITextField *txtIn;
+@property (weak, nonatomic) IBOutlet UIScrollView *svSuggestions;
 
 - (IBAction)inputChanged:(id)sender;
 - (IBAction)inputDone:(id)sender;
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation;
 @end
