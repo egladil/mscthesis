@@ -29,6 +29,7 @@
 		0A8398BA15A84ECD00875849 /* Foods.pgf in Resources */ = {isa = PBXBuildFile; fileRef = 0A8398B915A84ECD00875849 /* Foods.pgf */; };
 		0A8398BC15A8577500875849 /* Mountaineering.pgf in Resources */ = {isa = PBXBuildFile; fileRef = 0A8398BB15A8577500875849 /* Mountaineering.pgf */; };
 		0ACB1FD415AB137600279AA0 /* AlternativesInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACB1FD315AB137600279AA0 /* AlternativesInput.m */; };
+		0ACB1FD715ADA84100279AA0 /* TokenInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACB1FD615ADA84100279AA0 /* TokenInput.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,8 @@
 		0A8398BB15A8577500875849 /* Mountaineering.pgf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Mountaineering.pgf; path = ../grammar/Mountaineering.pgf; sourceTree = "<group>"; };
 		0ACB1FD215AB137600279AA0 /* AlternativesInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlternativesInput.h; sourceTree = "<group>"; };
 		0ACB1FD315AB137600279AA0 /* AlternativesInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlternativesInput.m; sourceTree = "<group>"; };
+		0ACB1FD515ADA84100279AA0 /* TokenInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TokenInput.h; sourceTree = "<group>"; };
+		0ACB1FD615ADA84100279AA0 /* TokenInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TokenInput.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +135,8 @@
 				0A8398B615A84AC500875849 /* grammar.h */,
 				0ACB1FD215AB137600279AA0 /* AlternativesInput.h */,
 				0ACB1FD315AB137600279AA0 /* AlternativesInput.m */,
+				0ACB1FD515ADA84100279AA0 /* TokenInput.h */,
+				0ACB1FD615ADA84100279AA0 /* TokenInput.m */,
 			);
 			path = iPhrase;
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 				0A83989815A8422600875849 /* SecondViewController.m in Sources */,
 				0A8398B815A84ACF00875849 /* grammar.cpp in Sources */,
 				0ACB1FD415AB137600279AA0 /* AlternativesInput.m in Sources */,
+				0ACB1FD715ADA84100279AA0 /* TokenInput.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

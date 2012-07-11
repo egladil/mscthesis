@@ -8,6 +8,7 @@
 
 #import "AlternativesInput.h"
 #import "FirstViewController.h"
+#import "TokenInput.h"
 #import "grammar.h"
 
 #include <gf/stringutil.h>
@@ -151,8 +152,10 @@ static NSArray* arrayFromVector(const std::vector<std::string>& vec) {
 @implementation FirstViewController
 @synthesize vMain;
 @synthesize txtIn;
+@synthesize vIn;
 @synthesize svSuggestions;
 
+TokenInput* tokenInput = nil;
 AlternativesInput* altInput = nil;
 
 
@@ -194,9 +197,10 @@ AlternativesInput* altInput = nil;
     gf::PGF* pgf = NULL;
     
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
     
     [txtIn setText:[NSString stringWithUTF8String:""]];
+    [txtIn removeFromSuperview];
+    
     
     pgf = getGrammar();
     pgf->addReference();
@@ -209,16 +213,26 @@ AlternativesInput* altInput = nil;
         return;
     }
     
+    tokenInput = [[TokenInput alloc] initWithFrame:CGRectMake(10, 10, 300, 30)];
+    [tokenInput setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
+    [vIn addSubview:tokenInput];
+    
+    
+    
     altInput = [[AlternativesInput alloc] initWithFrame:CGRectMake(5, 0, 290, 100)];
     [altInput setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
     [altInput addTarget:self action:@selector(onAlternative:)];
     [svSuggestions addSubview:altInput];
     
+    
     [txtIn setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
+    [vIn setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
     [svSuggestions setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
+    
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    
     
     [self updateSuggestions:arrayFromSet(predict(""))];
 }
@@ -228,6 +242,7 @@ AlternativesInput* altInput = nil;
     [self setTxtIn:nil];
     [self setSvSuggestions:nil];
     [self setVMain:nil];
+    [self setVIn:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
