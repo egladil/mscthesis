@@ -10,13 +10,8 @@
 
 @interface FirstViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIView *vMain;
-@property (weak, nonatomic) IBOutlet UITextField *txtIn;
 @property (weak, nonatomic) IBOutlet UIView *vIn;
 @property (weak, nonatomic) IBOutlet UIScrollView *svSuggestions;
-
-- (IBAction)inputChanged:(id)sender;
-- (IBAction)inputDone:(id)sender;
-- (BOOL)textFieldShouldReturn:(UITextField *)textField;
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation;
 @end

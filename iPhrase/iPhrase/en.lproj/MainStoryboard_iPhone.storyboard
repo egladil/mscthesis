@@ -13,33 +13,21 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="unlessEditing" id="AMG-MD-k93" userLabel="txtIn">
-                                <rect key="frame" x="10" y="10" width="300" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
-                                <connections>
-                                    <action selector="inputChanged:" destination="2" eventType="editingChanged" id="xZR-Oi-U4J"/>
-                                    <action selector="inputDone:" destination="2" eventType="editingDidEnd" id="Eml-Qe-I0t"/>
-                                    <outlet property="delegate" destination="2" id="Wo0-Tg-ltw"/>
-                                </connections>
-                            </textField>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="ggt-Pu-0mB" userLabel="svSuggestions">
-                                <rect key="frame" x="0.0" y="49" width="320" height="362"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
-                            </scrollView>
                             <view contentMode="scaleToFill" id="qCG-D0-yb7" userLabel="vIn">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="ggt-Pu-0mB" userLabel="svSuggestions">
+                                <rect key="frame" x="0.0" y="49" width="320" height="362"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="7"/>
                     <connections>
                         <outlet property="svSuggestions" destination="ggt-Pu-0mB" id="HPC-N6-cC7"/>
-                        <outlet property="txtIn" destination="AMG-MD-k93" id="6LQ-5A-UHq"/>
                         <outlet property="vIn" destination="qCG-D0-yb7" id="K9f-eb-DSN"/>
                         <outlet property="vMain" destination="16" id="Zmr-3d-cy3"/>
                     </connections>
@@ -100,6 +88,21 @@
         <image name="first" width="16" height="16"/>
         <image name="second" width="16" height="16"/>
     </resources>
+    <classes>
+        <class className="FirstViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FirstViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="inputChanged:"/>
+                <relationship kind="action" name="inputDone:"/>
+                <relationship kind="outlet" name="svSuggestions" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="vIn" candidateClass="UIView"/>
+                <relationship kind="outlet" name="vMain" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="SecondViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SecondViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

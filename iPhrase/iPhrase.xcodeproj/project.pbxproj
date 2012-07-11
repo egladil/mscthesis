@@ -15,7 +15,7 @@
 		0A83988815A8422600875849 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0A83988715A8422600875849 /* AppDelegate.mm */; };
 		0A83988B15A8422600875849 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A83988915A8422600875849 /* MainStoryboard_iPhone.storyboard */; };
 		0A83988E15A8422600875849 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A83988C15A8422600875849 /* MainStoryboard_iPad.storyboard */; };
-		0A83989115A8422600875849 /* FirstViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0A83989015A8422600875849 /* FirstViewController.mm */; };
+		0A83989115A8422600875849 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A83989015A8422600875849 /* FirstViewController.m */; };
 		0A83989315A8422600875849 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A83989215A8422600875849 /* first.png */; };
 		0A83989515A8422600875849 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A83989415A8422600875849 /* first@2x.png */; };
 		0A83989815A8422600875849 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A83989715A8422600875849 /* SecondViewController.m */; };
@@ -30,6 +30,7 @@
 		0A8398BC15A8577500875849 /* Mountaineering.pgf in Resources */ = {isa = PBXBuildFile; fileRef = 0A8398BB15A8577500875849 /* Mountaineering.pgf */; };
 		0ACB1FD415AB137600279AA0 /* AlternativesInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACB1FD315AB137600279AA0 /* AlternativesInput.m */; };
 		0ACB1FD715ADA84100279AA0 /* TokenInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACB1FD615ADA84100279AA0 /* TokenInput.m */; };
+		0ACB1FDA15ADE5B900279AA0 /* Grammarian.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0ACB1FD915ADE5B800279AA0 /* Grammarian.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +47,7 @@
 		0A83988A15A8422600875849 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		0A83988D15A8422600875849 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		0A83988F15A8422600875849 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		0A83989015A8422600875849 /* FirstViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FirstViewController.mm; sourceTree = "<group>"; };
+		0A83989015A8422600875849 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		0A83989215A8422600875849 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		0A83989415A8422600875849 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
 		0A83989615A8422600875849 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
@@ -65,6 +66,8 @@
 		0ACB1FD315AB137600279AA0 /* AlternativesInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlternativesInput.m; sourceTree = "<group>"; };
 		0ACB1FD515ADA84100279AA0 /* TokenInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TokenInput.h; sourceTree = "<group>"; };
 		0ACB1FD615ADA84100279AA0 /* TokenInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TokenInput.m; sourceTree = "<group>"; };
+		0ACB1FD815ADE5B800279AA0 /* Grammarian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grammarian.h; sourceTree = "<group>"; };
+		0ACB1FD915ADE5B800279AA0 /* Grammarian.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Grammarian.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +126,7 @@
 				0A83988915A8422600875849 /* MainStoryboard_iPhone.storyboard */,
 				0A83988C15A8422600875849 /* MainStoryboard_iPad.storyboard */,
 				0A83988F15A8422600875849 /* FirstViewController.h */,
-				0A83989015A8422600875849 /* FirstViewController.mm */,
+				0A83989015A8422600875849 /* FirstViewController.m */,
 				0A83989215A8422600875849 /* first.png */,
 				0A83989415A8422600875849 /* first@2x.png */,
 				0A83989615A8422600875849 /* SecondViewController.h */,
@@ -137,6 +140,8 @@
 				0ACB1FD315AB137600279AA0 /* AlternativesInput.m */,
 				0ACB1FD515ADA84100279AA0 /* TokenInput.h */,
 				0ACB1FD615ADA84100279AA0 /* TokenInput.m */,
+				0ACB1FD815ADE5B800279AA0 /* Grammarian.h */,
+				0ACB1FD915ADE5B800279AA0 /* Grammarian.mm */,
 			);
 			path = iPhrase;
 			sourceTree = "<group>";
@@ -227,11 +232,12 @@
 			files = (
 				0A83988415A8422600875849 /* main.m in Sources */,
 				0A83988815A8422600875849 /* AppDelegate.mm in Sources */,
-				0A83989115A8422600875849 /* FirstViewController.mm in Sources */,
+				0A83989115A8422600875849 /* FirstViewController.m in Sources */,
 				0A83989815A8422600875849 /* SecondViewController.m in Sources */,
 				0A8398B815A84ACF00875849 /* grammar.cpp in Sources */,
 				0ACB1FD415AB137600279AA0 /* AlternativesInput.m in Sources */,
 				0ACB1FD715ADA84100279AA0 /* TokenInput.m in Sources */,
+				0ACB1FDA15ADE5B900279AA0 /* Grammarian.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
