@@ -15,9 +15,11 @@
 - (void)setPunctuation:(NSCharacterSet*)punctuation;
 
 - (NSArray*)tokens;
+- (NSString*) lastToken;
 - (void)addToken:(NSString*)token;
 - (void)removeLastToken;
 - (void)clearTokens;
+- (void)editLastToken;
 
 - (NSString*)text;
 - (void)setText:(NSString*)text;

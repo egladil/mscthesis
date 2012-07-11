@@ -79,6 +79,10 @@ bool processingText = false;
     return [NSArray arrayWithArray:tokens];
 }
 
+- (NSString*) lastToken {
+    return [tokens lastObject];
+}
+
 - (UIButton*)createTokenButton:(NSString*)token {
     UIButton* btn;
     CGSize size;
