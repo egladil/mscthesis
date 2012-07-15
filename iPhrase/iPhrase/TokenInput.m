@@ -17,6 +17,48 @@ NSString* const TokenInputTokenRemovedNotification = @"TokenInputTokenRemovedNot
 
 NSString* const ZeroWidthSpace = @"\u200B";
 
+
+@interface TIDelegate : NSObject <UITextFieldDelegate>
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string;
+- (void)textFieldDidBeginEditing:(UITextField *)textField;
+- (void)textFieldDidEndEditing:(UITextField *)textField;
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField;
+- (BOOL)textFieldShouldClear:(UITextField *)textField;
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField;
+- (BOOL)textFieldShouldReturn:(UITextField *)textField;
+@end
+
+@implementation TIDelegate
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    return TRUE;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+}
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    return TRUE;
+}
+
+- (BOOL)textFieldShouldClear:(UITextField *)textField {
+    return TRUE;
+}
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+    return TRUE;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return FALSE;
+}
+
+@end
+
+
 @implementation TokenInput
 {
     NSCharacterSet* punctuation;
@@ -25,6 +67,7 @@ NSString* const ZeroWidthSpace = @"\u200B";
     NSMutableArray* buttons;
     UIView* buttonView;
     UITextField* textField;
+    TIDelegate* textFieldDelegate;
     bool processingText;
 }
 
@@ -51,6 +94,8 @@ NSString* const ZeroWidthSpace = @"\u200B";
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onTextFieldDidBeginEditing:) name:UITextFieldTextDidBeginEditingNotification object:textField];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onTextFieldDidChange:) name:UITextFieldTextDidChangeNotification object:textField];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onTextFieldDidEndEditing:) name:UITextFieldTextDidEndEditingNotification object:textField];
+    textFieldDelegate = [[TIDelegate alloc] init];
+    [textField setDelegate:textFieldDelegate];
     [self addSubview:textField];
     
     processingText = false;
