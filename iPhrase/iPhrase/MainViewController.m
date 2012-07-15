@@ -1,24 +1,29 @@
 //
-//  FirstViewController.m
-//  iPhrase
+//  MainViewController.m
+//  earg
 //
-//  Created by Emil Djupfeldt on 2012-07-07.
+//  Created by Emil Djupfeldt on 2012-07-15.
 //  Copyright (c) 2012 Chalmers. All rights reserved.
 //
 
+#import "MainViewController.h"
 #import "AlternativesInput.h"
-#import "FirstViewController.h"
-#import "TokenInput.h"
 #import "Grammarian.h"
+#import "TokenInput.h"
 
-@implementation FirstViewController
-@synthesize vMain;
-@synthesize vIn;
-@synthesize svSuggestions;
+@implementation MainViewController
+{
+    Grammarian* grammarian;
+    TokenInput* tokenInput;
+    AlternativesInput* altInput;
+}
 
-Grammarian* grammarian = nil;
-TokenInput* tokenInput = nil;
-AlternativesInput* altInput = nil;
+
+@synthesize flipsidePopoverController = _flipsidePopoverController;
+@synthesize vMain = _vMain;
+@synthesize vIn = _vIn;
+@synthesize svSuggestions = _svSuggestions;
+
 
 
 - (void)updateSuggestions:(NSArray*)words
@@ -40,10 +45,12 @@ AlternativesInput* altInput = nil;
     }
     
     rect = altInput.frame;
-    rect.size.height = [altInput optimalHeight];
+    rect.size.height = [altInput optimalHeight] + 10;
     [altInput setFrame:rect];
-    [svSuggestions setContentSize:rect.size];
+    [_svSuggestions setContentSize:rect.size];
 }
+
+
 
 
 - (void)didReceiveMemoryWarning
@@ -64,27 +71,23 @@ AlternativesInput* altInput = nil;
     
     tokenInput = [[TokenInput alloc] initWithFrame:CGRectMake(10, 10, 300, 30)];
     [tokenInput setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
-    [vIn addSubview:tokenInput];
+    [_vIn addSubview:tokenInput];
     
     
     
-    altInput = [[AlternativesInput alloc] initWithFrame:CGRectMake(5, 0, 290, 100)];
+    altInput = [[AlternativesInput alloc] initWithFrame:CGRectMake(5, 5, 290, 100)];
     [altInput setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
     [altInput addTarget:self action:@selector(onAlternative:)];
-    [svSuggestions addSubview:altInput];
-    
-    
-    [vIn setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
-    [svSuggestions setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
+    [_svSuggestions addSubview:altInput];
     
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onTextInput:) name:TokenInputTextDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onTextEnd:) name:TokenInputTextDidEndEditingNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onAddToken:) name:TokenInputTokenAddedNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onRemoveToken:) name:TokenInputTokenRemovedNotification object:nil];
-    
     
     [self updateSuggestions:[grammarian predict:@""]];
 }
@@ -95,10 +98,8 @@ AlternativesInput* altInput = nil;
     [self setVIn:nil];
     [self setSvSuggestions:nil];
     [super viewDidUnload];
-
-    tokenInput = nil;
-    altInput = nil;
-    grammarian = nil;
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -131,6 +132,47 @@ AlternativesInput* altInput = nil;
     }
 }
 
+#pragma mark - Flipside View Controller
+
+- (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller
+{
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        [self dismissModalViewControllerAnimated:YES];
+    } else {
+        [self.flipsidePopoverController dismissPopoverAnimated:YES];
+        self.flipsidePopoverController = nil;
+    }
+}
+
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
+{
+    self.flipsidePopoverController = nil;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showAlternate"]) {
+        [[segue destinationViewController] setDelegate:self];
+        
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+            UIPopoverController *popoverController = [(UIStoryboardPopoverSegue *)segue popoverController];
+            self.flipsidePopoverController = popoverController;
+            popoverController.delegate = self;
+        }
+    }
+}
+
+- (IBAction)togglePopover:(id)sender
+{
+    if (self.flipsidePopoverController) {
+        [self.flipsidePopoverController dismissPopoverAnimated:YES];
+        self.flipsidePopoverController = nil;
+    } else {
+        [self performSegueWithIdentifier:@"showAlternate" sender:sender];
+    }
+}
+
+
 
 
 
@@ -151,6 +193,10 @@ AlternativesInput* altInput = nil;
     }
     
     [self updateSuggestions:predictions];
+}
+
+- (IBAction)onTextEnd:(TokenInput*)sender {
+    fprintf(stderr, "onTextEnd\n");
 }
 
 - (IBAction)onAddToken:(TokenInput*)sender {
@@ -193,14 +239,13 @@ AlternativesInput* altInput = nil;
 }
 
 
-
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
     CGRect rect;
     
     rect = altInput.frame;
-    rect.size.height = [altInput optimalHeight];
+    rect.size.height = [altInput optimalHeight] + 10;
     [altInput setFrame:rect];
-    [svSuggestions setContentSize:rect.size];
+    [_svSuggestions setContentSize:rect.size];
 }
 
 - (void)keyboardDidShow:(NSNotification *)notification {
@@ -223,22 +268,22 @@ AlternativesInput* altInput = nil;
         scrSize.height = tmp;
     }
     
-    rect = svSuggestions.frame;
+    rect = _svSuggestions.frame;
     rect.size.height = scrSize.height - rect.origin.y - kbdSize.height;
     
-    [svSuggestions setFrame:rect];
+    [_svSuggestions setFrame:rect];
 }
 
 - (void)keyboardWillHide:(NSNotification *)notification {
     CGSize viewSize;
     CGRect rect;
     
-    viewSize = vMain.frame.size;
+    viewSize = _vMain.frame.size;
     
-    rect = svSuggestions.frame;
+    rect = _svSuggestions.frame;
     rect.size.height = viewSize.height - rect.origin.y;
     
-    [svSuggestions setFrame:rect];
+    [_svSuggestions setFrame:rect];
 }
 
 @end

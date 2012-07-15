@@ -1,14 +1,22 @@
 //
-//  SecondViewController.m
-//  iPhrase
+//  FlipsideViewController.m
+//  earg
 //
-//  Created by Emil Djupfeldt on 2012-07-07.
+//  Created by Emil Djupfeldt on 2012-07-15.
 //  Copyright (c) 2012 Chalmers. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "FlipsideViewController.h"
 
-@implementation SecondViewController
+@implementation FlipsideViewController
+
+@synthesize delegate = _delegate;
+
+- (void)awakeFromNib
+{
+    self.contentSizeForViewInPopover = CGSizeMake(320.0, 480.0);
+    [super awakeFromNib];
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -59,6 +67,13 @@
     } else {
         return YES;
     }
+}
+
+#pragma mark - Actions
+
+- (IBAction)done:(id)sender
+{
+    [self.delegate flipsideViewControllerDidFinish:self];
 }
 
 @end
