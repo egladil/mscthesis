@@ -65,10 +65,12 @@ static int calcEditDistance(NSString* a, NSString* b) {
 
 
 @implementation Grammarian
-gf::Parser* parser = NULL;
-gf::parser::ParseState* state = NULL;
-std::set<std::string> predictions;
-int acceptedTokenCount = 0;
+{
+    gf::Parser* parser;
+    gf::parser::ParseState* state;
+    std::set<std::string> predictions;
+    int acceptedTokenCount;
+}
 
 - (id)initWithGrammar:(gf::PGF*)pgf withLanguage:(gf::reader::Concrete*)concrete {
     self = [super init];
@@ -81,6 +83,8 @@ int acceptedTokenCount = 0;
     
     state = parser->parse();
     predictions = state->predict();
+    
+    acceptedTokenCount = 0;
     
     return self;
 }

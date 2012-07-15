@@ -18,14 +18,15 @@ NSString* const TokenInputTokenRemovedNotification = @"TokenInputTokenRemovedNot
 NSString* const ZeroWidthSpace = @"\u200B";
 
 @implementation TokenInput
-
-NSCharacterSet* punctuation = nil;
-NSCharacterSet* whitespace = nil;
-NSMutableArray* tokens = nil;
-NSMutableArray* buttons = nil;
-UIView* buttonView = nil;
-UITextField* textField = nil;
-bool processingText = false;
+{
+    NSCharacterSet* punctuation;
+    NSCharacterSet* whitespace;
+    NSMutableArray* tokens;
+    NSMutableArray* buttons;
+    UIView* buttonView;
+    UITextField* textField;
+    bool processingText;
+}
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -52,6 +53,8 @@ bool processingText = false;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onTextFieldDidEndEditing:) name:UITextFieldTextDidEndEditingNotification object:textField];
     [self addSubview:textField];
     
+    processingText = false;
+    
     [self setNeedsLayout];
     
     return self;
@@ -62,16 +65,16 @@ bool processingText = false;
     return whitespace;
 }
 
-- (void)setWhitespace:(NSCharacterSet*)whitespace {
-    self.whitespace = whitespace;
+- (void)setWhitespace:(NSCharacterSet*)ws {
+    self.whitespace = ws;
 }
 
 - (NSCharacterSet*) punctuation {
     return punctuation;
 }
 
-- (void)setPunctuation:(NSCharacterSet*)punctuation {
-    self.punctuation = punctuation;
+- (void)setPunctuation:(NSCharacterSet*)p {
+    self.punctuation = p;
 }
 
 
