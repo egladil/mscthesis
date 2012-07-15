@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "grammar.h"
+#import "iso639.h"
 
 
 #define GRAMMAR "Mountaineering"
@@ -31,6 +32,8 @@
     NSString *grammarPath;
     grammarPath = [[NSBundle mainBundle] pathForResource:@GRAMMAR ofType:@"pgf"];
     assert(grammarPath != nil);
+    
+    generateLanguageInfoCache();
     
     if (!loadGrammar([grammarPath fileSystemRepresentation])) {
         assert(0);
