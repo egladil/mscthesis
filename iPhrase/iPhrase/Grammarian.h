@@ -13,6 +13,8 @@
 - (id)initWithLanguage:(NSString*)language;
 
 + (NSArray*)languages;
++ (NSString*) codeForLanguage:(NSString*)language;
++ (NSString*) languageForCode:(NSString*)code;
 
 - (NSArray*)predict:(NSString*)prefix;
 - (NSArray*)predict:(NSString*)prefix withEditDistance:(int)distance;

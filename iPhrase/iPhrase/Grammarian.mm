@@ -160,6 +160,53 @@ static int calcEditDistance(NSString* a, NSString* b) {
     return ret;
 }
 
++ (NSString*) codeForLanguage:(NSString*)language {
+    gf::PGF* pgf;
+    std::set<std::string> langs;
+    std::string prefix;
+    std::string lang;
+    
+    if ([language length] == 0) {
+        return nil;
+    }
+    
+    pgf = getGrammar();
+    if (pgf == NULL) {
+        return nil;
+    }
+    
+    prefix = pgf->getAbstract()->getName();
+    lang = [language UTF8String];
+    
+    if (lang.substr(0, prefix.size()) == prefix) {
+        return [[NSString stringWithUTF8String:lang.substr(prefix.size()).c_str()] lowercaseString];
+    }
+    
+    return nil;
+}
+
++ (NSString*) languageForCode:(NSString*)code {
+    gf::PGF* pgf;
+    std::string lang;
+    
+    if ([code length] == 0) {
+        return nil;
+    }
+    
+    pgf = getGrammar();
+    if (pgf == NULL) {
+        return nil;
+    }
+    
+    lang = pgf->getAbstract()->getName() + [[[code substringToIndex:1] uppercaseString] UTF8String] + [[[code substringFromIndex:1] lowercaseString] UTF8String];
+    
+    if (pgf->getConcrete(lang) != NULL) {
+        return [NSString stringWithUTF8String:lang.c_str()];
+    }
+    
+    return nil;
+}
+
 
 - (NSArray*)predict:(NSString*)prefix {
     std::string pre;
