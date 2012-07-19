@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A69E59715B3236D00F5E04C /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A69E59415B3236D00F5E04C /* FlipsideViewController.m */; };
 		0A69E59815B3236D00F5E04C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A69E59615B3236D00F5E04C /* MainViewController.m */; };
+		0A69E59B15B3484700F5E04C /* iso639.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A69E59A15B3484700F5E04C /* iso639.cpp */; };
+		0A69E59F15B7B4FC00F5E04C /* SettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A69E59E15B7B4FC00F5E04C /* SettingsController.m */; };
+		0A69E5A215B7BA5000F5E04C /* LanguageSelectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A69E5A115B7BA4F00F5E04C /* LanguageSelectionController.m */; };
 		0A83987815A8422600875849 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A83987715A8422600875849 /* UIKit.framework */; };
 		0A83987A15A8422600875849 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A83987915A8422600875849 /* Foundation.framework */; };
 		0A83987C15A8422600875849 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A83987B15A8422600875849 /* CoreGraphics.framework */; };
@@ -34,10 +36,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0A69E59315B3236D00F5E04C /* FlipsideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipsideViewController.h; sourceTree = "<group>"; };
-		0A69E59415B3236D00F5E04C /* FlipsideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipsideViewController.m; sourceTree = "<group>"; };
 		0A69E59515B3236D00F5E04C /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		0A69E59615B3236D00F5E04C /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		0A69E59A15B3484700F5E04C /* iso639.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = iso639.cpp; sourceTree = "<group>"; };
+		0A69E59C15B34B4A00F5E04C /* iso639.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iso639.h; sourceTree = "<group>"; };
+		0A69E59D15B7B4FC00F5E04C /* SettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsController.h; sourceTree = "<group>"; };
+		0A69E59E15B7B4FC00F5E04C /* SettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsController.m; sourceTree = "<group>"; };
+		0A69E5A015B7BA4F00F5E04C /* LanguageSelectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanguageSelectionController.h; sourceTree = "<group>"; };
+		0A69E5A115B7BA4F00F5E04C /* LanguageSelectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguageSelectionController.m; sourceTree = "<group>"; };
 		0A83987315A8422600875849 /* iPhrase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPhrase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A83987715A8422600875849 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0A83987915A8422600875849 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -121,10 +127,14 @@
 		0A83987D15A8422600875849 /* iPhrase */ = {
 			isa = PBXGroup;
 			children = (
-				0A69E59315B3236D00F5E04C /* FlipsideViewController.h */,
-				0A69E59415B3236D00F5E04C /* FlipsideViewController.m */,
+				0A69E59A15B3484700F5E04C /* iso639.cpp */,
+				0A69E59C15B34B4A00F5E04C /* iso639.h */,
 				0A69E59515B3236D00F5E04C /* MainViewController.h */,
 				0A69E59615B3236D00F5E04C /* MainViewController.m */,
+				0A69E59D15B7B4FC00F5E04C /* SettingsController.h */,
+				0A69E59E15B7B4FC00F5E04C /* SettingsController.m */,
+				0A69E5A015B7BA4F00F5E04C /* LanguageSelectionController.h */,
+				0A69E5A115B7BA4F00F5E04C /* LanguageSelectionController.m */,
 				0A83988615A8422600875849 /* AppDelegate.h */,
 				0A83988715A8422600875849 /* AppDelegate.mm */,
 				0A83988915A8422600875849 /* MainStoryboard_iPhone.storyboard */,
@@ -236,8 +246,10 @@
 				0ACB1FD415AB137600279AA0 /* AlternativesInput.m in Sources */,
 				0ACB1FD715ADA84100279AA0 /* TokenInput.m in Sources */,
 				0ACB1FDA15ADE5B900279AA0 /* Grammarian.mm in Sources */,
-				0A69E59715B3236D00F5E04C /* FlipsideViewController.m in Sources */,
 				0A69E59815B3236D00F5E04C /* MainViewController.m in Sources */,
+				0A69E59B15B3484700F5E04C /* iso639.cpp in Sources */,
+				0A69E59F15B7B4FC00F5E04C /* SettingsController.m in Sources */,
+				0A69E5A215B7BA5000F5E04C /* LanguageSelectionController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,10 +16,10 @@
     Grammarian* grammarian;
     TokenInput* tokenInput;
     AlternativesInput* altInput;
+    NSString* sourceLanguage;
 }
 
 
-@synthesize flipsidePopoverController = _flipsidePopoverController;
 @synthesize vMain = _vMain;
 @synthesize vIn = _vIn;
 @synthesize svSuggestions = _svSuggestions;
@@ -132,48 +132,38 @@
     }
 }
 
-#pragma mark - Flipside View Controller
 
-- (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller
-{
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        [self dismissModalViewControllerAnimated:YES];
-    } else {
-        [self.flipsidePopoverController dismissPopoverAnimated:YES];
-        self.flipsidePopoverController = nil;
-    }
-}
-
-- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
-{
-    self.flipsidePopoverController = nil;
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"showAlternate"]) {
-        [[segue destinationViewController] setDelegate:self];
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.destinationViewController isKindOfClass:[SettingsController class]]) {
+        SettingsController* settings = (SettingsController*) segue.destinationViewController;
         
-        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-            UIPopoverController *popoverController = [(UIStoryboardPopoverSegue *)segue popoverController];
-            self.flipsidePopoverController = popoverController;
-            popoverController.delegate = self;
+        settings.delegate = self;
+        settings.fromLanguage = [grammarian sourceLanguage];
+        sourceLanguage = nil;
+    }
+}
+
+- (void) settingsDone {
+    if (sourceLanguage != nil) {
+        Grammarian* newGrammarian;
+        
+        newGrammarian = [[Grammarian alloc] initWithLanguage:sourceLanguage];
+        if (newGrammarian != nil) {
+            grammarian = newGrammarian;
+            [tokenInput clearTokens];
+            [tokenInput setText:@""];
+            [self updateSuggestions:[grammarian predict:@""]];
         }
+        sourceLanguage = nil;
     }
 }
 
-- (IBAction)togglePopover:(id)sender
-{
-    if (self.flipsidePopoverController) {
-        [self.flipsidePopoverController dismissPopoverAnimated:YES];
-        self.flipsidePopoverController = nil;
-    } else {
-        [self performSegueWithIdentifier:@"showAlternate" sender:sender];
-    }
+- (void) changedFromLanguage:(NSString*) language {
+    sourceLanguage = language;
 }
 
-
-
+- (void) changedToLanguage:(NSString*) language {
+}
 
 
 - (IBAction)onAlternative:(NSString*)word {

@@ -15,6 +15,10 @@
 + (NSArray*)languages;
 + (NSString*) codeForLanguage:(NSString*)language;
 + (NSString*) languageForCode:(NSString*)code;
++ (NSString*) humanReadableNameOfLanguageFromCode:(NSString*)code;
++ (NSString*) humanReadableNameOfLanguage:(NSString*)language;
+
+- (NSString*) sourceLanguage;
 
 - (NSArray*)predict:(NSString*)prefix;
 - (NSArray*)predict:(NSString*)prefix withEditDistance:(int)distance;

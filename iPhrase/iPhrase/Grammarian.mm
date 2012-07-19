@@ -8,6 +8,7 @@
 
 #import "Grammarian.h"
 #include "grammar.h"
+#include "iso639.h"
 #include <gf/Parser.h>
 #include <gf/trees/Printer.H>
 #include <algorithm>
@@ -66,6 +67,7 @@ static int calcEditDistance(NSString* a, NSString* b) {
 
 @implementation Grammarian
 {
+    gf::reader::Concrete* sourceConcrete;
     gf::Parser* parser;
     gf::parser::ParseState* state;
     std::set<std::string> predictions;
@@ -79,6 +81,9 @@ static int calcEditDistance(NSString* a, NSString* b) {
         return nil;
     }
     
+    sourceConcrete = concrete;
+    
+    concrete->addReference();
     parser = new gf::Parser(pgf, concrete);
     
     state = parser->parse();
@@ -136,6 +141,7 @@ static int calcEditDistance(NSString* a, NSString* b) {
 }
 
 - (void)dealloc {
+    gf::release(sourceConcrete);
     gf::release(parser);
     gf::release(state);
 }
@@ -205,6 +211,32 @@ static int calcEditDistance(NSString* a, NSString* b) {
     }
     
     return nil;
+}
+
++ (NSString*) humanReadableNameOfLanguageFromCode:(NSString*)code {
+    info_t* info;
+    
+    info = getLanguageInfo([code UTF8String]);
+    if (info == NULL || info->name == NULL || info->name[0] == 0) {
+        return [Grammarian languageForCode:code];
+    }
+    
+    return [NSString stringWithUTF8String:info->name];
+}
+
++ (NSString*) humanReadableNameOfLanguage:(NSString*)language {
+    NSString* code;
+    
+    code = [Grammarian codeForLanguage:language];
+    if (code == nil) {
+        return language;
+    }
+    
+    return [Grammarian humanReadableNameOfLanguageFromCode:code];
+}
+
+- (NSString*) sourceLanguage {
+    return [NSString stringWithUTF8String: sourceConcrete->getName().c_str()];
 }
 
 

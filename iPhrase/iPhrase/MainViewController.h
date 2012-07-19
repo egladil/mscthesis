@@ -6,11 +6,10 @@
 //  Copyright (c) 2012 Chalmers. All rights reserved.
 //
 
-#import "FlipsideViewController.h"
+#import "SettingsController.h"
 
-@interface MainViewController : UIViewController <FlipsideViewControllerDelegate, UIPopoverControllerDelegate>
+@interface MainViewController : UIViewController <SettingsControllerDelegate>
 
-@property (strong, nonatomic) UIPopoverController *flipsidePopoverController;
 @property (weak, nonatomic) IBOutlet UIView *vMain;
 @property (weak, nonatomic) IBOutlet UIView *vIn;
 @property (weak, nonatomic) IBOutlet UIScrollView *svSuggestions;
