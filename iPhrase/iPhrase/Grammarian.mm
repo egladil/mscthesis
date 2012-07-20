@@ -73,6 +73,7 @@ static int calcEditDistance(NSString* a, NSString* b) {
     gf::parser::ParseState* state;
     std::set<std::string> predictions;
     int acceptedTokenCount;
+    std::vector<gf::Tree*> treeCache;
 }
 
 - (id)initWithGrammar:(gf::PGF*)pgf withLanguage:(gf::reader::Concrete*)concrete {
@@ -146,7 +147,15 @@ static int calcEditDistance(NSString* a, NSString* b) {
     return [self initWithGrammar:pgf withLanguage:concrete];
 }
 
+- (void)releaseTreeCache {
+    for (std::vector<gf::Tree*>::iterator it = treeCache.begin(); it != treeCache.end(); it++) {
+        delete *it;
+    }
+    treeCache.clear();
+}
+
 - (void)dealloc {
+    [self releaseTreeCache];
     gf::release(sourceConcrete);
     gf::release(parser);
     gf::release(state);
@@ -318,6 +327,8 @@ static int calcEditDistance(NSString* a, NSString* b) {
         return FALSE;
     }
     
+    [self releaseTreeCache];
+    
     acceptedTokenCount++;
     predictions = state->predict();
     
@@ -329,6 +340,7 @@ static int calcEditDistance(NSString* a, NSString* b) {
     state = parser->parse();
     predictions = state->predict();
     acceptedTokenCount = 0;
+    [self releaseTreeCache];
 }
 
 - (int) acceptedTokenCount {
@@ -337,19 +349,20 @@ static int calcEditDistance(NSString* a, NSString* b) {
 
 
 - (NSArray*) parseTrees {
-    std::vector<gf::Tree*> trees;
     NSMutableArray* ret;
     std::set<std::string> deduplicate;
     
-    try {
-        trees = state->getTrees();
-    } catch (gf::Exception& e) {
-        return nil;
+    if (treeCache.empty()) {
+        try {
+            treeCache = state->getTrees();
+        } catch (gf::Exception& e) {
+            return nil;
+        }
     }
     
     ret = [[NSMutableArray alloc] init];
     
-    for (std::vector<gf::Tree*>::iterator it = trees.begin(); it != trees.end(); it++) {
+    for (std::vector<gf::Tree*>::iterator it = treeCache.begin(); it != treeCache.end(); it++) {
         gf::Tree* tree = *it;
         char* buf;
         std::string key;
@@ -367,8 +380,6 @@ static int calcEditDistance(NSString* a, NSString* b) {
         free(buf);
         
         [ret addObject:str];
-        
-        delete tree;
     }
     
     return ret;
@@ -378,7 +389,6 @@ static int calcEditDistance(NSString* a, NSString* b) {
     gf::PGF* pgf;
     gf::reader::Concrete* concrete;
     gf::Linearizer* linearizer;
-    std::vector<gf::Tree*> trees;
     NSMutableArray* ret;
     std::set<std::string> deduplicate;
     
@@ -407,17 +417,19 @@ static int calcEditDistance(NSString* a, NSString* b) {
     }
     
     
-    try {
-        trees = state->getTrees();
-    } catch (gf::Exception& e) {
-        gf::release(linearizer);
-        return nil;
+    if (treeCache.empty()) {
+        try {
+            treeCache = state->getTrees();
+        } catch (gf::Exception& e) {
+            gf::release(linearizer);
+            return nil;
+        }
     }
         
         
     ret = [[NSMutableArray alloc] init];
     
-    for (std::vector<gf::Tree*>::iterator it = trees.begin(); it != trees.end(); it++) {
+    for (std::vector<gf::Tree*>::iterator it = treeCache.begin(); it != treeCache.end(); it++) {
         gf::Tree* tree = *it;
         char* buf;
         std::string key;
@@ -437,15 +449,13 @@ static int calcEditDistance(NSString* a, NSString* b) {
         
         try {
             translation = linearizer->linearizeString(tree);
-            
-            str = [NSString stringWithUTF8String:translation.c_str()];
-        
-            [ret addObject:str];
         } catch (gf::Exception& e) {
             [ret addObject:[NSString stringWithUTF8String:e.getMessage().c_str()]];
+            continue;
         }
         
-        delete tree;
+        str = [NSString stringWithUTF8String:translation.c_str()];
+        [ret addObject:str];
     }
     
     gf::release(concrete);
