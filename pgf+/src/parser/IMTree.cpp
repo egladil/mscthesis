@@ -72,6 +72,9 @@ namespace gf {
             mix = listMixer(src);
             
             for (std::vector<std::vector<IMTree*> >::iterator args = mix.begin(); args != mix.end(); args++) {
+                for (std::vector<IMTree*>::iterator it = args->begin(); it != args->end(); it++) {
+                    (*it)->addReference();
+                }
                 ret.push_back(new IMApplication(production->getFunction()->getName(), *args));
             }
             
