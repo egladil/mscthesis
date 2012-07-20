@@ -66,6 +66,18 @@ static int calcEditDistance(NSString* a, NSString* b) {
 }
 
 
+static std::string toString(gf::Tree* tree) {
+    char* buf;
+    std::string ret;
+    
+    buf = gf::PrintAbsyn().print(tree);
+    ret = buf;
+    free(buf);
+    
+    return ret;
+}
+
+
 @implementation Grammarian
 {
     gf::reader::Concrete* sourceConcrete;
@@ -74,6 +86,7 @@ static int calcEditDistance(NSString* a, NSString* b) {
     std::set<std::string> predictions;
     int acceptedTokenCount;
     std::vector<gf::Tree*> treeCache;
+    std::map<gf::Tree*, std::string> treeStringCache;
 }
 
 - (id)initWithGrammar:(gf::PGF*)pgf withLanguage:(gf::reader::Concrete*)concrete {
@@ -152,6 +165,7 @@ static int calcEditDistance(NSString* a, NSString* b) {
         delete *it;
     }
     treeCache.clear();
+    treeStringCache.clear();
 }
 
 - (void)dealloc {
@@ -347,7 +361,6 @@ static int calcEditDistance(NSString* a, NSString* b) {
     return acceptedTokenCount;
 }
 
-
 - (NSArray*) parseTrees {
     NSMutableArray* ret;
     std::set<std::string> deduplicate;
@@ -364,20 +377,24 @@ static int calcEditDistance(NSString* a, NSString* b) {
     
     for (std::vector<gf::Tree*>::iterator it = treeCache.begin(); it != treeCache.end(); it++) {
         gf::Tree* tree = *it;
-        char* buf;
+        std::map<gf::Tree*, std::string>::const_iterator cachedKey;
         std::string key;
         NSString* str;
         
-        buf = gf::PrintAbsyn().print(tree);
+        cachedKey = treeStringCache.find(tree);
+        if (cachedKey == treeStringCache.end()) {
+            key = toString(tree);
+            treeStringCache.insert(std::make_pair(tree, key));
+        } else {
+            key = cachedKey->second;
+        }
         
-        key = buf;
         if (deduplicate.find(key) != deduplicate.end()) {
             continue;
         }
         deduplicate.insert(key);
         
-        str = [NSString stringWithUTF8String:buf];
-        free(buf);
+        str = [NSString stringWithUTF8String:key.c_str()];
         
         [ret addObject:str];
     }
@@ -431,15 +448,18 @@ static int calcEditDistance(NSString* a, NSString* b) {
     
     for (std::vector<gf::Tree*>::iterator it = treeCache.begin(); it != treeCache.end(); it++) {
         gf::Tree* tree = *it;
-        char* buf;
+        std::map<gf::Tree*, std::string>::const_iterator cachedKey;
         std::string key;
         std::string translation;
         NSString* str;
         
-        
-        buf = gf::PrintAbsyn().print(tree);
-        key = buf;
-        free(buf);
+        cachedKey = treeStringCache.find(tree);
+        if (cachedKey == treeStringCache.end()) {
+            key = toString(tree);
+            treeStringCache.insert(std::make_pair(tree, key));
+        } else {
+            key = cachedKey->second;
+        }
         
         if (deduplicate.find(key) != deduplicate.end()) {
             continue;
