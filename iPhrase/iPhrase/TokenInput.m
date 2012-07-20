@@ -73,8 +73,8 @@ NSString* const ZeroWidthSpace = @"\u200B";
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
+    if (!self) {
+        return nil;
     }
     
     punctuation = [NSCharacterSet characterSetWithCharactersInString:@",.;:!?"];
@@ -322,8 +322,6 @@ NSString* const ZeroWidthSpace = @"\u200B";
 
 - (IBAction)onTextFieldDidChange:(UITextField*)sender {
     NSString* text;
-    const char* data;
-    size_t len;
     
     if (processingText) {
         return;
@@ -346,9 +344,6 @@ NSString* const ZeroWidthSpace = @"\u200B";
         }   
     }
     
-    
-    data = [text UTF8String];
-    len = strlen(data);
     
     if ([text length] > 0) {
         unichar last;
