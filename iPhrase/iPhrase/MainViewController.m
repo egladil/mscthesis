@@ -10,19 +10,22 @@
 #import "AlternativesInput.h"
 #import "Grammarian.h"
 #import "TokenInput.h"
+#import "TranslationsController.h"
 
 @implementation MainViewController
 {
     Grammarian* grammarian;
     TokenInput* tokenInput;
     AlternativesInput* altInput;
-    NSString* sourceLanguage;
+    NSString* newSourceLanguage;
+    NSString* targetLanguage;
 }
 
 
 @synthesize vMain = _vMain;
 @synthesize vIn = _vIn;
 @synthesize svSuggestions = _svSuggestions;
+@synthesize btnTranslate;
 
 
 
@@ -67,7 +70,7 @@
     
     
     grammarian = [[Grammarian alloc] init];
-    
+    targetLanguage = [[Grammarian languages] objectAtIndex:0];
     
     tokenInput = [[TokenInput alloc] initWithFrame:CGRectMake(10, 10, 300, 30)];
     [tokenInput setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
@@ -97,6 +100,7 @@
     [self setVMain:nil];
     [self setVIn:nil];
     [self setSvSuggestions:nil];
+    [self setBtnTranslate:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -139,30 +143,37 @@
         
         settings.delegate = self;
         settings.fromLanguage = [grammarian sourceLanguage];
-        sourceLanguage = nil;
+        settings.toLanguage = targetLanguage;
+        newSourceLanguage = nil;
+    } else if ([segue.destinationViewController isKindOfClass:[TranslationsController class]]) {
+        TranslationsController* translations = (TranslationsController*) segue.destinationViewController;
+        
+        translations.grammarian = grammarian;
+        translations.language = targetLanguage;
     }
 }
 
 - (void) settingsDone {
-    if (sourceLanguage != nil) {
+    if (newSourceLanguage != nil) {
         Grammarian* newGrammarian;
         
-        newGrammarian = [[Grammarian alloc] initWithLanguage:sourceLanguage];
+        newGrammarian = [[Grammarian alloc] initWithLanguage:newSourceLanguage];
         if (newGrammarian != nil) {
             grammarian = newGrammarian;
             [tokenInput clearTokens];
             [tokenInput setText:@""];
             [self updateSuggestions:[grammarian predict:@""]];
         }
-        sourceLanguage = nil;
+        newSourceLanguage = nil;
     }
 }
 
 - (void) changedFromLanguage:(NSString*) language {
-    sourceLanguage = language;
+    newSourceLanguage = language;
 }
 
 - (void) changedToLanguage:(NSString*) language {
+    targetLanguage = language;
 }
 
 
@@ -197,6 +208,7 @@
     
     if ([grammarian accept:token]) {
         [self updateSuggestions:[grammarian predict:@""]];
+        btnTranslate.enabled = [[grammarian parseTrees] count] > 0;
         return;
     }
     
@@ -226,6 +238,8 @@
     for (NSString* token in tokens) {
         [grammarian accept:token];
     }
+    
+    btnTranslate.enabled = [[grammarian parseTrees] count] > 0;
 }
 
 

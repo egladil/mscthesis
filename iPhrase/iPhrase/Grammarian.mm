@@ -10,6 +10,7 @@
 #include "grammar.h"
 #include "iso639.h"
 #include <gf/Parser.h>
+#include <gf/Linearizer.h>
 #include <gf/trees/Printer.H>
 #include <algorithm>
 #include <stdlib.h>
@@ -86,7 +87,12 @@ static int calcEditDistance(NSString* a, NSString* b) {
     concrete->addReference();
     parser = new gf::Parser(pgf, concrete);
     
-    state = parser->parse();
+    try {
+        state = parser->parse();
+    } catch (gf::Exception& e) {
+        return nil;
+    }
+    
     predictions = state->predict();
     
     acceptedTokenCount = 0;
@@ -333,16 +339,30 @@ static int calcEditDistance(NSString* a, NSString* b) {
 - (NSArray*) parseTrees {
     std::vector<gf::Tree*> trees;
     NSMutableArray* ret;
+    std::set<std::string> deduplicate;
     
-    trees = state->getTrees();
+    try {
+        trees = state->getTrees();
+    } catch (gf::Exception& e) {
+        return nil;
+    }
+    
     ret = [[NSMutableArray alloc] init];
     
     for (std::vector<gf::Tree*>::iterator it = trees.begin(); it != trees.end(); it++) {
         gf::Tree* tree = *it;
         char* buf;
+        std::string key;
         NSString* str;
         
         buf = gf::PrintAbsyn().print(tree);
+        
+        key = buf;
+        if (deduplicate.find(key) != deduplicate.end()) {
+            continue;
+        }
+        deduplicate.insert(key);
+        
         str = [NSString stringWithUTF8String:buf];
         free(buf);
         
@@ -350,6 +370,85 @@ static int calcEditDistance(NSString* a, NSString* b) {
         
         delete tree;
     }
+    
+    return ret;
+}
+
+- (NSArray*) translationsForLanguage:(NSString*)language {
+    gf::PGF* pgf;
+    gf::reader::Concrete* concrete;
+    gf::Linearizer* linearizer;
+    std::vector<gf::Tree*> trees;
+    NSMutableArray* ret;
+    std::set<std::string> deduplicate;
+    
+    try {
+        pgf = getGrammar();
+        if (pgf == NULL) {
+            return nil;
+        }
+        
+        concrete = pgf->getConcrete([language UTF8String]);
+        if (concrete == NULL) {
+            return nil;
+        }
+    } catch (gf::Exception& e) {
+        return nil;
+    }
+    
+    pgf->addReference();
+    concrete->addReference();
+    try {
+        linearizer = new gf::Linearizer(pgf, concrete);
+    } catch (gf::Exception& e) {
+        gf::release(pgf);
+        gf::release(concrete);
+        return nil;
+    }
+    
+    
+    try {
+        trees = state->getTrees();
+    } catch (gf::Exception& e) {
+        gf::release(linearizer);
+        return nil;
+    }
+        
+        
+    ret = [[NSMutableArray alloc] init];
+    
+    for (std::vector<gf::Tree*>::iterator it = trees.begin(); it != trees.end(); it++) {
+        gf::Tree* tree = *it;
+        char* buf;
+        std::string key;
+        std::string translation;
+        NSString* str;
+        
+        
+        buf = gf::PrintAbsyn().print(tree);
+        key = buf;
+        free(buf);
+        
+        if (deduplicate.find(key) != deduplicate.end()) {
+            continue;
+        }
+        deduplicate.insert(key);
+        
+        
+        try {
+            translation = linearizer->linearizeString(tree);
+            
+            str = [NSString stringWithUTF8String:translation.c_str()];
+        
+            [ret addObject:str];
+        } catch (gf::Exception& e) {
+            [ret addObject:[NSString stringWithUTF8String:e.getMessage().c_str()]];
+        }
+        
+        delete tree;
+    }
+    
+    gf::release(concrete);
     
     return ret;
 }

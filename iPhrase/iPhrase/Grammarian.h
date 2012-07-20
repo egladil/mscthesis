@@ -30,4 +30,5 @@
 - (int) acceptedTokenCount;
 
 - (NSArray*) parseTrees;
+- (NSArray*) translationsForLanguage:(NSString*)language;
 @end

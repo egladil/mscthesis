@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIView *vMain;
 @property (weak, nonatomic) IBOutlet UIView *vIn;
 @property (weak, nonatomic) IBOutlet UIScrollView *svSuggestions;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *btnTranslate;
 
 @end

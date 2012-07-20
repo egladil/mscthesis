@@ -26,20 +26,77 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="puF-V4-fBj">
-                        <barButtonItem key="rightBarButtonItem" title="Settings" id="IxN-QT-ovg">
+                        <barButtonItem key="leftBarButtonItem" title="Settings" id="IxN-QT-ovg">
                             <connections>
                                 <segue destination="vNj-b6-AlM" kind="push" id="uEd-RJ-ese"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Translate" id="fOt-be-P6l">
+                            <connections>
+                                <segue destination="tFg-Jl-GEz" kind="push" id="bEF-0d-Uyf"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="btnTranslate" destination="fOt-be-P6l" id="NdR-zk-N9Z"/>
                         <outlet property="svSuggestions" destination="6Z1-MM-A7W" id="SuN-QW-oCn"/>
                         <outlet property="vIn" destination="QvE-Cx-oX4" id="mdR-I6-Sxx"/>
                         <outlet property="vMain" destination="3" id="1O9-xO-4bg"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="475" y="182"/>
+            <point key="canvasLocation" x="463" y="142"/>
+        </scene>
+        <scene sceneID="GvO-K5-6Bg">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aEe-fn-KRq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="tFg-Jl-GEz" customClass="TranslationsController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="6mN-IC-jSc">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TranslationCell" textLabel="Nwr-On-ve7" detailTextLabel="uVJ-EP-mln" style="IBUITableViewCellStyleSubtitle" id="MEy-qx-6Tf">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Nwr-On-ve7">
+                                            <rect key="frame" x="10" y="2" width="38" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uVJ-EP-mln">
+                                            <rect key="frame" x="10" y="24" width="47" height="18"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="tFg-Jl-GEz" id="GVK-6E-mf2"/>
+                            <outlet property="delegate" destination="tFg-Jl-GEz" id="gB8-jp-lFV"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Translations" id="zGh-x0-d3D">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="W38-BX-mxp">
+                            <connections>
+                                <action selector="doneTouched:" destination="tFg-Jl-GEz" id="7VX-Bd-EH0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="1005" y="471"/>
         </scene>
         <scene sceneID="tfw-mD-Tsu">
             <objects>
@@ -98,7 +155,7 @@
                     </connections>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="905" y="182"/>
+            <point key="canvasLocation" x="1005" y="-150"/>
         </scene>
         <scene sceneID="TJZ-uY-wmD">
             <objects>
@@ -154,7 +211,7 @@
                     <navigationItem key="navigationItem" title="Language" id="rx0-Sl-BQ2"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="1333" y="182"/>
+            <point key="canvasLocation" x="1433" y="-150"/>
         </scene>
         <scene sceneID="LKv-eA-pQi">
             <objects>
@@ -171,7 +228,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="-51" y="182"/>
+            <point key="canvasLocation" x="-31" y="142"/>
         </scene>
     </scenes>
     <classes>
@@ -181,6 +238,7 @@
         <class className="MainViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="btnTranslate" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="svSuggestions" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="vIn" candidateClass="UIView"/>
                 <relationship kind="outlet" name="vMain" candidateClass="UIView"/>
@@ -191,6 +249,12 @@
             <relationships>
                 <relationship kind="action" name="doneTouched:"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="TranslationsController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TranslationsController.h"/>
+            <relationships>
+                <relationship kind="action" name="doneTouched:"/>
             </relationships>
         </class>
     </classes>
