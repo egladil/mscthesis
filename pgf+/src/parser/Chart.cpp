@@ -19,8 +19,8 @@ namespace gf {
         }
         
         Chart::~Chart() {
-            for (std::map<uint32_t, std::set<gf::reader::Production*> >::iterator it = productionSets.begin(); it != productionSets.end(); it++) {
-                for (std::set<gf::reader::Production*>::iterator it2 = it->second.begin(); it2 != it->second.end(); it2++) {
+            for (std::map<uint32_t, gf::reader::ProductionContentSet>::iterator it = productionSets.begin(); it != productionSets.end(); it++) {
+                for (gf::reader::ProductionContentSet::iterator it2 = it->second.begin(); it2 != it->second.end(); it2++) {
                     (*it2)->release();
                 }
                 it->second.clear();
@@ -29,12 +29,12 @@ namespace gf {
         }
         
         bool Chart::addProduction(gf::reader::Production* production) {
-            std::map<uint32_t, std::set<gf::reader::Production*> >::iterator set;
-            std::set<gf::reader::Production*>::const_iterator it;
+            std::map<uint32_t, gf::reader::ProductionContentSet>::iterator set;
+            gf::reader::ProductionContentSet::const_iterator it;
             
             set = productionSets.find(production->getCategory());
             if (set == productionSets.end()) {
-                set = productionSets.insert(std::make_pair(production->getCategory(), std::set<gf::reader::Production*>())).first;
+                set = productionSets.insert(std::make_pair(production->getCategory(), gf::reader::ProductionContentSet())).first;
             } else {
                 it = set->second.find(production);
                 if (it != set->second.end()) {
@@ -53,7 +53,7 @@ namespace gf {
         }
         
         std::vector<gf::reader::ApplProduction*> Chart::getProductions(uint32_t resultCategory) const {
-            std::map<uint32_t, std::set<gf::reader::Production*> >::const_iterator set;
+            std::map<uint32_t, gf::reader::ProductionContentSet>::const_iterator set;
             std::vector<gf::reader::ApplProduction*> ret;
             
             set = productionSets.find(resultCategory);
@@ -61,7 +61,7 @@ namespace gf {
                 return ret;
             }
             
-            for (std::set<gf::reader::Production*>::const_iterator it = set->second.begin(); it != set->second.end(); it++) {
+            for (gf::reader::ProductionContentSet::const_iterator it = set->second.begin(); it != set->second.end(); it++) {
                 std::vector<gf::reader::ApplProduction*> tmp;
                 
                 tmp = uncoerce(*it);
@@ -157,9 +157,9 @@ namespace gf {
             std::string ret;
             
             ret = "=== Productions: ===\n";
-            for (std::map<uint32_t, std::set<gf::reader::Production*> >::const_iterator it = productionSets.begin(); it != productionSets.end(); it++) {
+            for (std::map<uint32_t, gf::reader::ProductionContentSet>::const_iterator it = productionSets.begin(); it != productionSets.end(); it++) {
                 ret+= "[";
-                for (std::set<gf::reader::Production*>::const_iterator it2 = it->second.begin(); it2 != it->second.end(); it2++) {
+                for (gf::reader::ProductionContentSet::const_iterator it2 = it->second.begin(); it2 != it->second.end(); it2++) {
                     ret+= (it2 == it->second.begin() ? "" : ", ") + (*it2)->toString();
                 }
                 ret+= "]\n";

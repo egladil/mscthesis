@@ -25,7 +25,7 @@ namespace gf {
         class Chart : public RefBase {
         private:
             uint32_t nextCategory;
-            std::map<uint32_t, std::set<gf::reader::Production*> > productionSets;
+            std::map<uint32_t, gf::reader::ProductionContentSet> productionSets;
             std::map<std::vector<uint32_t>, uint32_t> categoryBookKeeper;
             
             

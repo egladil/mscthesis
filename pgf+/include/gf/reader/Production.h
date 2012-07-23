@@ -10,6 +10,7 @@
 #define pgf__Production_h
 
 #include <stdint.h>
+#include <set>
 #include <string>
 #include <vector>
 
@@ -34,13 +35,23 @@ namespace gf {
             virtual uint32_t range() const;
             
             virtual std::string toString() const = 0;
-            virtual bool equals(const Production* other) const = 0;
+            virtual bool operator < (const Production* other) const = 0;
             
             virtual const std::vector<uint32_t>& getDomain() const = 0;
             
             virtual uint32_t getSelector() const;
             virtual uint32_t getFId() const;
         };
+        
+        class ProductionContentComparator {
+        public:
+            inline bool operator()(const Production* a, const Production* b) {
+                return a->operator<(b);
+            }
+        };
+        
+        typedef std::set<Production*> ProductionPointerSet;
+        typedef std::set<Production*, ProductionContentComparator> ProductionContentSet;
         
     }
 }

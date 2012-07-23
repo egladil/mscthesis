@@ -73,7 +73,7 @@ namespace gf {
             virtual std::string toString() const;
             
             // TODO: Cache map?
-            virtual std::map<uint32_t, std::set<Production*> > getSetOfProductions() const;
+            virtual std::map<uint32_t, ProductionPointerSet> getSetOfProductions() const;
         };
         
     }

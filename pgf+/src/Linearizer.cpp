@@ -81,7 +81,7 @@ namespace gf {
         for (MapIntSP::const_iterator outer = productions.begin(); outer != productions.end(); outer++) {
             uint32_t res = outer->first;
             
-            for (SetProd::const_iterator prod = outer->second.begin(); prod != outer->second.end(); prod++) {
+            for (gf::reader::ProductionPointerSet::const_iterator prod = outer->second.begin(); prod != outer->second.end(); prod++) {
                 std::vector<std::string> funs;
                 
                 funs = getFunctions(*prod, productions);
@@ -95,14 +95,14 @@ namespace gf {
                         if (oldSet != oldMap->second.end()) {
                             oldSet->second.insert(*prod);
                         } else {
-                            SetProd prodSet;
+                            gf::reader::ProductionPointerSet prodSet;
                             
                             prodSet.insert(*prod);
                             
                             oldMap->second.insert(std::make_pair(res, prodSet));
                         }
                     } else {
-                        SetProd prodSet;
+                        gf::reader::ProductionPointerSet prodSet;
                         MapIntSP newMap;
                         
                         prodSet.insert(*prod);
@@ -133,7 +133,7 @@ namespace gf {
             fid = coerce->getInitId();
             MapIntSP::const_iterator it = productions.find(fid);
             if (it != productions.end()) {
-                for (SetProd::const_iterator prod = it->second.begin(); prod != it->second.end(); prod++) {
+                for (gf::reader::ProductionPointerSet::const_iterator prod = it->second.begin(); prod != it->second.end(); prod++) {
                     std::vector<std::string> funs;
                     
                     funs = getFunctions(*prod, productions);
@@ -155,10 +155,10 @@ namespace gf {
         return productions.find(index) != productions.end();
     }
     
-    Linearizer::SetProd Linearizer::filterProdSet1(const MapIntSP& productions, const SetProd& set) const {
-        SetProd ret;
+    gf::reader::ProductionPointerSet Linearizer::filterProdSet1(const MapIntSP& productions, const gf::reader::ProductionPointerSet& set) const {
+        gf::reader::ProductionPointerSet ret;
         
-        for (SetProd::const_iterator it = set.begin(); it != set.end(); it++) {
+        for (gf::reader::ProductionPointerSet::const_iterator it = set.begin(); it != set.end(); it++) {
             if (filterRule(productions, *it)) {
                 ret.insert(*it);
             }
@@ -173,7 +173,7 @@ namespace gf {
         bool modified;
         
         for (MapIntSP::const_iterator it = productions.begin(); it != productions.end(); it++) {
-            SetProd set;
+            gf::reader::ProductionPointerSet set;
             
             set = filterProdSet1(productions0, it->second);
             if (!set.empty()) {
@@ -185,7 +185,7 @@ namespace gf {
         modified = false;
         for (MapIntSP::const_iterator it = filteredProductions.begin(); it != filteredProductions.end(); it++) {
             uint32_t index = it->first;
-            SetProd set = it->second;
+            gf::reader::ProductionPointerSet set = it->second;
             
             MapIntSP::const_iterator old = productions0.find(index);
             if (old != productions0.end()) {
@@ -371,7 +371,7 @@ namespace gf {
     std::vector<gf::linearizer::LinTriple*> Linearizer::lin0(std::vector<std::string>& xs, const std::vector<std::string>& ys, gf::linearizer::CncType* mb_cty, uint32_t mb_fid, const Tree* tree) const throw (gf::LinearizerException) {
         const Lambda* lambda;
 
-#ifdef DEBUG
+#ifdef GFDEBUG
         fprintf(stderr, "lin0: %s\n", gf::PrintAbsyn().print(const_cast<Tree*>(tree)));
 #endif
         
@@ -422,7 +422,7 @@ namespace gf {
     std::vector<gf::linearizer::LinTriple*> Linearizer::apply(const std::vector<std::string>& xs, gf::linearizer::CncType* mb_cty, uint32_t n_fid, const std::string& function, const std::vector<const Tree*>& trees) const throw (gf::LinearizerException) {
         MapStrMapIntSP::const_iterator productions;
         
-#ifdef DEBUG
+#ifdef GFDEBUG
         fprintf(stderr, "apply: %s\n", function.c_str());
 #endif
         
@@ -499,7 +499,7 @@ namespace gf {
                 gf::release(*itApp);
             }
             
-#ifdef DEBUG
+#ifdef GFDEBUG
             fprintf(stderr, "apply -> [");
             for (std::vector<gf::linearizer::LinTriple*>::const_iterator it = ret.begin(); it != ret.end(); it++) {
                 fprintf(stderr, "%s%s", it == ret.begin() ? "" : ", ", (*it)->toString().c_str());
@@ -522,7 +522,7 @@ namespace gf {
             
             for (MapIntSP::const_iterator it = productions.begin(); it != productions.end(); it++) {
                 uint32_t fid = it->first;
-                for (SetProd::const_iterator ip = it->second.begin(); ip != it->second.end(); ip++) {
+                for (gf::reader::ProductionPointerSet::const_iterator ip = it->second.begin(); ip != it->second.end(); ip++) {
                     gf::linearizer::CncType* cty;
                     std::vector<gf::linearizer::AppResult*> temp;
                     /*
@@ -530,7 +530,7 @@ namespace gf {
                     prod->addReference();
                     
                     for (MapIntSP::const_iterator itMap = productions.begin(); itMap != productions.end(); itMap++) {
-                        for (SetProd::const_iterator itSet = itMap->second.begin(); itSet != itMap->second.end(); itSet++) {
+                        for (gf::reader::ProductionPointerSet::const_iterator itSet = itMap->second.begin(); itSet != itMap->second.end(); itSet++) {
                             (*itSet)->addReference();
                         }
                     }
@@ -552,7 +552,7 @@ namespace gf {
                 return ret;
             }
             
-            for (SetProd::const_iterator ip = it->second.begin(); ip != it->second.end(); ip++) {
+            for (gf::reader::ProductionPointerSet::const_iterator ip = it->second.begin(); ip != it->second.end(); ip++) {
                 std::vector<gf::linearizer::AppResult*> temp;
                 
                 temp = toApp(mb_cty, *ip, function, productions);
@@ -634,7 +634,7 @@ namespace gf {
             MapIntSP::const_iterator it = productions.find(coerce->getInitId());
             assert(it != productions.end());
             
-            for (SetProd::const_iterator ip = it->second.begin(); ip != it->second.begin(); ip++) {
+            for (gf::reader::ProductionPointerSet::const_iterator ip = it->second.begin(); ip != it->second.begin(); ip++) {
                 std::vector<gf::linearizer::AppResult*> temp;
                 
                 temp = toApp(cty, *ip, function, productions);
@@ -768,7 +768,7 @@ namespace gf {
         
         lins = lin0(empty, xs, cncType, n_fid, exp);
         
-#ifdef DEBUG
+#ifdef GFDEBUG
         fprintf(stderr, "descend.lins: [");
         for (std::vector<gf::linearizer::LinTriple*>::const_iterator it = lins.begin(); it != lins.end(); it++) {
             fprintf(stderr, "%s%s", it == lins.begin() ? "" : ", ", (*it)->toString().c_str());

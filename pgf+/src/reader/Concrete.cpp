@@ -107,8 +107,8 @@ namespace gf {
         }
         
         // TODO: Cache map?
-        std::map<uint32_t, std::set<Production*> > Concrete::getSetOfProductions() const {
-            std::map<uint32_t, std::set<Production*> > ret;
+        std::map<uint32_t, ProductionPointerSet> Concrete::getSetOfProductions() const {
+            std::map<uint32_t, ProductionPointerSet> ret;
             
             for (std::vector<ProductionSet*>::const_iterator it = productions.begin(); it != productions.end(); it++) {
                 ProductionSet* ps = *it;

@@ -18,7 +18,7 @@ namespace gf {
         FILE* file;
         PGF* ret;
         
-#ifdef DEBUG
+#ifdef GFDEBUG
         fprintf(stderr, "Opening %s\n", filename.c_str());
 #endif
         
@@ -43,7 +43,7 @@ namespace gf {
         FILE* file;
         PGF* ret;
         
-#ifdef DEBUG
+#ifdef GFDEBUG
         fprintf(stderr, "Opening %s\n", filename.c_str());
 #endif
         

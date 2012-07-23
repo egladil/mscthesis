@@ -171,8 +171,8 @@
 		0A1D1E3315949D3F0074D642 /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; path = src; sourceTree = "<group>"; };
 		0A1D1EBE1599AD200074D642 /* Exception.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Exception.cpp; sourceTree = "<group>"; };
 		0A1D1EBF1599AD200074D642 /* IOException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IOException.cpp; sourceTree = "<group>"; };
-		0A1D1EC01599AD200074D642 /* PGFReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PGFReader.cpp; sourceTree = "<group>"; };
-		0A1D1EC11599AD200074D642 /* RefBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RefBase.cpp; sourceTree = "<group>"; };
+		0A1D1EC01599AD200074D642 /* PGFReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = PGFReader.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
+		0A1D1EC11599AD200074D642 /* RefBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = RefBase.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		0A1D1EC21599AD200074D642 /* UnknownCategoryException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UnknownCategoryException.cpp; sourceTree = "<group>"; };
 		0A1D1EC31599AD200074D642 /* UnknownLanguageException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UnknownLanguageException.cpp; sourceTree = "<group>"; };
 		0A1D1ECA1599AD950074D642 /* AbsCat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AbsCat.cpp; sourceTree = "<group>"; };
@@ -217,7 +217,7 @@
 		0A1D1F18159A0B0F0074D642 /* WeightedIdent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WeightedIdent.cpp; sourceTree = "<group>"; };
 		0A1D1F1A159A0B870074D642 /* WildCardPattern.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WildCardPattern.cpp; sourceTree = "<group>"; };
 		0A1D1F1C159B0F870074D642 /* PGF.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PGF.cpp; sourceTree = "<group>"; };
-		0A1D1F1E159B14550074D642 /* PGFBuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PGFBuilder.cpp; sourceTree = "<group>"; };
+		0A1D1F1E159B14550074D642 /* PGFBuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = PGFBuilder.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		0A8397F815A83AAC00875849 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0A83980815A83B0500875849 /* libpgf+ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libpgf+ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A83980C15A83B0500875849 /* pgf+ios-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "pgf+ios-Prefix.pch"; sourceTree = "<group>"; };
@@ -228,7 +228,7 @@
 		0A9C64E415A472A7005B2989 /* ParseState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ParseState.cpp; sourceTree = "<group>"; };
 		0A9C64E615A489B5005B2989 /* ActiveItem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActiveItem.cpp; sourceTree = "<group>"; };
 		0A9C64E815A48CC5005B2989 /* ParseTrie.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ParseTrie.cpp; sourceTree = "<group>"; };
-		0A9C64EA15A5A295005B2989 /* Chart.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Chart.cpp; sourceTree = "<group>"; };
+		0A9C64EA15A5A295005B2989 /* Chart.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = Chart.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		0A9C64EC15A5AED7005B2989 /* ActiveSet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActiveSet.cpp; sourceTree = "<group>"; };
 		0A9C64EE15A5B416005B2989 /* IMTree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IMTree.cpp; sourceTree = "<group>"; };
 		0A9C64F015A5C49C005B2989 /* IMLambda.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IMLambda.cpp; sourceTree = "<group>"; };
@@ -245,7 +245,7 @@
 		0ACD4C2F159DACBC00878123 /* LinTriple.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LinTriple.cpp; sourceTree = "<group>"; };
 		0ACD4C31159DACEA00878123 /* RezDesc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RezDesc.cpp; sourceTree = "<group>"; };
 		0ACD4C33159DE20E00878123 /* LinearizerException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LinearizerException.cpp; sourceTree = "<group>"; };
-		0ACD4C35159DE26B00878123 /* Linearizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Linearizer.cpp; sourceTree = "<group>"; };
+		0ACD4C35159DE26B00878123 /* Linearizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = Linearizer.cpp; sourceTree = "<group>"; };
 		0ACD4C3815A305E000878123 /* Absyn.C */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Absyn.C; sourceTree = "<group>"; };
 		0ACD4C3915A305E000878123 /* Lexer.C */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Lexer.C; sourceTree = "<group>"; };
 		0ACD4C3A15A305E000878123 /* Parser.C */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Parser.C; sourceTree = "<group>"; };
@@ -814,6 +814,7 @@
 				0A83981215A83B0500875849 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

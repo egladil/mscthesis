@@ -26,7 +26,7 @@ namespace gf {
             virtual ~CoerceProduction();
             
             virtual std::string toString() const;
-            virtual bool equals(const Production* other) const;
+            virtual bool operator < (const Production* other) const;
             
             virtual const std::vector<uint32_t>& getDomain() const;
             

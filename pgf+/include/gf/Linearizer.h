@@ -33,8 +33,7 @@ namespace gf {
     
     class Linearizer : public RefBase {
     private:
-        typedef std::set<gf::reader::Production*> SetProd;
-        typedef std::map<uint32_t, SetProd> MapIntSP;
+        typedef std::map<uint32_t, gf::reader::ProductionPointerSet> MapIntSP;
         typedef std::map<std::string, MapIntSP> MapStrMapIntSP;
         typedef std::vector<gf::linearizer::BracketedToken*> VBracketedToken;
         typedef std::vector<VBracketedToken> VVBracketedToken;
@@ -72,7 +71,7 @@ namespace gf {
         /**
          * filters a set of productions according to filterRule
          **/
-        SetProd filterProdSet1(const MapIntSP& productions, const SetProd& set) const;
+        gf::reader::ProductionPointerSet filterProdSet1(const MapIntSP& productions, const gf::reader::ProductionPointerSet& set) const;
         
         /**
          * filters an IntMap of productions according to filterProdsSet1

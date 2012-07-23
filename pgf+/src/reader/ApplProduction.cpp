@@ -35,15 +35,21 @@ namespace gf {
             return ret;
         }
         
-        bool ApplProduction::equals(const Production* other) const {
+        bool ApplProduction::operator<(const Production* other) const {
             const ApplProduction* appl;
             
             appl = dynamic_cast<const ApplProduction*>(other);
             if (appl == NULL) {
+                return this < other;
+            }
+            
+            if (function < appl->function) {
+                return true;
+            } else if (function > appl->function) {
                 return false;
             }
             
-            return domain == appl->domain;
+            return domain < appl->domain;
         }
         
         const std::vector<uint32_t>& ApplProduction::getDomain() const {

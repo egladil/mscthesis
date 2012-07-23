@@ -43,7 +43,7 @@ namespace gf {
             virtual uint32_t getId() const;
             
             // TODO: Cache set?
-            virtual std::set<Production*> getSetOfProductions() const;
+            virtual ProductionPointerSet getSetOfProductions() const;
         };
         
     }

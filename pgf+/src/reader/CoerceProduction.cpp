@@ -32,14 +32,14 @@ namespace gf {
             return ret;
         }
         
-        bool CoerceProduction::equals(const Production* other) const {
+        bool CoerceProduction::operator<(const Production* other) const {
             const CoerceProduction* coerce = dynamic_cast<const CoerceProduction*>(other);
             
             if (coerce == NULL) {
-                return false;
+                return this < other;
             }
             
-            return initId == coerce->initId;
+            return initId < coerce->initId;
         }
         
         const std::vector<uint32_t>& CoerceProduction::getDomain() const {

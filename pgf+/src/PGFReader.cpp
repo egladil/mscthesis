@@ -103,7 +103,7 @@ namespace gf {
         
         // Read version
         read(version, sizeof(version));        
-#ifdef DEBUG
+#ifdef GFDEBUG
         fprintf(stderr, "PGF version: %u.%u.%u.%u\n", version[0], version[1], version[2], version[3]);
 #endif
         
@@ -114,7 +114,7 @@ namespace gf {
             gf::reader::StringLit* strlit = dynamic_cast<gf::reader::StringLit*>(idxFlag->second);
             assert(strlit != NULL); // Malformed pgf, throw exception instead.
             index = readIndex(strlit->getValue());
-#ifdef DEBUG
+#ifdef GFDEBUG
             fprintf(stderr, "[");
             for (std::map<std::string, uint32_t>::const_iterator it = index.begin(); it != index.end(); it++) {
                 fprintf(stderr, "%s[%s, %u]", it == index.begin() ? "" : ", ", it->first.c_str(), it->second);
@@ -133,7 +133,7 @@ namespace gf {
             std::string name;
             
             name = getIdent();
-#ifdef DEBUG
+#ifdef GFDEBUG
             fprintf(stderr, "Language: %s\n", name.c_str());
 #endif
             if (readAllLanguages || languages.erase(name) > 0) {
@@ -144,7 +144,7 @@ namespace gf {
                     throw IOException("Malformed pgf, index for concrete not found.");
                 }
                 skip(langIdx->second);
-#ifdef DEBUG
+#ifdef GFDEBUG
                 fprintf(stderr, "Skipping %s\n", name.c_str());
 #endif
             } else {
@@ -206,7 +206,7 @@ namespace gf {
         std::vector<gf::reader::AbsCat*> absCats;
         
         name = getIdent();
-#ifdef DEBUG
+#ifdef GFDEBUG
         fprintf(stderr, "Abstract syntax [%s]\n", name.c_str());
 #endif
         flags = getListFlag();
@@ -248,7 +248,7 @@ namespace gf {
         gf::reader::AbsFun* ret;
         
         name = getIdent();
-#ifdef DEBUG
+#ifdef GFDEBUG
         fprintf(stderr, "AbsFun: '%s'\n", name.c_str());
 #endif
         type = getType();
@@ -261,7 +261,7 @@ namespace gf {
         
         ret = new gf::reader::AbsFun(name, type, arity, equations, weight);
         
-#ifdef DEBUG
+#ifdef GFDEBUG
         fprintf(stderr, "/AbsFun: %s\n", ret->toString().c_str());
 #endif
         
@@ -315,7 +315,7 @@ namespace gf {
         expressions = getListExpr();
         
         ret = new gf::reader::Type(hypos, returnCat, expressions);
-#ifdef DEBUG
+#ifdef GFDEBUG
         fprintf(stderr, "Type: %s\n", ret->toString().c_str());
 #endif
         return ret;
@@ -542,19 +542,19 @@ namespace gf {
         std::map<std::string, gf::reader::CncCat*> cncCats;
         int32_t fId;
         
-#ifdef DEBUG
+#ifdef GFDEBUG
         fprintf(stderr, "Concrete: %s\n", name.c_str());
         
         fprintf(stderr, "Concrete: Reading flags\n");
 #endif
         flags = getListFlag();
         
-#ifdef DEBUG
+#ifdef GFDEBUG
         fprintf(stderr, "Concrete: Skipping print names\n");
 #endif
         skipListPrintName();
         
-#ifdef DEBUG
+#ifdef GFDEBUG
         fprintf(stderr, "Concrete: Reading sequences\n");
 #endif
         sequences = getListSequence();
@@ -598,7 +598,7 @@ namespace gf {
         
         cnt = getInt();
         for (int i = 0; i < cnt; i++) {
-#ifdef DEBUG
+#ifdef GFDEBUG
             fprintf(stderr, "Reading sequence %i/%i\n", i, cnt);
 #endif
             ret.push_back(getSequence());
@@ -612,7 +612,7 @@ namespace gf {
         gf::reader::Symbol* ret;
         
         tag = getInt();  
-#ifdef DEBUG
+#ifdef GFDEBUG
         fprintf(stderr, "Symbol: type=%i\n", tag);
 #endif
         switch (tag) {
@@ -652,7 +652,7 @@ namespace gf {
                 throw IOException("invalid tag for symbol: " + toString(tag));
         }
         
-#ifdef DEBUG
+#ifdef GFDEBUG
         fprintf(stderr, "/Symbol: %s\n", ret->toString().c_str());
 #endif
         
@@ -723,7 +723,7 @@ namespace gf {
         
         cnt = getInt();
         for (int i = 0; i < cnt; i++) {
-#ifdef DEBUG
+#ifdef GFDEBUG
             fprintf(stderr, "Reading concrete function %i/%i\n", i, cnt);
 #endif
             ret.push_back(getCncFun(sequences));
@@ -767,7 +767,7 @@ namespace gf {
         
         cnt = getInt();
         for (int i = 0; i < cnt; i++) {
-#ifdef DEBUG
+#ifdef GFDEBUG
             fprintf(stderr, "Reading production set %i/%i\n", i, cnt);
 #endif
             ret.push_back(getProductionSet(cncFuns));
@@ -793,7 +793,7 @@ namespace gf {
         gf::reader::Production* ret = NULL;
         
         tag = getInt();
-#ifdef DEBUG
+#ifdef GFDEBUG
         fprintf(stderr, "Production: type=%i\n", tag);
 #endif
         switch (tag) {
@@ -826,7 +826,7 @@ namespace gf {
                 throw IOException("invalid tag for production: " + toString(tag));
         }
         
-#ifdef DEBUG
+#ifdef GFDEBUG
         fprintf(stderr, "/Production: %s\n", ret->toString().c_str());
 #endif
         return ret;
@@ -867,7 +867,7 @@ namespace gf {
         for (int i = 0; i < cnt; i++) {
             gf::reader::CncCat* cat;
             
-#ifdef DEBUG
+#ifdef GFDEBUG
             fprintf(stderr, "Reading concrete category %i/%i\n", i, cnt);
 #endif
             

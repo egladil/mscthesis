@@ -48,8 +48,8 @@ namespace gf {
         }
         
         // TODO: Cache set?
-        std::set<Production*> ProductionSet::getSetOfProductions() const {
-            std::set<Production*> ret;
+        ProductionPointerSet ProductionSet::getSetOfProductions() const {
+            ProductionPointerSet ret;
             
             for (std::vector<Production*>::const_iterator it = productions.begin(); it != productions.end(); it++) {
                 ret.insert(*it);
