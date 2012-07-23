@@ -7,7 +7,7 @@
 //
 
 #import "TranslationsController.h"
-
+#import "TranslationDetailsController.h"
 
 @implementation TranslationsController
 {
@@ -67,6 +67,16 @@
     }
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.destinationViewController isKindOfClass:[TranslationDetailsController class]]) {
+        TranslationDetailsController* translation = (TranslationDetailsController*) segue.destinationViewController;
+        UITableViewCell* cell = (UITableViewCell*) sender;
+        
+        translation.translation = [translations objectAtIndex:cell.tag];
+        translation.disambiguation = disambiguations != nil ? [disambiguations objectAtIndex:cell.tag] : nil;
+    }
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -92,6 +102,8 @@
     } else {
         cell.detailTextLabel.text = [trees objectAtIndex:indexPath.row];
     }
+    
+    cell.tag = indexPath.row;
     
     return cell;
 }

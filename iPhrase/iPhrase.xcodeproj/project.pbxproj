@@ -34,6 +34,7 @@
 		0ACB1FD415AB137600279AA0 /* AlternativesInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACB1FD315AB137600279AA0 /* AlternativesInput.m */; };
 		0ACB1FD715ADA84100279AA0 /* TokenInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACB1FD615ADA84100279AA0 /* TokenInput.m */; };
 		0ACB1FDA15ADE5B900279AA0 /* Grammarian.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0ACB1FD915ADE5B800279AA0 /* Grammarian.mm */; };
+		0ACF676F15BD838600434BC6 /* TranslationDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACF676E15BD838600434BC6 /* TranslationDetailsController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,8 @@
 		0ACB1FD615ADA84100279AA0 /* TokenInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TokenInput.m; sourceTree = "<group>"; };
 		0ACB1FD815ADE5B800279AA0 /* Grammarian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grammarian.h; sourceTree = "<group>"; };
 		0ACB1FD915ADE5B800279AA0 /* Grammarian.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Grammarian.mm; sourceTree = "<group>"; };
+		0ACF676D15BD838600434BC6 /* TranslationDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TranslationDetailsController.h; sourceTree = "<group>"; };
+		0ACF676E15BD838600434BC6 /* TranslationDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TranslationDetailsController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +139,8 @@
 				0A69E59615B3236D00F5E04C /* MainViewController.m */,
 				0A69E5A315B8D9AF00F5E04C /* TranslationsController.h */,
 				0A69E5A415B8D9B000F5E04C /* TranslationsController.m */,
+				0ACF676D15BD838600434BC6 /* TranslationDetailsController.h */,
+				0ACF676E15BD838600434BC6 /* TranslationDetailsController.m */,
 				0A69E59D15B7B4FC00F5E04C /* SettingsController.h */,
 				0A69E59E15B7B4FC00F5E04C /* SettingsController.m */,
 				0A69E5A015B7BA4F00F5E04C /* LanguageSelectionController.h */,
@@ -256,6 +261,7 @@
 				0A69E59F15B7B4FC00F5E04C /* SettingsController.m in Sources */,
 				0A69E5A215B7BA5000F5E04C /* LanguageSelectionController.m in Sources */,
 				0A69E5A515B8D9B000F5E04C /* TranslationsController.m in Sources */,
+				0ACF676F15BD838600434BC6 /* TranslationDetailsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
