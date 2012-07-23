@@ -36,7 +36,7 @@ TEST(FoodsParse, ThisFreshPizzaIsItalian) {
     str = "this fresh pizza is Italian";
 	tree = parseTree("((Pred (This ((Mod Fresh) Pizza))) Italian)");
     
-    EXPECT_NE(tree, (gf::Tree*) NULL);
+    ASSERT_NE(tree, (gf::Tree*) NULL);
     
     try {
         ps = parser->parse(str);
@@ -45,7 +45,7 @@ TEST(FoodsParse, ThisFreshPizzaIsItalian) {
         throw;
     }
     
-    EXPECT_NE(ps, (gf::parser::ParseState*) NULL);
+    ASSERT_NE(ps, (gf::parser::ParseState*) NULL);
      
     try {
         trees = ps->getTrees();
@@ -55,7 +55,7 @@ TEST(FoodsParse, ThisFreshPizzaIsItalian) {
         throw;
     }
     
-    EXPECT_EQ(1, trees.size());
+    ASSERT_EQ(1, trees.size());
     
     expected = gf::PrintAbsyn().print(tree);
     parsed = gf::PrintAbsyn().print(trees.front());

@@ -33,7 +33,7 @@ TEST(IndexedPGF, IndexedPhrasebookSelect) {
         FAIL();
     }
     
-    EXPECT_NE(pgf, (gf::PGF*) NULL);
+    ASSERT_NE(pgf, (gf::PGF*) NULL);
     
     EXPECT_TRUE(pgf->hasConcrete("PhrasebookEng"));
     EXPECT_TRUE(pgf->hasConcrete("PhrasebookFre"));
@@ -59,7 +59,7 @@ TEST(IndexedPGF, IndexedPhrasebookAll) {
         FAIL();
     }
     
-    EXPECT_NE(pgf, (gf::PGF*) NULL);
+    ASSERT_NE(pgf, (gf::PGF*) NULL);
     
 	EXPECT_TRUE(pgf->hasConcrete("PhrasebookEng"));
 	EXPECT_TRUE(pgf->hasConcrete("PhrasebookFre"));
@@ -123,7 +123,7 @@ TEST(IndexedPGF, UnindexedFoodsSelect) {
         FAIL();
     }
     
-    EXPECT_NE(pgf, (gf::PGF*) NULL);
+    ASSERT_NE(pgf, (gf::PGF*) NULL);
     
 	EXPECT_TRUE(pgf->hasConcrete("FoodsIta"));
 	EXPECT_FALSE(pgf->hasConcrete("FoodsFre"));
@@ -144,7 +144,7 @@ TEST(IndexedPGF, UnindexedFoodsAll) {
         FAIL();
     }
     
-    EXPECT_NE(pgf, (gf::PGF*) NULL);
+    ASSERT_NE(pgf, (gf::PGF*) NULL);
     
 	EXPECT_TRUE(pgf->hasConcrete("FoodsIta"));
 	

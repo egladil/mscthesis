@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A13EFF915BD3C7000BE4BB1 /* Answer.pgf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0A13EFF515BD385100BE4BB1 /* Answer.pgf */; };
+		0A13EFFA15BD3C7000BE4BB1 /* Mountaineering.pgf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0A13EFF615BD385100BE4BB1 /* Mountaineering.pgf */; };
 		0A1D1F55159B46800074D642 /* IndexedPGFTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1F54159B46800074D642 /* IndexedPGFTest.cpp */; };
 		0A1D1F59159B475D0074D642 /* Foods.pgf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0A1D1F56159B47340074D642 /* Foods.pgf */; };
 		0A1D1F5A159B475D0074D642 /* Phrasebook.pgf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0A1D1F57159B47340074D642 /* Phrasebook.pgf */; };
@@ -14,6 +16,7 @@
 		0A8398AC15A8431B00875849 /* libpgf+.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A8398AB15A8431B00875849 /* libpgf+.a */; };
 		0A9C64FB15A5DD49005B2989 /* FoodsParseTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A9C64FA15A5DD49005B2989 /* FoodsParseTest.cpp */; };
 		0ACD4C20159CA94100878123 /* FoodsLinearizeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD4C1F159CA94100878123 /* FoodsLinearizeTest.cpp */; };
+		0ACF676B15BD5AFD00434BC6 /* MountaineeringLinearizeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ACF676A15BD5AFD00434BC6 /* MountaineeringLinearizeTest.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,6 +26,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				0A13EFF915BD3C7000BE4BB1 /* Answer.pgf in CopyFiles */,
+				0A13EFFA15BD3C7000BE4BB1 /* Mountaineering.pgf in CopyFiles */,
 				0A1D1F59159B475D0074D642 /* Foods.pgf in CopyFiles */,
 				0A1D1F5A159B475D0074D642 /* Phrasebook.pgf in CopyFiles */,
 				0A1D1F5B159B475D0074D642 /* PhrasebookIndexed.pgf in CopyFiles */,
@@ -32,8 +37,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0A13EFF515BD385100BE4BB1 /* Answer.pgf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Answer.pgf; sourceTree = "<group>"; };
+		0A13EFF615BD385100BE4BB1 /* Mountaineering.pgf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mountaineering.pgf; sourceTree = "<group>"; };
 		0A1D1F2B159B3DAB0074D642 /* pgf+test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "pgf+test"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0A1D1F53159B41430074D642 /* testutil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testutil.h; sourceTree = "<group>"; };
+		0A1D1F53159B41430074D642 /* testutil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = testutil.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		0A1D1F54159B46800074D642 /* IndexedPGFTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IndexedPGFTest.cpp; sourceTree = "<group>"; };
 		0A1D1F56159B47340074D642 /* Foods.pgf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Foods.pgf; sourceTree = "<group>"; };
 		0A1D1F57159B47340074D642 /* Phrasebook.pgf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Phrasebook.pgf; sourceTree = "<group>"; };
@@ -41,6 +48,7 @@
 		0A8398AB15A8431B00875849 /* libpgf+.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libpgf+.a"; path = "../../../../Library/Developer/Xcode/DerivedData/iPhrase-cixqxmwhopreqhdtkculnizzlmra/Build/Products/Debug/libpgf+.a"; sourceTree = "<group>"; };
 		0A9C64FA15A5DD49005B2989 /* FoodsParseTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FoodsParseTest.cpp; sourceTree = "<group>"; };
 		0ACD4C1F159CA94100878123 /* FoodsLinearizeTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FoodsLinearizeTest.cpp; sourceTree = "<group>"; };
+		0ACF676A15BD5AFD00434BC6 /* MountaineeringLinearizeTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MountaineeringLinearizeTest.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,13 +83,16 @@
 		0A1D1F2E159B3DAB0074D642 /* pgf+test */ = {
 			isa = PBXGroup;
 			children = (
+				0A13EFF515BD385100BE4BB1 /* Answer.pgf */,
 				0A1D1F56159B47340074D642 /* Foods.pgf */,
+				0A13EFF615BD385100BE4BB1 /* Mountaineering.pgf */,
 				0A1D1F57159B47340074D642 /* Phrasebook.pgf */,
 				0A1D1F58159B47350074D642 /* PhrasebookIndexed.pgf */,
 				0A1D1F53159B41430074D642 /* testutil.h */,
-				0A1D1F54159B46800074D642 /* IndexedPGFTest.cpp */,
 				0ACD4C1F159CA94100878123 /* FoodsLinearizeTest.cpp */,
 				0A9C64FA15A5DD49005B2989 /* FoodsParseTest.cpp */,
+				0A1D1F54159B46800074D642 /* IndexedPGFTest.cpp */,
+				0ACF676A15BD5AFD00434BC6 /* MountaineeringLinearizeTest.cpp */,
 			);
 			name = "pgf+test";
 			path = "../pgf+/test";
@@ -141,6 +152,7 @@
 				0A1D1F55159B46800074D642 /* IndexedPGFTest.cpp in Sources */,
 				0ACD4C20159CA94100878123 /* FoodsLinearizeTest.cpp in Sources */,
 				0A9C64FB15A5DD49005B2989 /* FoodsParseTest.cpp in Sources */,
+				0ACF676B15BD5AFD00434BC6 /* MountaineeringLinearizeTest.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
