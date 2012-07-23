@@ -66,11 +66,28 @@
 
 - (void)viewDidLoad
 {
+    NSArray* languages;
+    
     [super viewDidLoad];
     
     
     grammarian = [[Grammarian alloc] init];
-    targetLanguage = [[Grammarian languages] objectAtIndex:0];
+    
+    
+    languages = [Grammarian languages];
+    targetLanguage = nil;
+    
+    for (NSString* language in languages) {
+        if ([[language substringToIndex:6] compare:@"Disamb"] != NSOrderedSame) {
+            targetLanguage = language;
+            break;
+        }
+    }
+            
+    if (targetLanguage == nil && [languages count] > 0) {
+        targetLanguage = [languages objectAtIndex:0];
+    }
+            
     
     tokenInput = [[TokenInput alloc] initWithFrame:CGRectMake(10, 10, 300, 30)];
     [tokenInput setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
@@ -147,9 +164,21 @@
         newSourceLanguage = nil;
     } else if ([segue.destinationViewController isKindOfClass:[TranslationsController class]]) {
         TranslationsController* translations = (TranslationsController*) segue.destinationViewController;
+        NSString* disambSource;
+        NSString* disambEnglish;
         
         translations.grammarian = grammarian;
         translations.language = targetLanguage;
+        
+        disambSource = [@"Disamb" stringByAppendingString:[grammarian sourceLanguage]];
+        disambEnglish = [@"Disamb" stringByAppendingString:[Grammarian languageForCode:@"Eng"]];
+        if ([Grammarian hasLanguage:disambSource]) {
+            translations.disambiguationLanguage = disambSource;
+        } else if ([Grammarian hasLanguage:disambEnglish]) {
+            translations.disambiguationLanguage = disambEnglish;
+        } else {
+            translations.disambiguationLanguage = nil;
+        }
     }
 }
 

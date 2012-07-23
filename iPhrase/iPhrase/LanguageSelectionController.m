@@ -52,9 +52,18 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    NSMutableArray* tempLanguages;
+    
     [super viewWillAppear:animated];
     
-    languages = [Grammarian languages];
+    tempLanguages = [[NSMutableArray alloc] init];
+    for (NSString* lang in [Grammarian languages]) {
+        if ([[lang substringToIndex:6] compare:@"Disamb"] != NSOrderedSame) {
+            [tempLanguages addObject:lang];
+        }
+    }
+    
+    languages = [NSArray arrayWithArray:tempLanguages];
 }
 
 - (void)viewDidAppear:(BOOL)animated

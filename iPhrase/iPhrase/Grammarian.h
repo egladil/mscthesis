@@ -13,6 +13,7 @@
 - (id)initWithLanguage:(NSString*)language;
 
 + (NSArray*)languages;
++ (BOOL) hasLanguage:(NSString*)language;
 + (NSString*) codeForLanguage:(NSString*)language;
 + (NSString*) languageForCode:(NSString*)code;
 + (NSString*) humanReadableNameOfLanguageFromCode:(NSString*)code;

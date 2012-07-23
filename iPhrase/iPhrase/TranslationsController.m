@@ -12,11 +12,13 @@
 @implementation TranslationsController
 {
     NSArray* translations;
+    NSArray* disambiguations;
     NSArray* trees;
 }
 
 @synthesize grammarian;
 @synthesize language;
+@synthesize disambiguationLanguage;
 
 - (id)initWithStyle:(UITableViewStyle)style {
     self = [super initWithStyle:style];
@@ -41,6 +43,7 @@
     [super viewWillAppear:animated];
     
     translations = [grammarian translationsForLanguage:language];
+    disambiguations = disambiguationLanguage != nil ? [grammarian translationsForLanguage:disambiguationLanguage] : nil;
     trees = [grammarian parseTrees];
 }
 
@@ -83,7 +86,12 @@
     }
     
     cell.textLabel.text = [translations objectAtIndex:indexPath.row];
-    cell.detailTextLabel.text = [trees objectAtIndex:indexPath.row];
+    
+    if (disambiguations != nil) {
+        cell.detailTextLabel.text = [disambiguations objectAtIndex:indexPath.row];
+    } else {
+        cell.detailTextLabel.text = [trees objectAtIndex:indexPath.row];
+    }
     
     return cell;
 }

@@ -12,6 +12,7 @@
 @interface TranslationsController : UITableViewController
 @property (nonatomic, weak) Grammarian* grammarian;
 @property (nonatomic, copy) NSString* language;
+@property (nonatomic, copy) NSString* disambiguationLanguage;
 
 - (IBAction)doneTouched:(id)sender;
 @end

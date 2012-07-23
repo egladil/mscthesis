@@ -195,6 +195,17 @@ static std::string toString(gf::Tree* tree) {
     return ret;
 }
 
++ (BOOL) hasLanguage:(NSString*)language {
+    gf::PGF* pgf;
+    
+    pgf = getGrammar();
+    if (pgf == NULL) {
+        return FALSE;
+    }
+    
+    return pgf->hasConcrete([language UTF8String]);
+}
+
 + (NSString*) codeForLanguage:(NSString*)language {
     gf::PGF* pgf;
     std::set<std::string> langs;
