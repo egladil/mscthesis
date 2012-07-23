@@ -634,7 +634,7 @@ namespace gf {
             MapIntSP::const_iterator it = productions.find(coerce->getInitId());
             assert(it != productions.end());
             
-            for (gf::reader::ProductionPointerSet::const_iterator ip = it->second.begin(); ip != it->second.begin(); ip++) {
+            for (gf::reader::ProductionPointerSet::const_iterator ip = it->second.begin(); ip != it->second.end(); ip++) {
                 std::vector<gf::linearizer::AppResult*> temp;
                 
                 temp = toApp(cty, *ip, function, productions);
