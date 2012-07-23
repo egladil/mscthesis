@@ -374,7 +374,6 @@ static std::string toString(gf::Tree* tree) {
 
 - (NSArray*) parseTrees {
     NSMutableArray* ret;
-    std::set<std::string> deduplicate;
     
     if (treeCache.empty()) {
         try {
@@ -400,10 +399,6 @@ static std::string toString(gf::Tree* tree) {
             key = cachedKey->second;
         }
         
-        if (deduplicate.find(key) != deduplicate.end()) {
-            continue;
-        }
-        deduplicate.insert(key);
         
         str = [NSString stringWithUTF8String:key.c_str()];
         
@@ -418,7 +413,6 @@ static std::string toString(gf::Tree* tree) {
     gf::reader::Concrete* concrete;
     gf::Linearizer* linearizer;
     NSMutableArray* ret;
-    std::set<std::string> deduplicate;
     
     try {
         pgf = getGrammar();
@@ -471,11 +465,6 @@ static std::string toString(gf::Tree* tree) {
         } else {
             key = cachedKey->second;
         }
-        
-        if (deduplicate.find(key) != deduplicate.end()) {
-            continue;
-        }
-        deduplicate.insert(key);
         
         
         try {
