@@ -104,10 +104,16 @@ namespace gf {
             
             tree = new Function(absfun->getName());
             for (std::vector<Tree*>::const_iterator it2 = it->begin(); it2 != it->end(); it2++) {
-                tree = new Application(tree, *it2);
+                tree = new Application(tree, (*it2)->clone());
             }
             
             ret.push_back(tree);
+        }
+        
+        for (std::vector<std::vector<Tree*> >::const_iterator it = children.begin(); it != children.end(); it++) {
+            for (std::vector<Tree*>::const_iterator it2 = it->begin(); it2 != it->end(); it2++) {
+                delete *it2;
+            }
         }
         
         return ret;

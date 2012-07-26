@@ -24,7 +24,7 @@ namespace gf {
      * generates a random expression of a given category
      * does not handle dependent categories or categories with implicit arguments
      **/
-    class Generator {
+    class Generator : public RefBase {
     private:
         PGF* pgf;
         std::map<std::string, std::set<std::string> > directRules;

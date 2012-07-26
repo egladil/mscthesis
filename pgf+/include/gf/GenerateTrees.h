@@ -20,7 +20,7 @@
 
 namespace gf {
     
-    class GenerateTrees : RefBase {
+    class GenerateTrees : public RefBase {
     private:
         gf::reader::Abstract* abstract;
         
