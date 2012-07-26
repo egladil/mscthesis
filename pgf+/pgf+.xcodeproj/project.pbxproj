@@ -56,6 +56,9 @@
 		0A1D1F1B159A0B8C0074D642 /* WildCardPattern.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1F1A159A0B870074D642 /* WildCardPattern.cpp */; };
 		0A1D1F1D159B0F8B0074D642 /* PGF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1F1C159B0F870074D642 /* PGF.cpp */; };
 		0A1D1F1F159B145A0074D642 /* PGFBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1F1E159B14550074D642 /* PGFBuilder.cpp */; };
+		0A5F587315C0FB560017359F /* Generator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A5F587215C0FB560017359F /* Generator.cpp */; };
+		0A5F587615C0FB600017359F /* GenerateTrees.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A5F587515C0FB600017359F /* GenerateTrees.cpp */; };
+		0A5F587815C0FB700017359F /* GeneratorException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A5F587715C0FB700017359F /* GeneratorException.cpp */; };
 		0A83980915A83B0500875849 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A8397F815A83AAC00875849 /* Foundation.framework */; };
 		0A83980F15A83B0500875849 /* pgf_ios.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A83980E15A83B0500875849 /* pgf_ios.m */; };
 		0A83981315A83B3100875849 /* Exception.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EBE1599AD200074D642 /* Exception.cpp */; };
@@ -218,6 +221,9 @@
 		0A1D1F1A159A0B870074D642 /* WildCardPattern.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WildCardPattern.cpp; sourceTree = "<group>"; };
 		0A1D1F1C159B0F870074D642 /* PGF.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PGF.cpp; sourceTree = "<group>"; };
 		0A1D1F1E159B14550074D642 /* PGFBuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = PGFBuilder.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
+		0A5F587215C0FB560017359F /* Generator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Generator.cpp; sourceTree = "<group>"; };
+		0A5F587515C0FB600017359F /* GenerateTrees.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GenerateTrees.cpp; sourceTree = "<group>"; };
+		0A5F587715C0FB700017359F /* GeneratorException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GeneratorException.cpp; sourceTree = "<group>"; };
 		0A8397F815A83AAC00875849 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0A83980815A83B0500875849 /* libpgf+ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libpgf+ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A83980C15A83B0500875849 /* pgf+ios-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "pgf+ios-Prefix.pch"; sourceTree = "<group>"; };
@@ -297,6 +303,9 @@
 			isa = PBXGroup;
 			children = (
 				0A1D1EBE1599AD200074D642 /* Exception.cpp */,
+				0A5F587515C0FB600017359F /* GenerateTrees.cpp */,
+				0A5F587215C0FB560017359F /* Generator.cpp */,
+				0A5F587715C0FB700017359F /* GeneratorException.cpp */,
 				0A1D1EBF1599AD200074D642 /* IOException.cpp */,
 				0ACD4C35159DE26B00878123 /* Linearizer.cpp */,
 				0ACD4C33159DE20E00878123 /* LinearizerException.cpp */,
@@ -599,6 +608,9 @@
 				0A9C64F515A5CC71005B2989 /* IMApplication.cpp in Sources */,
 				0A9C64F715A5CE72005B2989 /* IMLiteral.cpp in Sources */,
 				0A9C64F915A5CF3C005B2989 /* IMMetaVariable.cpp in Sources */,
+				0A5F587315C0FB560017359F /* Generator.cpp in Sources */,
+				0A5F587615C0FB600017359F /* GenerateTrees.cpp in Sources */,
+				0A5F587815C0FB700017359F /* GeneratorException.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
