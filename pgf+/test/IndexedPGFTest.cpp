@@ -42,8 +42,6 @@ TEST(IndexedPGF, IndexedPhrasebookSelect) {
     EXPECT_EQ(pgf->getConcreteNames(), languages);
     
     gf::release(pgf);
-    
-    usleep(10 * 1000000);
 }
 
 

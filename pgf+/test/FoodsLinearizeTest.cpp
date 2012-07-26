@@ -42,8 +42,81 @@ TEST(FoodsLinearize, ThisFreshPizzaIsItalian) {
     delete tree;
     gf::release(linearizer);
     
-    usleep(10 * 1000000);
-    
     EXPECT_EQ(lin, "this fresh pizza is Italian");
+}
+
+
+TEST(FoodsLinearize, ThoseBoringFishAreExpensive) {
+    gf::Linearizer* linearizer;
+    gf::Tree* tree;
+    std::string lin;
+    
+    linearizer = new gf::Linearizer(pgfWithLanguageGuaranteed("Foods.pgf", "FoodsEng"), "FoodsEng");
+    
+    tree = parseTree("((Pred (Those ((Mod Boring) Fish))) Expensive)");
+    try {
+        lin = linearizer->linearizeString(tree);
+    } catch (gf::Exception& ex) {
+        delete tree;
+        gf::release(linearizer);
+        
+        EXPECT_EQ("", ex.toString());
+        FAIL();
+    }
+    
+    delete tree;
+    gf::release(linearizer);
+    
+    EXPECT_EQ(lin, "those boring fish are expensive");
+}
+
+
+TEST(FoodsLinearize, ThisDeliciousPizzaIsFresh_swe) {
+    gf::Linearizer* linearizer;
+    gf::Tree* tree;
+    std::string lin;
+    
+    linearizer = new gf::Linearizer(pgfWithLanguageGuaranteed("Foods.pgf", "FoodsSwe"), "FoodsSwe");
+    
+    tree = parseTree("((Pred (This ((Mod Delicious) Pizza))) Fresh)");
+    try {
+        lin = linearizer->linearizeString(tree);
+    } catch (gf::Exception& ex) {
+        delete tree;
+        gf::release(linearizer);
+        
+        EXPECT_EQ("", ex.toString());
+        FAIL();
+    }
+    
+    delete tree;
+    gf::release(linearizer);
+    
+    EXPECT_EQ(lin, "den här läckra pizzan är färsk");
+}
+
+
+TEST(FoodsLinearize, ThisDeliciousPizzaIsFresh_ita) {
+    gf::Linearizer* linearizer;
+    gf::Tree* tree;
+    std::string lin;
+    
+    linearizer = new gf::Linearizer(pgfWithLanguageGuaranteed("Foods.pgf", "FoodsIta"), "FoodsIta");
+    
+    tree = parseTree("((Pred (This ((Mod Delicious) Pizza))) Fresh)");
+    try {
+        lin = linearizer->linearizeString(tree);
+    } catch (gf::Exception& ex) {
+        delete tree;
+        gf::release(linearizer);
+        
+        EXPECT_EQ("", ex.toString());
+        FAIL();
+    }
+    
+    delete tree;
+    gf::release(linearizer);
+    
+    EXPECT_EQ(lin, "questa pizza deliziosa è fresca");
 }
 

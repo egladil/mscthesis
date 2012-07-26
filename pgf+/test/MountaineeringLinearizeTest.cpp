@@ -43,8 +43,6 @@ TEST(MountaineeringLinearize, ILikeThisBeer) {
     delete tree;
     gf::release(linearizer);
     
-    usleep(10 * 1000000);
-    
     EXPECT_EQ("I like this beer", lin);
 }
 

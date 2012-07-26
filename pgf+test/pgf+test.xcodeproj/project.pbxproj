@@ -13,6 +13,10 @@
 		0A1D1F59159B475D0074D642 /* Foods.pgf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0A1D1F56159B47340074D642 /* Foods.pgf */; };
 		0A1D1F5A159B475D0074D642 /* Phrasebook.pgf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0A1D1F57159B47340074D642 /* Phrasebook.pgf */; };
 		0A1D1F5B159B475D0074D642 /* PhrasebookIndexed.pgf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0A1D1F58159B47350074D642 /* PhrasebookIndexed.pgf */; };
+		0A5F589915C13B830017359F /* FoodsPredictTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A5F589815C13B830017359F /* FoodsPredictTest.cpp */; };
+		0A5F589C15C13E420017359F /* AnswerTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A5F589B15C13E420017359F /* AnswerTest.cpp */; };
+		0A5F589E15C1403C0017359F /* StartCatTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A5F589D15C1403C0017359F /* StartCatTest.cpp */; };
+		0A5F58A015C1417D0017359F /* GenerateTreesTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A5F589F15C1417C0017359F /* GenerateTreesTest.cpp */; };
 		0A8398AC15A8431B00875849 /* libpgf+.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A8398AB15A8431B00875849 /* libpgf+.a */; };
 		0A9C64FB15A5DD49005B2989 /* FoodsParseTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A9C64FA15A5DD49005B2989 /* FoodsParseTest.cpp */; };
 		0ACD4C20159CA94100878123 /* FoodsLinearizeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD4C1F159CA94100878123 /* FoodsLinearizeTest.cpp */; };
@@ -45,6 +49,10 @@
 		0A1D1F56159B47340074D642 /* Foods.pgf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Foods.pgf; sourceTree = "<group>"; };
 		0A1D1F57159B47340074D642 /* Phrasebook.pgf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Phrasebook.pgf; sourceTree = "<group>"; };
 		0A1D1F58159B47350074D642 /* PhrasebookIndexed.pgf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PhrasebookIndexed.pgf; sourceTree = "<group>"; };
+		0A5F589815C13B830017359F /* FoodsPredictTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FoodsPredictTest.cpp; sourceTree = "<group>"; };
+		0A5F589B15C13E420017359F /* AnswerTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AnswerTest.cpp; sourceTree = "<group>"; };
+		0A5F589D15C1403C0017359F /* StartCatTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StartCatTest.cpp; sourceTree = "<group>"; };
+		0A5F589F15C1417C0017359F /* GenerateTreesTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GenerateTreesTest.cpp; sourceTree = "<group>"; };
 		0A8398AB15A8431B00875849 /* libpgf+.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libpgf+.a"; path = "../../../../Library/Developer/Xcode/DerivedData/iPhrase-cixqxmwhopreqhdtkculnizzlmra/Build/Products/Debug/libpgf+.a"; sourceTree = "<group>"; };
 		0A9C64FA15A5DD49005B2989 /* FoodsParseTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FoodsParseTest.cpp; sourceTree = "<group>"; };
 		0ACD4C1F159CA94100878123 /* FoodsLinearizeTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FoodsLinearizeTest.cpp; sourceTree = "<group>"; };
@@ -89,10 +97,14 @@
 				0A1D1F57159B47340074D642 /* Phrasebook.pgf */,
 				0A1D1F58159B47350074D642 /* PhrasebookIndexed.pgf */,
 				0A1D1F53159B41430074D642 /* testutil.h */,
+				0A5F589B15C13E420017359F /* AnswerTest.cpp */,
 				0ACD4C1F159CA94100878123 /* FoodsLinearizeTest.cpp */,
 				0A9C64FA15A5DD49005B2989 /* FoodsParseTest.cpp */,
+				0A5F589815C13B830017359F /* FoodsPredictTest.cpp */,
+				0A5F589F15C1417C0017359F /* GenerateTreesTest.cpp */,
 				0A1D1F54159B46800074D642 /* IndexedPGFTest.cpp */,
 				0ACF676A15BD5AFD00434BC6 /* MountaineeringLinearizeTest.cpp */,
+				0A5F589D15C1403C0017359F /* StartCatTest.cpp */,
 			);
 			name = "pgf+test";
 			path = "../pgf+/test";
@@ -153,6 +165,10 @@
 				0ACD4C20159CA94100878123 /* FoodsLinearizeTest.cpp in Sources */,
 				0A9C64FB15A5DD49005B2989 /* FoodsParseTest.cpp in Sources */,
 				0ACF676B15BD5AFD00434BC6 /* MountaineeringLinearizeTest.cpp in Sources */,
+				0A5F589915C13B830017359F /* FoodsPredictTest.cpp in Sources */,
+				0A5F589C15C13E420017359F /* AnswerTest.cpp in Sources */,
+				0A5F589E15C1403C0017359F /* StartCatTest.cpp in Sources */,
+				0A5F58A015C1417D0017359F /* GenerateTreesTest.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

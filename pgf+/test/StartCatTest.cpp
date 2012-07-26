@@ -1,8 +1,8 @@
 //
-//  FoodsParseTest.cpp
+//  StartCatTest.cpp
 //  pgf+test
 //
-//  Created by Emil Djupfeldt on 2012-07-05.
+//  Created by Emil Djupfeldt on 2012-07-26.
 //  Copyright (c) 2012 Chalmers. All rights reserved.
 //
 
@@ -23,7 +23,7 @@
 #include "testutil.h"
 
 
-TEST(FoodsParse, ThisFreshPizzaIsItalian) {
+TEST(StartCat, ThisFreshPizzaIsItalian_Comment) {
     gf::Parser* parser;
     gf::Tree* tree;
     std::string str;
@@ -32,6 +32,8 @@ TEST(FoodsParse, ThisFreshPizzaIsItalian) {
     std::string parsed, expected;
     
     parser = new gf::Parser(pgfWithLanguageGuaranteed("Foods.pgf", "FoodsEng"), "FoodsEng");
+    
+    parser->setStartCategory("Comment");
     
     str = "this fresh pizza is Italian";
 	tree = parseTree("((Pred (This ((Mod Fresh) Pizza))) Italian)");
@@ -46,7 +48,7 @@ TEST(FoodsParse, ThisFreshPizzaIsItalian) {
     }
     
     ASSERT_NE(ps, (gf::parser::ParseState*) NULL);
-     
+    
     try {
         trees = ps->getTrees();
     } catch (gf::Exception& e) {
@@ -70,7 +72,7 @@ TEST(FoodsParse, ThisFreshPizzaIsItalian) {
 }
 
 
-TEST(FoodsParse, ThoseBoringFishAreExpensive) {
+TEST(StartCat, ThoseBoringFishAreExpensive_Comment) {
     gf::Parser* parser;
     gf::Tree* tree;
     std::string str;
@@ -79,6 +81,8 @@ TEST(FoodsParse, ThoseBoringFishAreExpensive) {
     std::string parsed, expected;
     
     parser = new gf::Parser(pgfWithLanguageGuaranteed("Foods.pgf", "FoodsEng"), "FoodsEng");
+    
+    parser->setStartCategory("Comment");
     
     str = "those boring fish are expensive";
 	tree = parseTree("((Pred (Those ((Mod Boring) Fish))) Expensive)");
@@ -117,7 +121,7 @@ TEST(FoodsParse, ThoseBoringFishAreExpensive) {
 }
 
 
-TEST(FoodsParse, ThisDeliciousPizzaIsFresh_swe) {
+TEST(StartCat, ThisFreshPizza_Item) {
     gf::Parser* parser;
     gf::Tree* tree;
     std::string str;
@@ -125,10 +129,12 @@ TEST(FoodsParse, ThisDeliciousPizzaIsFresh_swe) {
     std::vector<gf::Tree*> trees;
     std::string parsed, expected;
     
-    parser = new gf::Parser(pgfWithLanguageGuaranteed("Foods.pgf", "FoodsSwe"), "FoodsSwe");
+    parser = new gf::Parser(pgfWithLanguageGuaranteed("Foods.pgf", "FoodsEng"), "FoodsEng");
     
-    str = "den här läckra pizzan är färsk";
-	tree = parseTree("((Pred (This ((Mod Delicious) Pizza))) Fresh)");
+    parser->setStartCategory("Item");
+    
+    str = "this fresh pizza";
+	tree = parseTree("(This ((Mod Fresh) Pizza))");
     
     ASSERT_NE(tree, (gf::Tree*) NULL);
     
@@ -164,7 +170,7 @@ TEST(FoodsParse, ThisDeliciousPizzaIsFresh_swe) {
 }
 
 
-TEST(FoodsParse, ThisDeliciousPizzaIsFresh_ita) {
+TEST(StartCat, ThoseBoringFish_Item) {
     gf::Parser* parser;
     gf::Tree* tree;
     std::string str;
@@ -172,10 +178,12 @@ TEST(FoodsParse, ThisDeliciousPizzaIsFresh_ita) {
     std::vector<gf::Tree*> trees;
     std::string parsed, expected;
     
-    parser = new gf::Parser(pgfWithLanguageGuaranteed("Foods.pgf", "FoodsIta"), "FoodsIta");
+    parser = new gf::Parser(pgfWithLanguageGuaranteed("Foods.pgf", "FoodsEng"), "FoodsEng");
     
-    str = "questa pizza deliziosa è fresca";
-	tree = parseTree("((Pred (This ((Mod Delicious) Pizza))) Fresh)");
+    parser->setStartCategory("Item");
+    
+    str = "those boring fish";
+	tree = parseTree("(Those ((Mod Boring) Fish))");
     
     ASSERT_NE(tree, (gf::Tree*) NULL);
     
@@ -209,4 +217,3 @@ TEST(FoodsParse, ThisDeliciousPizzaIsFresh_ita) {
     gf::release(ps);
     gf::release(parser);
 }
-
