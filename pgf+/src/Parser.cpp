@@ -12,12 +12,12 @@
 namespace gf {
     
     Parser::Parser(PGF* pgf, gf::reader::Concrete* language)
-        : language(language), startcat(pgf->getAbstract()->startcat()) {
+        : language(language), startcat(pgf->getAbstract()->getStartCategory()) {
         gf::release(pgf);
     }
     
     Parser::Parser(PGF* pgf, const std::string& language) throw (UnknownLanguageException)
-        : language(pgf->getConcrete(language)), startcat(pgf->getAbstract()->startcat()) {
+        : language(pgf->getConcrete(language)), startcat(pgf->getAbstract()->getStartCategory()) {
         this->language->addReference();
         gf::release(pgf);
     }

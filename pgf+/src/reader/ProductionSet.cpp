@@ -22,9 +22,6 @@ namespace gf {
             }
         }
         
-        size_t ProductionSet::length() const {
-            return productions.size();
-        }
         const std::vector<Production*>& ProductionSet::getProductions() const {
             return productions;
         }

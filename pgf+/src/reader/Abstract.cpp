@@ -45,7 +45,7 @@ namespace gf {
             return name;
         }
         
-        const std::string& Abstract::startcat() const {
+        const std::string& Abstract::getStartCategory() const {
             std::map<std::string, RLiteral*>::const_iterator flag = flags.find("startcat");
             StringLit* strlit;
             

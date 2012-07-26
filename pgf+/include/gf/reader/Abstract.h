@@ -41,7 +41,7 @@ namespace gf {
             virtual ~Abstract();
             
             virtual const std::string& getName() const;
-            virtual const std::string& startcat() const;
+            virtual const std::string& getStartCategory() const;
             
             /**
              * Returns all the functions whose return type

@@ -29,20 +29,6 @@ namespace gf {
             return sequences;
         }
         
-        Sequence* CncFun::sequence(uint32_t index) const {
-            // TODO: Bounds checking
-            return sequences.at(index);
-        }
-        
-        const Symbol* CncFun::symbol(uint32_t seqIndex, uint32_t symbIndex) const {
-            // TODO: Bounds checking.
-            return sequence(seqIndex)->getSymbols().at(symbIndex);
-        }
-        
-        size_t CncFun::size() const {
-            return sequences.size();
-        }
-        
         std::string CncFun::toString() const {
             std::string ret;
             

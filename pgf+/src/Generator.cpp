@@ -51,7 +51,7 @@ namespace gf {
     }
     
     Tree* Generator::generate() const throw(GeneratorException) {
-        return generate(pgf->getAbstract()->startcat());
+        return generate(pgf->getAbstract()->getStartCategory());
     }
     
     Tree* Generator::getDirect(const std::set<std::string>& dirFuns) const {

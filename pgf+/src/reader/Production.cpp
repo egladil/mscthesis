@@ -22,7 +22,7 @@ namespace gf {
             return fId;
         }
         
-        uint32_t Production::range() const {
+        uint32_t Production::getRange() const {
             return fId;
         }
         

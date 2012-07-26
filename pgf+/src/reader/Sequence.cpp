@@ -21,15 +21,6 @@ namespace gf {
             }
         }
         
-        Symbol* Sequence::getSymbol(uint32_t index) const {
-            // TODO: Range check
-            return symbols.at(index);
-        }
-        
-        size_t Sequence::length() const {
-            return symbols.size();
-        }
-        
         const std::vector<Symbol*>& Sequence::getSymbols() const {
             return symbols;
         }

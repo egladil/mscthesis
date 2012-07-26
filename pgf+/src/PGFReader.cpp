@@ -125,7 +125,7 @@ namespace gf {
         
         // Read abstact grammar
         abs = getAbstract();
-        startCat = abs->startcat();
+        startCat = abs->getStartCategory();
         
         // Read concrete grammars
         nbConcretes = getInt();

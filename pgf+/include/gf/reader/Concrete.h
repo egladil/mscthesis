@@ -66,7 +66,7 @@ namespace gf {
             virtual std::vector<CncCat*> getCncCats() const;
             
             virtual int32_t getFId() const;
-            virtual const CncCat* getStartCat() const;
+            virtual const CncCat* getStartCategory() const;
           
             virtual std::vector<Production*> getProductions() const;
             

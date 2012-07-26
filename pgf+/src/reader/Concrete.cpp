@@ -78,7 +78,7 @@ namespace gf {
             return fId;
         }
         
-        const CncCat* Concrete::getStartCat() const {
+        const CncCat* Concrete::getStartCategory() const {
             std::map<std::string, CncCat*>::const_iterator it = cncCats.find(startCat);
             if (it != cncCats.end()) {
                 return it->second;

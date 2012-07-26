@@ -35,7 +35,6 @@ namespace gf {
             ProductionSet(uint32_t id, const std::vector<Production*>& productions);
             virtual ~ProductionSet();
             
-            virtual size_t length() const;
             virtual const std::vector<Production*>& getProductions() const;
             
             virtual std::string toString() const;

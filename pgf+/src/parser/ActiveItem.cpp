@@ -46,14 +46,14 @@ namespace gf {
         
         gf::reader::Symbol* ActiveItem::nextSymbol() const {
             if (hasNextSymbol()) {
-                return cncFun->sequence(constituent)->getSymbol(position);
+                return cncFun->getSequences().at(constituent)->getSymbols().at(position);
             }
             
             return NULL;
         }
         
         bool ActiveItem::hasNextSymbol() const {
-            return position < cncFun->sequence(constituent)->length();
+            return position < cncFun->getSequences().at(constituent)->getSymbols().size();
         }
         
         bool ActiveItem::operator==(const ActiveItem& other) const {

@@ -32,7 +32,7 @@ namespace gf {
             
             virtual uint32_t getCategory() const;
             
-            virtual uint32_t range() const;
+            virtual uint32_t getRange() const;
             
             virtual std::string toString() const = 0;
             virtual bool operator < (const Production* other) const = 0;
