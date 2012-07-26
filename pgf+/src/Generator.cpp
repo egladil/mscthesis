@@ -51,22 +51,34 @@ namespace gf {
     }
     
     Tree* Generator::generate() const throw(GeneratorException) {
-        return gen(pgf->getAbstract()->startcat());
+        return generate(pgf->getAbstract()->startcat());
     }
     
     Tree* Generator::getDirect(const std::set<std::string>& dirFuns) const {
         uint32_t pos;
+        std::set<std::string>::const_iterator it;
         
         pos = rand() % dirFuns.size();
-        return new Function(*(dirFuns.begin() + pos));
+        it = dirFuns.begin();
+        for (uint32_t i = 0; i < pos; i++) {
+            it++;
+        }
+
+        return new Function(*it);
     }
     
     Tree* Generator::getIndirect(const std::string& type, const std::set<std::string>& indirFuns) const throw(GeneratorException) {
         uint32_t pos;
+        std::set<std::string>::const_iterator it;
         std::string functionName;
         
         pos = rand() % indirFuns.size();
-        functionName = *(indirFuns.begin() + pos);
+        it = indirFuns.begin();
+        for (uint32_t i = 0; i < pos; i++) {
+            it++;
+        }
+        
+        functionName = *it;
         
         for (std::vector<gf::reader::AbsFun*>::const_iterator it = pgf->getAbstract()->getAbsFuns().begin(); it != pgf->getAbstract()->getAbsFuns().end(); it++) {
             gf::reader::AbsFun* absfun = *it;

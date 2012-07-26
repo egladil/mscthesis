@@ -83,10 +83,14 @@ namespace gf {
     }
     
     std::vector<Tree*> GenerateTrees::generateTrees(gf::reader::AbsFun* absfun, uint32_t depth) const {
-        gf::reader::Type* type;
         std::vector<std::vector<Tree*> > children;
         std::vector<std::vector<Tree*> > combined;
         std::vector<Tree*> ret;
+        
+        if (absfun->getType()->isFunctorType()) {
+            // Functors are not supported.
+            return std::vector<Tree*>();
+        }
         
         for (std::vector<gf::reader::Hypo*>::const_iterator it = absfun->getType()->getHypos().begin(); it != absfun->getType()->getHypos().end(); it++) {
             gf::reader::Hypo* hypo = *it;

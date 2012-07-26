@@ -59,6 +59,9 @@
 		0A5F587315C0FB560017359F /* Generator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A5F587215C0FB560017359F /* Generator.cpp */; };
 		0A5F587615C0FB600017359F /* GenerateTrees.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A5F587515C0FB600017359F /* GenerateTrees.cpp */; };
 		0A5F587815C0FB700017359F /* GeneratorException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A5F587715C0FB700017359F /* GeneratorException.cpp */; };
+		0A5F588D15C124510017359F /* GenerateTrees.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A5F587515C0FB600017359F /* GenerateTrees.cpp */; };
+		0A5F588E15C124510017359F /* Generator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A5F587215C0FB560017359F /* Generator.cpp */; };
+		0A5F588F15C124510017359F /* GeneratorException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A5F587715C0FB700017359F /* GeneratorException.cpp */; };
 		0A83980915A83B0500875849 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A8397F815A83AAC00875849 /* Foundation.framework */; };
 		0A83980F15A83B0500875849 /* pgf_ios.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A83980E15A83B0500875849 /* pgf_ios.m */; };
 		0A83981315A83B3100875849 /* Exception.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D1EBE1599AD200074D642 /* Exception.cpp */; };
@@ -696,6 +699,9 @@
 				0A83985D15A83B5B00875849 /* LeafKS.cpp in Sources */,
 				0A83985E15A83B5B00875849 /* LinTriple.cpp in Sources */,
 				0A83985F15A83B5B00875849 /* RezDesc.cpp in Sources */,
+				0A5F588D15C124510017359F /* GenerateTrees.cpp in Sources */,
+				0A5F588E15C124510017359F /* Generator.cpp in Sources */,
+				0A5F588F15C124510017359F /* GeneratorException.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
