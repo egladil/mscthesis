@@ -15,3 +15,9 @@ build/
 *.perspective
 *.perspectivev3
 /tmp/
+/report/main.aux
+/report/main.log
+/report/main.out
+/report/main.pdf
+/report/main.synctex.gz
+/report/main.toc
