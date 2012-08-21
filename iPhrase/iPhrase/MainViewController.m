@@ -12,6 +12,9 @@
 #import "TokenInput.h"
 #import "TranslationsController.h"
 
+#define PREFS_SOURCE_LANGUAGE_KEY       @"sourceLanguage"
+#define PREFS_TARGET_LANGUAGE_KEY       @"targetLanguage"
+
 @implementation MainViewController
 {
     Grammarian* grammarian;
@@ -70,25 +73,6 @@
     
     [super viewDidLoad];
     
-    
-    grammarian = [[Grammarian alloc] init];
-    
-    
-    languages = [Grammarian languages];
-    targetLanguage = nil;
-    
-    for (NSString* language in languages) {
-        if ([[language substringToIndex:6] compare:@"Disamb"] != NSOrderedSame) {
-            targetLanguage = language;
-            break;
-        }
-    }
-            
-    if (targetLanguage == nil && [languages count] > 0) {
-        targetLanguage = [languages objectAtIndex:0];
-    }
-            
-    
     tokenInput = [[TokenInput alloc] initWithFrame:CGRectMake(10, 10, 300, 30)];
     [tokenInput setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
     [_vIn addSubview:tokenInput];
@@ -109,11 +93,36 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onAddToken:) name:TokenInputTokenAddedNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onRemoveToken:) name:TokenInputTokenRemovedNotification object:nil];
     
-    [self updateSuggestions:[grammarian predict:@""]];
+    newSourceLanguage = [[NSUserDefaults standardUserDefaults] objectForKey:PREFS_SOURCE_LANGUAGE_KEY];
+    targetLanguage = [[NSUserDefaults standardUserDefaults] objectForKey:PREFS_TARGET_LANGUAGE_KEY];
+    
+    if (targetLanguage == nil) {
+        languages = [Grammarian languages];
+        
+        for (NSString* language in languages) {
+            if ([[language substringToIndex:6] compare:@"Disamb"] != NSOrderedSame) {
+                targetLanguage = language;
+                break;
+            }
+        }
+        
+        if (targetLanguage == nil && [languages count] > 0) {
+            targetLanguage = [languages objectAtIndex:0];
+        }
+    }
+    
+    [self settingsDone];
+    
+    if (grammarian == nil) {
+        grammarian = [[Grammarian alloc] init];
+        [self updateSuggestions:[grammarian predict:@""]];
+    }
 }
 
 - (void)viewDidUnload
 {
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
     [self setVMain:nil];
     [self setVIn:nil];
     [self setSvSuggestions:nil];
@@ -199,12 +208,14 @@
     }
 }
 
-- (void) changedFromLanguage:(NSString*) language {
+- (void) changedFromLanguage:(NSString*) language {    
     newSourceLanguage = language;
+    [[NSUserDefaults standardUserDefaults] setObject:language forKey:PREFS_SOURCE_LANGUAGE_KEY];
 }
 
 - (void) changedToLanguage:(NSString*) language {
     targetLanguage = language;
+    [[NSUserDefaults standardUserDefaults] setObject:language forKey:PREFS_TARGET_LANGUAGE_KEY];
 }
 
 
