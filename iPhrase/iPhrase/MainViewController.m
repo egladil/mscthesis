@@ -143,6 +143,8 @@
 	[super viewDidDisappear:animated];
 }
 
+#pragma mark - Input and stuff
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
@@ -283,11 +285,11 @@
 
 - (void)keyboardDidShow:(NSNotification *)notification {
     CGSize kbdSize;
-    CGSize scrSize;
+    CGSize viewSize;
     CGRect rect;
     
     kbdSize = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-    scrSize = [UIScreen mainScreen].applicationFrame.size;
+    viewSize = _vMain.frame.size;
     
     if (UIInterfaceOrientationIsLandscape([self interfaceOrientation])) {
         float tmp;
@@ -295,14 +297,10 @@
         tmp = kbdSize.width;
         kbdSize.width = kbdSize.height;
         kbdSize.height = tmp;
-        
-        tmp = scrSize.width;
-        scrSize.width = scrSize.height;
-        scrSize.height = tmp;
     }
     
     rect = _svSuggestions.frame;
-    rect.size.height = scrSize.height - rect.origin.y - kbdSize.height;
+    rect.size.height = viewSize.height - rect.origin.y - kbdSize.height;
     
     [_svSuggestions setFrame:rect];
 }
