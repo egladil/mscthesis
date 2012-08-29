@@ -7,6 +7,7 @@
 //
 
 #include <assert.h>
+#include <algorithm>
 
 #include <gf/stringutil.h>
 #include <gf/Linearizer.h>

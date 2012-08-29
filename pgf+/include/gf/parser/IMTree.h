@@ -16,7 +16,7 @@
 #include <gf/parser/Chart.h>
 #include <gf/reader/ApplProduction.h>
 #include <gf/reader/CncCat.h>
-#include <gf/trees/Absyn.h>
+#include <gf/trees/Absyn.H>
 
 namespace gf {
     namespace parser {

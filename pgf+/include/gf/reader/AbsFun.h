@@ -9,6 +9,7 @@
 #ifndef pgf__AbsFun_h
 #define pgf__AbsFun_h
 
+#include <stdint.h>
 #include <string>
 #include <vector>
 

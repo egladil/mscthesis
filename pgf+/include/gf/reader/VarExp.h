@@ -9,6 +9,7 @@
 #ifndef pgf__VarExp_h
 #define pgf__VarExp_h
 
+#include <stdint.h>
 #include <gf/reader/Expr.h>
 
 namespace gf {

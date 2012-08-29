@@ -9,6 +9,7 @@
 #ifndef pgf__MetaExp_h
 #define pgf__MetaExp_h
 
+#include <stdint.h>
 #include <gf/reader/Expr.h>
 
 namespace gf {
