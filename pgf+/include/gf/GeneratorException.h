@@ -19,7 +19,7 @@ namespace gf {
     public:
         GeneratorException();
         GeneratorException(const std::string& message);
-        virtual ~GeneratorException();
+        virtual ~GeneratorException() throw();
     };
     
 }

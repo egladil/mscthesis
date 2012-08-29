@@ -19,7 +19,7 @@ namespace gf {
     public:
         ParseException();
         ParseException(const std::string& message);
-        virtual ~ParseException();
+        virtual ~ParseException() throw();
     };
     
 }

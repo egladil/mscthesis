@@ -21,7 +21,7 @@ namespace gf {
         
     public:
         UnknownCategoryException(const std::string& category);
-        virtual ~UnknownCategoryException();
+        virtual ~UnknownCategoryException() throw();
         
         virtual const std::string& getCategory() const;
     };

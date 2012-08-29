@@ -17,7 +17,7 @@ namespace gf {
         : Exception(message) {
     }
     
-    LinearizerException::~LinearizerException() {
+    LinearizerException::~LinearizerException() throw() {
     }
     
 }

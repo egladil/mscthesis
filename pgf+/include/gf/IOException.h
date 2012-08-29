@@ -20,7 +20,7 @@ namespace gf {
         IOException();
         IOException(const std::string& message);
         IOException(int err);
-        virtual ~IOException();
+        virtual ~IOException() throw();
     };
     
 }

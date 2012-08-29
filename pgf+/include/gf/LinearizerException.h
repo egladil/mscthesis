@@ -19,7 +19,7 @@ namespace gf {
     public:
         LinearizerException();
         LinearizerException(const std::string& message);
-        virtual ~LinearizerException();
+        virtual ~LinearizerException() throw();
     };
     
 }

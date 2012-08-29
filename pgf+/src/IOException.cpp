@@ -23,7 +23,7 @@ namespace gf {
         : Exception(strerror(err)) {
     }
     
-    IOException::~IOException() {
+    IOException::~IOException() throw() {
     }
     
 }

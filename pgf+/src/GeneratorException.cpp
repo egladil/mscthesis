@@ -17,7 +17,7 @@ namespace gf {
         : Exception(message) {
     }
     
-    GeneratorException::~GeneratorException() {
+    GeneratorException::~GeneratorException() throw() {
     }
     
 }

@@ -14,7 +14,7 @@ namespace gf {
     : Exception("Unknown language: "+ language), language(language) {
     }
     
-    UnknownLanguageException::~UnknownLanguageException() {
+    UnknownLanguageException::~UnknownLanguageException() throw() {
     }
     
     const std::string& UnknownLanguageException::getLanguage() const {

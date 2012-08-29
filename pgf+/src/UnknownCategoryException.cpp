@@ -14,7 +14,7 @@ namespace gf {
         : Exception("Unknown category: " + category), category(category) {
     }
     
-    UnknownCategoryException::~UnknownCategoryException() {
+    UnknownCategoryException::~UnknownCategoryException() throw() {
     }
     
     const std::string& UnknownCategoryException::getCategory() const {

@@ -19,7 +19,7 @@ namespace gf {
         
     public:
         UnknownLanguageException(const std::string& language);
-        virtual ~UnknownLanguageException();
+        virtual ~UnknownLanguageException() throw();
         
         virtual const std::string& getLanguage() const;
     };

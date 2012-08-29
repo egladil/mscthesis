@@ -17,7 +17,7 @@ namespace gf {
         : Exception(message) {
     }
     
-    ParseException::~ParseException() {
+    ParseException::~ParseException() throw() {
     }
     
 }

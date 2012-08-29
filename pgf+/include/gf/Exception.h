@@ -9,22 +9,25 @@
 #ifndef pgf__Exception_h
 #define pgf__Exception_h
 
+#include <exception>
 #include <string>
 
 namespace gf {
     
-    class Exception {
+    class Exception : public std::exception {
     private:
         std::string message;
         
     public:
         Exception();
         Exception(const std::string& message);
-        virtual ~Exception();
+        virtual ~Exception() throw();
         
         virtual const std::string& getMessage() const;
         
         virtual std::string toString() const;
+        
+        virtual const char* what() const throw();
     };
     
 }

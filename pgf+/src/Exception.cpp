@@ -18,7 +18,7 @@ namespace gf {
         : message(message) {
     }
     
-    Exception::~Exception() {
+    Exception::~Exception() throw() {
     }
     
     const std::string& Exception::getMessage() const {
@@ -35,4 +35,8 @@ namespace gf {
         return ret;
     }
     
+    const char* Exception::what() const throw() {
+    	return message.c_str();
+    }
 }
+
