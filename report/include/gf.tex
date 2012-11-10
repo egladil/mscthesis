@@ -1,33 +1,49 @@
 \chapter{GF and PGF}
-\lettrine[lines=4, loversize=-0.1, lraise=0.1]{L}{orem ipsum dolor} sit amet, consectetur adipiscing elit. Donec viverra gravida adipiscing. Morbi vitae dui eu leo dapibus venenatis quis laoreet augue. Proin sem nunc, lobortis sed gravida id, iaculis id justo. Sed convallis, mauris vel mattis posuere, tortor quam molestie sem, vel feugiat risus dolor sit amet purus. Nulla facilisi. Duis ac velit non tortor malesuada pellentesque vitae vitae erat. Aliquam dapibus porta lorem lacinia vestibulum. Nulla convallis venenatis euismod. Suspendisse adipiscing lacus id nisi hendrerit dapibus. Sed quam diam, pretium vel accumsan vel, pulvinar et odio. Nulla facilisis ullamcorper metus non suscipit. Aliquam nec augue odio. In hac habitasse platea dictumst. Nulla facilisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas consequat mattis metus, in imperdiet purus suscipit eu. Mauris velit lorem, pharetra nec vehicula cursus, vulputate sit amet dui. Nam sed eros magna, quis molestie urna.
+\lettrine[lines=4, loversize=-0.1, lraise=0.1]{I}{n order to fully understand} this work some basic understanding of the Grammatical Framework and the Portable Grammar format is needed.
 
 \section{Grammatical Framework}
+The Grammatical Framework (GF) is a type-theoretic grammar formalism based on Martin-L\"of theory. It can be used to write grammars for both natural and formal languages.
+A grammar for GF is made up of an abstract syntax common for all languages, and a set of concrete syntaxes, one for each supported language.
+Once a grammar is written it can be used for both parsing and linearisation of text in any of the grammar's supported languages.
+
 \subsection{Abstract syntax}
+The abstract syntax describes the sementical structure of the grammar. It declares the categories and functions of the grammar.
+
 \subsection{Concrete syntax}
+A concrete syntax is a language specific implementation of the abstract syntax. It defines linearisations for the categories and functions declared in the abstract syntax.
+
 \subsection{Inheritance}
+A very useful feature of GF is the ability for syntaxes to inherit from other syntaxes. This makes it possible to make specialisations of already written grammars. For instance, the Mountaineering grammar discussed later extends the Phrasebook grammar that is part of the standard GF distribution.
+The inheritance in GF is a bit more advanced than in i.e. Java or C++. Unlike Java (but like C++) it allows multiple inheritance. In addition to this it also allows negative inheritance. That is, the ability to choose not to inherit some parts of the base grammar(s). This is similar to overriding in object oriented programming languages, the difference beeing the ability to completely remove a feature instead of just replacing it.
+
+Allowing multiple inheritance can lead to situations where a grammar inherits from another grammar along to different paths, known as the diamond problem. This is solved in GF by...
+
+Negative inheritance would lead to some issues in object oriented programming languages. If the static type of a variable defines a method but the dynamic type does not, this would most likely lead to a runtime error. However, when inheriting from another grammar in GF the sub-grammar does not inherit the type of the base grammar. The closest thing to a base type for a concrete grammar is its abstract grammar. And the abstract grammar in turn has no base type. Thus the problem with the static type declaring a feature not present in the dynamic type does not arise.
 
 \section{Portable Grammar Format}
-\subsection{Types}
-\subsection{PGF}
-\subsection{Abstract}
-\subsection{AbsFun}
-\subsection{AbsCat}
-\subsection{CatFun}
-\subsection{Type}
-\subsection{Hypo}
-\subsection{Equation}
-\subsection{Pattern}
-\subsection{Expression}
-\subsection{Literal}
-\subsection{BindType}
-\subsection{Concrete}
-\subsection{PrintName}
-\subsection{Sequence}
-\subsection{Symbol}
-\subsection{Alternative}
-\subsection{CncFun}
-\subsection{LinDef}
-\subsection{ProductionSet}
-\subsection{Production}
-\subsection{PArg}
-\subsection{CncCat}
+\begin{description}
+\item[Types]
+\item[PGF]
+\item[Abstract]
+\item[AbsFun]
+\item[AbsCat]
+\item[CatFun]
+\item[Type]
+\item[Hypo]
+\item[Equation]
+\item[Pattern]
+\item[Expression]
+\item[Literal]
+\item[BindType]
+\item[Concrete]
+\item[PrintName]
+\item[Sequence]
+\item[Symbol]
+\item[Alternative]
+\item[CncFun]
+\item[LinDef]
+\item[ProductionSet]
+\item[Production]
+\item[PArg]
+\item[CncCat]
+\end{description}
