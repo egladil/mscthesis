@@ -21,6 +21,8 @@ Allowing multiple inheritance can lead to situations where a grammar inherits fr
 Negative inheritance would lead to some issues in object oriented programming languages. If the static type of a variable defines a method but the dynamic type does not, this would most likely lead to a runtime error. However, when inheriting from another grammar in GF the sub-grammar does not inherit the type of the base grammar. The closest thing to a base type for a concrete grammar is instead its abstract grammar. And the abstract grammar in turn has no base type. Thus the problem with the static type declaring a feature not present in the dynamic type does not arise.
 
 \section{Portable Grammar Format}
+\label{sec:pgf}
+
 \begin{description}
 \item[Types]
 \item[PGF]
