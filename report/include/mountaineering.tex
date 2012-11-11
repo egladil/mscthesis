@@ -3,6 +3,7 @@
 
 In GF there is already a tourist phrasebook grammar. This can be used as a basis for the Mountaineering grammar so that only the jargon has to be added.
 
+
 \section{Phrasebook}
 The phrasebook grammar in the GF distribution provides several forms of useful questions and phrases. Some examples include:
 \begin{itemize}
@@ -12,10 +13,13 @@ The phrasebook grammar in the GF distribution provides several forms of useful q
 \item This Italian pizza is good.
 \end{itemize}
 
+
 \section{Mountaineering}
 The words and phrases present in mountaineering jargon varies from language to language. Some languages, like Norwegian, has a very rich vocabulary for this area. Others, like Swedish, mostly use loan words. English and German fall somewhere in between, with German being on the richer side of the spectrum while English borrows some from German but not as much as Swedish does from English.
 
+
 \subsection{Words}
+\label{sec:words}
 When deciding what words to include a few categories where identified, namely actions, exclamations, gear, holds, knots, places and people. Some of these could be placed in existing categories from the Phrasebook grammar, while other where given their own categories.
 
 The words where categorised as follows:
@@ -32,6 +36,7 @@ VerbPhrase, Kind and PlaceKind are inherited from the Phrasebook grammar, while 
 
 Profession is probably the most interesting category as it is used in the replacement of certain phrases from the Phrasebook grammar, discussed below.
 
+
 \subsection{Phrases}
 The Phrasebook grammar provides most of the phrases needed to use the added words. Some phrases were added though:
 \begin{description}
@@ -40,70 +45,22 @@ The Phrasebook grammar provides most of the phrases needed to use the added word
 \item[IsAProfession] Someone is a climber/physician/etc: "I am a climber."
 \end{description}
 
+
 \subsection{Professions}
 In the Phrasebook grammar there is a group of Actions on the form "I am a student." However, these are not very flexible and does not allow the profession to be reused in other phrases were a person is needed. I.e. "The student walks to the hotel.".
 This is somewhat limiting as being able to say "The leader climbs to the belay station." can be rather useful.
 
 To address this, the old professions were excluded when inheriting from the Phrasebook grammar, and instead a new system to express both the old phrases and the new were designed.
 
-First, a new category Profession as described above were added. Then functions to use professions as persons were created. Finally the function IsAProfession was added to replicate the "I am a student." type of phrases.
+First, a new category Profession as described in section \ref{sec:words} were added. Then functions to use professions as persons were created. Finally the function IsAProfession was added to replicate the "I am a student." type of phrases. The abstract and concrete syntax for this is shown in listings \ref{lst:absprofession}, \ref{lst:conprofession_i} and \ref{lst:conprofession_eng}. This can be compared with the old functions from Phrasebook in listings \ref{lst:oldabsprofession} and \ref{lst:oldconprofession_eng}. The new way makes the grammar a bit more complex, but in return adding more professions is easier and the ways they can be used are more flexible.
 
-Abstract:
-\begin{verbatim}
--- this teacher, that teacher
-ThisProfession, ThatProfession : Profession -> Person;
--- these teachers,those teachers
-TheseProfessions, ThoseProfessions : Profession -> Person;
--- the teacher, the teachers
-TheProfession, TheProfessions : Profession -> Person;
+\lstinputlisting[language=Haskell,morekeywords={abstract,concrete,with,open,in,cat,fun,lincat,lin,oper}, frame=single, breaklines=true, float, captionpos=b, linerange={2-2,5-7,11-13,20-20}, caption=New abstract syntax for Professions., label=lst:absprofession]{../grammar/Mountaineering.gf}
 
-IsAProfession : Person -> Profession -> Action;
-\end{verbatim}
+\lstinputlisting[language=Haskell,morekeywords={abstract,concrete,with,open,in,cat,fun,lincat,lin,oper}, frame=single, breaklines=true, float, captionpos=b, linerange={8-8,11-13,16-21,32-33}, caption=New shared concrete syntax for Professions., label=lst:conprofession_i]{../grammar/MountaineeringI.gf}
 
+\lstinputlisting[language=Haskell,morekeywords={abstract,concrete,with,open,in,cat,fun,lincat,lin,oper}, frame=single, breaklines=true, float, captionpos=b, linerange={27-27,30-30,110-113}, caption=New english concrete syntax for Professions., label=lst:conprofession_eng]{../grammar/MountaineeringEng.gf}
 
-Concrete (common):
-\begin{verbatim}
-ThisProfession pro = {name = mkNP this_Quant pro ; isPron = False ;
-                                               poss = this_Quant};
-ThatProfession pro = {name = mkNP that_Quant pro ; isPron = False ;
-                                               poss = that_Quant};
-TheseProfessions pro = {name = mkNP this_Quant plNum pro ; isPron = False ;
-                                               poss = this_Quant};
-ThoseProfessions pro = {name = mkNP that_Quant plNum pro ; isPron = False ;
-                                               poss = that_Quant};
-TheProfession pro = {name = mkNP the_Quant pro ; isPron = False ;
-                                               poss = the_Quant};
-TheProfessions pro = {name = mkNP the_Quant plNum pro ; isPron = False ;
-                                               poss = the_Quant};
-\end{verbatim}
+\lstinputlisting[language=Haskell,morekeywords={abstract,concrete,with,open,in,cat,fun,lincat,lin,oper}, frame=single, breaklines=true, float, captionpos=b, linerange={203-203,237-244}, caption=Old abstract syntax for Professions., label=lst:oldabsprofession]{../GF/examples/phrasebook/Words.gf}
 
-Concrete (english):
-\begin{verbatim}
-IsAProfession p pro = mkProfession pro p;
-\end{verbatim}
+\lstinputlisting[language=Haskell,morekeywords={abstract,concrete,with,open,in,cat,fun,lincat,lin,oper}, frame=single, breaklines=true, float, captionpos=b, linerange={265-265,296-306}, caption=Old english concrete syntax for Professions., label=lst:oldconprofession_eng]{../GF/examples/phrasebook/WordsEng.gf}
 
-This can be compared with the old functions from Phrasebook.
-
-Abstract:
-\begin{verbatim}
-ADoctor : Person -> Action ;
-AProfessor : Person -> Action ;
-ALawyer : Person -> Action ;
-AEngineer : Person -> Action ;
-ATeacher : Person -> Action ;
-ACook : Person -> Action ;
-AStudent : Person -> Action ;
-ABusinessman : Person -> Action ;
-\end{verbatim}
-
-Concrete:
-\begin{verbatim}
-ADoctor = mkProfession (mkN "doctor") ;
-AProfessor = mkProfession (mkN "professor") ;
-ALawyer = mkProfession (mkN "lawyer") ;
-AEngineer =  mkProfession (mkN "engineer") ;
-ATeacher = mkProfession (mkN "teacher") ;
-ACook = mkProfession (mkN "cook") ;
-AStudent = mkProfession (mkN "student") ;
-ABusinessman = mkProfession (mkN "businessman" "businessmen") ;
-\end{verbatim}
