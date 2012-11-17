@@ -3,21 +3,21 @@
 
 
 \section{libpgf}
-There already exists a C library to work with PGF files. However, it does not support predicting the next possible tokens given a sequence of previous tokens. As this was a rather prominent feature of the Android aplication, not providing it in the iPhone application was not an alternative which meant that this existing library unfortunately could not be used.
+There already exists a C library to work with PGF files \cite{libpgf}. However, it does not support predicting the next possible tokens given a sequence of previous tokens. As this was a rather prominent feature of the Android aplication, not providing it in the iPhone application was not an alternative which meant that this existing library unfortunately could not be used.
 
 
 \section{JPGF}
-The Android application uses the JPGF library. It uses ... to parse the input and is thus able to predict possible continuations of the current token sequence.
+The Android application uses the JPGF library \cite{jpgf}. It uses ... to parse the input and is thus able to predict possible continuations of the current token sequence.
 
 The JPGF library is divided into four major parts: The PGF file reader, the lineariser, the parser, and finally the parse tree represenatation. These will be discussed further in the next section.
 
 
 \section{libpgf+}
-The C++ library retains most of the structure and api of the Java library. Some additions were necesarry to account for the fact that C++ does not provide garbage collection, automatic reference counting or any other form of automatic memory management except on the stack. Also, some changes were made in cases where there were duplicate methods with different names or where methods did not follow the general naming convention used in JPGF.
+The C++ library retains most of the structure and api of the Java library. Some additions were necesarry to account for the fact that C++ does not provide garbage collection, automatic reference counting or any other form of automatic memory management except on the stack \cite{cppmemoryhandling}. Also, some changes were made in cases where there were duplicate methods with different names or where methods did not follow the general naming convention used in JPGF.
 
 
 \subsection{Memory handling}
-As C++ does not provide automatic memory management and JPGF relies on the garbage collector in Java taking care of all allocated objects that it no longer needs, something was needed to take care of this in the new implementation. There were some alternatives. One was to implement reference counting in the api. Another alternative would have been to implement garbage collection (GC) or rely on an external library to provide it. A comparison of the three alternatives can be seen in table \ref{tbl:memorymanagement}.
+As C++ does not provide automatic memory management and JPGF relies on the garbage collector in Java taking care of all allocated objects that it no longer needs, something was needed to take care of this in the new implementation. There were some alternatives. One was to implement reference counting \cite{refcount} in the api. Another alternative would have been to implement garbage collection (GC) \cite{gc} or rely on an external library to provide it. A comparison of the three alternatives can be seen in table \ref{tbl:memorymanagement}.
 
 \begin{table}
 \begin{tabularx}{\textwidth}{|l|X|X|}
@@ -70,7 +70,7 @@ The second part is the set of classes modelling the grammar that was read from t
 
 
 \subsection{Parse tree}
-The classes modelling the parse tree are automatically generated from the BNF grammar shown in listing \ref{lst:parsetree} using bnfc. This grammar is identical to the one used in JPGF and theoretically a tree parsed with libpgf+ could be converted to a string using this grammar and then read from the string with JPGF and linearised there, or vice versa.
+The classes modelling the parse tree are automatically generated from the BNF grammar shown in listing \ref{lst:parsetree} using bnfc \cite{bnfc}. This grammar is identical to the one used in JPGF and theoretically a tree parsed with libpgf+ could be converted to a string using this grammar and then read from the string with JPGF and linearised there, or vice versa.
 
 \lstinputlisting[language=Haskell, morekeywords={Ident}, frame=single, breaklines=true, float, captionpos=b, caption=BNF grammar used to generate the classes modelling the parse tree., label=lst:parsetree]{../pgf+/src/Trees.cf}
 
