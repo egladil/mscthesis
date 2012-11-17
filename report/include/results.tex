@@ -1,20 +1,76 @@
 \chapter{Results}
-\lettrine[lines=4, loversize=-0.1, lraise=0.1]{L}{orem ipsum dolor} sit amet, consectetur adipiscing elit.
+\lettrine[lines=4, loversize=-0.1, lraise=0.1]{T}{his chapter presents} the results of this work and discusses possible further work.
 
 
 \section{Results}
-\subsection{Sub-header}
+
+
+\subsection{Mountaineering phrasebook}
+The mountaineering phrasebook extends the Phrasebook grammar with 78 new words specific to this domain. It adds two new kinds of phrases, and replaces one old with a new implementation. It also extends the Person category to include professions.
+
+
+\subsection{libpgf+}
+A comparison of the GF, JPGF, libpgf and libpgf+ parsers can be seen in table \ref{tbl:parsercomparison}. The comparison was done using the Mountaineering grammar and a list of 1000 randomly generated phrases supported by the grammar. Time measurements were taken with the unix \emph{time} command and is the sum of both user and system time (that is, total cpu time).
+
+\begin{table}
+\begin{center}
+\begin{tabular}{|l|l|l|l|}
+	\hline
+	 & \emph{Predictions} & \emph{PGF load time} & \emph{Average parse time} \\ \hline
+	\emph{GF} & Yes & X ms & Y ms \\ \hline
+	\emph{JPGF} & Yes & X ms & Y ms \\ \hline
+	\emph{libpgf} & No & X ms & Y ms \\ \hline
+	\emph{libpgf+} & Yes & X ms & Y ms \\ \hline
+\end{tabular}
+\end{center}
+\caption{Comparison of parsers.}
+\label{tbl:parsercomparison}
+\end{table}
+
+
+\subsection{iPhone application}
+A comparison of the available features in the Android and the iPhone applications can be seen in \ref{tbl:appcomparison}.
+\begin{table}
+\begin{center}
+\begin{tabular}{|l|l|l|}
+	\hline
+	 & \emph{Phrasedroid (Android)} & \emph{iPhrase (iPhone)} \\ \hline
+	\emph{Load from PGF} & Yes & Yes \\ \hline
+	\emph{Change input language} & Yes & Yes \\ \hline
+	\emph{Change output language} & Yes & Yes \\ \hline
+	\emph{Token touch input} & Yes & Yes \\ \hline
+	\emph{Keyboard input} & No & Yes \\ \hline
+	\emph{List all possible translations} & Yes & Yes \\ \hline
+	\emph{Text-to-speach of translation} & Yes & No \\ \hline
+\end{tabular}
+\end{center}
+\caption{Comparison of memory management alternatives.}
+\label{tbl:appcomparison}
+\end{table}
 
 
 \section{Evaluation}
-\subsection{Sub-header}
+
+
+\subsection{Mountaineering phrasebook}
+The new words in the grammar relates mostly to climbing. While it is one important aspect of mountaineering, there are other areas as well that would benefit from being covered by the grammar.
+
+\subsection{libpgf+}
+The libpgf+ library has the same functionality as the JPGF library. While this does not include full support for everything that can be expressed using PGF (most notably XXXX), they provide all the features necesarry to implement a working phrase translation application.
+
+\subsection{iPhone application}
+With the same feature set as the Android application except for text-to-speach, the iPhone application should be considered a successful reimplmentation. Also, the addition of the keyboard input is very useful when the number of possible continuations is very large.
 
 
 \section{Future work}
 
 
 \subsection{Mountaineering phrasebook}
-The grammar can of course be extended with a larger vocabulary and more phrases.
+The grammar can of course be extended with a larger vocabulary and more phrases. Some examples include alpine flora and fauna, and phrases for asking for/giving directions to get from one place to another.
+
+
+\subsection{libpgf+}
+Adding support for XXXX would make the library feature complete with regards to the Portable Grammar Format. This would also benefit JPGF, since the code base is similar enough that porting features from one to the other would not be much of a problem.
 
 
 \subsection{The iPhone application}
