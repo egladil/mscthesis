@@ -21,4 +21,4 @@ build/
 /report/main.pdf
 /report/main.synctex.gz
 /report/main.toc
-/report/include/packagescommands.log
+/report/include/*.log
