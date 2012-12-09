@@ -7,21 +7,21 @@ A grammar for GF is made up of an abstract syntax common for all languages, and 
 Once a grammar is written it can be used for both parsing and linearisation of text in any of the grammar's supported languages.
 
 \subsection{Abstract syntax}
-The abstract syntax describes the sementical structure of the grammar. It declares the categories and functions of the grammar.\cite{gfabsyn}
+The abstract syntax describes the sementical structure of the grammar. It declares the categories and functions of the grammar.\cite{gf}
 
 \subsection{Concrete syntax}
-A concrete syntax is a language specific implementation of the abstract syntax. It defines linearisations for the categories and functions declared in the abstract syntax. \cite{gfconcrete}
+A concrete syntax is a language specific implementation of the abstract syntax. It defines linearisations for the categories and functions declared in the abstract syntax. \cite{gf}
 
 \subsection{Inheritance}
-A very useful feature of GF is the ability for syntaxes to inherit from other syntaxes \cite{gfinheritance}. This makes it possible to make specialisations of already written grammars. For instance, the Mountaineering grammar discussed later extends the Phrasebook grammar that is part of the standard GF distribution.
-The inheritance in GF is a bit more advanced than in i.e. Java or C++. Unlike Java (but like C++) it allows multiple inheritance \cite{javalangspec} \cite{cxx11}. In addition to this it also allows negative inheritance \cite{gfneginherit}. That is, the ability to choose not to inherit some parts of the base grammar(s). This is similar to overriding in object oriented programming languages \cite{overriding}, the difference beeing the ability to completely remove a feature instead of just replacing it.
+A very useful feature of GF is the ability for syntaxes to inherit from other syntaxes \cite{gf}. This makes it possible to make specialisations of already written grammars. For instance, the Mountaineering grammar discussed later extends the Phrasebook grammar that is part of the standard GF distribution.
+The inheritance in GF is a bit more advanced than in i.e. Java or C++. Unlike Java (but like C++) it allows multiple inheritance \cite{javalangspec} \cite{cxx11}. In addition to this it also allows negative inheritance \cite{gf}. That is, the ability to choose not to inherit some parts of the base grammar(s). This is similar to overriding in object oriented programming languages, the difference beeing the ability to completely remove a feature instead of just replacing it.
 
-Allowing multiple inheritance can lead to situations where a grammar inherits from another grammar along to different paths, known as the diamond problem \cite{diamongproblem}. This is not a problem in GF though, as everything inherited are constants and the compiler can recognise if two contants come from the same source\cite{gfdiamondsolution}.
+Allowing multiple inheritance can lead to situations where a grammar inherits from another grammar along to different paths, known as the diamond problem \cite{diamondproblem}. This is not a problem in GF though, as everything inherited are constants and the compiler can recognise if two contants come from the same source\cite{gf}.
 
-Negative inheritance would lead to some issues in object oriented programming languages. If the static type \cite{statictype} of a variable defines a method but the dynamic type \cite{dynamictype} does not, this would most likely lead to a runtime error. However, when inheriting from another grammar in GF the sub-grammar does not inherit the type of the base grammar \cite{grammartype}. The closest thing to a base type for a concrete grammar is instead its abstract grammar. And the abstract grammar in turn has no base type. Thus the problem with the static type declaring a feature not present in the dynamic type does not arise.
+Negative inheritance would lead to some issues in object oriented programming languages. If the static type of a variable defines a method but the dynamic type does not, this would most likely lead to a runtime error. However, when inheriting from another grammar in GF the sub-grammar does not inherit the type of the base grammar \cite{gf}. The closest thing to a base type for a concrete grammar is instead its abstract grammar. And the abstract grammar in turn has no base type. Thus the problem with the static type declaring a feature not present in the dynamic type does not arise.
 
 \section{Portable Grammar Format}
-When parsing using a GF grammar, it is most suitably represented by a Parallel Multiple Context-Free Grammar (PMCFG) \cite{pmcfg}. This grammar can be written to file using the Portable Grammar Format (PGF) \cite{Angelov}.
+When parsing using a GF grammar, it is most suitably represented by a Parallel Multiple Context-Free Grammar (PMCFG) \cite{pmcfg} \cite{pmcfg2}. This grammar can be written to file using the Portable Grammar Format (PGF) \cite{Angelov}.
 
 There are some differences between PMCFG and GF abstract and concrete syntaxes. PCMFG does not allow parameters or nested records and tables, which are both used in the concrete syntaxes of GF. The lack of parameters is addressed by instantiating all parameter variables with all values they can possibly receive when compiling a PGF file. The nested records and tables are by simply flattening them.
 

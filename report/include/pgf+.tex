@@ -13,11 +13,11 @@ The JPGF library is divided into four major parts: The PGF file reader, the line
 
 
 \section{libpgf+}
-The C++ library retains most of the structure and api of the Java library. Some additions were necesarry to account for the fact that C++ does not provide garbage collection, automatic reference counting or any other form of automatic memory management except on the stack \cite{cppmemoryhandling}. Also, some changes were made in cases where there were duplicate methods with different names or where methods did not follow the general naming convention used in JPGF.
+The C++ library retains most of the structure and api of the Java library. Some additions were necesarry to account for the fact that C++ does not provide garbage collection, automatic reference counting or any other form of automatic memory management except on the stack \cite{cxx11}. Also, some changes were made in cases where there were duplicate methods with different names or where methods did not follow the general naming convention used in JPGF.
 
 
 \subsection{Memory handling}
-As C++ does not provide automatic memory management and JPGF relies on the garbage collector in Java taking care of all allocated objects that it no longer needs, something was needed to take care of this in the new implementation. There were some alternatives. One was to implement reference counting \cite{refcount} in the api. Another alternative would have been to implement garbage collection (GC) \cite{gc} or rely on an external library to provide it. A comparison of the three alternatives can be seen in table \ref{tbl:memorymanagement}.
+As C++ does not provide automatic memory management and JPGF relies on the garbage collector in Java taking care of all allocated objects that it no longer needs, something was needed to take care of this in the new implementation. There were some alternatives. One was to implement reference counting in the api. Another alternative would have been to implement garbage collection (GC) \cite{gc} or rely on an external library to provide it. A comparison of the three alternatives can be seen in table \ref{tbl:memorymanagement}.
 
 \begin{table}
 \begin{tabularx}{\textwidth}{|l|X|X|}
