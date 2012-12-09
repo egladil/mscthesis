@@ -21,32 +21,8 @@ Allowing multiple inheritance can lead to situations where a grammar inherits fr
 Negative inheritance would lead to some issues in object oriented programming languages. If the static type \cite{statictype} of a variable defines a method but the dynamic type \cite{dynamictype} does not, this would most likely lead to a runtime error. However, when inheriting from another grammar in GF the sub-grammar does not inherit the type of the base grammar \cite{grammartype}. The closest thing to a base type for a concrete grammar is instead its abstract grammar. And the abstract grammar in turn has no base type. Thus the problem with the static type declaring a feature not present in the dynamic type does not arise.
 
 \section{Portable Grammar Format}
-\label{sec:pgf}
-A full description of the Portable Grammar Format (PGF) can be found in \cite{Angelov}.
+When parsing using a GF grammar, it is most suitably represented by a Parallel Multiple Context-Free Grammar (PMCFG) \cite{pmcfg}. This grammar can be written to file using the Portable Grammar Format (PGF) \cite{Angelov}.
 
-\begin{description}
-\item[Types]
-\item[PGF]
-\item[Abstract]
-\item[AbsFun]
-\item[AbsCat]
-\item[CatFun]
-\item[Type]
-\item[Hypo]
-\item[Equation]
-\item[Pattern]
-\item[Expression]
-\item[Literal]
-\item[BindType]
-\item[Concrete]
-\item[PrintName]
-\item[Sequence]
-\item[Symbol]
-\item[Alternative]
-\item[CncFun]
-\item[LinDef]
-\item[ProductionSet]
-\item[Production]
-\item[PArg]
-\item[CncCat]
-\end{description}
+There are some differences between PMCFG and GF abstract and concrete syntaxes. PCMFG does not allow parameters or nested records and tables, which are both used in the concrete syntaxes of GF. The lack of parameters is addressed by instantiating all parameter variables with all values they can possibly receive when compiling a PGF file. The nested records and tables are by simply flattening them.
+
+Another step that is performed when compiling a PGF file is to replace all linearisation rules with concrete functions. One linearisation rule will be replaced with one or more concrete functions. A simple example is a linearisation for a category generating one singular and one plural concrete function. This expansion then propagates, so if another linearisation depends on the one from the previous example it will also generate both a singular and a plural concrete function.
