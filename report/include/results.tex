@@ -10,17 +10,16 @@ The mountaineering phrasebook extends the Phrasebook grammar with 78 new words s
 
 
 \subsection{libpgf+}
-A comparison of the GF, JPGF, libpgf and libpgf+ parsers can be seen in table \ref{tbl:parsercomparison}. The comparison was done using the Mountaineering grammar and a list of 1000 randomly generated phrases supported by the grammar. Time measurements for GF were taken with the unix \emph{time} command while running GF in batch mode, and is the sum of both user and system time (that is, total cpu time). The time measurements for JPGF were taken using the Netbeans profiler while the measurements for libpgf and libpgf+ were taken using the OS X profiler (Instruments).
+A comparison of the GF, JPGF, libpgf+ parsers can be seen in table \ref{tbl:parsercomparison}. The comparison was done using the Mountaineering grammar and a list of 1000 randomly generated phrases supported by the grammar. Time measurements for GF were taken with the unix \emph{time} command while running GF in batch mode, and is the sum of both user and system time (that is, total cpu time). The time measurements for JPGF were taken using the Netbeans profiler while the measurements for libpgf+ were taken using the OS X profiler (Instruments).
 
 \begin{table}
 \begin{center}
 \begin{tabular}{|l|l|l|l|}
 	\hline
-	 & \emph{Predictions} & \emph{PGF load time} & \emph{Average parse time} \\ \hline
-	\emph{GF} & Yes & X ms & Y ms \\ \hline
-	\emph{JPGF} & Yes & X ms & Y ms \\ \hline
-	\emph{libpgf} & No & X ms & Y ms \\ \hline
-	\emph{libpgf+} & Yes & X ms & Y ms \\ \hline
+	 & \emph{PGF load time} & \emph{Average parse time} \\ \hline
+	\emph{GF} & 171 ms & 6.1 ms \\ \hline
+	\emph{JPGF} & 1129 ms & 8.5 ms \\ \hline
+	\emph{libpgf+} & 56 ms & 17 ms \\ \hline
 \end{tabular}
 \end{center}
 \caption{Comparison of parsers.}
@@ -56,7 +55,7 @@ A comparison of the available features in the Android and the iPhone application
 The new words in the grammar relates mostly to climbing. While it is one important aspect of mountaineering, there are other areas that would benefit from being covered by the grammar as well.
 
 \subsection{libpgf+}
-The libpgf+ library has the same functionality as the JPGF library. While this does not include full support for everything that can be expressed using PGF (most notably XXXX), they provide all the features necesarry to implement a working phrase translation application.
+The libpgf+ library has the same functionality as the JPGF library. This means that it provides all the features necesarry to implement a working phrase translation application.
 
 \subsection{iPhone application}
 With the same feature set as the Android application except for text-to-speach, the iPhone application should be considered a successful reimplementation. Also, the addition of the keyboard input is very useful when the number of possible continuations is very large.
@@ -70,7 +69,7 @@ The grammar can of course be extended with a larger vocabulary and more phrases.
 
 
 \subsection{libpgf+}
-Adding support for XXXX would make the library feature complete with regards to the Portable Grammar Format. This would also benefit JPGF, since the code base is similar enough that porting features from one to the other would not be much of a problem.
+The api could be better documented. This would also benefit JPGF, since they share a common api with the exception for memory handling. There might also be bugs in the code that has not been found yet.
 
 
 \subsection{The iPhone application}
