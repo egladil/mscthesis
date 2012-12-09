@@ -1,2 +1,6 @@
 \chapter{Conclusion}
-\lettrine[lines=4, loversize=-0.1, lraise=0.1]{T}{his was a triumf!} I'm making a note here: "HUGE SUCCESS!!"
+\lettrine[lines=4, loversize=-0.1, lraise=0.1]{S}{uprisingly}, the Java version of the parser was actually faster than the C++ version. This is most likely due to recursive nature of the algorithm and the fact that the Java version is partly written in Scala which handles recursion better than Java or C++. Another factor which might affect the result is the Java just-in-time compiler which would further optimize the code at run time, compared to the static optimizations done for the C++ code at compile time.
+
+The grammar includes a little under 100 new words and a few new phrases relating to climbing in three different languages. This is a great start for a climbing and trekking grammar, but it can of course be extended.
+
+Finally, the iPhone application works as intended and presents a user interface similar to the Android application. The grammar in the application can easily be replaced by another and thus the reusability requirements are met. Translations and prediction can be a bit slow for very long sentences which is a result of the somewhat limited cpu in the iPhone and the fact that the libpgf+ library is slower than the JPGF library.
